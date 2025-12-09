@@ -105,7 +105,6 @@ class PricingAgent:
     def generate_tender_quote(self, input_rfp, simulation_params):
         print(f"\n💡 PROCESSING TENDER FOR: {input_rfp['client_name']}")
         
-        # Accumulators
         acc_material = 0
         acc_labor = 0
         acc_setup = 0
@@ -115,21 +114,17 @@ class PricingAgent:
         
         line_items = []
         
-        # Strategy
         client_row = self.clients[self.clients['client_name'] == input_rfp['client_name']]
         client_id = client_row.iloc[0]['client_id'] if not client_row.empty else None
         final_margin_pct, margin_breakdown = self._get_margin_composition(client_id, input_rfp.get('competitor_detected'))
 
-        # Process Items
         for item in input_rfp['requested_items']:
             sku = item['sku']
             qty = item['qty']
             
-            # 1. Production Costs
             mode, _ = self._check_factory_status(sku, qty)
             cost_comps = self._calculate_cost_components_per_unit(sku, qty, mode, simulation_params['copper_market_factor'])
             
-            # 2. Overheads
             distance = input_rfp.get('distance_km', 500)
             unit_transport = self._calculate_transport_cost_per_unit(sku, input_rfp['delivery_zone'], distance)
             
@@ -137,11 +132,9 @@ class PricingAgent:
             if "90 Days" in input_rfp['payment_terms']:
                 unit_finance = cost_comps['total_production_unit'] * 0.03
             
-            # 3. Final Price
             unit_total_cost = cost_comps['total_production_unit'] + unit_transport + unit_finance
             unit_final_price = unit_total_cost * (1 + final_margin_pct)
             
-            # 4. Accumulate
             acc_material += (cost_comps['material'] * qty)
             acc_labor += (cost_comps['labor'] * qty)
             acc_setup += (cost_comps['setup'] * qty)
@@ -154,25 +147,27 @@ class PricingAgent:
                 "qty": qty,
                 "breakdown_per_unit": {
                     "material": round(cost_comps['material'], 2),
-                    "labor": round(cost_comps['labor'], 2),
+                    "labor_mfg": round(cost_comps['labor'], 2),
                     "transport": round(unit_transport, 2)
                 },
                 "final_unit_price": round(unit_final_price, 2),
                 "line_total_value": round(unit_final_price * qty, 2)
             })
 
-        # Final Accounting
         total_production = acc_material + acc_labor + acc_setup
         total_overheads = acc_transport + acc_finance
         total_project_cost = total_production + total_overheads
         estimated_profit = acc_total_bid - total_project_cost
 
+        # GRAB RFP ID SAFELY
+        rfp_id_tag = input_rfp.get('rfp_id', 'UNKNOWN-RFP')
+
         output_data = {
             "tender_summary": {
+                "rfp_processing_id": rfp_id_tag, # <--- HERE IT IS
                 "client": input_rfp['client_name'],
                 "logistics_param": f"{input_rfp.get('distance_km')} km to {input_rfp['delivery_zone']}",
                 
-                # --- SECTION 1: DETAILED COST BILL ---
                 "cost_breakdown_bill": {
                     "1_total_raw_material": round(acc_material, 2),
                     "2_total_labor_mfg": round(acc_labor, 2),
@@ -181,7 +176,6 @@ class PricingAgent:
                     "5_total_finance": round(acc_finance, 2)
                 },
 
-                # --- SECTION 2: STRICT ACCOUNTING LEDGER (A-E) ---
                 "internal_accounting_ledger": {
                     "A_total_production_cost": round(total_production, 2),
                     "B_total_overheads_cost": round(total_overheads, 2),
@@ -210,6 +204,6 @@ if __name__ == "__main__":
         
         with open("output.json", "w") as f:
             json.dump(quote, f, indent=4)
-        print("✅ SUCCESS: Full Accounting Ledger Generated.")
+        print(f"✅ SUCCESS: Quote generated for {quote['tender_summary']['rfp_processing_id']}.")
     else:
         print("⚠️ 'input.json' not found.")
