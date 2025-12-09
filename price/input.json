@@ -1,0 +1,15 @@
+{
+    "rfp_details": {
+        "client_name": "Sharma Infra",
+        "delivery_zone": "Hilly_Remote",
+        "payment_terms": "90 Days Credit",
+        "competitor_detected": "RivalCables Ltd",
+        "requested_items": [
+            { "sku": "PROD-002", "qty": 50000 },
+            { "sku": "PROD-001", "qty": 2000 }
+        ]
+    },
+    "simulation_params": {
+        "copper_market_factor": 1.15
+    }
+}

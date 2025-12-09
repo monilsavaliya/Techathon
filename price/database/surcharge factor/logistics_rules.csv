@@ -1,0 +1,6 @@
+zone_code,zone_type,surcharge_multiplier,transport_rate_per_ton_km,packaging_requirement,risk_factor_percent
+Z-01,Plains_Highway,1.00,4.50,Standard,0.02
+Z-02,Hilly_Remote,2.50,12.00,Shockproof_Crating,0.15
+Z-03,Coastal_Humid,1.10,5.50,Anti_Saline_Wrap,0.05
+Z-04,Urban_Restricted,1.50,6.00,Standard,0.03
+Z-05,Desert_HighHeat,1.20,5.00,Heat_Resistant_Wrap,0.04

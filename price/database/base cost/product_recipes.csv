@@ -1,0 +1,8 @@
+product_id,material_id,quantity_required,unit
+PROD-001,MAT-FE-01,10.0,kg
+PROD-001,MAT-CARB-02,20.0,kg
+PROD-002,MAT-CU-01,0.5,kg
+PROD-002,MAT-PVC-03,0.2,kg
+PROD-002,MAT-TAPE-05,0.1,kg
+PROD-003,MAT-AL-01,0.8,kg
+PROD-003,MAT-XLPE-04,0.3,kg

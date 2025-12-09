@@ -1,0 +1,5 @@
+batch_id,product_id,finish_date,status,total_qty,unallocated_qty
+B-101,PROD-002,2025-12-15,Running,5000,0
+B-102,PROD-002,2025-12-18,Running,2000,500
+B-103,PROD-003,2026-01-10,Scheduled,10000,10000
+B-104,PROD-001,2025-12-20,QA-Check,500,500

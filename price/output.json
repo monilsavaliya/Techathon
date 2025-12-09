@@ -1,0 +1,50 @@
+{
+    "tender_summary": {
+        "client": "Sharma Infra",
+        "status": "Generated",
+        "total_production_cost": 22840875.0,
+        "total_overheads_cost": 34946538.75,
+        "total_project_cost": 57787413.75,
+        "estimated_net_profit": 7512363.79,
+        "grand_total_bid": 65299777.54,
+        "final_margin_percentage_applied": "13.0%"
+    },
+    "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [
+            {
+                "reason": "Competitor Impact (RivalCables Ltd)",
+                "value": "-5.0%"
+            },
+            {
+                "reason": "Client Loyalty Discount (Gold)",
+                "value": "-2.0%"
+            }
+        ],
+        "final_effective_margin": "13.0%"
+    },
+    "line_items": [
+        {
+            "sku": "PROD-002",
+            "qty": 50000,
+            "mode": "Make-to-Order",
+            "unit_breakdown": {
+                "pure_production_cost": 455.54,
+                "overheads_cost": 696.97
+            },
+            "final_unit_price": 1302.34,
+            "line_total_value": 65116807.94
+        },
+        {
+            "sku": "PROD-001",
+            "qty": 2000,
+            "mode": "Stock",
+            "unit_breakdown": {
+                "pure_production_cost": 32.0,
+                "overheads_cost": 48.96
+            },
+            "final_unit_price": 91.48,
+            "line_total_value": 182969.6
+        }
+    ]
+}

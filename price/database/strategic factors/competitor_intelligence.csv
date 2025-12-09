@@ -1,0 +1,6 @@
+competitor_id,competitor_name,aggression_score_1_to_10,avg_undercut_percent,win_rate_against_us,strategic_behavior
+COMP-001,RivalCables Ltd,9,0.05,0.45,Aggressive pricing; usually 5% below market
+COMP-002,PremiumWires Inc,3,-0.10,0.75,Quality focused; bids 10% higher than market
+COMP-003,Standard Electricals,5,0.00,0.50,Follows standard market rates
+COMP-004,Desi Power Grid,10,0.08,0.30,Predatory; bids at cost to kill competition
+COMP-005,InfraTech Solutions,4,-0.05,0.60,Bundles services; hard to beat on value

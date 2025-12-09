@@ -1,0 +1,5 @@
+product_id,product_name,category,base_mfg_cost,setup_cost,inventory_stock
+PROD-001,Iron Rod 10m Standard,Iron Rod,15.00,50.00,250
+PROD-002,HV XLPE Cable 11kV,Cable,450.00,5000.00,1200
+PROD-003,Aluminum Power Cable,Cable,200.00,3000.00,500
+PROD-004,Control Copper Cable,Cable,80.00,1500.00,0

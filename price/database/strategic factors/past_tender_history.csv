@@ -1,0 +1,8 @@
+tender_id,client_id,competitor_present,margin_offered,outcome,reason
+T-2023-01,CL-101,RivalCables Ltd,0.18,Won,Competitive Price
+T-2023-02,CL-101,RivalCables Ltd,0.22,Lost,Price too high vs Aggressive Rival
+T-2023-03,CL-102,PremiumWires Inc,0.20,Won,Better Value
+T-2023-04,CL-103,Standard Electricals,0.15,Won,Good Entry Price
+T-2023-05,CL-104,Desi Power Grid,0.12,Lost,Competitor undercut insanely
+T-2023-06,CL-102,PremiumWires Inc,0.25,Lost,Greedy Margin
+T-2023-07,CL-101,RivalCables Ltd,0.19,Won,Optimized Margin

@@ -1,0 +1,9 @@
+material_id,material_name,base_cost_per_unit,unit,linked_commodity_index,supplier_name,volatility_risk_level
+MAT-FE-01,Iron Grade A,0.90,kg,STEEL_FUTURES,Global Steel Corp,Medium
+MAT-CARB-02,Carbon-B,0.40,kg,NONE,ChemCo Ltd,Low
+MAT-CU-01,Copper Wire,8.50,kg,LME_COPPER,Vedanta Resources,High
+MAT-AL-01,Aluminum Cond,3.20,kg,LME_ALUMINUM,Hindalco,Medium
+MAT-PVC-03,PVC Insulation,2.20,kg,CRUDE_OIL,Reliance Polymers,High
+MAT-XLPE-04,XLPE Compound,4.50,kg,PETROCHEM_INDEX,Dow Chemicals,High
+MAT-TAPE-05,Steel Tape,1.10,kg,STEEL_FUTURES,Jindal Steel,Medium
+MAT-FILLER-06,PP Filler,0.30,kg,NONE,Local Plastic Co,Low
