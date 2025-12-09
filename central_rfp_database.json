@@ -1,0 +1,52 @@
+[
+  {
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2025-009",
+      "status": "Ready_For_Technical",
+      "created_timestamp": "2025-12-10T09:00:00Z"
+    },
+
+    "sales_agent_output": {
+      "source_url": "https://eprocure.gov.in/tender/sharma-infra-009",
+      
+      "client_extraction": {
+        "client_name": "Sharma Infra",
+        "client_id": "CL-101", 
+        "payment_terms_extracted": "90 Days Credit"
+      },
+
+      "timeline_extraction": {
+        "submission_deadline": "2026-01-15",
+        "days_remaining": 36
+      },
+
+      "logistics_extraction": {
+        "delivery_location_text": "Shimla, Himachal Pradesh",
+        "calculated_distance_km": 1250,  // Sales Agent calculates this via Maps API
+        "mapped_zone_code": "Z-02"       // Sales Agent maps 'Shimla' -> 'Hilly'
+      },
+
+      "market_intelligence": {
+        "competitors_identified": ["COMP-001", "COMP-004"],
+        "strategic_note": "Must win to block Desi Power Grid.",
+        "priority_score": 85
+      },
+      
+      "raw_demand_extraction": [
+         // Sales sees "50km Cable" but doesn't know SKU yet.
+         // Tech Agent will refine this later.
+         { "description": "High Voltage Cable", "raw_qty": "50000 m" },
+         { "description": "Iron Rods", "raw_qty": "2000 units" }
+      ]
+    },
+
+    "tech_agent_output": {
+      "status": "Pending",
+      "line_items_finalized": [] 
+    },
+
+    "pricing_agent_output": {
+      "financials": {}
+    }
+  }
+]
