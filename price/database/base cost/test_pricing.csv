@@ -1,0 +1,7 @@
+test_id,test_name,cost_per_unit,unit,mandatory_for_category
+TEST-001,Fire Resistance Test,50000.0,Lot,Wire
+TEST-002,High Voltage Test (11kV),15000.0,Per Drum,Cable
+TEST-003,Water Absorption Test,5000.0,Sample,Cable
+TEST-004,Tensile Strength Test,2000.0,Sample,Iron Rod
+TEST-005,Chemical Analysis,8000.0,Lot,All
+TEST-006,Third Party Inspection (TPI),25000.0,Day,All

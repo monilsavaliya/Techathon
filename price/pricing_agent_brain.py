@@ -20,6 +20,9 @@ class PricingAgent:
             self.materials = clean_df(pd.read_csv(f"{base_path}/material_master.csv"))
             self.inventory = clean_df(pd.read_csv(f"{base_path}/factory_inventory_master.csv"))
             self.schedule = clean_df(pd.read_csv(f"{base_path}/factory_production_schedule.csv"))
+            
+            # --- NEW: LOAD TEST DATABASE ---
+            self.tests = clean_df(pd.read_csv(f"{base_path}/test_pricing.csv"))
 
             # 2. LOAD STRATEGIC FACTOR FILES
             strat_path = f"{db_folder}/strategic factors"
@@ -66,12 +69,10 @@ class PricingAgent:
             mat_info = self.materials[self.materials['material_id'] == row['material_id']].iloc[0]
             base_cost = float(mat_info['base_cost_per_unit'])
             
-            # Math Factor
             db_factor = float(mat_info.get('current_market_factor', 1.0))
             final_mat_cost = base_cost * db_factor
             total_mat_cost += (final_mat_cost * float(row['quantity_required']))
 
-            # Intelligence Warning
             if mat_info.get('volatility_risk_level') == 'High':
                 risk_warnings.append(f"High Volatility: {mat_info['material_name']} ({db_factor}x)")
             
@@ -102,31 +103,43 @@ class PricingAgent:
 
         return weight_tons * distance_km * rate * multiplier
 
-    def _get_margin_composition(self, client_id, competitor_id):
+    def _calculate_total_testing_cost(self, requested_test_ids):
         """ 
-        UPDATED LOGIC: 
-        1. Takes the WORST case between 'Undercut' and 'Win Rate' (Avoids double counting).
-        2. Hides 'No Change' messages.
+        NEW FUNCTION: Sums up the cost of all required tests 
         """
+        total_test_cost = 0
+        test_details = []
+        
+        if not requested_test_ids:
+            return 0, []
+
+        for test_id in requested_test_ids:
+            test_row = self.tests[self.tests['test_id'] == test_id]
+            if not test_row.empty:
+                info = test_row.iloc[0]
+                cost = float(info['cost_per_unit'])
+                total_test_cost += cost
+                test_details.append(f"{info['test_name']} ({info['unit']}): ₹{cost}")
+            else:
+                test_details.append(f"⚠️ Test ID {test_id} not found")
+        
+        return total_test_cost, test_details
+
+    def _get_margin_composition(self, client_id, competitor_id):
         base_margin = 0.20 
         adjustments = []
         
-        # --- COMPETITOR STRATEGY ---
         if competitor_id:
             comp_data = self.competitors[self.competitors['competitor_id'] == competitor_id]
-            
             if not comp_data.empty:
                 comp_info = comp_data.iloc[0]
+                undercut = float(comp_info['avg_undercut_percent'])
                 comp_name = comp_info['competitor_name']
                 
-                # A. Undercut Risk
-                undercut = float(comp_info['avg_undercut_percent'])
                 risk_undercut = undercut if undercut > 0 else 0.0
                 
-                # B. History Risk (Match ID or Name)
                 history_clean = self.history.copy()
                 history_clean['competitor_present'] = history_clean['competitor_present'].astype(str).str.strip().str.upper()
-                
                 search_id = str(competitor_id).strip().upper()
                 search_name = str(comp_name).strip().upper()
                 
@@ -142,11 +155,9 @@ class PricingAgent:
                     print(f"   📊 AI INSIGHT: Win Rate against {competitor_id} is {int(win_rate*100)}%")
                     
                     if win_rate < 0.30:
-                        risk_history = 0.05 # Panic value
+                        risk_history = 0.05 
                 
-                # C. DECISION: Take the Max Risk (Don't sum them)
                 final_competitor_cut = max(risk_undercut, risk_history)
-                
                 if final_competitor_cut > 0:
                     base_margin -= final_competitor_cut
                     reason = "Competitor Aggression" if risk_undercut >= risk_history else "Critical Low Win Rate"
@@ -154,18 +165,16 @@ class PricingAgent:
             else:
                 adjustments.append({"reason": f"Competitor ID {competitor_id} Not Found", "value": "0.0%"})
 
-        # --- CLIENT STRATEGY ---
         if client_id:
             client_data = self.clients[self.clients['client_id'] == client_id]
             if not client_data.empty:
                 tier = client_data.iloc[0]['tier']
-                # Check DB discount first
                 db_disc = float(client_data.iloc[0].get('default_discount_percent', 0.0))
                 
                 if db_disc > 0:
                     base_margin -= db_disc
                     adjustments.append({"reason": f"Loyalty Discount ({tier})", "value": f"-{round(db_disc*100, 1)}%"})
-                elif tier == 'Gold': # Fallback if DB column is empty
+                elif tier == 'Gold':
                     base_margin -= 0.02
                     adjustments.append({"reason": "Client Loyalty Discount (Gold)", "value": "-2.0%"})
 
@@ -174,12 +183,13 @@ class PricingAgent:
     def generate_tender_quote(self, input_rfp):
         print(f"\n💡 PROCESSING TENDER FOR: {input_rfp.get('client_name', 'Unknown')}")
         
+        # Accumulators
         acc_material = 0
         acc_labor = 0
         acc_setup = 0
         acc_transport = 0
         acc_finance = 0
-        acc_total_bid = 0
+        acc_product_total_bid = 0
         
         line_items = []
         
@@ -189,6 +199,7 @@ class PricingAgent:
             input_rfp.get('competitor_id')
         )
 
+        # 1. PRODUCT COSTS
         for item in input_rfp['requested_items']:
             sku = item['sku']
             qty = item['qty']
@@ -204,15 +215,17 @@ class PricingAgent:
             if "90 Days" in input_rfp['payment_terms']:
                 unit_finance = cost_comps['total_production_unit'] * 0.03
             
+            # Unit Math
             unit_total_cost = cost_comps['total_production_unit'] + unit_transport + unit_finance
             unit_final_price = unit_total_cost * (1 + final_margin_pct)
             
+            # Global Accumulation
             acc_material += (cost_comps['material'] * qty)
             acc_labor += (cost_comps['labor'] * qty)
             acc_setup += (cost_comps['setup'] * qty)
             acc_transport += (unit_transport * qty)
             acc_finance += (unit_finance * qty)
-            acc_total_bid += (unit_final_price * qty)
+            acc_product_total_bid += (unit_final_price * qty)
             
             line_items.append({
                 "sku": sku,
@@ -227,10 +240,22 @@ class PricingAgent:
                 "line_total_value": round(unit_final_price * qty, 2)
             })
 
+        # 2. TESTING COSTS (New Section)
+        testing_cost, test_log = self._calculate_total_testing_cost(input_rfp.get('required_tests', []))
+        
+        # 3. FINAL ACCOUNTING
         total_production = acc_material + acc_labor + acc_setup
         total_overheads = acc_transport + acc_finance
-        total_project_cost = total_production + total_overheads
-        estimated_profit = acc_total_bid - total_project_cost
+        
+        # Total Cost = Product Cost + Test Cost
+        total_project_cost = total_production + total_overheads + testing_cost
+        
+        # Total Revenue = Product Revenue + (Test Revenue - usually passed at cost or with small margin)
+        # Here we assume tests are passed at cost + same margin for simplicity
+        total_test_bid = testing_cost * (1 + final_margin_pct)
+        grand_total_bid = acc_product_total_bid + total_test_bid
+        
+        estimated_profit = grand_total_bid - total_project_cost
         
         rfp_id_tag = input_rfp.get('rfp_id', 'UNKNOWN-RFP')
         zone_display = input_rfp.get('delivery_zone_code') or input_rfp.get('delivery_zone')
@@ -246,19 +271,22 @@ class PricingAgent:
                     "2_total_labor_mfg": round(acc_labor, 2),
                     "3_total_setup_mto": round(acc_setup, 2),
                     "4_total_transport": round(acc_transport, 2),
-                    "5_total_finance": round(acc_finance, 2)
+                    "5_total_finance": round(acc_finance, 2),
+                    "6_total_testing_cost": round(testing_cost, 2) # <-- NEW FIELD
                 },
 
                 "internal_accounting_ledger": {
                     "A_total_production_cost": round(total_production, 2),
                     "B_total_overheads_cost": round(total_overheads, 2),
-                    "C_total_project_cost_A_plus_B": round(total_project_cost, 2),
-                    "D_estimated_net_profit": round(estimated_profit, 2),
-                    "E_grand_total_bid_C_plus_D": round(acc_total_bid, 2)
+                    "C_total_testing_cost": round(testing_cost, 2), # <-- NEW FIELD
+                    "D_total_project_cost_A_plus_B_plus_C": round(total_project_cost, 2),
+                    "E_estimated_net_profit": round(estimated_profit, 2),
+                    "F_grand_total_bid": round(grand_total_bid, 2)
                 },
                 
                 "final_margin_percentage": f"{round(final_margin_pct*100, 1)}%"
             },
+            "testing_breakdown": test_log, # <-- NEW REPORT
             "margin_composition_report": {
                 "standard_company_margin": "20.0%",
                 "adjustments_applied": margin_breakdown,
@@ -273,10 +301,11 @@ if __name__ == "__main__":
         with open("input.json", "r") as f:
             data = json.load(f)
         agent = PricingAgent()
+        
         quote = agent.generate_tender_quote(data['rfp_details'])
         
-        with open("output.json", "w") as f:
-            json.dump(quote, f, indent=4)
+        with open("output.json", "w", encoding='utf-8') as f:
+            json.dump(quote, f, indent=4, ensure_ascii=False)
         print(f"✅ SUCCESS: Quote generated for {quote['tender_summary']['rfp_processing_id']}.")
     else:
         print("⚠️ 'input.json' not found.")

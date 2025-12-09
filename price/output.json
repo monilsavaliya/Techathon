@@ -1,82 +1,71 @@
 {
     "tender_summary": {
-        "rfp_processing_id": "STRESS-TEST-001",
+        "rfp_processing_id": "RFP-2025-009",
         "client_id": "CL-101",
-        "logistics_param": "1500 km to Z-02",
+        "logistics_param": "1250 km to Z-02",
         "cost_breakdown_bill": {
-            "1_total_raw_material": 21049.56,
-            "2_total_labor_mfg": 1060000.0,
-            "3_total_setup_mto": 8000.0,
-            "4_total_transport": 639000.0,
-            "5_total_finance": 32671.49
+            "1_total_raw_material": 309315.0,
+            "2_total_labor_mfg": 22530000.0,
+            "3_total_setup_mto": 5000.0,
+            "4_total_transport": 9562500.0,
+            "5_total_finance": 685329.45,
+            "6_total_testing_cost": 75000.0
         },
         "internal_accounting_ledger": {
-            "A_total_production_cost": 1089049.56,
-            "B_total_overheads_cost": 671671.49,
-            "C_total_project_cost_A_plus_B": 1760721.05,
-            "D_estimated_net_profit": 123250.47,
-            "E_grand_total_bid_C_plus_D": 1883971.52
+            "A_total_production_cost": 22844315.0,
+            "B_total_overheads_cost": 10247829.45,
+            "C_total_testing_cost": 75000.0,
+            "D_total_project_cost_A_plus_B_plus_C": 33167144.45,
+            "E_estimated_net_profit": 3316714.45,
+            "F_grand_total_bid": 36483858.9
         },
-        "final_margin_percentage": "7.0%"
+        "final_margin_percentage": "10.0%"
     },
+    "testing_breakdown": [
+        "Fire Resistance Test (Lot): ₹50000.0",
+        "Third Party Inspection (TPI) (Day): ₹25000.0"
+    ],
     "margin_composition_report": {
         "standard_company_margin": "20.0%",
         "adjustments_applied": [
             {
-                "reason": "Competitor Aggression (Desi Power Grid)",
-                "value": "-8.0%"
+                "reason": "Competitor Aggression (RivalCables Ltd)",
+                "value": "-5.0%"
             },
             {
                 "reason": "Loyalty Discount (Gold)",
                 "value": "-5.0%"
             }
         ],
-        "final_effective_margin": "7.0%"
+        "final_effective_margin": "10.0%"
     },
     "line_items": [
         {
-            "sku": "PROD-004",
-            "qty": 5000,
-            "breakdown_per_unit": {
-                "material": 2.18,
-                "labor_mfg": 80.0,
-                "transport": 67.5
-            },
-            "risk_alerts": [
-                "High Volatility: Copper Wire (1.15x)",
-                "High Volatility: PVC Insulation (1.02x)"
-            ],
-            "final_unit_price": 162.79,
-            "line_total_value": 813974.58
-        },
-        {
             "sku": "PROD-002",
-            "qty": 1200,
+            "qty": 50000,
             "breakdown_per_unit": {
                 "material": 5.75,
                 "labor_mfg": 450.0,
-                "transport": 202.5
+                "transport": 168.75
             },
             "risk_alerts": [
                 "High Volatility: Copper Wire (1.15x)",
                 "High Volatility: PVC Insulation (1.02x)"
             ],
-            "final_unit_price": 718.95,
-            "line_total_value": 862743.6
+            "final_unit_price": 702.1,
+            "line_total_value": 35104942.9
         },
         {
-            "sku": "PROD-007",
-            "qty": 200,
+            "sku": "PROD-001",
+            "qty": 2000,
             "breakdown_per_unit": {
-                "material": 16.29,
-                "labor_mfg": 600.0,
-                "transport": 292.5
+                "material": 11.0,
+                "labor_mfg": 15.0,
+                "transport": 562.5
             },
-            "risk_alerts": [
-                "High Volatility: Copper Wire (1.15x)"
-            ],
-            "final_unit_price": 1036.27,
-            "line_total_value": 207253.34
+            "risk_alerts": [],
+            "final_unit_price": 648.21,
+            "line_total_value": 1296416.0
         }
     ]
 }

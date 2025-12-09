@@ -1,28 +1,19 @@
 {
     "rfp_details": {
-        "rfp_id": "STRESS-TEST-001",
-        "client_id": "CL-101", 
+        "rfp_id": "RFP-2025-009",
+        "client_id": "CL-101",
         "client_name": "Sharma Infra",
         "delivery_zone_code": "Z-02",
-        "distance_km": 1500,
+        "distance_km": 1250,
         "payment_terms": "90 Days Credit",
-        "competitor_id": "COMP-004",
+        "competitor_id": "COMP-001",
         "requested_items": [
-            { 
-                "sku": "PROD-004", 
-                "qty": 5000,
-                "note": "Triggers STOCK logic (We have 10,000)"
-            },
-            { 
-                "sku": "PROD-002", 
-                "qty": 1200,
-                "note": "Triggers INCOMING BATCH logic (Stock 1000 + Incoming 500 > 1200)"
-            },
-            { 
-                "sku": "PROD-007", 
-                "qty": 200,
-                "note": "Triggers MAKE-TO-ORDER logic (Stock 100 + Incoming 50 < 200)"
-            }
+            { "sku": "PROD-002", "qty": 50000 },
+            { "sku": "PROD-001", "qty": 2000 }
+        ],
+        "required_tests": [
+            "TEST-001", 
+            "TEST-006"
         ]
     }
 }
