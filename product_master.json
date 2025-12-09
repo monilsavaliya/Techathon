@@ -12,7 +12,31 @@
     "setup_cost": 50.0,
     "inventory_stock": 250,
     "weight_kg_per_unit": 15.0,
-    "unit_of_measure": "Unit"
+    "unit_of_measure": "Unit",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Iron",
+        "material_id": "MAT-FE-001"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-MECH-01",
+        "test_name": "Tensile Strength Test",
+        "test_type": "Mechanical"
+      },
+      {
+        "test_code": "T-MECH-02",
+        "test_name": "Bend Test",
+        "test_type": "Mechanical"
+      },
+      {
+        "test_code": "T-CHEM-01",
+        "test_name": "Chemical Composition Analysis",
+        "test_type": "Chemical"
+      }
+    ]
   },
   {
     "product_id": "PROD-002",
@@ -27,7 +51,46 @@
     "setup_cost": 5000.0,
     "inventory_stock": 1200,
     "weight_kg_per_unit": 4.5,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-03",
+        "test_name": "Partial Discharge Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PROD-003",
@@ -42,7 +105,41 @@
     "setup_cost": 3000.0,
     "inventory_stock": 500,
     "weight_kg_per_unit": 3.2,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Aluminium",
+        "material_id": "MAT-AL-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC",
+        "material_id": "MAT-INS-PVC"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PROD-004",
@@ -57,7 +154,41 @@
     "setup_cost": 1500.0,
     "inventory_stock": 0,
     "weight_kg_per_unit": 1.5,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC",
+        "material_id": "MAT-INS-PVC"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PROD-005",
@@ -72,7 +203,41 @@
     "setup_cost": 1000.0,
     "inventory_stock": 10000,
     "weight_kg_per_unit": 0.8,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC/Rubber",
+        "material_id": "MAT-INS-PVC-R"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-05",
+        "test_name": "Spark Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      }
+    ]
   },
   {
     "product_id": "PROD-006",
@@ -87,7 +252,41 @@
     "setup_cost": 500.0,
     "inventory_stock": 50000,
     "weight_kg_per_unit": 0.2,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "FR-LSH",
+        "material_id": "MAT-INS-FRLSH"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-05",
+        "test_name": "Spark Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      }
+    ]
   },
   {
     "product_id": "PROD-007",
@@ -102,7 +301,41 @@
     "setup_cost": 8000.0,
     "inventory_stock": 100,
     "weight_kg_per_unit": 6.5,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PROD-008",
@@ -117,7 +350,41 @@
     "setup_cost": 800.0,
     "inventory_stock": 2500,
     "weight_kg_per_unit": 0.1,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Tinned Copper",
+        "material_id": "MAT-TCU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPO",
+        "material_id": "MAT-INS-XLPO"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-06",
+        "test_name": "DC Voltage Resistance",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ENV-01",
+        "test_name": "UV Resistance Test",
+        "test_type": "Environmental"
+      },
+      {
+        "test_code": "T-ENV-02",
+        "test_name": "Damp Heat Test",
+        "test_type": "Environmental"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-1.5",
@@ -132,7 +399,41 @@
     "setup_cost": 200.0,
     "inventory_stock": 350,
     "weight_kg_per_unit": 0.018,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC FR",
+        "material_id": "MAT-INS-PVC-FR"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-05",
+        "test_name": "Spark Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-2.5",
@@ -147,7 +448,41 @@
     "setup_cost": 200.0,
     "inventory_stock": 250,
     "weight_kg_per_unit": 0.027,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC FR",
+        "material_id": "MAT-INS-PVC-FR"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-05",
+        "test_name": "Spark Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-4",
@@ -162,7 +497,41 @@
     "setup_cost": 250.0,
     "inventory_stock": 200,
     "weight_kg_per_unit": 0.038,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC FRLS",
+        "material_id": "MAT-INS-PVC-FRLS"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-05",
+        "test_name": "Spark Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-6",
@@ -177,7 +546,41 @@
     "setup_cost": 300.0,
     "inventory_stock": 180,
     "weight_kg_per_unit": 0.049,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC FRLS",
+        "material_id": "MAT-INS-PVC-FRLS"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-05",
+        "test_name": "Spark Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-10",
@@ -192,7 +595,41 @@
     "setup_cost": 400.0,
     "inventory_stock": 160,
     "weight_kg_per_unit": 0.076,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC FR",
+        "material_id": "MAT-INS-PVC-FR"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-05",
+        "test_name": "Spark Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      }
+    ]
   },
   {
     "product_id": "PC-AL-4",
@@ -207,7 +644,41 @@
     "setup_cost": 500.0,
     "inventory_stock": 210,
     "weight_kg_per_unit": 0.021,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Aluminium",
+        "material_id": "MAT-AL-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-05",
+        "test_name": "Spark Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-MECH-03",
+        "test_name": "Tensile Strength of Insulation",
+        "test_type": "Mechanical"
+      }
+    ]
   },
   {
     "product_id": "PC-AL-6",
@@ -222,7 +693,41 @@
     "setup_cost": 500.0,
     "inventory_stock": 195,
     "weight_kg_per_unit": 0.029,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Aluminium",
+        "material_id": "MAT-AL-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-AL-10",
@@ -237,7 +742,41 @@
     "setup_cost": 600.0,
     "inventory_stock": 170,
     "weight_kg_per_unit": 0.041,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Aluminium",
+        "material_id": "MAT-AL-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC FR",
+        "material_id": "MAT-INS-PVC-FR"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-16",
@@ -252,7 +791,41 @@
     "setup_cost": 1500.0,
     "inventory_stock": 140,
     "weight_kg_per_unit": 0.121,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-25",
@@ -267,7 +840,41 @@
     "setup_cost": 1800.0,
     "inventory_stock": 130,
     "weight_kg_per_unit": 0.185,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-35",
@@ -282,7 +889,41 @@
     "setup_cost": 2000.0,
     "inventory_stock": 125,
     "weight_kg_per_unit": 0.253,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-50",
@@ -297,7 +938,41 @@
     "setup_cost": 2500.0,
     "inventory_stock": 110,
     "weight_kg_per_unit": 0.368,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-AL-16",
@@ -312,7 +987,41 @@
     "setup_cost": 800.0,
     "inventory_stock": 300,
     "weight_kg_per_unit": 0.068,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Aluminium",
+        "material_id": "MAT-AL-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC FRLS",
+        "material_id": "MAT-INS-PVC-FRLS"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-AL-25",
@@ -327,7 +1036,41 @@
     "setup_cost": 800.0,
     "inventory_stock": 260,
     "weight_kg_per_unit": 0.102,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Aluminium",
+        "material_id": "MAT-AL-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "PVC FRLS",
+        "material_id": "MAT-INS-PVC-FRLS"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-AL-35",
@@ -342,7 +1085,41 @@
     "setup_cost": 1000.0,
     "inventory_stock": 220,
     "weight_kg_per_unit": 0.148,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Aluminium",
+        "material_id": "MAT-AL-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-AL-50",
@@ -357,7 +1134,41 @@
     "setup_cost": 1200.0,
     "inventory_stock": 200,
     "weight_kg_per_unit": 0.212,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Aluminium",
+        "material_id": "MAT-AL-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-CU-70",
@@ -372,7 +1183,41 @@
     "setup_cost": 3000.0,
     "inventory_stock": 85,
     "weight_kg_per_unit": 0.502,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Copper",
+        "material_id": "MAT-CU-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   },
   {
     "product_id": "PC-AL-70",
@@ -387,6 +1232,40 @@
     "setup_cost": 1500.0,
     "inventory_stock": 130,
     "weight_kg_per_unit": 0.302,
-    "unit_of_measure": "Meter"
+    "unit_of_measure": "Meter",
+    "required_materials": [
+      {
+        "component_type": "Primary Material",
+        "material_name": "Aluminium",
+        "material_id": "MAT-AL-001"
+      },
+      {
+        "component_type": "Insulation",
+        "material_name": "XLPE",
+        "material_id": "MAT-INS-XLPE"
+      }
+    ],
+    "quality_tests": [
+      {
+        "test_code": "T-ELEC-01",
+        "test_name": "Conductor Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-04",
+        "test_name": "Insulation Resistance Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-ELEC-02",
+        "test_name": "High Voltage Test",
+        "test_type": "Electrical"
+      },
+      {
+        "test_code": "T-THERM-01",
+        "test_name": "Thermal Stability",
+        "test_type": "Thermal"
+      }
+    ]
   }
 ]
