@@ -1,8 +1,9 @@
 {
     "rfp_details": {
+        "rfp_id": "RFP-2025-009", 
         "client_name": "Sharma Infra",
         "delivery_zone": "Hilly_Remote",
-        "distance_km": 1250, 
+        "distance_km": 1250,
         "payment_terms": "90 Days Credit",
         "competitor_detected": "RivalCables Ltd",
         "requested_items": [
