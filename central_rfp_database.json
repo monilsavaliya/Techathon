@@ -44,14 +44,12 @@
           "matched_internal_sku": "PROD-002",
           "qty_required": 50000,
           "production_mode": "Make-to-Order",
-          "warehouse_source": "WH-Delhi-C4"
         },
         {
           "rfp_item_ref": "Iron Rods",
           "matched_internal_sku": "PROD-001",
           "qty_required": 2000,
           "production_mode": "Stock",
-          "warehouse_source": "WH-Mumbai-A1"
         }
       ]
     },
