@@ -1,0 +1,114 @@
+[
+  {
+    "test_code": "T-ELEC-01",
+    "test_name": "Conductor Resistance",
+    "standard_type": "Routine/Acceptance",
+    "estimated_cost_usd": 5.00,
+    "cost_basis": "Per Test",
+    "test_frequency": "Every Batch/Coil"
+  },
+  {
+    "test_code": "T-ELEC-02",
+    "test_name": "High Voltage Test",
+    "standard_type": "Routine/Acceptance",
+    "estimated_cost_usd": 15.00,
+    "cost_basis": "Per Test",
+    "test_frequency": "Every Batch/Coil"
+  },
+  {
+    "test_code": "T-ELEC-03",
+    "test_name": "Partial Discharge",
+    "standard_type": "Type/Special",
+    "estimated_cost_usd": 350.00,
+    "cost_basis": "Per Test",
+    "test_frequency": "Initial Design/Periodically"
+  },
+  {
+    "test_code": "T-ELEC-04",
+    "test_name": "Insulation Resistance",
+    "standard_type": "Routine/Acceptance",
+    "estimated_cost_usd": 8.00,
+    "cost_basis": "Per Test",
+    "test_frequency": "Every Batch/Coil"
+  },
+  {
+    "test_code": "T-ELEC-05",
+    "test_name": "Spark Test (Pin-hole)",
+    "standard_type": "Routine/Acceptance",
+    "estimated_cost_usd": 2.00,
+    "cost_basis": "Per Test",
+    "test_frequency": "100% Online"
+  },
+  {
+    "test_code": "T-ELEC-06",
+    "test_name": "DC Voltage Resistance",
+    "standard_type": "Type/Special",
+    "estimated_cost_usd": 200.00,
+    "cost_basis": "Per Test",
+    "test_frequency": "Initial Design/Periodically"
+  },
+  {
+    "test_code": "T-MECH-01",
+    "test_name": "Tensile Strength",
+    "standard_type": "Type/Acceptance",
+    "estimated_cost_usd": 50.00,
+    "cost_basis": "Per Sample",
+    "test_frequency": "Per Batch"
+  },
+  {
+    "test_code": "T-MECH-02",
+    "test_name": "Bend Test",
+    "standard_type": "Routine/Acceptance",
+    "estimated_cost_usd": 10.00,
+    "cost_basis": "Per Sample",
+    "test_frequency": "Per Batch"
+  },
+  {
+    "test_code": "T-MECH-03",
+    "test_name": "Insulation Tensile",
+    "standard_type": "Type/Acceptance",
+    "estimated_cost_usd": 60.00,
+    "cost_basis": "Per Sample",
+    "test_frequency": "Per Batch"
+  },
+  {
+    "test_code": "T-THERM-01",
+    "test_name": "Thermal Stability",
+    "standard_type": "Type/Special",
+    "estimated_cost_usd": 150.00,
+    "cost_basis": "Per Test",
+    "test_frequency": "Initial Design/Periodically"
+  },
+  {
+    "test_code": "T-CHEM-01",
+    "test_name": "Chemical Composition",
+    "standard_type": "Type/Acceptance",
+    "estimated_cost_usd": 120.00,
+    "cost_basis": "Per Sample",
+    "test_frequency": "Per Raw Material Batch"
+  },
+  {
+    "test_code": "T-ENV-01",
+    "test_name": "UV Resistance",
+    "standard_type": "Type/Special",
+    "estimated_cost_usd": 400.00,
+    "cost_basis": "Per Test",
+    "test_frequency": "Initial Design/Periodically"
+  },
+  {
+    "test_code": "T-ENV-02",
+    "test_name": "Damp Heat Test",
+    "standard_type": "Type/Special",
+    "estimated_cost_usd": 550.00,
+    "cost_basis": "Per Test",
+    "test_frequency": "Initial Design/Periodically"
+  },
+  {
+    "test_code": "T-GEN-01",
+    "test_name": "Visual Inspection",
+    "standard_type": "Routine",
+    "estimated_cost_usd": 1.00,
+    "cost_basis": "Per Unit/Meter",
+    "test_frequency": "100% Online"
+  }
+]
