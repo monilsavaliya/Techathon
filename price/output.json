@@ -1,59 +1,82 @@
 {
     "tender_summary": {
-        "client": "Sharma Infra",
-        "logistics_param": "1250 km to Hilly_Remote",
+        "rfp_processing_id": "STRESS-TEST-001",
+        "client_id": "CL-101",
+        "logistics_param": "1500 km to Z-02",
         "cost_breakdown_bill": {
-            "1_total_raw_material": 305875.0,
-            "2_total_labor_mfg": 22530000.0,
-            "3_total_setup_mto": 5000.0,
-            "4_total_transport": 9562500.0,
-            "5_total_finance": 685226.25
+            "1_total_raw_material": 21049.56,
+            "2_total_labor_mfg": 1060000.0,
+            "3_total_setup_mto": 8000.0,
+            "4_total_transport": 639000.0,
+            "5_total_finance": 32671.49
         },
         "internal_accounting_ledger": {
-            "A_total_production_cost": 22840875.0,
-            "B_total_overheads_cost": 10247726.25,
-            "C_total_project_cost_A_plus_B": 33088601.25,
-            "D_estimated_net_profit": 4301518.16,
-            "E_grand_total_bid_C_plus_D": 37390119.41
+            "A_total_production_cost": 1089049.56,
+            "B_total_overheads_cost": 671671.49,
+            "C_total_project_cost_A_plus_B": 1760721.05,
+            "D_estimated_net_profit": 123250.47,
+            "E_grand_total_bid_C_plus_D": 1883971.52
         },
-        "final_margin_percentage": "13.0%"
+        "final_margin_percentage": "7.0%"
     },
     "margin_composition_report": {
         "standard_company_margin": "20.0%",
         "adjustments_applied": [
             {
-                "reason": "Competitor Impact (RivalCables Ltd)",
-                "value": "-5.0%"
+                "reason": "Competitor Aggression (Desi Power Grid)",
+                "value": "-8.0%"
             },
             {
-                "reason": "Client Loyalty Discount (Gold)",
-                "value": "-2.0%"
+                "reason": "Loyalty Discount (Gold)",
+                "value": "-5.0%"
             }
         ],
-        "final_effective_margin": "13.0%"
+        "final_effective_margin": "7.0%"
     },
     "line_items": [
         {
-            "sku": "PROD-002",
-            "qty": 50000,
+            "sku": "PROD-004",
+            "qty": 5000,
             "breakdown_per_unit": {
-                "material": 5.44,
-                "labor": 450.0,
-                "transport": 168.75
+                "material": 2.18,
+                "labor_mfg": 80.0,
+                "transport": 67.5
             },
-            "final_unit_price": 720.89,
-            "line_total_value": 36044379.81
+            "risk_alerts": [
+                "High Volatility: Copper Wire (1.15x)",
+                "High Volatility: PVC Insulation (1.02x)"
+            ],
+            "final_unit_price": 162.79,
+            "line_total_value": 813974.58
         },
         {
-            "sku": "PROD-001",
-            "qty": 2000,
+            "sku": "PROD-002",
+            "qty": 1200,
             "breakdown_per_unit": {
-                "material": 17.0,
-                "labor": 15.0,
-                "transport": 562.5
+                "material": 5.75,
+                "labor_mfg": 450.0,
+                "transport": 202.5
             },
-            "final_unit_price": 672.87,
-            "line_total_value": 1345739.6
+            "risk_alerts": [
+                "High Volatility: Copper Wire (1.15x)",
+                "High Volatility: PVC Insulation (1.02x)"
+            ],
+            "final_unit_price": 718.95,
+            "line_total_value": 862743.6
+        },
+        {
+            "sku": "PROD-007",
+            "qty": 200,
+            "breakdown_per_unit": {
+                "material": 16.29,
+                "labor_mfg": 600.0,
+                "transport": 292.5
+            },
+            "risk_alerts": [
+                "High Volatility: Copper Wire (1.15x)"
+            ],
+            "final_unit_price": 1036.27,
+            "line_total_value": 207253.34
         }
     ]
 }

@@ -3,3 +3,7 @@ PROD-001,Iron Rod 10m Standard,Iron Rod,15.00,50.00,250,15.0
 PROD-002,HV XLPE Cable 11kV,Cable,450.00,5000.00,1200,4.5
 PROD-003,Aluminum Power Cable,Cable,200.00,3000.00,500,3.2
 PROD-004,Control Copper Cable,Cable,80.00,1500.00,0,1.5
+PROD-005,Submersible Flat Cable,Cable,45.00,1000.00,10000,0.8
+PROD-006,Fire Resistant Low Smoke,Wire,25.00,500.00,50000,0.2
+PROD-007,Heavy Duty Armored Cable,Cable,600.00,8000.00,100,6.5
+PROD-008,Solar DC Cable 4sqmm,Wire,30.00,800.00,2500,0.1

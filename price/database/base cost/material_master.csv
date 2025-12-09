@@ -1,9 +1,13 @@
-material_id,material_name,base_cost_per_unit,unit,linked_commodity_index,supplier_name,volatility_risk_level
-MAT-FE-01,Iron Grade A,0.90,kg,STEEL_FUTURES,Global Steel Corp,Medium
-MAT-CARB-02,Carbon-B,0.40,kg,NONE,ChemCo Ltd,Low
-MAT-CU-01,Copper Wire,8.50,kg,LME_COPPER,Vedanta Resources,High
-MAT-AL-01,Aluminum Cond,3.20,kg,LME_ALUMINUM,Hindalco,Medium
-MAT-PVC-03,PVC Insulation,2.20,kg,CRUDE_OIL,Reliance Polymers,High
-MAT-XLPE-04,XLPE Compound,4.50,kg,PETROCHEM_INDEX,Dow Chemicals,High
-MAT-TAPE-05,Steel Tape,1.10,kg,STEEL_FUTURES,Jindal Steel,Medium
-MAT-FILLER-06,PP Filler,0.30,kg,NONE,Local Plastic Co,Low
+material_id,material_name,base_cost_per_unit,unit,linked_commodity_index,supplier_name,volatility_risk_level,current_market_factor
+MAT-FE-01,Iron Grade A,0.90,kg,STEEL_FUTURES,Global Steel Corp,Medium,1.0
+MAT-CARB-02,Carbon-B,0.40,kg,NONE,ChemCo Ltd,Low,1.0
+MAT-CU-01,Copper Wire,8.50,kg,LME_COPPER,Vedanta Resources,High,1.15
+MAT-AL-01,Aluminum Cond,3.20,kg,LME_ALUMINUM,Hindalco,Medium,1.05
+MAT-PVC-03,PVC Insulation,2.20,kg,CRUDE_OIL,Reliance Polymers,High,1.02
+MAT-XLPE-04,XLPE Compound,4.50,kg,PETROCHEM_INDEX,Dow Chemicals,High,1.0
+MAT-TAPE-05,Steel Tape,1.10,kg,STEEL_FUTURES,Jindal Steel,Medium,1.0
+MAT-FILLER-06,PP Filler,0.30,kg,NONE,Local Plastic Co,Low,1.0
+MAT-LEAD-07,Lead Sheath,2.10,kg,LME_LEAD,Hindustan Zinc,Medium,1.0
+MAT-RUBBER-08,Synthetic Rubber,3.50,kg,CRUDE_OIL,Rubber King,Medium,1.0
+MAT-DRUM-09,Wooden Drum (Large),150.00,unit,NONE,Local Timber,Low,1.0
+MAT-DRUM-10,Steel Drum (Huge),500.00,unit,STEEL_FUTURES,Tata Steel,Medium,1.05

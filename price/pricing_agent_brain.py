@@ -6,104 +6,173 @@ class PricingAgent:
     def __init__(self, db_folder="database"):
         print("🤖 PRICING AGENT: Loading Knowledge Base...")
         try:
+            # Helper: Clean headers and data
+            def clean_df(df):
+                df.columns = df.columns.str.strip()
+                df_obj = df.select_dtypes(['object'])
+                df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
+                return df
+
             # 1. LOAD BASE COST FILES
             base_path = f"{db_folder}/base cost"
-            self.products = pd.read_csv(f"{base_path}/product_master.csv")
-            self.recipes = pd.read_csv(f"{base_path}/product_recipes.csv")
-            self.materials = pd.read_csv(f"{base_path}/material_master.csv")
-            self.inventory = pd.read_csv(f"{base_path}/factory_inventory_master.csv")
-            self.schedule = pd.read_csv(f"{base_path}/factory_production_schedule.csv")
+            self.products = clean_df(pd.read_csv(f"{base_path}/product_master.csv"))
+            self.recipes = clean_df(pd.read_csv(f"{base_path}/product_recipes.csv"))
+            self.materials = clean_df(pd.read_csv(f"{base_path}/material_master.csv"))
+            self.inventory = clean_df(pd.read_csv(f"{base_path}/factory_inventory_master.csv"))
+            self.schedule = clean_df(pd.read_csv(f"{base_path}/factory_production_schedule.csv"))
 
             # 2. LOAD STRATEGIC FACTOR FILES
             strat_path = f"{db_folder}/strategic factors"
-            self.clients = pd.read_csv(f"{strat_path}/client_master.csv")
-            self.competitors = pd.read_csv(f"{strat_path}/competitor_intelligence.csv")
-            self.history = pd.read_csv(f"{strat_path}/past_tender_history.csv")
+            self.clients = clean_df(pd.read_csv(f"{strat_path}/client_master.csv"))
+            self.competitors = clean_df(pd.read_csv(f"{strat_path}/competitor_intelligence.csv"))
+            self.history = clean_df(pd.read_csv(f"{strat_path}/past_tender_history.csv"))
 
             # 3. LOAD SURCHARGE FACTOR FILES
             sur_path = f"{db_folder}/surcharge factor"
-            self.logistics = pd.read_csv(f"{sur_path}/logistics_rules.csv")
+            self.logistics = clean_df(pd.read_csv(f"{sur_path}/logistics_rules.csv"))
 
-            print("✅ SYSTEM READY: Databases loaded.")
+            print("✅ SYSTEM READY: Databases loaded & Cleaned.")
         except FileNotFoundError as e:
             print(f"❌ CRITICAL ERROR: Database missing. {e}")
 
     def _check_factory_status(self, product_id, qty_needed):
-        """ Checks Inventory vs Schedule """
         stock_row = self.inventory[self.inventory['product_id'] == product_id]
         if stock_row.empty: return "Make-to-Order", 0
         
-        available_stock = stock_row.iloc[0]['qty_available_for_sale']
+        available_stock = int(stock_row.iloc[0]['qty_available_for_sale'])
         if available_stock >= qty_needed:
             return "Stock", 0
         
         if 'unallocated_qty' in self.schedule.columns:
-            incoming = self.schedule[(self.schedule['product_id'] == product_id) & (self.schedule['unallocated_qty'] > 0)]
-            if (available_stock + incoming['unallocated_qty'].sum()) >= qty_needed:
+            incoming = self.schedule[(self.schedule['product_id'] == product_id) & (self.schedule['unallocated_qty'].astype(float) > 0)]
+            if (available_stock + incoming['unallocated_qty'].astype(float).sum()) >= qty_needed:
                 return "Incoming-Batch", 0
         
         return "Make-to-Order", 1 
 
-    def _calculate_cost_components_per_unit(self, product_id, qty, mode, market_factor):
-        """ Breakdown: Material, Labor, Setup """
+    def _calculate_cost_components_per_unit(self, product_id, qty, mode):
         prod_row = self.products[self.products['product_id'] == product_id]
-        if prod_row.empty: return {"material": 0, "labor": 0, "setup": 0, "total": 0}
+        if prod_row.empty: return {"material": 0, "labor": 0, "setup": 0, "total": 0, "warnings": []}
         prod_info = prod_row.iloc[0]
         
-        setup_fee = prod_info['setup_cost'] if mode == "Make-to-Order" else 0
+        setup_fee = float(prod_info['setup_cost']) if mode == "Make-to-Order" else 0
         setup_per_unit = setup_fee / qty
         
         my_recipe = self.recipes[self.recipes['product_id'] == product_id]
         total_mat_cost = 0
+        risk_warnings = []
+
         for _, row in my_recipe.iterrows():
             mat_info = self.materials[self.materials['material_id'] == row['material_id']].iloc[0]
-            cost = mat_info['base_cost_per_unit']
-            if "LME" in str(mat_info.get('linked_commodity_index', '')):
-                cost = cost * market_factor
-            total_mat_cost += (cost * row['quantity_required'])
+            base_cost = float(mat_info['base_cost_per_unit'])
             
-        labor_cost = prod_info['base_mfg_cost']
+            # Math Factor
+            db_factor = float(mat_info.get('current_market_factor', 1.0))
+            final_mat_cost = base_cost * db_factor
+            total_mat_cost += (final_mat_cost * float(row['quantity_required']))
+
+            # Intelligence Warning
+            if mat_info.get('volatility_risk_level') == 'High':
+                risk_warnings.append(f"High Volatility: {mat_info['material_name']} ({db_factor}x)")
+            
+        labor_cost = float(prod_info['base_mfg_cost'])
         
         return {
             "material": total_mat_cost,
             "labor": labor_cost,
             "setup": setup_per_unit,
-            "total_production_unit": total_mat_cost + labor_cost + setup_per_unit
+            "total_production_unit": total_mat_cost + labor_cost + setup_per_unit,
+            "risk_log": risk_warnings
         }
 
-    def _calculate_transport_cost_per_unit(self, product_id, zone, distance_km):
-        """ Distance * Weight * Rate """
+    def _calculate_transport_cost_per_unit(self, product_id, zone_code, distance_km):
         prod_row = self.products[self.products['product_id'] == product_id]
         if prod_row.empty: return 0
-        weight_kg = prod_row.iloc[0].get('weight_kg_per_unit', 1.0)
+        weight_kg = float(prod_row.iloc[0].get('weight_kg_per_unit', 1.0))
         weight_tons = weight_kg / 1000.0
 
-        zone_data = self.logistics[self.logistics['zone_type'] == zone].iloc[0]
-        rate = zone_data['transport_rate_per_ton_km']
-        multiplier = zone_data['surcharge_multiplier']
+        zone_data = self.logistics[self.logistics['zone_code'] == zone_code]
+        if zone_data.empty:
+            print(f"   ⚠️ Warning: Zone Code '{zone_code}' not found. Defaulting to Z-01.")
+            zone_data = self.logistics[self.logistics['zone_code'] == "Z-01"]
+            
+        zone_rule = zone_data.iloc[0]
+        rate = float(zone_rule['transport_rate_per_ton_km'])
+        multiplier = float(zone_rule['surcharge_multiplier'])
 
         return weight_tons * distance_km * rate * multiplier
 
-    def _get_margin_composition(self, client_id, competitor_name):
+    def _get_margin_composition(self, client_id, competitor_id):
+        """ 
+        UPDATED LOGIC: 
+        1. Takes the WORST case between 'Undercut' and 'Win Rate' (Avoids double counting).
+        2. Hides 'No Change' messages.
+        """
         base_margin = 0.20 
         adjustments = []
-        if competitor_name:
-            comp_data = self.competitors[self.competitors['competitor_name'] == competitor_name]
+        
+        # --- COMPETITOR STRATEGY ---
+        if competitor_id:
+            comp_data = self.competitors[self.competitors['competitor_id'] == competitor_id]
+            
             if not comp_data.empty:
-                undercut = comp_data.iloc[0]['avg_undercut_percent']
-                if undercut > 0:
-                    base_margin -= undercut
-                    adjustments.append({"reason": f"Competitor Impact ({competitor_name})", "value": f"-{round(undercut*100, 1)}%"})
-        client_data = self.clients[self.clients['client_id'] == client_id]
-        if not client_data.empty:
-            tier = client_data.iloc[0]['tier']
-            if tier == 'Gold':
-                base_margin -= 0.02
-                adjustments.append({"reason": "Client Loyalty Discount (Gold)", "value": "-2.0%"})
+                comp_info = comp_data.iloc[0]
+                comp_name = comp_info['competitor_name']
+                
+                # A. Undercut Risk
+                undercut = float(comp_info['avg_undercut_percent'])
+                risk_undercut = undercut if undercut > 0 else 0.0
+                
+                # B. History Risk (Match ID or Name)
+                history_clean = self.history.copy()
+                history_clean['competitor_present'] = history_clean['competitor_present'].astype(str).str.strip().str.upper()
+                
+                search_id = str(competitor_id).strip().upper()
+                search_name = str(comp_name).strip().upper()
+                
+                past_matches = self.history[
+                    (history_clean['competitor_present'] == search_id) | 
+                    (history_clean['competitor_present'] == search_name)
+                ]
+                
+                risk_history = 0.0
+                if not past_matches.empty:
+                    wins = past_matches[past_matches['outcome'].str.lower() == 'won']
+                    win_rate = len(wins) / len(past_matches)
+                    print(f"   📊 AI INSIGHT: Win Rate against {competitor_id} is {int(win_rate*100)}%")
+                    
+                    if win_rate < 0.30:
+                        risk_history = 0.05 # Panic value
+                
+                # C. DECISION: Take the Max Risk (Don't sum them)
+                final_competitor_cut = max(risk_undercut, risk_history)
+                
+                if final_competitor_cut > 0:
+                    base_margin -= final_competitor_cut
+                    reason = "Competitor Aggression" if risk_undercut >= risk_history else "Critical Low Win Rate"
+                    adjustments.append({"reason": f"{reason} ({comp_name})", "value": f"-{round(final_competitor_cut*100, 1)}%"})
+            else:
+                adjustments.append({"reason": f"Competitor ID {competitor_id} Not Found", "value": "0.0%"})
+
+        # --- CLIENT STRATEGY ---
+        if client_id:
+            client_data = self.clients[self.clients['client_id'] == client_id]
+            if not client_data.empty:
+                tier = client_data.iloc[0]['tier']
+                # Check DB discount first
+                db_disc = float(client_data.iloc[0].get('default_discount_percent', 0.0))
+                
+                if db_disc > 0:
+                    base_margin -= db_disc
+                    adjustments.append({"reason": f"Loyalty Discount ({tier})", "value": f"-{round(db_disc*100, 1)}%"})
+                elif tier == 'Gold': # Fallback if DB column is empty
+                    base_margin -= 0.02
+                    adjustments.append({"reason": "Client Loyalty Discount (Gold)", "value": "-2.0%"})
+
         return base_margin, adjustments
 
-    def generate_tender_quote(self, input_rfp, simulation_params):
-        print(f"\n💡 PROCESSING TENDER FOR: {input_rfp['client_name']}")
+    def generate_tender_quote(self, input_rfp):
+        print(f"\n💡 PROCESSING TENDER FOR: {input_rfp.get('client_name', 'Unknown')}")
         
         acc_material = 0
         acc_labor = 0
@@ -114,19 +183,22 @@ class PricingAgent:
         
         line_items = []
         
-        client_row = self.clients[self.clients['client_name'] == input_rfp['client_name']]
-        client_id = client_row.iloc[0]['client_id'] if not client_row.empty else None
-        final_margin_pct, margin_breakdown = self._get_margin_composition(client_id, input_rfp.get('competitor_detected'))
+        # Strategy
+        final_margin_pct, margin_breakdown = self._get_margin_composition(
+            input_rfp.get('client_id'), 
+            input_rfp.get('competitor_id')
+        )
 
         for item in input_rfp['requested_items']:
             sku = item['sku']
             qty = item['qty']
             
             mode, _ = self._check_factory_status(sku, qty)
-            cost_comps = self._calculate_cost_components_per_unit(sku, qty, mode, simulation_params['copper_market_factor'])
+            cost_comps = self._calculate_cost_components_per_unit(sku, qty, mode)
             
             distance = input_rfp.get('distance_km', 500)
-            unit_transport = self._calculate_transport_cost_per_unit(sku, input_rfp['delivery_zone'], distance)
+            zone_code = input_rfp.get('delivery_zone_code') or input_rfp.get('delivery_zone')
+            unit_transport = self._calculate_transport_cost_per_unit(sku, zone_code, distance)
             
             unit_finance = 0
             if "90 Days" in input_rfp['payment_terms']:
@@ -150,6 +222,7 @@ class PricingAgent:
                     "labor_mfg": round(cost_comps['labor'], 2),
                     "transport": round(unit_transport, 2)
                 },
+                "risk_alerts": cost_comps['risk_log'],
                 "final_unit_price": round(unit_final_price, 2),
                 "line_total_value": round(unit_final_price * qty, 2)
             })
@@ -158,15 +231,15 @@ class PricingAgent:
         total_overheads = acc_transport + acc_finance
         total_project_cost = total_production + total_overheads
         estimated_profit = acc_total_bid - total_project_cost
-
-        # GRAB RFP ID SAFELY
+        
         rfp_id_tag = input_rfp.get('rfp_id', 'UNKNOWN-RFP')
+        zone_display = input_rfp.get('delivery_zone_code') or input_rfp.get('delivery_zone')
 
         output_data = {
             "tender_summary": {
-                "rfp_processing_id": rfp_id_tag, # <--- HERE IT IS
-                "client": input_rfp['client_name'],
-                "logistics_param": f"{input_rfp.get('distance_km')} km to {input_rfp['delivery_zone']}",
+                "rfp_processing_id": rfp_id_tag,
+                "client_id": input_rfp.get('client_id'), 
+                "logistics_param": f"{input_rfp.get('distance_km')} km to {zone_display}",
                 
                 "cost_breakdown_bill": {
                     "1_total_raw_material": round(acc_material, 2),
@@ -200,7 +273,7 @@ if __name__ == "__main__":
         with open("input.json", "r") as f:
             data = json.load(f)
         agent = PricingAgent()
-        quote = agent.generate_tender_quote(data['rfp_details'], data['simulation_params'])
+        quote = agent.generate_tender_quote(data['rfp_details'])
         
         with open("output.json", "w") as f:
             json.dump(quote, f, indent=4)
