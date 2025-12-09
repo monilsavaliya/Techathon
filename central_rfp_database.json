@@ -2,51 +2,138 @@
   {
     "rfp_meta_data": {
       "rfp_unique_id": "RFP-2025-009",
-      "status": "Ready_For_Technical",
-      "created_timestamp": "2025-12-10T09:00:00Z"
+      "status": "Pricing_Completed",
+      "created_at_timestamp": "2025-12-10T09:00:00Z",
+      "last_updated_timestamp": "2025-12-10T14:45:00Z"
     },
 
     "sales_agent_output": {
       "source_url": "https://eprocure.gov.in/tender/sharma-infra-009",
-      
       "client_extraction": {
         "client_name": "Sharma Infra",
-        "client_id": "CL-101", 
+        "client_id": "CL-101",
         "payment_terms_extracted": "90 Days Credit"
       },
-
       "timeline_extraction": {
         "submission_deadline": "2026-01-15",
         "days_remaining": 36
       },
-
       "logistics_extraction": {
         "delivery_location_text": "Shimla, Himachal Pradesh",
-        "calculated_distance_km": 1250,  // Sales Agent calculates this via Maps API
-        "mapped_zone_code": "Z-02"       // Sales Agent maps 'Shimla' -> 'Hilly'
+        "calculated_distance_km": 1250,
+        "mapped_zone_code": "Z-02"
       },
-
       "market_intelligence": {
         "competitors_identified": ["COMP-001", "COMP-004"],
         "strategic_note": "Must win to block Desi Power Grid.",
         "priority_score": 85
       },
-      
       "raw_demand_extraction": [
-         // Sales sees "50km Cable" but doesn't know SKU yet.
-         // Tech Agent will refine this later.
-         { "description": "High Voltage Cable", "raw_qty": "50000 m" },
-         { "description": "Iron Rods", "raw_qty": "2000 units" }
+        { "description": "High Voltage Cable", "raw_qty": "50000 m" },
+        { "description": "Iron Rods", "raw_qty": "2000 units" }
       ]
     },
 
     "tech_agent_output": {
-      "status": "Pending",
-      "line_items_finalized": [] 
+      "status": "Approved",
+      "inventory_check_summary": "Partial Stock Available (MTO Triggered for Cable)",
+      "required_tests_identified": ["TEST-001", "TEST-006"],
+      "line_items_mapped": [
+        {
+          "rfp_item_ref": "High Voltage Cable",
+          "matched_internal_sku": "PROD-002",
+          "qty_required": 50000,
+          "production_mode": "Make-to-Order",
+          "warehouse_source": "WH-Delhi-C4"
+        },
+        {
+          "rfp_item_ref": "Iron Rods",
+          "matched_internal_sku": "PROD-001",
+          "qty_required": 2000,
+          "production_mode": "Stock",
+          "warehouse_source": "WH-Mumbai-A1"
+        }
+      ]
     },
 
     "pricing_agent_output": {
-      "financials": {}
+      "tender_summary": {
+        "rfp_processing_id": "RFP-2025-009",
+        "client_id": "CL-101",
+        "logistics_param": "1250 km to Z-02",
+        
+        "cost_breakdown_bill": {
+          "1_total_raw_material": 309315.0,
+          "2_total_labor_mfg": 22530000.0,
+          "3_total_setup_mto": 5000.0,
+          "4_total_transport": 9562500.0,
+          "5_total_finance": 685329.45,
+          "6_total_testing_cost": 75000.0
+        },
+
+        "internal_accounting_ledger": {
+          "A_total_production_cost": 22844315.0,
+          "B_total_overheads_cost": 10247829.45,
+          "C_total_testing_cost": 75000.0,
+          "D_total_project_cost_A_plus_B_plus_C": 33167144.45,
+          "E_estimated_net_profit": 2321700.11,
+          "F_grand_total_bid_D_plus_E": 35488844.56
+        },
+        
+        "final_margin_percentage": "7.0%"
+      },
+
+      "sales_intelligence_card": {
+        "deal_attractiveness_score": "25/100",
+        "recommended_priority": "LOW",
+        "profitability_rating": "Excellent",
+        "risk_factors": "High Setup Costs"
+      },
+
+      "testing_breakdown": [
+        "Fire Resistance Test (Lot): ₹50000.0",
+        "Third Party Inspection (TPI) (Day): ₹25000.0"
+      ],
+
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [
+          { "reason": "Driven by Desi Power Grid (Aggressive)", "value": "-8.0%" },
+          { "reason": "Loyalty Discount (Gold)", "value": "-5.0%" }
+        ],
+        "final_effective_margin": "7.0%"
+      },
+
+      "line_items_detailed": [
+        {
+          "sku": "PROD-002",
+          "qty": 50000,
+          "tech_mode": "Make-to-Order",
+          "breakdown_per_unit": {
+            "material": 5.75,
+            "labor_mfg": 450.0,
+            "transport": 168.75
+          },
+          "risk_alerts": [
+            "High Volatility: Copper Wire (1.15x)"
+          ],
+          "final_unit_price": 682.95,
+          "line_total_value": 34147535.36
+        },
+        {
+          "sku": "PROD-001",
+          "qty": 2000,
+          "tech_mode": "Stock",
+          "breakdown_per_unit": {
+            "material": 11.0,
+            "labor_mfg": 15.0,
+            "transport": 562.5
+          },
+          "risk_alerts": [],
+          "final_unit_price": 630.53,
+          "line_total_value": 1261059.2
+        }
+      ]
     }
   }
 ]
