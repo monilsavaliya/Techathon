@@ -1,400 +1,726 @@
 [
   {
-    "sales_status": 1,
-    "tech_status": 1,
-    "price_status": 1,
-    "rfp_meta_data": {
-      "rfp_unique_id": "ORN-PROC-2025-092",
-      "status": "Pricing_Completed",
-      "created_at_timestamp": "2025-12-10T10:00:00Z",
-      "last_updated_timestamp": "2025-12-12T14:30:00Z"
+    "rfp_unique_id": "RFP-2025-DMRC-003",
+    "status": "New",
+    "last_updated": "2025-11-01T09:00:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Pending",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
     },
     "sales_agent_output": {
-      "source_document": "RFP ORN-PROC-2025-092.pdf",
-      "client_extraction": {
-        "client_name": "Orion Infrastructure Solutions Ltd.",
-        "client_id": "CL-ORN-001",
-        "payment_terms_extracted": "30% Advance, 50% Dispatch, 20% Delivery (30 Days)"
+      "summary": {
+        "client_name": "Delhi Metro Rail Corporation (DMRC)",
+        "project_title": "Underground Tunnel Electrification - Phase 4",
+        "tender_ref_no": "DMRC/ELECT/UG/2025/44",
+        "submission_deadline": "2025-12-15T14:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 500000.0,
+        "emd_type": "Bank Guarantee"
       },
-      "timeline_extraction": {
-        "submission_deadline": "2026-01-15T17:00:00",
-        "days_remaining": 34,
-        "contract_type": "Unit Rate Contract (Firm Price 45 Days)"
+      "logistics_constraints": {
+        "delivery_location": "Mukundpur Depot, Delhi",
+        "delivery_timeline_days": 60,
+        "unloading_scope": "Client Scope"
       },
-      "logistics_extraction": {
-        "delivery_location_text": "Plot No. 45-B, Hazira Industrial Area, Surat, Gujarat",
-        "calculated_distance_km": 285,
-        "mapped_zone_code": "Z-04",
-        "incoterms": "DAP (Delivered at Place)"
+      "commercial_terms": {
+        "payment_terms": "100% against GRN within 30 days",
+        "penalty_clause": "0.5% per week, max 5%",
+        "price_basis": "FOR Destination"
       },
-      "market_intelligence": {
-        "competitors_identified": ["Polycab India Ltd", "KEC International", "Gupta Power Infra"],
-        "strategic_note": "Orion is a high-value Tier-1 client. Project Neon is a flagship grid expansion. Aggressive pricing recommended.",
-        "priority_score": 92
+      "line_items_extracted": [
+        {
+          "lot_id": "L001",
+          "raw_description": "Supply of 33kV 3 Core 400sqmm Copper LSZH Armoured Cable for Tunnel Power",
+          "quantity": 5000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "33kV",
+            "core_count": 3,
+            "cross_section_sqmm": 400,
+            "conductor_material": "Copper",
+            "insulation_type": "XLPE",
+            "sheath_type": "LSZH (Low Smoke Zero Halogen)",
+            "standards": ["BS 7835", "IEC 60502"]
+          }
+        }
+      ]
+    },
+    "tech_agent_output": null,
+    "pricing_agent_output": null
+  },
+
+  {
+    "rfp_unique_id": "RFP-2025-ADANI-SOLAR-088",
+    "status": "Tech_In_Progress",
+    "last_updated": "2025-11-02T11:30:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "In_Progress",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Adani Green Energy Ltd",
+        "project_title": "Khavda Solar Park Block 4 DC Cabling",
+        "tender_ref_no": "AGEL/SOLAR/KAV/2025/088",
+        "submission_deadline": "2025-11-30T17:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 0.0,
+        "emd_type": "Vendor Registration"
       },
-      "raw_demand_extraction": [
-        { 
-            "lot_ref": "Lot A: HV Transmission",
-            "item_code_ref": "HV-CAB-01",
-            "description": "11kV Grade Power Cable. Conductor: Electrolytic Grade Copper, Stranded Compacted Circular. Configuration: 3 Core x 300 sq.mm. Insulation: Extruded XLPE (Cross-linked Polyethylene). Inner Sheath: PVC/Outer Sheath: HDPE. Standard: Must conform to IS 7098 Part-2.", 
-            "raw_qty": "5,000 Meters",
-            "required_timeline": "100% delivery within 6 weeks of PO"
+      "logistics_constraints": {
+        "delivery_location": "Khavda, Gujarat",
+        "delivery_timeline_days": 90,
+        "unloading_scope": "Vendor Scope"
+      },
+      "commercial_terms": {
+        "payment_terms": "40% Advance, 60% after Installation",
+        "penalty_clause": "Strict 2% per week",
+        "price_basis": "Ex-Works + Freight"
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L001",
+          "raw_description": "Supply of 1.5kV DC Solar Cable 4 sqmm Tinned Copper EN 50618",
+          "quantity": 150000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "1.5kV DC",
+            "core_count": 1,
+            "cross_section_sqmm": 4,
+            "conductor_material": "Tinned Copper",
+            "insulation_type": "XLPO",
+            "standards": ["EN 50618"]
+          }
         },
-        { 
-            "lot_ref": "Lot B: Structural Reinforcement",
-            "item_code_ref": "STR-STL-01",
-            "description": "Structural Steel Rods. Material: Mild Steel / Iron. Dimension: 10-meter straight lengths. Grade: E250 Quality A or equivalent. Standard: Must conform to IS 2062. Coating: No anti-rust oil required (Bare).", 
-            "raw_qty": "1,500 Units",
-            "required_timeline": "Immediate (within 2 weeks)"
-        },
-        { 
-            "lot_ref": "Lot C: Internal Wiring",
-            "item_code_ref": "LV-WIR-01",
-            "description": "Low Voltage Building Wire. Conductor: Flexible Copper Class 5. Cross Section: 2.5 sq.mm. Insulation properties: FR-LSH (Flame Retardant Low Smoke Halogen). Voltage Grade: 1100V. Standard: Must conform to IS 694.", 
-            "raw_qty": "20,000 Meters",
-            "required_timeline": "Phased delivery over 3 months"
+        {
+          "lot_id": "L002",
+          "raw_description": "LT Power Cable 4C x 240 sqmm Al Armoured for Inverter Output",
+          "quantity": 2500,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 4,
+            "cross_section_sqmm": 240,
+            "conductor_material": "Aluminium",
+            "armour_type": "Strip",
+            "standards": ["IS 7098"]
+          }
         }
       ]
     },
     "tech_agent_output": {
-      "status": "Approved",
-      "inventory_check_summary": "Steel & Wires Available. HV Cable requires Production Run.",
-      "competitors_identified_ids": ["COMP-001", "COMP-002", "COMP-005"],
-      "required_tests_identified": ["T-ELEC-01", "T-ELEC-02", "T-MECH-01", "T-MECH-03", "T-THERM-01"],
-      "line_items_mapped": [
+      "status": "Partial",
+      "compliance_summary": "Solar Cable Match Found. LT Cable Processing.",
+      "line_item_matches": [
         {
-          "rfp_item_ref": "Lot A: HV Transmission",
-          "matched_internal_sku": "PROD-002",
-          "product_name": "HV XLPE Cable 11kV",
-          "qty_required": 5000,
-          "production_mode": "Make-to-Order",
-          "warehouse_source": "Factory_Line_2",
-          "shortage_alert": "Deficit of 3,800m. Production slot reserved for Jan Wk 3."
+          "lot_id_ref": "L001",
+          "matched_product_id": "PROD-008",
+          "product_name": "Solar DC Cable 4sqmm",
+          "match_confidence_score": 0.95,
+          "deviation_note": null,
+          "required_tests": ["TEST-ENV-01"]
+        }
+      ]
+    },
+    "pricing_agent_output": null
+  },
+
+  {
+    "rfp_unique_id": "RFP-2025-IOCL-REF-99",
+    "status": "Sales_Completed",
+    "last_updated": "2025-11-05T10:00:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Pending",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Indian Oil Corporation Ltd (IOCL)",
+        "project_title": "Panipat Refinery Expansion - HT Cabling",
+        "tender_ref_no": "IOCL/PNP/PROJ/ELECT/221",
+        "submission_deadline": "2026-01-10T11:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 200000.0,
+        "emd_type": "DD"
+      },
+      "logistics_constraints": {
+        "delivery_location": "Panipat Refinery Warehouse",
+        "delivery_timeline_days": 30,
+        "unloading_scope": "Vendor Scope"
+      },
+      "commercial_terms": {
+        "payment_terms": "100% LC at sight",
+        "penalty_clause": "LD 0.5% per week max 10%",
+        "price_basis": "FOR Site"
+      },
+      
+      
+    },
+    "tech_agent_output": null,
+    "pricing_agent_output": null
+  },
+
+  {
+    "rfp_unique_id": "RFP-2025-PWD-HOSP-04",
+    "status": "Pricing_Completed",
+    "last_updated": "2025-10-30T16:45:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "Completed",
+      "final_review": "Pending Approval"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "PWD Maharashtra",
+        "project_title": "Pune General Hospital - Electrical Works",
+        "tender_ref_no": "PWD/PUNE/HOSP/ELECT/2025-26",
+        "submission_deadline": "2025-11-15T15:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 50000.0,
+        "emd_type": "Online"
+      },
+      "logistics_constraints": {
+        "delivery_location": "Pune Central Store",
+        "delivery_timeline_days": 15,
+        "unloading_scope": "Client Scope"
+      },
+      "commercial_terms": {
+        "payment_terms": "Bill basis",
+        "penalty_clause": "Standard PWD Norms",
+        "price_basis": "FOR Destination"
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L001",
+          "raw_description": "Supplying FRLS Copper Wire 2.5sqmm 1100V Grade",
+          "quantity": 5000,
+          "unit": "Coil (90m)",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 1,
+            "cross_section_sqmm": 2.5,
+            "conductor_material": "Copper",
+            "insulation_type": "PVC FRLS",
+            "standards": ["IS 694"]
+          }
         },
         {
-          "rfp_item_ref": "Lot B: Structural Reinforcement",
-          "matched_internal_sku": "PROD-001",
-          "product_name": "Iron Rod 10m Standard",
-          "qty_required": 1500,
-          "production_mode": "Partial-Stock",
-          "warehouse_source": "Warehouse_A",
-          "shortage_alert": "Deficit of 1,250 units."
+          "lot_id": "L002",
+          "raw_description": "Supplying FRLS Copper Wire 4.0sqmm 1100V Grade",
+          "quantity": 2000,
+          "unit": "Coil (90m)",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 1,
+            "cross_section_sqmm": 4,
+            "conductor_material": "Copper",
+            "insulation_type": "PVC FRLS",
+            "standards": ["IS 694"]
+          }
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "compliance_summary": "Stock Available. Matches Polycab Wires.",
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L001",
+          "matched_product_id": "PC-CU-2.5",
+          "product_name": "Polycab Copper Wire 2.5 sqmm",
+          "match_confidence_score": 1.0,
+          "required_tests": ["TEST-AT-004", "TEST-TT-002"]
         },
         {
-          "rfp_item_ref": "Lot C: Internal Wiring",
-          "matched_internal_sku": "PROD-006",
-          "product_name": "Fire Resistant Low Smoke Wire",
-          "qty_required": 20000,
-          "production_mode": "Stock",
-          "warehouse_source": "Warehouse_B",
-          "shortage_alert": "None."
+          "lot_id_ref": "L002",
+          "matched_product_id": "PC-CU-4",
+          "product_name": "Polycab Copper Wire 4 sqmm",
+          "match_confidence_score": 1.0,
+          "required_tests": ["TEST-AT-004", "TEST-TT-002"]
         }
       ]
     },
     "pricing_agent_output": {
-      "tender_summary": {
-        "rfp_processing_id": "ORN-PROC-2025-092",
-        "financials": {
-          "grand_total_bid": 3771482.5,
-          "total_cost": 3279550.0,
-          "net_profit": 491932.5,
-          "effective_margin": "15.0%"
-        },
-        "cost_breakdown": {
-          "production": 3035050.0,
-          "logistics": 223000.0,
-          "finance": 0.0,
-          "testing": 21500.0
-        }
+      "status": "Success",
+      "financial_summary": {
+        "total_material_cost": 2150000.0,
+        "total_testing_cost": 8000.0,
+        "total_logistics_cost": 5000.0,
+        "margin_percentage": 12.0,
+        "final_bid_value": 2422560.0
       },
-      "sales_intelligence_card": {
-        "deal_score": 90,
-        "priority": "HIGH",
-        "risk_factors": "High Volatility Materials"
-      },
-      "testing_breakdown": [
-        "T-ELEC-01: ₹425.0", "T-ELEC-02: ₹1275.0", "T-MECH-01: ₹4250.0", "T-MECH-03: ₹5100.0", "T-THERM-01: ₹12750.0"
-      ],
-      "margin_composition_report": {
-        "standard_company_margin": "20.0%",
-        "adjustments_applied": [
-          { "reason": "Client Loyalty (Gold): -5.0%", "value": "-5.0%" },
-          { "reason": "High Volatility Material Risk: +5.0%", "value": "+5.0%" }
-        ],
-        "final_effective_margin": "15.0%"
-      },
-      "lots_breakdown": [
-        {
-          "lot_reference": "Lot A: HV Transmission",
-          "lot_total_bid": 2533671.05,
-          "items": [
-             {
-              "sku": "PROD-002",
-              "qty": 5000,
-              "base_unit_cost": 435.0,
-              "final_unit_price": 506.73,
-              "line_total_value": 2533671.05
-             }
-          ]
-        },
-        {
-          "lot_reference": "Lot B: Structural Reinforcement",
-          "lot_total_bid": 34306.56,
-          "items": [
-             {
-              "sku": "PROD-001",
-              "qty": 1500,
-              "base_unit_cost": 16.5,
-              "final_unit_price": 22.87,
-              "line_total_value": 34306.56
-             }
-          ]
-        },
-        {
-          "lot_reference": "Lot C: Internal Wiring",
-          "lot_total_bid": 803862.00,
-          "items": [
-             {
-              "sku": "PROD-006",
-              "qty": 20000,
-              "base_unit_cost": 27.2,
-              "final_unit_price": 40.19,
-              "line_total_value": 803862.00
-             }
-          ]
-        }
+      "line_item_breakdown": [
+        { "lot_id_ref": "L001", "unit_price_quoted": 2850.0, "total_line_price": 1425000.0 },
+        { "lot_id_ref": "L002", "unit_price_quoted": 3950.0, "total_line_price": 790000.0 }
       ]
     }
   },
+
   {
-    "sales_status": 1,
-    "tech_status": 1,
-    "price_status": 0,
-    "rfp_meta_data": {
-      "rfp_unique_id": "METRO-DEL-2026-005",
-      "status": "Tech_Approved_Pricing_Pending",
-      "created_at_timestamp": "2025-12-13T08:30:00Z",
-      "last_updated_timestamp": "2025-12-14T11:00:00Z"
+    "rfp_unique_id": "RFP-2025-TATA-POWER-MUM",
+    "status": "Tech_Failed",
+    "last_updated": "2025-11-06T14:20:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Failed",
+      "pricing_agent": "Pending",
+      "final_review": "Flagged"
     },
     "sales_agent_output": {
-      "source_document": "DMRC_Phase4_Signaling.pdf",
-      "client_extraction": {
-        "client_name": "Delhi Metro Rail Corporation",
-        "client_id": "CL-GOV-001",
-        "payment_terms_extracted": "100% Delivery (Net 45 Days)"
+      "summary": {
+        "client_name": "Tata Power Mumbai",
+        "project_title": "Network Reliability Upgrade",
+        "tender_ref_no": "TPC/MUM/DIST/25/009",
+        "submission_deadline": "2025-12-01T12:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 100000.0,
+        "emd_type": "Bid Bond"
       },
-      "timeline_extraction": {
-        "submission_deadline": "2026-02-01T14:00:00",
-        "days_remaining": 49,
-        "contract_type": "Fixed Price"
+      "logistics_constraints": {
+        "delivery_location": "Carnac Bunder, Mumbai",
+        "delivery_timeline_days": 20,
+        "unloading_scope": "Vendor Scope"
       },
-      "logistics_extraction": {
-        "delivery_location_text": "Mukundpur Depot, Delhi",
-        "calculated_distance_km": 1150,
-        "mapped_zone_code": "Z-01",
-        "incoterms": "DAP"
+      "commercial_terms": {
+        "payment_terms": "30 days credit",
+        "penalty_clause": "Standard",
+        "price_basis": "FOR Mumbai"
       },
-      "market_intelligence": {
-        "competitors_identified": ["Havells India", "KEI Industries", "Paramount Communications"],
-        "strategic_note": "Government tender. Price L1 is key. High volume.",
-        "priority_score": 75
-      },
-      "raw_demand_extraction": [
+      "line_items_extracted": [
         {
-          "lot_ref": "Lot 1",
-          "description": "Control Cable 1.1kV. Copper Conductor, PVC Insulated, Armoured, 12 Core x 1.5 sqmm. IS 1554 Part 1.",
-          "raw_qty": "15,000 Meters",
-          "required_timeline": "Immediate"
-        },
-        {
-          "lot_ref": "Lot 2",
-          "description": "LT Power Cable 1.1kV. Aluminum Conductor, XLPE Insulated, Armoured, 3.5 Core x 70 sqmm. IS 7098 Part 1.",
-          "raw_qty": "2,500 Meters",
-          "required_timeline": "4 Weeks"
+          "lot_id": "L001",
+          "raw_description": "220kV EHV Cable 1200sqmm Lead Sheathed Milliken Conductor",
+          "quantity": 500,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "220kV",
+            "core_count": 1,
+            "cross_section_sqmm": 1200,
+            "conductor_material": "Copper (Milliken)",
+            "sheath_type": "Lead Alloy",
+            "standards": ["IEC 62067"]
+          }
         }
       ]
     },
     "tech_agent_output": {
-      "status": "Approved",
-      "inventory_check_summary": "Stock Unavailable. Production required.",
-      "competitors_identified_ids": ["COMP-003", "COMP-006", "COMP-013"],
-      "required_tests_identified": ["T-ELEC-01", "T-ELEC-04", "T-MECH-03"],
-      "line_items_mapped": [
+      "status": "Failed",
+      "compliance_summary": "Product Not Found in Database. Voltage Grade 220kV exceeds max capability (33kV).",
+      "line_item_matches": [],
+      "unmatched_items": ["L001"]
+    },
+    "pricing_agent_output": null
+  },
+
+  {
+    "rfp_unique_id": "RFP-2025-NHAI-LIGHTING",
+    "status": "New",
+    "last_updated": "2025-11-07T08:00:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Pending",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "National Highways Authority of India (NHAI)",
+        "project_title": "Highway Lighting - Delhi-Mumbai Expressway Pkg 4",
+        "tender_ref_no": "NHAI/DME/PKG4/ELECT/2025",
+        "submission_deadline": "2026-02-20T16:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 150000.0,
+        "emd_type": "DD"
+      },
+      "logistics_constraints": {
+        "delivery_location": "Kota, Rajasthan",
+        "delivery_timeline_days": 120,
+        "unloading_scope": "Client Scope"
+      },
+      "commercial_terms": {
+        "payment_terms": "80% Supply, 20% Installation",
+        "penalty_clause": "Standard GCC",
+        "price_basis": "FOR Site"
+      },
+      "line_items_extracted": [
         {
-          "rfp_item_ref": "Lot 1",
-          "matched_internal_sku": "PROD-004",
-          "product_name": "Control Copper Cable",
-          "qty_required": 15000,
-          "production_mode": "Make-to-Order",
-          "warehouse_source": "Factory_Line_1",
-          "shortage_alert": "Zero stock."
+          "lot_id": "L001",
+          "raw_description": "4 Core 16 sqmm Aluminium Armoured LT Cable for Pole Loop",
+          "quantity": 25000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 4,
+            "cross_section_sqmm": 16,
+            "conductor_material": "Aluminium",
+            "armour_type": "Armoured",
+            "standards": ["IS 7098"]
+          }
         },
         {
-          "rfp_item_ref": "Lot 2",
-          "matched_internal_sku": "PC-AL-70",
-          "product_name": "Polycab Aluminium Cable 70 sqmm",
-          "qty_required": 2500,
-          "production_mode": "Make-to-Order",
-          "warehouse_source": "Factory_Line_3",
-          "shortage_alert": "Zero stock. Requires Aluminium procurement."
+          "lot_id": "L002",
+          "raw_description": "4 Core 25 sqmm Aluminium Armoured LT Cable for Feeder",
+          "quantity": 10000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 4,
+            "cross_section_sqmm": 25,
+            "conductor_material": "Aluminium",
+            "armour_type": "Armoured",
+            "standards": ["IS 7098"]
+          }
+        }
+      ]
+    },
+    "tech_agent_output": null,
+    "pricing_agent_output": null
+  },
+
+  {
+    "rfp_unique_id": "RFP-2025-BSNL-FIBER-PWR",
+    "status": "Tech_Completed",
+    "last_updated": "2025-11-06T15:00:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "In_Progress",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Bharat Sanchar Nigam Ltd (BSNL)",
+        "project_title": "Power Supply for BTS Sites - Odhisa Circle",
+        "tender_ref_no": "BSNL/OD/BTS/PWR/2025/11",
+        "submission_deadline": "2025-12-10T14:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 75000.0,
+        "emd_type": "BG"
+      },
+      "logistics_constraints": {
+        "delivery_location": "Bhubaneswar Central Store",
+        "delivery_timeline_days": 45,
+        "unloading_scope": "Vendor Scope"
+      },
+      "commercial_terms": {
+        "payment_terms": "100% on Receipt",
+        "penalty_clause": "Standard",
+        "price_basis": "FOR"
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L001",
+          "raw_description": "2 Core 10sqmm Copper Armoured Power Cable",
+          "quantity": 8000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 2,
+            "cross_section_sqmm": 10,
+            "conductor_material": "Copper",
+            "armour_type": "Armoured",
+            "standards": ["IS 7098"]
+          }
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "compliance_summary": "Mapped to 2 Core equivalent (Using 3C logic or custom request)",
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L001",
+          "matched_product_id": "PC-LT-CU-2C-10",
+          "product_name": "Polycab 1.1kV 2 Core 10sqmm Copper Armoured Cable",
+          "match_confidence_score": 0.90,
+          "deviation_note": "Database shows 3C/4C mostly, mapped to 2C custom construct",
+          "required_tests": ["TEST-RT-001", "TEST-AT-002"]
+        }
+      ]
+    },
+    "pricing_agent_output": null
+  },
+
+  {
+    "rfp_unique_id": "RFP-2025-NTPC-THERMAL",
+    "status": "Sales_Completed",
+    "last_updated": "2025-11-08T09:15:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Pending",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "NTPC Limited",
+        "project_title": "Vindhyachal Thermal Power Station - Cable Replacement",
+        "tender_ref_no": "NTPC/VSTPS/O&M/ELECT/2025/55",
+        "submission_deadline": "2025-12-25T11:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 300000.0,
+        "emd_type": "BG"
+      },
+      "logistics_constraints": {
+        "delivery_location": "Singrauli, MP",
+        "delivery_timeline_days": 60,
+        "unloading_scope": "Client Scope"
+      },
+      "commercial_terms": {
+        "payment_terms": "100% within 45 days",
+        "penalty_clause": "Standard",
+        "price_basis": "Ex-Works"
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L001",
+          "raw_description": "1.1kV Control Cable 12 Core 1.5 sqmm Copper Armoured",
+          "quantity": 10000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 12,
+            "cross_section_sqmm": 1.5,
+            "conductor_material": "Copper",
+            "type": "Control Cable",
+            "standards": ["IS 1554"]
+          }
+        },
+        {
+          "lot_id": "L002",
+          "raw_description": "1.1kV Power Cable 3.5C x 300 sqmm Al Armoured",
+          "quantity": 2000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 3.5,
+            "cross_section_sqmm": 300,
+            "conductor_material": "Aluminium",
+            "standards": ["IS 7098"]
+          }
+        }
+      ]
+    },
+    "tech_agent_output": null,
+    "pricing_agent_output": null
+  },
+
+  {
+    "rfp_unique_id": "RFP-2025-L&T-INFRA",
+    "status": "Pricing_Completed",
+    "last_updated": "2025-11-04T13:00:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "Completed",
+      "final_review": "Ready for Submission"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Larsen & Toubro (L&T) Construction",
+        "project_title": "Bangalore Water Supply Project",
+        "tender_ref_no": "L&T/BWSSB/PROC/25/102",
+        "submission_deadline": "2025-11-20T17:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 0.0,
+        "emd_type": "Vendor Reg"
+      },
+      "logistics_constraints": {
+        "delivery_location": "TK Halli, Karnataka",
+        "delivery_timeline_days": 30,
+        "unloading_scope": "Vendor Scope"
+      },
+      "commercial_terms": {
+        "payment_terms": "45 Days LC",
+        "penalty_clause": "Standard",
+        "price_basis": "FOR Site"
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L001",
+          "raw_description": "3 Core 240 sqmm Aluminium HT Cable 11kV Grade XLPE",
+          "quantity": 1500,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "11kV",
+            "core_count": 3,
+            "cross_section_sqmm": 240,
+            "conductor_material": "Aluminium",
+            "standards": ["IS 7098 Part-2"]
+          }
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "compliance_summary": "Exact Match Found.",
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L001",
+          "matched_product_id": "PC-11KV-AL-3C-240",
+          "product_name": "Polycab 6.35/11 kV 3 Core 240sqmm Aluminium Armoured Cable",
+          "match_confidence_score": 1.0,
+          "required_tests": ["TEST-RT-002", "TEST-RT-003"]
         }
       ]
     },
     "pricing_agent_output": {
-      "tender_summary": {
-        "rfp_processing_id": null,
-        "financials": {
-          "grand_total_bid": 0.0,
-          "total_cost": 0.0,
-          "net_profit": 0.0,
-          "effective_margin": null
-        },
-        "cost_breakdown": {
-          "production": 0.0,
-          "logistics": 0.0,
-          "finance": 0.0,
-          "testing": 0.0
-        }
+      "status": "Success",
+      "financial_summary": {
+        "total_material_cost": 2175000.0,
+        "total_testing_cost": 25000.0,
+        "total_logistics_cost": 15000.0,
+        "margin_percentage": 10.0,
+        "final_bid_value": 2436500.0
       },
-      "sales_intelligence_card": {
-        "deal_score": 0,
-        "priority": "PENDING",
-        "risk_factors": null
-      },
-      "testing_breakdown": [],
-      "margin_composition_report": {
-        "standard_company_margin": "20.0%",
-        "adjustments_applied": [],
-        "final_effective_margin": null
-      },
-      "lots_breakdown": []
+      "line_item_breakdown": [
+        { "lot_id_ref": "L001", "unit_price_quoted": 1624.33, "total_line_price": 2436500.0 }
+      ]
     }
   },
+
   {
-    "sales_status": 1,
-    "tech_status": 0,
-    "price_status": 0,
-    "rfp_meta_data": {
-      "rfp_unique_id": "SOLAR-RAJ-2025-088",
-      "status": "Sales_Completed",
-      "created_at_timestamp": "2025-12-14T09:00:00Z"
+    "rfp_unique_id": "RFP-2025-SMART-CITY-VNS",
+    "status": "New",
+    "last_updated": "2025-11-09T10:00:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Pending",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
     },
     "sales_agent_output": {
-      "source_document": "Adani_Green_Solar_Park.pdf",
-      "client_extraction": {
-        "client_name": "Adani Transmission",
-        "client_id": "CL-ATA-001",
-        "payment_terms_extracted": "90 Days Credit"
+      "summary": {
+        "client_name": "Varanasi Smart City Ltd",
+        "project_title": "Kashi Vishwanath Corridor - Underground Cabling",
+        "tender_ref_no": "VSCL/ELECT/UG/2025/05",
+        "submission_deadline": "2026-01-05T15:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 250000.0,
+        "emd_type": "DD"
       },
-      "timeline_extraction": {
-        "submission_deadline": "2026-03-01",
-        "days_remaining": 78,
-        "contract_type": "Variable Price"
+      "logistics_constraints": {
+        "delivery_location": "Varanasi, UP",
+        "delivery_timeline_days": 90,
+        "unloading_scope": "Vendor Scope"
       },
-      "logistics_extraction": {
-        "delivery_location_text": "Bikaner, Rajasthan",
-        "calculated_distance_km": 850,
-        "mapped_zone_code": "Z-01",
-        "incoterms": "Ex-Works"
+      "commercial_terms": {
+        "payment_terms": "Milestone based",
+        "penalty_clause": "Strict",
+        "price_basis": "FOR Destination"
       },
-      "market_intelligence": {
-        "competitors_identified": ["Sterlite Power", "Apar Industries"],
-        "strategic_note": "Huge volume opportunity. Competitors are aggressive.",
-        "priority_score": 95
+      "line_items_extracted": [
+        {
+          "lot_id": "L001",
+          "raw_description": "LT 4C x 185 sqmm Al Armoured Cable",
+          "quantity": 5000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 4,
+            "cross_section_sqmm": 185,
+            "conductor_material": "Aluminium",
+            "standards": ["IS 7098"]
+          }
+        },
+        {
+          "lot_id": "L002",
+          "raw_description": "LT 4C x 95 sqmm Al Armoured Cable",
+          "quantity": 8000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "1.1kV",
+            "core_count": 4,
+            "cross_section_sqmm": 95,
+            "conductor_material": "Aluminium",
+            "standards": ["IS 7098"]
+          }
+        },
+        {
+          "lot_id": "L003",
+          "raw_description": "HT 3C x 185 sqmm Al Armoured Cable 11kV",
+          "quantity": 2000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "11kV",
+            "core_count": 3,
+            "cross_section_sqmm": 185,
+            "conductor_material": "Aluminium",
+            "standards": ["IS 7098"]
+          }
+        }
+      ]
+    },
+    "tech_agent_output": null,
+    "pricing_agent_output": null
+  },
+
+  {
+    "rfp_unique_id": "RFP-2025-BESCOM-RURAL",
+    "status": "Tech_In_Progress",
+    "last_updated": "2025-11-09T12:00:00Z",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "In_Progress",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "BESCOM (Bangalore Electricity Supply Company)",
+        "project_title": "Rural Feeder Separation Project",
+        "tender_ref_no": "BESCOM/PROJ/RURAL/2025/112",
+        "submission_deadline": "2025-12-15T16:00:00",
+        "contract_currency": "INR",
+        "emd_amount": 400000.0,
+        "emd_type": "BG"
       },
-      "raw_demand_extraction": [
-        { "lot_ref": "Lot 1", "description": "Solar DC Cable 4sqmm. Tinned Copper, XLPO Insulated/Sheathed. EN 50618.", "raw_qty": "100,000 Meters", "required_timeline": "Phased 6 Months" }
+      "logistics_constraints": {
+        "delivery_location": "Tumkur Division Stores",
+        "delivery_timeline_days": 100,
+        "unloading_scope": "Client Scope"
+      },
+      "commercial_terms": {
+        "payment_terms": "Standard BESCOM Terms",
+        "penalty_clause": "Standard",
+        "price_basis": "FOR"
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L001",
+          "raw_description": "11kV 3 Core 50 sqmm Al Armoured Cable",
+          "quantity": 10000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "11kV",
+            "core_count": 3,
+            "cross_section_sqmm": 50,
+            "conductor_material": "Aluminium",
+            "standards": ["IS 7098"]
+          }
+        }
       ]
     },
     "tech_agent_output": {
-      "status": "Pending",
-      "inventory_check_summary": null,
-      "competitors_identified_ids": [],
-      "required_tests_identified": [],
-      "line_items_mapped": []
-    },
-    "pricing_agent_output": {
-      "tender_summary": {
-        "rfp_processing_id": null,
-        "financials": {
-          "grand_total_bid": 0.0,
-          "total_cost": 0.0,
-          "net_profit": 0.0,
-          "effective_margin": null
-        },
-        "cost_breakdown": {
-          "production": 0.0,
-          "logistics": 0.0,
-          "finance": 0.0,
-          "testing": 0.0
+      "status": "Partial",
+      "compliance_summary": "Matching item...",
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L001",
+          "matched_product_id": "PC-11KV-AL-3C-50",
+          "product_name": "Polycab 6.35/11 kV 3 Core 50sqmm Aluminium Armoured Cable",
+          "match_confidence_score": 1.0,
+          "required_tests": ["TEST-RT-001"]
         }
-      },
-      "sales_intelligence_card": {
-        "deal_score": 0,
-        "priority": "PENDING",
-        "risk_factors": null
-      },
-      "testing_breakdown": [],
-      "margin_composition_report": {
-        "standard_company_margin": "20.0%",
-        "adjustments_applied": [],
-        "final_effective_margin": null
-      },
-      "lots_breakdown": []
-    }
-  },
-  {
-    "sales_status": 0,
-    "tech_status": 0,
-    "price_status": 0,
-    "rfp_meta_data": {
-      "rfp_unique_id": "RFP-2025-101-RAW",
-      "status": "New_Inbound",
-      "created_at_timestamp": "2025-12-15T08:00:00Z"
+      ]
     },
-    "sales_agent_output": {
-      "source_document": null,
-      "client_extraction": {},
-      "timeline_extraction": {},
-      "logistics_extraction": {},
-      "market_intelligence": {},
-      "raw_demand_extraction": []
-    },
-    "tech_agent_output": {
-      "status": "Pending",
-      "inventory_check_summary": null,
-      "competitors_identified_ids": [],
-      "required_tests_identified": [],
-      "line_items_mapped": []
-    },
-    "pricing_agent_output": {
-      "tender_summary": {
-        "rfp_processing_id": null,
-        "financials": {
-          "grand_total_bid": 0.0,
-          "total_cost": 0.0,
-          "net_profit": 0.0,
-          "effective_margin": null
-        },
-        "cost_breakdown": {
-          "production": 0.0,
-          "logistics": 0.0,
-          "finance": 0.0,
-          "testing": 0.0
-        }
-      },
-      "sales_intelligence_card": {
-        "deal_score": 0,
-        "priority": "PENDING",
-        "risk_factors": null
-      },
-      "testing_breakdown": [],
-      "margin_composition_report": {
-        "standard_company_margin": "20.0%",
-        "adjustments_applied": [],
-        "final_effective_margin": null
-      },
-      "lots_breakdown": []
-    }
+    "pricing_agent_output": null
   }
 ]
