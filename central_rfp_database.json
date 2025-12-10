@@ -6,7 +6,8 @@
     "rfp_meta_data": {
       "rfp_unique_id": "ORN-PROC-2025-092",
       "status": "Pricing_Completed",
-      "created_at_timestamp": "2025-12-10T10:00:00Z"
+      "created_at_timestamp": "2025-12-10T10:00:00Z",
+      "last_updated_timestamp": "2025-12-12T14:30:00Z"
     },
     "sales_agent_output": {
       "source_document": "RFP ORN-PROC-2025-092.pdf",
@@ -23,18 +24,36 @@
       "logistics_extraction": {
         "delivery_location_text": "Plot No. 45-B, Hazira Industrial Area, Surat, Gujarat",
         "calculated_distance_km": 285,
-        "mapped_zone_code": "Z-04",
-        "incoterms": "DAP"
+        "mapped_zone_code": "Z-04 (Western Region)",
+        "incoterms": "DAP (Delivered at Place)"
       },
       "market_intelligence": {
         "competitors_identified": ["Polycab India Ltd", "KEC International", "Gupta Power Infra"],
-        "strategic_note": "Orion is a high-value Tier-1 client. Project Neon is a flagship grid expansion.",
+        "strategic_note": "Orion is a high-value Tier-1 client. Project Neon is a flagship grid expansion. Aggressive pricing recommended.",
         "priority_score": 92
       },
       "raw_demand_extraction": [
-        { "lot_ref": "Lot A", "description": "11kV XLPE Cable", "raw_qty": "5,000 Meters", "required_timeline": "6 Weeks" },
-        { "lot_ref": "Lot B", "description": "Structural Steel Rods", "raw_qty": "1,500 Units", "required_timeline": "Immediate" },
-        { "lot_ref": "Lot C", "description": "Low Voltage Wire", "raw_qty": "20,000 Meters", "required_timeline": "Phased 3 Months" }
+        { 
+            "lot_ref": "Lot A: HV Transmission",
+            "item_code_ref": "HV-CAB-01",
+            "description": "11kV Grade Power Cable. Conductor: Electrolytic Grade Copper, Stranded Compacted Circular. Configuration: 3 Core x 300 sq.mm. Insulation: Extruded XLPE (Cross-linked Polyethylene). Inner Sheath: PVC / Outer Sheath: HDPE. Standard: Must conform to IS 7098 Part-2.", 
+            "raw_qty": "5,000 Meters",
+            "required_timeline": "100% delivery within 6 weeks of PO"
+        },
+        { 
+            "lot_ref": "Lot B: Structural Reinforcement",
+            "item_code_ref": "STR-STL-01",
+            "description": "Structural Steel Rods. Material: Mild Steel / Iron. Dimension: 10-meter straight lengths. Grade: E250 Quality A or equivalent. Standard: Must conform to IS 2062. Coating: No anti-rust oil required (Bare).", 
+            "raw_qty": "1,500 Units",
+            "required_timeline": "Immediate (within 2 weeks)"
+        },
+        { 
+            "lot_ref": "Lot C: Internal Wiring",
+            "item_code_ref": "LV-WIR-01",
+            "description": "Low Voltage Building Wire. Conductor: Flexible Copper Class 5. Cross Section: 2.5 sq.mm. Insulation properties: FR-LSH (Flame Retardant Low Smoke Halogen). Voltage Grade: 1100V. Standard: Must conform to IS 694.", 
+            "raw_qty": "20,000 Meters",
+            "required_timeline": "Phased delivery over 3 months"
+        }
       ]
     },
     "tech_agent_output": {
@@ -49,7 +68,7 @@
           "qty_required": 5000,
           "production_mode": "Make-to-Order",
           "warehouse_source": "Factory_Line_2",
-          "shortage_alert": "Deficit of 3,800m. Production slot reserved."
+          "shortage_alert": "Deficit of 3,800m. Production slot reserved for Jan Wk 3."
         },
         {
           "rfp_item_ref": "Lot B: Steel Rods",
@@ -58,7 +77,7 @@
           "qty_required": 1500,
           "production_mode": "Partial-Stock",
           "warehouse_source": "Warehouse_A",
-          "shortage_alert": "Deficit of 1,250 units."
+          "shortage_alert": "Deficit of 1,250 units. Immediate procurement of raw iron needed."
         },
         {
           "rfp_item_ref": "Lot C: Safety Wire",
@@ -67,7 +86,7 @@
           "qty_required": 20000,
           "production_mode": "Stock",
           "warehouse_source": "Warehouse_B",
-          "shortage_alert": "None."
+          "shortage_alert": "None. 50,000m available in stock."
         }
       ]
     },
@@ -75,7 +94,7 @@
       "tender_summary": {
         "rfp_processing_id": "ORN-PROC-2025-092",
         "client_id": "CL-ORN-001",
-        "logistics_param": "285 km to Z-04 (West (Hub))",
+        "logistics_param": "285 km to Z-04 (Western Region)",
         "financials": {
           "grand_total_bid": 3771482.5,
           "total_cost": 3279550.0,
@@ -116,6 +135,28 @@
           "final_unit_price": 506.73,
           "line_total": 2533671.05,
           "risks": ["CU-A"]
+        },
+        {
+          "sku": "PROD-001",
+          "qty": 1500,
+          "base_unit_cost": 16.5,
+          "logistics_total": 9618.75,
+          "finance_cost": 0.0,
+          "applied_margin": "15.0%",
+          "final_unit_price": 22.87,
+          "line_total": 34306.56,
+          "risks": []
+        },
+        {
+          "sku": "PROD-006",
+          "qty": 20000,
+          "base_unit_cost": 27.2,
+          "logistics_total": 153900.0,
+          "finance_cost": 0.0,
+          "applied_margin": "15.0%",
+          "final_unit_price": 40.19,
+          "line_total": 803862.00,
+          "risks": ["CU-A"]
         }
       ]
     }
@@ -127,10 +168,11 @@
     "rfp_meta_data": {
       "rfp_unique_id": "METRO-DEL-2026-005",
       "status": "Tech_Approved_Pricing_Pending",
-      "created_at_timestamp": "2025-12-13T08:30:00Z"
+      "created_at_timestamp": "2025-12-13T08:30:00Z",
+      "last_updated_timestamp": "2025-12-14T11:00:00Z"
     },
     "sales_agent_output": {
-      "source_document": "DMRC_Phase4.pdf",
+      "source_document": "DMRC_Phase4_Signaling.pdf",
       "client_extraction": {
         "client_name": "Delhi Metro Rail Corporation",
         "client_id": "CL-GOV-001",
@@ -148,18 +190,29 @@
         "incoterms": "DAP"
       },
       "market_intelligence": {
-        "competitors_identified": ["Havells India", "KEI Industries"],
-        "strategic_note": "Government tender. Price is L1.",
+        "competitors_identified": ["Havells India", "KEI Industries", "Paramount Communications"],
+        "strategic_note": "Government tender. Price L1 is key. High volume.",
         "priority_score": 75
       },
       "raw_demand_extraction": [
-        { "lot_ref": "Lot 1", "description": "Control Cable", "raw_qty": "15,000 m", "required_timeline": "Immediate" }
+        {
+          "lot_ref": "Lot 1",
+          "description": "Control Cable 1.1kV. Copper Conductor, PVC Insulated, Armoured, 12 Core x 1.5 sqmm. IS 1554 Part 1.",
+          "raw_qty": "15,000 Meters",
+          "required_timeline": "Immediate"
+        },
+        {
+          "lot_ref": "Lot 2",
+          "description": "LT Power Cable 1.1kV. Aluminum Conductor, XLPE Insulated, Armoured, 3.5 Core x 70 sqmm. IS 7098 Part 1.",
+          "raw_qty": "2,500 Meters",
+          "required_timeline": "4 Weeks"
+        }
       ]
     },
     "tech_agent_output": {
       "status": "Approved",
-      "inventory_check_summary": "Stock Unavailable.",
-      "required_tests_identified": ["T-ELEC-01", "T-ELEC-04"],
+      "inventory_check_summary": "Stock Unavailable. Production required.",
+      "required_tests_identified": ["T-ELEC-01", "T-ELEC-04", "T-MECH-03"],
       "line_items_mapped": [
         {
           "rfp_item_ref": "Lot 1: Control Cable",
@@ -169,6 +222,15 @@
           "production_mode": "Make-to-Order",
           "warehouse_source": "Factory_Line_1",
           "shortage_alert": "Zero stock."
+        },
+        {
+          "rfp_item_ref": "Lot 2: Power Cable",
+          "matched_internal_sku": "PC-AL-70",
+          "product_name": "Polycab Aluminium Cable 70 sqmm",
+          "qty_required": 2500,
+          "production_mode": "Make-to-Order",
+          "warehouse_source": "Factory_Line_3",
+          "shortage_alert": "Zero stock. Requires Aluminium procurement."
         }
       ]
     },
@@ -223,7 +285,7 @@
       "timeline_extraction": {
         "submission_deadline": "2026-03-01",
         "days_remaining": 78,
-        "contract_type": "Variable"
+        "contract_type": "Variable Price"
       },
       "logistics_extraction": {
         "delivery_location_text": "Bikaner, Rajasthan",
@@ -233,12 +295,382 @@
       },
       "market_intelligence": {
         "competitors_identified": ["Sterlite Power", "Apar Industries"],
-        "strategic_note": "Huge volume.",
+        "strategic_note": "Huge volume opportunity. Competitors are aggressive.",
         "priority_score": 95
       },
       "raw_demand_extraction": [
-        { "lot_ref": "Lot 1", "description": "Solar DC Cable", "raw_qty": "100,000 m", "required_timeline": "Phased" }
+        { 
+            "lot_ref": "Lot 1", 
+            "description": "Solar DC Cable 4sqmm. Tinned Copper, XLPO Insulated/Sheathed. EN 50618.", 
+            "raw_qty": "100,000 Meters", 
+            "required_timeline": "Phased 6 Months" 
+        }
       ]
+    },
+    "tech_agent_output": {
+      "status": "Pending",
+      "inventory_check_summary": null,
+      "required_tests_identified": [],
+      "line_items_mapped": []
+    },
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": null,
+        "client_id": null,
+        "logistics_param": null,
+        "financials": {
+          "grand_total_bid": 0.0,
+          "total_cost": 0.0,
+          "net_profit": 0.0,
+          "effective_margin": null
+        },
+        "cost_breakdown": {
+          "production": 0.0,
+          "logistics": 0.0,
+          "finance": 0.0,
+          "testing": 0.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 0,
+        "priority": "PENDING",
+        "risk_factors": null
+      },
+      "testing_breakdown": [],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [],
+        "final_effective_margin": null
+      },
+      "line_items_detailed": []
+    }
+  },
+  {
+    "sales_status": 0,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2025-101-RAW",
+      "status": "New_Inbound",
+      "created_at_timestamp": "2025-12-15T08:00:00Z"
+    },
+    "sales_agent_output": {
+      "source_document": null,
+      "client_extraction": {},
+      "timeline_extraction": {},
+      "logistics_extraction": {},
+      "market_intelligence": {},
+      "raw_demand_extraction": []
+    },
+    "tech_agent_output": {
+      "status": "Pending",
+      "inventory_check_summary": null,
+      "required_tests_identified": [],
+      "line_items_mapped": []
+    },
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": null,
+        "client_id": null,
+        "logistics_param": null,
+        "financials": {
+          "grand_total_bid": 0.0,
+          "total_cost": 0.0,
+          "net_profit": 0.0,
+          "effective_margin": null
+        },
+        "cost_breakdown": {
+          "production": 0.0,
+          "logistics": 0.0,
+          "finance": 0.0,
+          "testing": 0.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 0,
+        "priority": "PENDING",
+        "risk_factors": null
+      },
+      "testing_breakdown": [],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [],
+        "final_effective_margin": null
+      },
+      "line_items_detailed": []
+    }
+  },
+  {
+    "sales_status": 0,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2025-105-DUMMY",
+      "status": "Draft",
+      "created_at_timestamp": "2025-12-15T12:00:00Z"
+    },
+    "sales_agent_output": {
+      "source_document": null,
+      "client_extraction": {},
+      "timeline_extraction": {},
+      "logistics_extraction": {},
+      "market_intelligence": {},
+      "raw_demand_extraction": []
+    },
+    "tech_agent_output": {
+      "status": "Pending",
+      "inventory_check_summary": null,
+      "required_tests_identified": [],
+      "line_items_mapped": []
+    },
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": null,
+        "client_id": null,
+        "logistics_param": null,
+        "financials": {
+          "grand_total_bid": 0.0,
+          "total_cost": 0.0,
+          "net_profit": 0.0,
+          "effective_margin": null
+        },
+        "cost_breakdown": {
+          "production": 0.0,
+          "logistics": 0.0,
+          "finance": 0.0,
+          "testing": 0.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 0,
+        "priority": "PENDING",
+        "risk_factors": null
+      },
+      "testing_breakdown": [],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [],
+        "final_effective_margin": null
+      },
+      "line_items_detailed": []
+    }
+  },
+  {
+    "sales_status": 0,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2025-106-DUMMY",
+      "status": "Draft",
+      "created_at_timestamp": "2025-12-15T12:00:00Z"
+    },
+    "sales_agent_output": {
+      "client_extraction": {},
+      "raw_demand_extraction": []
+    },
+    "tech_agent_output": {
+      "status": "Pending",
+      "inventory_check_summary": null,
+      "required_tests_identified": [],
+      "line_items_mapped": []
+    },
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": null,
+        "client_id": null,
+        "logistics_param": null,
+        "financials": {
+          "grand_total_bid": 0.0,
+          "total_cost": 0.0,
+          "net_profit": 0.0,
+          "effective_margin": null
+        },
+        "cost_breakdown": {
+          "production": 0.0,
+          "logistics": 0.0,
+          "finance": 0.0,
+          "testing": 0.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 0,
+        "priority": "PENDING",
+        "risk_factors": null
+      },
+      "testing_breakdown": [],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [],
+        "final_effective_margin": null
+      },
+      "line_items_detailed": []
+    }
+  },
+  {
+    "sales_status": 0,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2025-107-DUMMY",
+      "status": "Draft",
+      "created_at_timestamp": "2025-12-15T12:00:00Z"
+    },
+    "sales_agent_output": {
+      "client_extraction": {},
+      "raw_demand_extraction": []
+    },
+    "tech_agent_output": {
+      "status": "Pending",
+      "inventory_check_summary": null,
+      "required_tests_identified": [],
+      "line_items_mapped": []
+    },
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": null,
+        "client_id": null,
+        "logistics_param": null,
+        "financials": {
+          "grand_total_bid": 0.0,
+          "total_cost": 0.0,
+          "net_profit": 0.0,
+          "effective_margin": null
+        },
+        "cost_breakdown": {
+          "production": 0.0,
+          "logistics": 0.0,
+          "finance": 0.0,
+          "testing": 0.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 0,
+        "priority": "PENDING",
+        "risk_factors": null
+      },
+      "testing_breakdown": [],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [],
+        "final_effective_margin": null
+      },
+      "line_items_detailed": []
+    }
+  },
+  {
+    "sales_status": 0,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2025-108-DUMMY",
+      "status": "Draft",
+      "created_at_timestamp": "2025-12-15T12:00:00Z"
+    },
+    "sales_agent_output": {
+      "client_extraction": {},
+      "raw_demand_extraction": []
+    },
+    "tech_agent_output": {
+      "status": "Pending",
+      "inventory_check_summary": null,
+      "required_tests_identified": [],
+      "line_items_mapped": []
+    },
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": null,
+        "client_id": null,
+        "logistics_param": null,
+        "financials": {
+          "grand_total_bid": 0.0,
+          "total_cost": 0.0,
+          "net_profit": 0.0,
+          "effective_margin": null
+        },
+        "cost_breakdown": {
+          "production": 0.0,
+          "logistics": 0.0,
+          "finance": 0.0,
+          "testing": 0.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 0,
+        "priority": "PENDING",
+        "risk_factors": null
+      },
+      "testing_breakdown": [],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [],
+        "final_effective_margin": null
+      },
+      "line_items_detailed": []
+    }
+  },
+  {
+    "sales_status": 0,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2025-109-DUMMY",
+      "status": "Draft",
+      "created_at_timestamp": "2025-12-15T12:00:00Z"
+    },
+    "sales_agent_output": {
+      "client_extraction": {},
+      "raw_demand_extraction": []
+    },
+    "tech_agent_output": {
+      "status": "Pending",
+      "inventory_check_summary": null,
+      "required_tests_identified": [],
+      "line_items_mapped": []
+    },
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": null,
+        "client_id": null,
+        "logistics_param": null,
+        "financials": {
+          "grand_total_bid": 0.0,
+          "total_cost": 0.0,
+          "net_profit": 0.0,
+          "effective_margin": null
+        },
+        "cost_breakdown": {
+          "production": 0.0,
+          "logistics": 0.0,
+          "finance": 0.0,
+          "testing": 0.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 0,
+        "priority": "PENDING",
+        "risk_factors": null
+      },
+      "testing_breakdown": [],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [],
+        "final_effective_margin": null
+      },
+      "line_items_detailed": []
+    }
+  },
+  {
+    "sales_status": 0,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2025-1010-DUMMY",
+      "status": "Draft",
+      "created_at_timestamp": "2025-12-15T12:00:00Z"
+    },
+    "sales_agent_output": {
+      "client_extraction": {},
+      "raw_demand_extraction": []
     },
     "tech_agent_output": {
       "status": "Pending",
