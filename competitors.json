@@ -3,7 +3,7 @@
     "competitor_id": "COMP-001",
     "name": "Polycab India Ltd",
     "tier": "Tier-1 (Market Leader)",
-    "colliding_internal_skus": ["PROD-002", "PROD-003", "PROD-006", "PC-CU-50", "PC-AL-70"],
+    "colliding_internal_skus": ["PC-LT-AL-3.5C-400", "PC-11KV-CU-3C-185", "PC-33KV-AL-3C-400", "PC-CU-2.5"],
     "strong_regions": ["Pan-India", "West"],
     "pricing_intelligence": {
       "aggression_score": 6,
@@ -18,32 +18,168 @@
   },
   {
     "competitor_id": "COMP-002",
-    "name": "KEC International",
-    "tier": "Tier-1 (EPC Giant)",
-    "colliding_internal_skus": ["PROD-002", "PROD-007", "PC-CU-70", "PC-AL-70"],
-    "strong_regions": ["North", "International"],
+    "name": "Havells India",
+    "tier": "Tier-1 (Premium)",
+    "colliding_internal_skus": ["PC-CU-1.5", "PC-CU-4", "PC-LT-CU-4C-16", "PC-BS7835-CU-3C-95-LSZH"],
+    "strong_regions": ["North", "Pan-India"],
     "pricing_intelligence": {
-      "aggression_score": 7,
-      "avg_undercut_percent": 0.05,
-      "strategic_behavior": "Cross-subsidizes material cost with installation profits.",
-      "typical_margin_buffer": 0.12
+      "aggression_score": 5,
+      "avg_undercut_percent": -0.05,
+      "strategic_behavior": "Focuses on 'Quality' & 'FRLS' specs. Often priced higher than base.",
+      "typical_margin_buffer": 0.18
     },
     "performance_metrics": {
-      "win_rate_against_us": 0.30,
-      "recent_tender_outcomes": [1, 1, 0, 0, 1]
+      "win_rate_against_us": 0.35,
+      "recent_tender_outcomes": [0, 1, 0, 0, 1]
     }
   },
   {
     "competitor_id": "COMP-003",
-    "name": "Havells India",
-    "tier": "Tier-1 (Premium Retail)",
-    "colliding_internal_skus": ["PROD-006", "PC-CU-1.5", "PC-CU-2.5", "PC-CU-4"],
-    "strong_regions": ["North", "West"],
+    "name": "KEI Industries",
+    "tier": "Tier-1 (EPC Giant)",
+    "colliding_internal_skus": ["PC-33KV-CU-1C-630", "PC-HT-XLPE-3C-240", "PC-LT-AL-3.5C-300"],
+    "strong_regions": ["East", "North", "Exports"],
+    "pricing_intelligence": {
+      "aggression_score": 7,
+      "avg_undercut_percent": 0.04,
+      "strategic_behavior": "Very strong in EHV (Extra High Voltage) and EPC projects.",
+      "typical_margin_buffer": 0.11
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.55,
+      "recent_tender_outcomes": [1, 1, 0, 1, 1]
+    }
+  },
+  {
+    "competitor_id": "COMP-004",
+    "name": "Finolex Cables",
+    "tier": "Tier-1 (Reliable)",
+    "colliding_internal_skus": ["PC-SOLAR-DC-4", "PC-CU-6", "PC-LT-CU-3C-6"],
+    "strong_regions": ["South", "West"],
+    "pricing_intelligence": {
+      "aggression_score": 6,
+      "avg_undercut_percent": 0.01,
+      "strategic_behavior": "Strong distribution network. Competitive in Agri/Solar cables.",
+      "typical_margin_buffer": 0.12
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.40,
+      "recent_tender_outcomes": [0, 0, 1, 1, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-005",
+    "name": "RR Kabel",
+    "tier": "Tier-2 (Innovator)",
+    "colliding_internal_skus": ["PC-BS5467-CU-3C-35", "PC-CU-2.5", "PROD-006"],
+    "strong_regions": ["West", "International"],
+    "pricing_intelligence": {
+      "aggression_score": 5,
+      "avg_undercut_percent": -0.02,
+      "strategic_behavior": "Pitches 'Fire Safety' strongly. Wins on technical compliance.",
+      "typical_margin_buffer": 0.15
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.30,
+      "recent_tender_outcomes": [0, 1, 0, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-006",
+    "name": "Apar Industries",
+    "tier": "Tier-2 (Industrial)",
+    "colliding_internal_skus": ["PC-11KV-AL-3C-185", "PC-33KV-AL-1C-630", "MAT-RUB-PVC"],
+    "strong_regions": ["West", "Central"],
+    "pricing_intelligence": {
+      "aggression_score": 8,
+      "avg_undercut_percent": 0.06,
+      "strategic_behavior": "Aggressive in Utility/Conductor tenders. Vertical integration advantage.",
+      "typical_margin_buffer": 0.09
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.60,
+      "recent_tender_outcomes": [1, 1, 1, 0, 1]
+    }
+  },
+  {
+    "competitor_id": "COMP-007",
+    "name": "Universal Cables",
+    "tier": "Tier-2 (Legacy)",
+    "colliding_internal_skus": ["PC-HT-XLPE-3C-400", "PC-11KV-CU-3C-120"],
+    "strong_regions": ["Central", "North"],
+    "pricing_intelligence": {
+      "aggression_score": 6,
+      "avg_undercut_percent": 0.03,
+      "strategic_behavior": "Strong in PSU tenders (NTPC/BHEL).",
+      "typical_margin_buffer": 0.10
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.50,
+      "recent_tender_outcomes": [1, 0, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-008",
+    "name": "Ravin Cables",
+    "tier": "Tier-2 (Specialist)",
+    "colliding_internal_skus": ["PC-BS6622-CU-1C-500", "PC-33KV-TRIPLEX-CU-240"],
+    "strong_regions": ["West", "Exports"],
+    "pricing_intelligence": {
+      "aggression_score": 7,
+      "avg_undercut_percent": 0.04,
+      "strategic_behavior": "Focuses on specialized EHV/HV projects.",
+      "typical_margin_buffer": 0.11
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.45,
+      "recent_tender_outcomes": [0, 1, 0, 1, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-009",
+    "name": "Gemscab",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-LT-AL-4C-16", "PC-LT-AL-3.5C-150"],
+    "strong_regions": ["North"],
+    "pricing_intelligence": {
+      "aggression_score": 9,
+      "avg_undercut_percent": 0.08,
+      "strategic_behavior": "Highly aggressive in Delhi/NCR/UP region.",
+      "typical_margin_buffer": 0.07
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.70,
+      "recent_tender_outcomes": [1, 1, 1, 1, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-010",
+    "name": "Paramount Cables",
+    "tier": "Tier-2 (Telecom/Rail)",
+    "colliding_internal_skus": ["PC-BSNL-PIJF", "PC-LT-CU-2C-10", "PROD-004"],
+    "strong_regions": ["North", "East"],
+    "pricing_intelligence": {
+      "aggression_score": 8,
+      "avg_undercut_percent": 0.05,
+      "strategic_behavior": "Dominant in Railway/Telecom signaling cables.",
+      "typical_margin_buffer": 0.08
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.65,
+      "recent_tender_outcomes": [1, 0, 1, 1, 1]
+    }
+  },
+  {
+    "competitor_id": "COMP-011",
+    "name": "V-Guard",
+    "tier": "Tier-1 (Retail)",
+    "colliding_internal_skus": ["PC-CU-1.5", "PC-CU-2.5", "PC-CU-4"],
+    "strong_regions": ["South"],
     "pricing_intelligence": {
       "aggression_score": 4,
-      "avg_undercut_percent": -0.10,
-      "strategic_behavior": "Premium pricing strategy. Relies on brand pull.",
-      "typical_margin_buffer": 0.165
+      "avg_undercut_percent": -0.03,
+      "strategic_behavior": "Retail focused. Rarely bids on large infrastructure.",
+      "typical_margin_buffer": 0.16
     },
     "performance_metrics": {
       "win_rate_against_us": 0.20,
@@ -51,169 +187,16 @@
     }
   },
   {
-    "competitor_id": "COMP-004",
-    "name": "Finolex Cables",
-    "tier": "Tier-1 (Wire Specialist)",
-    "colliding_internal_skus": ["PROD-006", "PROD-005", "PC-CU-6", "PC-AL-6"],
-    "strong_regions": ["West", "South"],
-    "pricing_intelligence": {
-      "aggression_score": 5,
-      "avg_undercut_percent": 0.00,
-      "strategic_behavior": "Conservative bidder. Maintains strict price discipline.",
-      "typical_margin_buffer": 0.15
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.40,
-      "recent_tender_outcomes": [1, 0, 1, 0, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-005",
-    "name": "InfraTech Solutions",
-    "tier": "Tier-2 (Bundler)",
-    "colliding_internal_skus": ["PROD-002", "PROD-003", "PROD-007"],
-    "strong_regions": ["North East"],
-    "pricing_intelligence": {
-      "aggression_score": 4,
-      "avg_undercut_percent": -0.05,
-      "strategic_behavior": "Bundles services (Installation + Supply).",
-      "typical_margin_buffer": 0.115
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.60,
-      "recent_tender_outcomes": [0, 1, 1, 0, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-006",
-    "name": "KEI Industries",
-    "tier": "Tier-1 (Institutional)",
-    "colliding_internal_skus": ["PROD-002", "PROD-007", "PROD-008", "PC-AL-35"],
-    "strong_regions": ["North", "East"],
-    "pricing_intelligence": {
-      "aggression_score": 6,
-      "avg_undercut_percent": 0.02,
-      "strategic_behavior": "Strong relationship with PSUs.",
-      "typical_margin_buffer": 0.135
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.50,
-      "recent_tender_outcomes": [0, 1, 0, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-007",
-    "name": "RR Kabel",
-    "tier": "Tier-2 (Export Focus)",
-    "colliding_internal_skus": ["PROD-006", "PC-CU-1.5", "PC-CU-10"],
-    "strong_regions": ["West", "International"],
-    "pricing_intelligence": {
-      "aggression_score": 5,
-      "avg_undercut_percent": -0.05,
-      "strategic_behavior": "Focuses on quality/certifications (UL/CE).",
-      "typical_margin_buffer": 0.10
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.35,
-      "recent_tender_outcomes": [0, 0, 1, 0, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-008",
-    "name": "Apar Industries",
-    "tier": "Tier-1 (Conductor King)",
-    "colliding_internal_skus": ["PROD-003", "PC-AL-50", "PC-AL-70", "PROD-002"],
-    "strong_regions": ["West", "Exports"],
-    "pricing_intelligence": {
-      "aggression_score": 7,
-      "avg_undercut_percent": 0.03,
-      "strategic_behavior": "Scale player in Conductors.",
-      "typical_margin_buffer": 0.12
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.42,
-      "recent_tender_outcomes": [1, 0, 0, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-009",
-    "name": "Universal Cables",
-    "tier": "Tier-2 (Legacy)",
-    "colliding_internal_skus": ["PROD-002", "PROD-007", "PC-CU-50"],
-    "strong_regions": ["Central", "East"],
-    "pricing_intelligence": {
-      "aggression_score": 8,
-      "avg_undercut_percent": 0.06,
-      "strategic_behavior": "Legacy player trying to regain market share.",
-      "typical_margin_buffer": 0.055
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.55,
-      "recent_tender_outcomes": [0, 1, 1, 0, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-010",
-    "name": "Sterlite Power",
-    "tier": "Tier-1 (Transmission)",
-    "colliding_internal_skus": ["PROD-002", "PROD-003", "PC-AL-70"],
-    "strong_regions": ["Pan-India"],
-    "pricing_intelligence": {
-      "aggression_score": 6,
-      "avg_undercut_percent": -0.02,
-      "strategic_behavior": "Focuses on technology and high-ampacity cables.",
-      "typical_margin_buffer": 0.135
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.25,
-      "recent_tender_outcomes": [1, 0, 0, 0, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-011",
-    "name": "V-Guard Industries",
-    "tier": "Tier-2 (Retail)",
-    "colliding_internal_skus": ["PROD-006", "PC-CU-2.5", "PC-CU-4"],
-    "strong_regions": ["South"],
-    "pricing_intelligence": {
-      "aggression_score": 4,
-      "avg_undercut_percent": -0.05,
-      "strategic_behavior": "Strong retailer presence.",
-      "typical_margin_buffer": 0.115
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.15,
-      "recent_tender_outcomes": [0, 0, 0, 1, 0]
-    }
-  },
-  {
     "competitor_id": "COMP-012",
-    "name": "Syska LED & Wires",
-    "tier": "Tier-2 (Retail)",
-    "colliding_internal_skus": ["PROD-006", "PC-CU-1.5"],
-    "strong_regions": ["West", "South"],
-    "pricing_intelligence": {
-      "aggression_score": 5,
-      "avg_undercut_percent": 0.01,
-      "strategic_behavior": "Bundles LED lighting with wires.",
-      "typical_margin_buffer": 0.10
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.10,
-      "recent_tender_outcomes": [0, 0, 0, 0, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-013",
-    "name": "Paramount Communications",
-    "tier": "Tier-3 (Price Warrior)",
-    "colliding_internal_skus": ["PROD-004", "PROD-005", "PC-CU-10"],
-    "strong_regions": ["North"],
+    "name": "Gupta Power",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-11KV-AL-3C-50", "PC-LT-AL-3.5C-240"],
+    "strong_regions": ["East", "Odisha"],
     "pricing_intelligence": {
       "aggression_score": 8,
       "avg_undercut_percent": 0.07,
-      "strategic_behavior": "Aggressive on specs they control.",
-      "typical_margin_buffer": 0.005
+      "strategic_behavior": "Very strong in Odisha/Bengal belts.",
+      "typical_margin_buffer": 0.08
     },
     "performance_metrics": {
       "win_rate_against_us": 0.65,
@@ -221,67 +204,67 @@
     }
   },
   {
-    "competitor_id": "COMP-014",
-    "name": "Cords Cable Industries",
-    "tier": "Tier-2 (Specialist)",
-    "colliding_internal_skus": ["PROD-004", "PC-CU-16", "PC-CU-25"],
-    "strong_regions": ["North", "West"],
+    "competitor_id": "COMP-013",
+    "name": "KEC International",
+    "tier": "Tier-1 (Global)",
+    "colliding_internal_skus": ["PC-220KV-CU-1200", "PC-33KV-AL-3C-400"],
+    "strong_regions": ["International", "West"],
     "pricing_intelligence": {
       "aggression_score": 7,
       "avg_undercut_percent": 0.03,
-      "strategic_behavior": "Specializes in Instrumentation/Control.",
-      "typical_margin_buffer": 0.07
+      "strategic_behavior": "Packages cable with turnkey tower projects.",
+      "typical_margin_buffer": 0.12
     },
     "performance_metrics": {
-      "win_rate_against_us": 0.48,
-      "recent_tender_outcomes": [0, 1, 0, 1, 0]
+      "win_rate_against_us": 0.50,
+      "recent_tender_outcomes": [0, 1, 1, 0, 1]
+    }
+  },
+  {
+    "competitor_id": "COMP-014",
+    "name": "Torrent Power Cables",
+    "tier": "Tier-2 (Utility)",
+    "colliding_internal_skus": ["PC-11KV-AL-3C-185", "PC-33KV-CU-3C-300"],
+    "strong_regions": ["West", "Gujarat"],
+    "pricing_intelligence": {
+      "aggression_score": 6,
+      "avg_undercut_percent": 0.02,
+      "strategic_behavior": "Preferred vendor for Torrent Power DISCOMs.",
+      "typical_margin_buffer": 0.10
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.55,
+      "recent_tender_outcomes": [1, 0, 1, 0, 0]
     }
   },
   {
     "competitor_id": "COMP-015",
-    "name": "Dynamic Cables",
-    "tier": "Tier-3 (Growth)",
-    "colliding_internal_skus": ["PROD-002", "PROD-003", "PC-AL-35"],
-    "strong_regions": ["North", "Exports"],
+    "name": "Gloster Cables",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-LT-AL-3.5C-400", "PC-LT-CU-4C-16"],
+    "strong_regions": ["South", "Central"],
     "pricing_intelligence": {
-      "aggression_score": 9,
-      "avg_undercut_percent": 0.09,
-      "strategic_behavior": "Very aggressive on HV Cable tenders.",
-      "typical_margin_buffer": -0.01
+      "aggression_score": 8,
+      "avg_undercut_percent": 0.06,
+      "strategic_behavior": "Aggressive on LT Armoured cables.",
+      "typical_margin_buffer": 0.09
     },
     "performance_metrics": {
-      "win_rate_against_us": 0.70,
-      "recent_tender_outcomes": [1, 1, 1, 0, 1]
+      "win_rate_against_us": 0.60,
+      "recent_tender_outcomes": [1, 1, 0, 1, 0]
     }
   },
   {
     "competitor_id": "COMP-016",
-    "name": "Ravin Cables",
-    "tier": "Tier-2 (JV)",
-    "colliding_internal_skus": ["PROD-002", "PC-CU-50", "PC-CU-70"],
-    "strong_regions": ["West", "Exports"],
-    "pricing_intelligence": {
-      "aggression_score": 6,
-      "avg_undercut_percent": 0.03,
-      "strategic_behavior": "Competes on quality and EHV capabilities.",
-      "typical_margin_buffer": 0.085
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.38,
-      "recent_tender_outcomes": [1, 0, 0, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-017",
-    "name": "Gemscab",
-    "tier": "Tier-3 (Local)",
-    "colliding_internal_skus": ["PROD-002", "PC-AL-25", "PC-AL-16"],
-    "strong_regions": ["North"],
+    "name": "Dynamic Cables",
+    "tier": "Tier-2 (Challenger)",
+    "colliding_internal_skus": ["PC-11KV-AL-3C-50", "PC-33KV-AL-1C-400"],
+    "strong_regions": ["North", "Jaipur"],
     "pricing_intelligence": {
       "aggression_score": 9,
-      "avg_undercut_percent": 0.10,
-      "strategic_behavior": "Very aggressive in Rajasthan/NCR region.",
-      "typical_margin_buffer": -0.01
+      "avg_undercut_percent": 0.09,
+      "strategic_behavior": "Disruptive pricing in Rajasthan/North gov tenders.",
+      "typical_margin_buffer": 0.06
     },
     "performance_metrics": {
       "win_rate_against_us": 0.75,
@@ -289,339 +272,101 @@
     }
   },
   {
-    "competitor_id": "COMP-018",
-    "name": "Gloster Cables",
-    "tier": "Tier-2 (Established)",
-    "colliding_internal_skus": ["PROD-002", "PROD-003", "PC-CU-35"],
-    "strong_regions": ["South", "West"],
-    "pricing_intelligence": {
-      "aggression_score": 7,
-      "avg_undercut_percent": 0.04,
-      "strategic_behavior": "Reliable mid-tier player.",
-      "typical_margin_buffer": 0.07
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.50,
-      "recent_tender_outcomes": [0, 1, 0, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-019",
-    "name": "Torrent Power (Cables)",
-    "tier": "Tier-1 (Utility)",
-    "colliding_internal_skus": ["PROD-002", "PC-AL-50", "PC-CU-50"],
-    "strong_regions": ["West"],
-    "pricing_intelligence": {
-      "aggression_score": 5,
-      "avg_undercut_percent": -0.01,
-      "strategic_behavior": "In-house consumption focus.",
-      "typical_margin_buffer": 0.15
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.30,
-      "recent_tender_outcomes": [0, 0, 1, 0, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-020",
-    "name": "CMI Ltd",
-    "tier": "Tier-3 (Specialty)",
-    "colliding_internal_skus": ["PROD-004", "PROD-008", "PC-CU-4"],
-    "strong_regions": ["North"],
-    "pricing_intelligence": {
-      "aggression_score": 8,
-      "avg_undercut_percent": 0.06,
-      "strategic_behavior": "Strong in Railway/Specialty signaling.",
-      "typical_margin_buffer": 0.005
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.62,
-      "recent_tender_outcomes": [1, 0, 1, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-021",
-    "name": "Tata Steel (Struct)",
-    "tier": "Tier-1 (Steel Giant)",
-    "colliding_internal_skus": ["PROD-001"],
-    "strong_regions": ["East", "West"],
-    "pricing_intelligence": {
-      "aggression_score": 5,
-      "avg_undercut_percent": 0.00,
-      "strategic_behavior": "Premium Quality Assurance.",
-      "typical_margin_buffer": 0.15
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.50,
-      "recent_tender_outcomes": [0, 1, 0, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-022",
-    "name": "Jindal Steel & Power",
-    "tier": "Tier-1 (Steel Giant)",
-    "colliding_internal_skus": ["PROD-001"],
-    "strong_regions": ["North", "Central"],
-    "pricing_intelligence": {
-      "aggression_score": 6,
-      "avg_undercut_percent": 0.02,
-      "strategic_behavior": "Volume player in Structural Steel.",
-      "typical_margin_buffer": 0.135
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.45,
-      "recent_tender_outcomes": [1, 0, 1, 0, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-023",
-    "name": "SAIL (Steel Auth)",
-    "tier": "Tier-1 (PSU)",
-    "colliding_internal_skus": ["PROD-001"],
-    "strong_regions": ["Pan-India"],
-    "pricing_intelligence": {
-      "aggression_score": 4,
-      "avg_undercut_percent": -0.05,
-      "strategic_behavior": "Government pricing.",
-      "typical_margin_buffer": 0.165
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.40,
-      "recent_tender_outcomes": [0, 0, 1, 0, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-024",
-    "name": "Kamdhenu Ltd",
-    "tier": "Tier-2 (Regional)",
-    "colliding_internal_skus": ["PROD-001"],
+    "competitor_id": "COMP-017",
+    "name": "Cords Cable Industries",
+    "tier": "Tier-2 (Specialized)",
+    "colliding_internal_skus": ["PROD-004", "PC-LT-CU-12C-1.5"],
     "strong_regions": ["North", "West"],
     "pricing_intelligence": {
       "aggression_score": 7,
       "avg_undercut_percent": 0.04,
-      "strategic_behavior": "Franchise model allows local manufacturing flexibility.",
-      "typical_margin_buffer": 0.07
+      "strategic_behavior": "Focus on Instrumentation and Control cables.",
+      "typical_margin_buffer": 0.11
     },
     "performance_metrics": {
-      "win_rate_against_us": 0.65,
+      "win_rate_against_us": 0.50,
+      "recent_tender_outcomes": [0, 1, 0, 1, 1]
+    }
+  },
+  {
+    "competitor_id": "COMP-018",
+    "name": "V-Flow Tech Cables",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-LT-AL-4C-16"],
+    "strong_regions": ["Local", "Maharashtra"],
+    "pricing_intelligence": {
+      "aggression_score": 10,
+      "avg_undercut_percent": 0.15,
+      "strategic_behavior": "Local unbranded competitor. Extremely low cost.",
+      "typical_margin_buffer": 0.03
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.85,
+      "recent_tender_outcomes": [1, 1, 1, 1, 1]
+    }
+  },
+  {
+    "competitor_id": "COMP-019",
+    "name": "Ultracab India",
+    "tier": "Tier-3 (Growing)",
+    "colliding_internal_skus": ["PC-CU-1.5", "PC-CU-2.5"],
+    "strong_regions": ["West"],
+    "pricing_intelligence": {
+      "aggression_score": 8,
+      "avg_undercut_percent": 0.07,
+      "strategic_behavior": "Targeting Tier-2 cities with lower pricing.",
+      "typical_margin_buffer": 0.08
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.55,
+      "recent_tender_outcomes": [0, 1, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-020",
+    "name": "Bonton Cables",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-LT-AL-3.5C-25"],
+    "strong_regions": ["South"],
+    "pricing_intelligence": {
+      "aggression_score": 9,
+      "avg_undercut_percent": 0.10,
+      "strategic_behavior": "Price warrior in small LT tenders.",
+      "typical_margin_buffer": 0.05
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.70,
       "recent_tender_outcomes": [1, 1, 0, 1, 0]
     }
   },
   {
-    "competitor_id": "COMP-025",
-    "name": "Electrotherm",
-    "tier": "Tier-2 (Challenger)",
-    "colliding_internal_skus": ["PROD-001"],
-    "strong_regions": ["West"],
+    "competitor_id": "COMP-021",
+    "name": "Alpha Conductors",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PROD-001", "PROD-005"],
+    "strong_regions": ["North"],
     "pricing_intelligence": {
       "aggression_score": 8,
-      "avg_undercut_percent": 0.06,
-      "strategic_behavior": "Regional stronghold in Gujarat.",
-      "typical_margin_buffer": 0.055
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.70,
-      "recent_tender_outcomes": [1, 1, 1, 0, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-026",
-    "name": "Gallantt Metal",
-    "tier": "Tier-3 (Price Warrior)",
-    "colliding_internal_skus": ["PROD-001"],
-    "strong_regions": ["North", "East"],
-    "pricing_intelligence": {
-      "aggression_score": 9,
       "avg_undercut_percent": 0.08,
-      "strategic_behavior": "Price leader in secondary steel market.",
-      "typical_margin_buffer": -0.01
+      "strategic_behavior": "Low overheads allow aggressive bidding.",
+      "typical_margin_buffer": 0.06
     },
     "performance_metrics": {
-      "win_rate_against_us": 0.80,
-      "recent_tender_outcomes": [1, 1, 1, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-027",
-    "name": "Shyam Steel",
-    "tier": "Tier-2 (Regional)",
-    "colliding_internal_skus": ["PROD-001"],
-    "strong_regions": ["East", "North"],
-    "pricing_intelligence": {
-      "aggression_score": 7,
-      "avg_undercut_percent": 0.03,
-      "strategic_behavior": "Heavy marketing spend.",
-      "typical_margin_buffer": 0.07
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.55,
+      "win_rate_against_us": 0.60,
       "recent_tender_outcomes": [1, 0, 1, 0, 1]
     }
   },
   {
-    "competitor_id": "COMP-028",
-    "name": "Rathi Steel",
-    "tier": "Tier-2 (Legacy)",
-    "colliding_internal_skus": ["PROD-001"],
-    "strong_regions": ["North"],
-    "pricing_intelligence": {
-      "aggression_score": 8,
-      "avg_undercut_percent": 0.05,
-      "strategic_behavior": "Legacy brand with strong dealer network.",
-      "typical_margin_buffer": 0.055
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.60,
-      "recent_tender_outcomes": [0, 1, 1, 0, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-029",
-    "name": "Desi Power Grid",
-    "tier": "Tier-3 (Local)",
-    "colliding_internal_skus": ["PROD-003", "PROD-005", "PC-AL-4", "PC-AL-10"],
-    "strong_regions": ["Central"],
-    "pricing_intelligence": {
-      "aggression_score": 10,
-      "avg_undercut_percent": 0.15,
-      "strategic_behavior": "Predatory; bids at cost.",
-      "typical_margin_buffer": -0.025
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.10,
-      "recent_tender_outcomes": [0, 0, 0, 0, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-030",
-    "name": "Swastik Cables",
-    "tier": "Tier-3 (Local)",
-    "colliding_internal_skus": ["PROD-005", "PROD-006", "PC-CU-1.5"],
-    "strong_regions": ["North"],
-    "pricing_intelligence": {
-      "aggression_score": 9,
-      "avg_undercut_percent": 0.07,
-      "strategic_behavior": "Low overheads allow for very cheap pricing.",
-      "typical_margin_buffer": -0.01
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.72,
-      "recent_tender_outcomes": [1, 1, 0, 1, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-031",
-    "name": "Plaza Cables",
-    "tier": "Tier-3 (Mass Market)",
-    "colliding_internal_skus": ["PROD-006", "PROD-004", "PC-CU-2.5", "PC-CU-4"],
-    "strong_regions": ["North", "Central"],
-    "pricing_intelligence": {
-      "aggression_score": 8,
-      "avg_undercut_percent": 0.05,
-      "strategic_behavior": "Focuses on volume sales to distributors.",
-      "typical_margin_buffer": 0.005
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.68,
-      "recent_tender_outcomes": [0, 1, 1, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-032",
-    "name": "Bonton Cables",
+    "competitor_id": "COMP-022",
+    "name": "Beta Wires Ltd",
     "tier": "Tier-3 (Regional)",
-    "colliding_internal_skus": ["PROD-006", "PC-CU-1.5", "PC-CU-10"],
-    "strong_regions": ["South"],
-    "pricing_intelligence": {
-      "aggression_score": 8,
-      "avg_undercut_percent": 0.06,
-      "strategic_behavior": "Aggressive in South India tenders.",
-      "typical_margin_buffer": 0.005
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.66,
-      "recent_tender_outcomes": [1, 0, 1, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-033",
-    "name": "Ultracab India",
-    "tier": "Tier-3 (Niche)",
-    "colliding_internal_skus": ["PROD-005", "PROD-004", "PC-CU-6"],
-    "strong_regions": ["West"],
-    "pricing_intelligence": {
-      "aggression_score": 9,
-      "avg_undercut_percent": 0.08,
-      "strategic_behavior": "Hard to beat on price for submersible cables.",
-      "typical_margin_buffer": -0.01
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.78,
-      "recent_tender_outcomes": [1, 1, 1, 0, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-034",
-    "name": "V-Marc India",
-    "tier": "Tier-2 (Challenger)",
-    "colliding_internal_skus": ["PROD-002", "PROD-003", "PC-AL-25"],
-    "strong_regions": ["North"],
+    "colliding_internal_skus": ["PC-CU-4", "PC-CU-6"],
+    "strong_regions": ["East"],
     "pricing_intelligence": {
       "aggression_score": 7,
-      "avg_undercut_percent": 0.04,
-      "strategic_behavior": "Good quality-to-price ratio.",
-      "typical_margin_buffer": 0.07
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.52,
-      "recent_tender_outcomes": [0, 1, 0, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-035",
-    "name": "Relicab Cable",
-    "tier": "Tier-3 (Small Cap)",
-    "colliding_internal_skus": ["PROD-004", "PC-CU-25"],
-    "strong_regions": ["West"],
-    "pricing_intelligence": {
-      "aggression_score": 8,
-      "avg_undercut_percent": 0.07,
-      "strategic_behavior": "Focuses purely on Control Cables.",
-      "typical_margin_buffer": 0.005
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.70,
-      "recent_tender_outcomes": [1, 1, 0, 1, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-036",
-    "name": "Aksh Optifibre",
-    "tier": "Tier-2 (Telecom)",
-    "colliding_internal_skus": ["PROD-004", "PC-CU-16"],
-    "strong_regions": ["North"],
-    "pricing_intelligence": {
-      "aggression_score": 6,
-      "avg_undercut_percent": 0.02,
-      "strategic_behavior": "Telecom specialist dipping into Control Cables.",
-      "typical_margin_buffer": 0.085
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.35,
-      "recent_tender_outcomes": [0, 0, 1, 0, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-037",
-    "name": "Birla Cable",
-    "tier": "Tier-1 (Group Co)",
-    "colliding_internal_skus": ["PROD-004", "PROD-002", "PC-CU-35"],
-    "strong_regions": ["Central"],
-    "pricing_intelligence": {
-      "aggression_score": 5,
-      "avg_undercut_percent": 0.00,
-      "strategic_behavior": "High brand value.",
-      "typical_margin_buffer": 0.15
+      "avg_undercut_percent": 0.05,
+      "strategic_behavior": "Focus on house wiring.",
+      "typical_margin_buffer": 0.09
     },
     "performance_metrics": {
       "win_rate_against_us": 0.40,
@@ -629,118 +374,67 @@
     }
   },
   {
-    "competitor_id": "COMP-038",
-    "name": "Vindhya Telelinks",
+    "competitor_id": "COMP-023",
+    "name": "Gamma Cables",
     "tier": "Tier-2 (Regional)",
-    "colliding_internal_skus": ["PROD-003", "PROD-004", "PC-AL-35"],
-    "strong_regions": ["Central"],
+    "colliding_internal_skus": ["PC-11KV-CU-3C-50"],
+    "strong_regions": ["South"],
     "pricing_intelligence": {
       "aggression_score": 6,
       "avg_undercut_percent": 0.02,
-      "strategic_behavior": "Standard bidding.",
-      "typical_margin_buffer": 0.085
+      "strategic_behavior": "Reliable regional player.",
+      "typical_margin_buffer": 0.10
     },
     "performance_metrics": {
       "win_rate_against_us": 0.45,
-      "recent_tender_outcomes": [0, 1, 0, 1, 0]
+      "recent_tender_outcomes": [0, 0, 1, 1, 0]
     }
   },
   {
-    "competitor_id": "COMP-039",
-    "name": "Diamond Power Infra",
-    "tier": "Tier-2 (Power)",
-    "colliding_internal_skus": ["PROD-002", "PROD-003", "PC-CU-50"],
+    "competitor_id": "COMP-024",
+    "name": "Delta Power Systems",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PROD-008", "PC-SOLAR-DC-4"],
     "strong_regions": ["West"],
     "pricing_intelligence": {
-      "aggression_score": 8,
-      "avg_undercut_percent": 0.07,
-      "strategic_behavior": "Aggressive on conductor/cable packages.",
-      "typical_margin_buffer": 0.055
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.58,
-      "recent_tender_outcomes": [1, 0, 1, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-040",
-    "name": "Alpha Conductors",
-    "tier": "Tier-3 (Local)",
-    "colliding_internal_skus": ["PROD-003", "PC-AL-16", "PC-AL-25"],
-    "strong_regions": ["South"],
-    "pricing_intelligence": {
       "aggression_score": 9,
-      "avg_undercut_percent": 0.10,
-      "strategic_behavior": "Only sells Aluminum products.",
-      "typical_margin_buffer": -0.01
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.82,
-      "recent_tender_outcomes": [1, 1, 1, 1, 0]
-    }
-  },
-  {
-    "competitor_id": "COMP-041",
-    "name": "Beta Wires Pvt Ltd",
-    "tier": "Tier-3 (Local)",
-    "colliding_internal_skus": ["PROD-006", "PC-CU-1.5"],
-    "strong_regions": ["East"],
-    "pricing_intelligence": {
-      "aggression_score": 10,
-      "avg_undercut_percent": 0.15,
-      "strategic_behavior": "Non-ISI compliant wires often.",
-      "typical_margin_buffer": -0.025
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.85,
-      "recent_tender_outcomes": [0, 1, 1, 1, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-042",
-    "name": "Gamma Steel Structures",
-    "tier": "Tier-3 (Local)",
-    "colliding_internal_skus": ["PROD-001"],
-    "strong_regions": ["Central"],
-    "pricing_intelligence": {
-      "aggression_score": 9,
-      "avg_undercut_percent": 0.08,
-      "strategic_behavior": "Local rolling mill.",
-      "typical_margin_buffer": -0.01
+      "avg_undercut_percent": 0.12,
+      "strategic_behavior": "Entering Solar market with low prices.",
+      "typical_margin_buffer": 0.04
     },
     "performance_metrics": {
       "win_rate_against_us": 0.75,
-      "recent_tender_outcomes": [1, 1, 0, 1, 1]
+      "recent_tender_outcomes": [1, 1, 1, 0, 0]
     }
   },
   {
-    "competitor_id": "COMP-043",
-    "name": "Delta Electric",
-    "tier": "Tier-2 (Panel Builder)",
-    "colliding_internal_skus": ["PROD-004", "PROD-006", "PC-CU-4"],
-    "strong_regions": ["West"],
+    "competitor_id": "COMP-025",
+    "name": "Epsilon Cables",
+    "tier": "Tier-2 (Specialist)",
+    "colliding_internal_skus": ["PC-BS7835-CU-3C-95-LSZH"],
+    "strong_regions": ["North", "Metro"],
     "pricing_intelligence": {
-      "aggression_score": 7,
-      "avg_undercut_percent": 0.03,
-      "strategic_behavior": "Mainly does panels, supplies cable as accessory.",
-      "typical_margin_buffer": 0.07
+      "aggression_score": 5,
+      "avg_undercut_percent": 0.0,
+      "strategic_behavior": "Niche player in LSZH/Fire survival cables.",
+      "typical_margin_buffer": 0.14
     },
     "performance_metrics": {
-      "win_rate_against_us": 0.50,
-      "recent_tender_outcomes": [0, 1, 0, 1, 0]
+      "win_rate_against_us": 0.35,
+      "recent_tender_outcomes": [0, 1, 0, 0, 0]
     }
   },
   {
-    "competitor_id": "COMP-044",
-    "name": "Epsilon Cables",
-    "tier": "Tier-3 (Specialty)",
-    "colliding_internal_skus": ["PROD-004", "PROD-008"],
-    "strong_regions": ["South"],
+    "competitor_id": "COMP-026",
+    "name": "Zeta Wires",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-CU-1.5", "PROD-006"],
+    "strong_regions": ["Central"],
     "pricing_intelligence": {
       "aggression_score": 8,
-      "avg_undercut_percent": 0.05,
-      "strategic_behavior": "Coaxial/Data focus.",
-      "typical_margin_buffer": 0.005
+      "avg_undercut_percent": 0.09,
+      "strategic_behavior": "Mass market focus.",
+      "typical_margin_buffer": 0.05
     },
     "performance_metrics": {
       "win_rate_against_us": 0.65,
@@ -748,105 +442,411 @@
     }
   },
   {
-    "competitor_id": "COMP-045",
-    "name": "Zeta Infra",
-    "tier": "Tier-2 (EPC)",
-    "colliding_internal_skus": ["PROD-002", "PROD-007", "PC-CU-50"],
-    "strong_regions": ["North"],
+    "competitor_id": "COMP-027",
+    "name": "Eta Electricals",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-LT-AL-3.5C-120"],
+    "strong_regions": ["East"],
     "pricing_intelligence": {
-      "aggression_score": 6,
-      "avg_undercut_percent": 0.02,
-      "strategic_behavior": "EPC contractor bidding for material supply.",
-      "typical_margin_buffer": 0.085
+      "aggression_score": 7,
+      "avg_undercut_percent": 0.03,
+      "strategic_behavior": "Strong relationship with local contractors.",
+      "typical_margin_buffer": 0.09
     },
     "performance_metrics": {
-      "win_rate_against_us": 0.45,
+      "win_rate_against_us": 0.50,
       "recent_tender_outcomes": [0, 1, 0, 1, 0]
     }
   },
   {
-    "competitor_id": "COMP-046",
-    "name": "Eta Power Solutions",
-    "tier": "Tier-2 (Accessories)",
-    "colliding_internal_skus": ["PROD-002", "PC-AL-35"],
+    "competitor_id": "COMP-028",
+    "name": "Theta Cables",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-LT-CU-1C-16-RED"],
+    "strong_regions": ["South"],
+    "pricing_intelligence": {
+      "aggression_score": 9,
+      "avg_undercut_percent": 0.11,
+      "strategic_behavior": "Undercuts heavily on single core wires.",
+      "typical_margin_buffer": 0.04
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.70,
+      "recent_tender_outcomes": [1, 1, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-029",
+    "name": "Iota Industries",
+    "tier": "Tier-2 (Industrial)",
+    "colliding_internal_skus": ["PC-11KV-AL-1C-150"],
+    "strong_regions": ["West"],
+    "pricing_intelligence": {
+      "aggression_score": 6,
+      "avg_undercut_percent": 0.02,
+      "strategic_behavior": "Industrial supplier.",
+      "typical_margin_buffer": 0.10
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.45,
+      "recent_tender_outcomes": [0, 0, 1, 0, 1]
+    }
+  },
+  {
+    "competitor_id": "COMP-030",
+    "name": "Kappa Tech",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PROD-005"],
+    "strong_regions": ["North"],
+    "pricing_intelligence": {
+      "aggression_score": 8,
+      "avg_undercut_percent": 0.07,
+      "strategic_behavior": "Flexible manufacturing.",
+      "typical_margin_buffer": 0.06
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.60,
+      "recent_tender_outcomes": [1, 0, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-031",
+    "name": "Lambda Cables",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-33KV-AL-3C-95"],
     "strong_regions": ["East"],
     "pricing_intelligence": {
       "aggression_score": 7,
       "avg_undercut_percent": 0.04,
-      "strategic_behavior": "Jointing kit manufacturer supplying cables.",
-      "typical_margin_buffer": 0.07
+      "strategic_behavior": "Growing presence in HT segment.",
+      "typical_margin_buffer": 0.09
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.50,
+      "recent_tender_outcomes": [0, 1, 0, 1, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-032",
+    "name": "Mu Wires",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-LT-CU-1C-25-BLK"],
+    "strong_regions": ["South"],
+    "pricing_intelligence": {
+      "aggression_score": 9,
+      "avg_undercut_percent": 0.10,
+      "strategic_behavior": "Very competitive on small gauges.",
+      "typical_margin_buffer": 0.05
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.70,
+      "recent_tender_outcomes": [1, 1, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-033",
+    "name": "Nu Power",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-LT-AL-4C-25"],
+    "strong_regions": ["West"],
+    "pricing_intelligence": {
+      "aggression_score": 6,
+      "avg_undercut_percent": 0.03,
+      "strategic_behavior": "Reliable LT supplier.",
+      "typical_margin_buffer": 0.10
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.45,
+      "recent_tender_outcomes": [0, 0, 1, 0, 1]
+    }
+  },
+  {
+    "competitor_id": "COMP-034",
+    "name": "Xi Cables",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-CU-10"],
+    "strong_regions": ["North"],
+    "pricing_intelligence": {
+      "aggression_score": 8,
+      "avg_undercut_percent": 0.08,
+      "strategic_behavior": "Focus on domestic market.",
+      "typical_margin_buffer": 0.06
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.60,
+      "recent_tender_outcomes": [1, 0, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-035",
+    "name": "Omicron Electricals",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-11KV-CU-3C-70"],
+    "strong_regions": ["East"],
+    "pricing_intelligence": {
+      "aggression_score": 7,
+      "avg_undercut_percent": 0.05,
+      "strategic_behavior": "Winning mid-sized contracts.",
+      "typical_margin_buffer": 0.09
     },
     "performance_metrics": {
       "win_rate_against_us": 0.55,
-      "recent_tender_outcomes": [1, 0, 1, 0, 1]
+      "recent_tender_outcomes": [0, 1, 1, 0, 0]
     }
   },
   {
-    "competitor_id": "COMP-047",
-    "name": "Theta Wires",
-    "tier": "Tier-3 (Component)",
-    "colliding_internal_skus": ["PROD-006", "PC-CU-1.5", "PC-CU-2.5"],
-    "strong_regions": ["West"],
+    "competitor_id": "COMP-036",
+    "name": "Pi Industries",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PROD-003"],
+    "strong_regions": ["South"],
     "pricing_intelligence": {
       "aggression_score": 9,
-      "avg_undercut_percent": 0.09,
-      "strategic_behavior": "Winding wire specialist.",
-      "typical_margin_buffer": -0.01
-    },
-    "performance_metrics": {
-      "win_rate_against_us": 0.80,
-      "recent_tender_outcomes": [0, 1, 1, 1, 1]
-    }
-  },
-  {
-    "competitor_id": "COMP-048",
-    "name": "Iota Cables",
-    "tier": "Tier-3 (Local)",
-    "colliding_internal_skus": ["PROD-006", "PC-CU-1.5"],
-    "strong_regions": ["Central"],
-    "pricing_intelligence": {
-      "aggression_score": 10,
       "avg_undercut_percent": 0.12,
-      "strategic_behavior": "Unbranded/White-label manufacturer.",
-      "typical_margin_buffer": -0.025
+      "strategic_behavior": "Aggressive pricing strategy.",
+      "typical_margin_buffer": 0.04
     },
     "performance_metrics": {
-      "win_rate_against_us": 0.90,
+      "win_rate_against_us": 0.75,
       "recent_tender_outcomes": [1, 1, 1, 1, 0]
     }
   },
   {
-    "competitor_id": "COMP-049",
-    "name": "Kappa Steel",
+    "competitor_id": "COMP-037",
+    "name": "Rho Cables",
     "tier": "Tier-2 (Regional)",
-    "colliding_internal_skus": ["PROD-001"],
-    "strong_regions": ["South"],
+    "colliding_internal_skus": ["PC-LT-AL-3.5C-50"],
+    "strong_regions": ["West"],
+    "pricing_intelligence": {
+      "aggression_score": 6,
+      "avg_undercut_percent": 0.02,
+      "strategic_behavior": "Quality focused regional player.",
+      "typical_margin_buffer": 0.11
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.40,
+      "recent_tender_outcomes": [0, 0, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-038",
+    "name": "Sigma Wires",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-CU-2.5"],
+    "strong_regions": ["North"],
     "pricing_intelligence": {
       "aggression_score": 8,
-      "avg_undercut_percent": 0.05,
-      "strategic_behavior": "Regional steel player.",
-      "typical_margin_buffer": 0.055
+      "avg_undercut_percent": 0.09,
+      "strategic_behavior": "High volume low margin.",
+      "typical_margin_buffer": 0.05
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.65,
+      "recent_tender_outcomes": [1, 0, 1, 1, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-039",
+    "name": "Tau Electricals",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-11KV-AL-1C-500"],
+    "strong_regions": ["East"],
+    "pricing_intelligence": {
+      "aggression_score": 7,
+      "avg_undercut_percent": 0.04,
+      "strategic_behavior": "Targeting infrastructure projects.",
+      "typical_margin_buffer": 0.09
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.50,
+      "recent_tender_outcomes": [0, 1, 0, 1, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-040",
+    "name": "Upsilon Cables",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PROD-002"],
+    "strong_regions": ["South"],
+    "pricing_intelligence": {
+      "aggression_score": 9,
+      "avg_undercut_percent": 0.11,
+      "strategic_behavior": "Undercutting established players.",
+      "typical_margin_buffer": 0.04
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.70,
+      "recent_tender_outcomes": [1, 1, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-041",
+    "name": "Phi Power",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-33KV-CU-3C-50"],
+    "strong_regions": ["West"],
+    "pricing_intelligence": {
+      "aggression_score": 6,
+      "avg_undercut_percent": 0.03,
+      "strategic_behavior": "Stable supplier for utilities.",
+      "typical_margin_buffer": 0.10
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.45,
+      "recent_tender_outcomes": [0, 0, 1, 0, 1]
+    }
+  },
+  {
+    "competitor_id": "COMP-042",
+    "name": "Chi Cables",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-CU-16"],
+    "strong_regions": ["North"],
+    "pricing_intelligence": {
+      "aggression_score": 8,
+      "avg_undercut_percent": 0.08,
+      "strategic_behavior": "Focus on rapid delivery.",
+      "typical_margin_buffer": 0.06
     },
     "performance_metrics": {
       "win_rate_against_us": 0.60,
-      "recent_tender_outcomes": [1, 0, 1, 0, 1]
+      "recent_tender_outcomes": [1, 0, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-043",
+    "name": "Psi Electricals",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-LT-AL-3.5C-95"],
+    "strong_regions": ["East"],
+    "pricing_intelligence": {
+      "aggression_score": 7,
+      "avg_undercut_percent": 0.05,
+      "strategic_behavior": "Expanding into new territories.",
+      "typical_margin_buffer": 0.09
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.55,
+      "recent_tender_outcomes": [0, 1, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-044",
+    "name": "Omega Wires",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PROD-007"],
+    "strong_regions": ["South"],
+    "pricing_intelligence": {
+      "aggression_score": 9,
+      "avg_undercut_percent": 0.13,
+      "strategic_behavior": "Lowest price bidder.",
+      "typical_margin_buffer": 0.03
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.80,
+      "recent_tender_outcomes": [1, 1, 1, 1, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-045",
+    "name": "A1 Cables",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-11KV-CU-3C-240"],
+    "strong_regions": ["West"],
+    "pricing_intelligence": {
+      "aggression_score": 6,
+      "avg_undercut_percent": 0.02,
+      "strategic_behavior": "Quality certified products.",
+      "typical_margin_buffer": 0.11
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.40,
+      "recent_tender_outcomes": [0, 0, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-046",
+    "name": "Best Conductors",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-CU-35"],
+    "strong_regions": ["North"],
+    "pricing_intelligence": {
+      "aggression_score": 8,
+      "avg_undercut_percent": 0.09,
+      "strategic_behavior": "Regional dominance.",
+      "typical_margin_buffer": 0.05
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.65,
+      "recent_tender_outcomes": [1, 0, 1, 1, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-047",
+    "name": "City Electricals",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-LT-AL-3.5C-35"],
+    "strong_regions": ["East"],
+    "pricing_intelligence": {
+      "aggression_score": 7,
+      "avg_undercut_percent": 0.04,
+      "strategic_behavior": "Service oriented.",
+      "typical_margin_buffer": 0.09
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.50,
+      "recent_tender_outcomes": [0, 1, 0, 1, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-048",
+    "name": "Durga Cables",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-CU-1.5"],
+    "strong_regions": ["South"],
+    "pricing_intelligence": {
+      "aggression_score": 9,
+      "avg_undercut_percent": 0.11,
+      "strategic_behavior": "Mass production.",
+      "typical_margin_buffer": 0.04
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.70,
+      "recent_tender_outcomes": [1, 1, 1, 0, 0]
+    }
+  },
+  {
+    "competitor_id": "COMP-049",
+    "name": "Everest Wires",
+    "tier": "Tier-2 (Regional)",
+    "colliding_internal_skus": ["PC-BS6622-CU-1C-500"],
+    "strong_regions": ["West"],
+    "pricing_intelligence": {
+      "aggression_score": 6,
+      "avg_undercut_percent": 0.03,
+      "strategic_behavior": "Reliable partner.",
+      "typical_margin_buffer": 0.10
+    },
+    "performance_metrics": {
+      "win_rate_against_us": 0.45,
+      "recent_tender_outcomes": [0, 0, 1, 0, 1]
     }
   },
   {
     "competitor_id": "COMP-050",
-    "name": "Lambda Electricals",
-    "tier": "Tier-3 (PVC)",
-    "colliding_internal_skus": ["PROD-006", "PC-CU-1.5", "PC-CU-4"],
+    "name": "Future Cables",
+    "tier": "Tier-3 (Local)",
+    "colliding_internal_skus": ["PC-CU-50"],
     "strong_regions": ["North"],
     "pricing_intelligence": {
-      "aggression_score": 9,
+      "aggression_score": 8,
       "avg_undercut_percent": 0.08,
-      "strategic_behavior": "PVC Pipe maker selling wires.",
-      "typical_margin_buffer": -0.01
+      "strategic_behavior": "Discount driven.",
+      "typical_margin_buffer": 0.06
     },
     "performance_metrics": {
-      "win_rate_against_us": 0.77,
-      "recent_tender_outcomes": [0, 1, 1, 1, 0]
+      "win_rate_against_us": 0.60,
+      "recent_tender_outcomes": [1, 0, 1, 0, 0]
     }
   }
 ]
