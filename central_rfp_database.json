@@ -1,12 +1,40 @@
 [
   {
+    "sales_status": 1,
+    "tech_status": 1,
+    "price_status": 1,
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2024-088-DONE",
+      "status": "Closed_Won",
+      "created_at": "2024-11-01T10:00:00Z"
+    },
+    "sales_agent_output": { "client_extraction": { "client_name": "Old Infra Co" } },
+    "tech_agent_output": {},
+    "pricing_agent_output": { "status": "Completed", "grand_total": 500000 }
+  },
+  {
+    "sales_status": 1,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": {
+      "rfp_unique_id": "RFP-2025-002-NEW",
+      "status": "Tech_Pending",
+      "created_at": "2025-12-01T09:00:00Z"
+    },
+    "sales_agent_output": { "client_extraction": { "client_name": "Future City" } },
+    "tech_agent_output": {},
+    "pricing_agent_output": {}
+  },
+  {
+    "sales_status": 1,
+    "tech_status": 1,
+    "price_status": 0,
     "rfp_meta_data": {
       "rfp_unique_id": "ORN-PROC-2025-092",
-      "status": "Pricing_Completed",
+      "status": "Tech_Approved_Pricing_Pending",
       "created_at_timestamp": "2025-12-10T10:00:00Z",
       "last_updated_timestamp": "2025-12-12T14:30:00Z"
     },
-
     "sales_agent_output": {
       "source_document": "RFP ORN-PROC-2025-092.pdf",
       "client_extraction": {
@@ -26,8 +54,8 @@
         "incoterms": "DAP (Delivered at Place)"
       },
       "market_intelligence": {
-        "competitors_identified": ["Polycab", "KEC International", "Gupta Power"],
-        "strategic_note": "Orion is a high-value Tier-1 client. Project Neon is a flagship grid expansion. Aggressive pricing recommended to secure entry.",
+        "competitors_identified": ["COMP-001", "COMP-002", "COMP-005"],
+        "strategic_note": "Orion is a high-value Tier-1 client. Project Neon is a flagship grid expansion. Aggressive pricing recommended.",
         "priority_score": 92
       },
       "raw_demand_extraction": [
@@ -51,7 +79,6 @@
         }
       ]
     },
-
     "tech_agent_output": {
       "status": "Approved",
       "inventory_check_summary": "Steel & Wires Available. HV Cable requires Production Run.",
@@ -86,92 +113,73 @@
         }
       ]
     },
-
-    "pricing_agent_output": {
-      "tender_summary": {
-        "rfp_processing_id": "ORN-PROC-2025-092",
-        "client_id": "CL-ORN-001",
-        "logistics_param": "285 km to Hazira, Surat",
-        
-        "cost_breakdown_bill": {
-          "1_total_raw_material": 2580000.00,
-          "2_total_labor_mfg": 450000.00,
-          "3_total_setup_mto": 5050.00,
-          "4_total_transport": 125000.00,
-          "5_total_finance": 98000.00,
-          "6_total_testing_cost": 21500.00
-        },
-
-        "internal_accounting_ledger": {
-          "A_total_production_cost": 3035050.00,
-          "B_total_overheads_cost": 223000.00,
-          "C_total_testing_cost": 21500.00,
-          "D_total_project_cost_A_plus_B_plus_C": 3279550.00,
-          "E_estimated_net_profit": 491932.50,
-          "F_grand_total_bid_D_plus_E": 3771482.50
-        },
-        
-        "final_margin_percentage": "15.0%"
-      },
-
-      "sales_intelligence_card": {
-        "deal_attractiveness_score": "88/100",
-        "recommended_priority": "HIGH",
-        "profitability_rating": "Good",
-        "risk_factors": "Copper Volatility on Lot C (3-month delivery). Hedging recommended."
-      },
-
-      "testing_breakdown": [
-        "HV Cable (Type Test + Routine): ₹15,000",
-        "Steel Rods (Mechanical Lot Test): ₹4,500",
-        "Wires (FRLS Flammability Test): ₹2,000"
-      ],
-
-      "margin_composition_report": {
-        "standard_company_margin": "20.0%",
-        "adjustments_applied": [
-          { "reason": "Strategic Entry Pricing (Project Neon)", "value": "-3.0%" },
-          { "reason": "Bulk Quantity Discount (Wires)", "value": "-2.0%" }
-        ],
-        "final_effective_margin": "15.0%"
-      },
-
-      "line_items_detailed": [
-        {
-          "sku": "PROD-002",
-          "description": "11kV XLPE Cable (3C x 300sqmm)",
-          "qty": 5000,
-          "unit": "Meter",
-          "delivery_phase": "Phase 2 (6 Weeks)",
-          "base_unit_cost": 450.0,
-          "qa_cost_total": 15000.0,
-          "final_unit_price_quoted": 585.00,
-          "line_total_value": 2925000.00
-        },
-        {
-          "sku": "PROD-001",
-          "description": "Structural Iron Rod 10m (IS 2062)",
-          "qty": 1500,
-          "unit": "Unit",
-          "delivery_phase": "Phase 1 (Immediate)",
-          "base_unit_cost": 15.0,
-          "qa_cost_total": 4500.0,
-          "final_unit_price_quoted": 22.50,
-          "line_total_value": 33750.00
-        },
-        {
-          "sku": "PROD-006",
-          "description": "FR-LSH Copper Wire 2.5sqmm",
-          "qty": 20000,
-          "unit": "Meter",
-          "delivery_phase": "Phase 3 (3 Months)",
-          "base_unit_cost": 25.0,
-          "qa_cost_total": 2000.0,
-          "risk_premium": "5.0%",
-          "final_unit_price_quoted": 40.63,
-          "line_total_value": 812600.00
-        }
-      ]
-    }
+    "pricing_agent_output": {}
+  },
+  {
+    "sales_status": 0,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-004-DRAFT" },
+    "sales_agent_output": {},
+    "tech_agent_output": {},
+    "pricing_agent_output": {}
+  },
+  {
+    "sales_status": 1,
+    "tech_status": 1,
+    "price_status": 1,
+    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-005-CLOSED" },
+    "sales_agent_output": {},
+    "tech_agent_output": {},
+    "pricing_agent_output": { "status": "Lost" }
+  },
+  {
+    "sales_status": 1,
+    "tech_status": 1,
+    "price_status": 0,
+    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-006-PENDING" },
+    "sales_agent_output": {
+       "client_extraction": { "client_id": "CL-102", "payment_terms_extracted": "Advance" },
+       "logistics_extraction": { "calculated_distance_km": 500, "mapped_zone_code": "Z-01" },
+       "market_intelligence": { "competitors_identified": [] }
+    },
+    "tech_agent_output": { "line_items_mapped": [], "required_tests_identified": [] },
+    "pricing_agent_output": {}
+  },
+  {
+    "sales_status": 1,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-007-WIP" },
+    "sales_agent_output": {},
+    "tech_agent_output": {},
+    "pricing_agent_output": {}
+  },
+  {
+    "sales_status": 0,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-008-EMPTY" },
+    "sales_agent_output": {},
+    "tech_agent_output": {},
+    "pricing_agent_output": {}
+  },
+  {
+    "sales_status": 1,
+    "tech_status": 1,
+    "price_status": 1,
+    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-003-DONE" },
+    "sales_agent_output": {},
+    "tech_agent_output": {},
+    "pricing_agent_output": { "status": "Won" }
+  },
+  {
+    "sales_status": 1,
+    "tech_status": 0,
+    "price_status": 0,
+    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-011-NEW" },
+    "sales_agent_output": {},
+    "tech_agent_output": {},
+    "pricing_agent_output": {}
   }
 ]
