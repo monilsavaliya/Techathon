@@ -4,36 +4,9 @@
     "tech_status": 1,
     "price_status": 1,
     "rfp_meta_data": {
-      "rfp_unique_id": "RFP-2024-088-DONE",
-      "status": "Closed_Won",
-      "created_at": "2024-11-01T10:00:00Z"
-    },
-    "sales_agent_output": { "client_extraction": { "client_name": "Old Infra Co" } },
-    "tech_agent_output": {},
-    "pricing_agent_output": { "status": "Completed", "grand_total": 500000 }
-  },
-  {
-    "sales_status": 1,
-    "tech_status": 0,
-    "price_status": 0,
-    "rfp_meta_data": {
-      "rfp_unique_id": "RFP-2025-002-NEW",
-      "status": "Tech_Pending",
-      "created_at": "2025-12-01T09:00:00Z"
-    },
-    "sales_agent_output": { "client_extraction": { "client_name": "Future City" } },
-    "tech_agent_output": {},
-    "pricing_agent_output": {}
-  },
-  {
-    "sales_status": 1,
-    "tech_status": 1,
-    "price_status": 0,
-    "rfp_meta_data": {
       "rfp_unique_id": "ORN-PROC-2025-092",
-      "status": "Tech_Approved_Pricing_Pending",
-      "created_at_timestamp": "2025-12-10T10:00:00Z",
-      "last_updated_timestamp": "2025-12-12T14:30:00Z"
+      "status": "Pricing_Completed",
+      "created_at_timestamp": "2025-12-10T10:00:00Z"
     },
     "sales_agent_output": {
       "source_document": "RFP ORN-PROC-2025-092.pdf",
@@ -50,33 +23,18 @@
       "logistics_extraction": {
         "delivery_location_text": "Plot No. 45-B, Hazira Industrial Area, Surat, Gujarat",
         "calculated_distance_km": 285,
-        "mapped_zone_code": "Z-04 (Western Region)",
-        "incoterms": "DAP (Delivered at Place)"
+        "mapped_zone_code": "Z-04",
+        "incoterms": "DAP"
       },
       "market_intelligence": {
-        "competitors_identified": ["COMP-001", "COMP-002", "COMP-005"],
-        "strategic_note": "Orion is a high-value Tier-1 client. Project Neon is a flagship grid expansion. Aggressive pricing recommended.",
+        "competitors_identified": ["Polycab India Ltd", "KEC International", "Gupta Power Infra"],
+        "strategic_note": "Orion is a high-value Tier-1 client. Project Neon is a flagship grid expansion.",
         "priority_score": 92
       },
       "raw_demand_extraction": [
-        { 
-            "lot_ref": "Lot A",
-            "description": "11kV XLPE Cable, 3C x 300sqmm", 
-            "raw_qty": "5,000 Meters",
-            "required_timeline": "6 Weeks from PO"
-        },
-        { 
-            "lot_ref": "Lot B",
-            "description": "Structural Steel Rods, 10m, IS 2062", 
-            "raw_qty": "1,500 Units",
-            "required_timeline": "Immediate (2 Weeks)"
-        },
-        { 
-            "lot_ref": "Lot C",
-            "description": "Low Voltage Wire, 2.5sqmm, FR-LSH", 
-            "raw_qty": "20,000 Meters",
-            "required_timeline": "Phased over 3 Months"
-        }
+        { "lot_ref": "Lot A", "description": "11kV XLPE Cable", "raw_qty": "5,000 Meters", "required_timeline": "6 Weeks" },
+        { "lot_ref": "Lot B", "description": "Structural Steel Rods", "raw_qty": "1,500 Units", "required_timeline": "Immediate" },
+        { "lot_ref": "Lot C", "description": "Low Voltage Wire", "raw_qty": "20,000 Meters", "required_timeline": "Phased 3 Months" }
       ]
     },
     "tech_agent_output": {
@@ -91,7 +49,7 @@
           "qty_required": 5000,
           "production_mode": "Make-to-Order",
           "warehouse_source": "Factory_Line_2",
-          "shortage_alert": "Deficit of 3,800m. Production slot reserved for Jan Wk 3."
+          "shortage_alert": "Deficit of 3,800m. Production slot reserved."
         },
         {
           "rfp_item_ref": "Lot B: Steel Rods",
@@ -100,7 +58,7 @@
           "qty_required": 1500,
           "production_mode": "Partial-Stock",
           "warehouse_source": "Warehouse_A",
-          "shortage_alert": "Deficit of 1,250 units. Immediate procurement of raw iron needed."
+          "shortage_alert": "Deficit of 1,250 units."
         },
         {
           "rfp_item_ref": "Lot C: Safety Wire",
@@ -109,77 +67,215 @@
           "qty_required": 20000,
           "production_mode": "Stock",
           "warehouse_source": "Warehouse_B",
-          "shortage_alert": "None. 50,000m available in stock."
+          "shortage_alert": "None."
         }
       ]
     },
-    "pricing_agent_output": {}
-  },
-  {
-    "sales_status": 0,
-    "tech_status": 0,
-    "price_status": 0,
-    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-004-DRAFT" },
-    "sales_agent_output": {},
-    "tech_agent_output": {},
-    "pricing_agent_output": {}
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": "ORN-PROC-2025-092",
+        "client_id": "CL-ORN-001",
+        "logistics_param": "285 km to Z-04 (West (Hub))",
+        "financials": {
+          "grand_total_bid": 3771482.5,
+          "total_cost": 3279550.0,
+          "net_profit": 491932.5,
+          "effective_margin": "15.0%"
+        },
+        "cost_breakdown": {
+          "production": 3035050.0,
+          "logistics": 223000.0,
+          "finance": 0.0,
+          "testing": 21500.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 90,
+        "priority": "HIGH",
+        "risk_factors": "High Volatility Materials"
+      },
+      "testing_breakdown": [
+        "T-ELEC-01: ₹425.0", "T-ELEC-02: ₹1275.0", "T-MECH-01: ₹4250.0", "T-MECH-03: ₹5100.0", "T-THERM-01: ₹12750.0"
+      ],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [
+          { "reason": "Client Loyalty (Gold): -5.0%", "value": "-5.0%" },
+          { "reason": "High Volatility Material Risk: +5.0%", "value": "+5.0%" }
+        ],
+        "final_effective_margin": "15.0%"
+      },
+      "line_items_detailed": [
+        {
+          "sku": "PROD-002",
+          "qty": 5000,
+          "base_unit_cost": 435.0,
+          "logistics_total": 57627.0,
+          "finance_cost": 0.0,
+          "applied_margin": "15.0%",
+          "final_unit_price": 506.73,
+          "line_total": 2533671.05,
+          "risks": ["CU-A"]
+        }
+      ]
+    }
   },
   {
     "sales_status": 1,
     "tech_status": 1,
-    "price_status": 1,
-    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-005-CLOSED" },
-    "sales_agent_output": {},
-    "tech_agent_output": {},
-    "pricing_agent_output": { "status": "Lost" }
-  },
-  {
-    "sales_status": 1,
-    "tech_status": 1,
     "price_status": 0,
-    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-006-PENDING" },
-    "sales_agent_output": {
-       "client_extraction": { "client_id": "CL-102", "payment_terms_extracted": "Advance" },
-       "logistics_extraction": { "calculated_distance_km": 500, "mapped_zone_code": "Z-01" },
-       "market_intelligence": { "competitors_identified": [] }
+    "rfp_meta_data": {
+      "rfp_unique_id": "METRO-DEL-2026-005",
+      "status": "Tech_Approved_Pricing_Pending",
+      "created_at_timestamp": "2025-12-13T08:30:00Z"
     },
-    "tech_agent_output": { "line_items_mapped": [], "required_tests_identified": [] },
-    "pricing_agent_output": {}
+    "sales_agent_output": {
+      "source_document": "DMRC_Phase4.pdf",
+      "client_extraction": {
+        "client_name": "Delhi Metro Rail Corporation",
+        "client_id": "CL-GOV-001",
+        "payment_terms_extracted": "100% Delivery (Net 45 Days)"
+      },
+      "timeline_extraction": {
+        "submission_deadline": "2026-02-01T14:00:00",
+        "days_remaining": 49,
+        "contract_type": "Fixed Price"
+      },
+      "logistics_extraction": {
+        "delivery_location_text": "Mukundpur Depot, Delhi",
+        "calculated_distance_km": 1150,
+        "mapped_zone_code": "Z-01",
+        "incoterms": "DAP"
+      },
+      "market_intelligence": {
+        "competitors_identified": ["Havells India", "KEI Industries"],
+        "strategic_note": "Government tender. Price is L1.",
+        "priority_score": 75
+      },
+      "raw_demand_extraction": [
+        { "lot_ref": "Lot 1", "description": "Control Cable", "raw_qty": "15,000 m", "required_timeline": "Immediate" }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Approved",
+      "inventory_check_summary": "Stock Unavailable.",
+      "required_tests_identified": ["T-ELEC-01", "T-ELEC-04"],
+      "line_items_mapped": [
+        {
+          "rfp_item_ref": "Lot 1: Control Cable",
+          "matched_internal_sku": "PROD-004",
+          "product_name": "Control Copper Cable",
+          "qty_required": 15000,
+          "production_mode": "Make-to-Order",
+          "warehouse_source": "Factory_Line_1",
+          "shortage_alert": "Zero stock."
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": null,
+        "client_id": null,
+        "logistics_param": null,
+        "financials": {
+          "grand_total_bid": 0.0,
+          "total_cost": 0.0,
+          "net_profit": 0.0,
+          "effective_margin": null
+        },
+        "cost_breakdown": {
+          "production": 0.0,
+          "logistics": 0.0,
+          "finance": 0.0,
+          "testing": 0.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 0,
+        "priority": "PENDING",
+        "risk_factors": null
+      },
+      "testing_breakdown": [],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [],
+        "final_effective_margin": null
+      },
+      "line_items_detailed": []
+    }
   },
   {
     "sales_status": 1,
     "tech_status": 0,
     "price_status": 0,
-    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-007-WIP" },
-    "sales_agent_output": {},
-    "tech_agent_output": {},
-    "pricing_agent_output": {}
-  },
-  {
-    "sales_status": 0,
-    "tech_status": 0,
-    "price_status": 0,
-    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-008-EMPTY" },
-    "sales_agent_output": {},
-    "tech_agent_output": {},
-    "pricing_agent_output": {}
-  },
-  {
-    "sales_status": 1,
-    "tech_status": 1,
-    "price_status": 1,
-    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-003-DONE" },
-    "sales_agent_output": {},
-    "tech_agent_output": {},
-    "pricing_agent_output": { "status": "Won" }
-  },
-  {
-    "sales_status": 1,
-    "tech_status": 0,
-    "price_status": 0,
-    "rfp_meta_data": { "rfp_unique_id": "RFP-2025-011-NEW" },
-    "sales_agent_output": {},
-    "tech_agent_output": {},
-    "pricing_agent_output": {}
+    "rfp_meta_data": {
+      "rfp_unique_id": "SOLAR-RAJ-2025-088",
+      "status": "Sales_Completed",
+      "created_at_timestamp": "2025-12-14T09:00:00Z"
+    },
+    "sales_agent_output": {
+      "source_document": "Adani_Green_Solar_Park.pdf",
+      "client_extraction": {
+        "client_name": "Adani Transmission",
+        "client_id": "CL-ATA-001",
+        "payment_terms_extracted": "90 Days Credit"
+      },
+      "timeline_extraction": {
+        "submission_deadline": "2026-03-01",
+        "days_remaining": 78,
+        "contract_type": "Variable"
+      },
+      "logistics_extraction": {
+        "delivery_location_text": "Bikaner, Rajasthan",
+        "calculated_distance_km": 850,
+        "mapped_zone_code": "Z-01",
+        "incoterms": "Ex-Works"
+      },
+      "market_intelligence": {
+        "competitors_identified": ["Sterlite Power", "Apar Industries"],
+        "strategic_note": "Huge volume.",
+        "priority_score": 95
+      },
+      "raw_demand_extraction": [
+        { "lot_ref": "Lot 1", "description": "Solar DC Cable", "raw_qty": "100,000 m", "required_timeline": "Phased" }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Pending",
+      "inventory_check_summary": null,
+      "required_tests_identified": [],
+      "line_items_mapped": []
+    },
+    "pricing_agent_output": {
+      "tender_summary": {
+        "rfp_processing_id": null,
+        "client_id": null,
+        "logistics_param": null,
+        "financials": {
+          "grand_total_bid": 0.0,
+          "total_cost": 0.0,
+          "net_profit": 0.0,
+          "effective_margin": null
+        },
+        "cost_breakdown": {
+          "production": 0.0,
+          "logistics": 0.0,
+          "finance": 0.0,
+          "testing": 0.0
+        }
+      },
+      "sales_intelligence_card": {
+        "deal_score": 0,
+        "priority": "PENDING",
+        "risk_factors": null
+      },
+      "testing_breakdown": [],
+      "margin_composition_report": {
+        "standard_company_margin": "20.0%",
+        "adjustments_applied": [],
+        "final_effective_margin": null
+      },
+      "line_items_detailed": []
+    }
   }
 ]
