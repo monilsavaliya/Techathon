@@ -1,118 +1,51 @@
-# 🤖 Agentic AI Pricing Engine (B2B Tender Automation)
+# 💰 Smart Pricing Agent - Logic & Architecture
 
-## 📌 Project Overview
-This project implements an autonomous **Pricing Agent** designed for the manufacturing sector (e.g., Asian Paints / Polycab). It automates the complex process of generating financial bids for B2B RFPs (Request for Proposals).
-
-Unlike a simple calculator, this Agent uses **Heuristic AI Logic** to determine the optimal price by analyzing:
-1.  **Real-Time Costs:** Raw material volatility (LME Copper Index).
-2.  **Factory Constraints:** Inventory levels vs. Production schedules (Stock vs. Make-to-Order).
-3.  **Logistics:** Weight-based transport costs mapped to geographical terrain zones.
-4.  **Game Theory:** Competitor aggression levels and historical win/loss rates.
+## Overview
+The Pricing Agent is not a simple calculator. It is a **Strategic Commercial Bot** that simulates a human Commercial Manager. It calculates the "Winning Price" by balancing **Cost**, **Competition**, **Factory Capacity**, and **Risk**.
 
 ---
 
-## 🚀 Key Features
+## 🧠 The "Smart" Pricing Formula
 
-### 1. Dynamic Manufacturing Logic
-The agent checks the `factory_inventory_master.csv` and `factory_production_schedule.csv` before pricing.
-* **Scenario A (Stock Available):** Uses standard cost.
-* **Scenario B (Incoming Batch):** Allocates "unclaimed" future stock (No setup fee).
-* **Scenario C (Make-to-Order):** Automatically adds **Setup Costs** and **Rush Surcharges** if manufacturing lines must be interrupted.
+The final bid is calculated using a Multi-Factor Weighted Algorithm:
 
-### 2. Intelligent Logistics Engine
-Instead of a flat % fee, the agent calculates precise transport costs:
-* **Formula:** `Weight (Tons) × Distance (km) × Rate/Ton/km × Terrain Multiplier`
-* **Intelligence:** Automatically maps cities to zones (e.g., "Shimla" → **Hilly_Remote** → 2.5x Cost Multiplier).
+$$\text{Final Price} = (\text{Base Cost} + \text{Logistics} + \text{Testing}) \times (1 + \text{Dynamic Margin})$$
 
-### 3. Strategic Margin Optimization (The "AI Brain")
-The Agent determines the profit margin dynamically using a **Waterfall Strategy**:
-* **Base Margin:** Starts at 20%.
-* **Competitor Check:** If a rival like *RivalCables* is detected, the agent drops the margin to match their historical undercut % (e.g., -5%).
-* **Win Rate Analysis:** If we historically lose >70% of bids against this rival, the agent applies a "Panic Drop" (-5%) to ensure a win.
-* **Client Loyalty:** Applies automatic discounts for Gold/Platinum tier clients.
+### 1. Dynamic Margin Logic
+The agent starts with a **Base Margin (18%)** and adjusts it in real-time:
 
-### 4. Volatility Protection
-The agent reads `material_master.csv` to identify high-risk materials (e.g., Copper). It applies a **Real-Time Market Factor** (e.g., 1.15x) to the raw material cost to protect against inflation during the tender validity period.
+| Factor | Logic Source | Impact on Price |
+| :--- | :--- | :--- |
+| **Competitor Threat** | `competitors.json` | **Drops Margin** if fighting a "Predatory" rival (e.g., V-Flow Tech) or if historical Win Rate < 40%. |
+| **Factory Load** | `production_schedule.json` | **Raises Price (+5%)** if factory is full (Scarcity Premium). <br> **Drops Price (-3%)** if lines are idle (Contribution Margin). |
+| **Financial Risk** | `commercial_terms` | **Discounts (-2%)** for "100% Advance". <br> **Penalizes (+3%)** for "90 Days Credit" (Cost of Capital). |
+| **Project Risk** | `rfp_summary` | **Adds Buffer (+4%)** for keywords like "Metro", "Hazardous", "Hilly Terrain". |
+| **Inventory** | `inventory_master.csv` | **Clearance Discount (-5%)** if matching dead stock is found. |
 
 ---
 
-## 📂 System Architecture & Data Composition
+## 🏭 Costing Engine Breakdown
 
-The logic is powered by a relational CSV database organized into three layers:
+### A. Material Costing (Real-Time)
+Instead of static prices, the agent calculates the **Live BOM Cost**:
+> *Cost = (Copper Wt × LME Rate × Market Factor) + (XLPE Wt × Index) + Process Cost*
+* **Market Factor:** Reads `material_master.json` to check if Copper is bullish (1.15x) or bearish.
 
-### A. Base Cost Layer (`database/base cost/`)
-| File | Purpose |
-| :--- | :--- |
-| **`product_master.csv`** | Base manufacturing cost (Labor/Machine) and Weight per unit. |
-| **`product_recipes.csv`** | Bill of Materials (BOM) linking Products to Ingredients. |
-| **`material_master.csv`** | Live raw material costs & Volatility Risk Flags. |
-| **`factory_inventory_master.csv`** | Live warehouse stock levels. |
-| **`factory_production_schedule.csv`** | Future batch visibility for capacity planning. |
+### B. Testing Charges (Granular)
+The agent reads the specific standards (e.g., `IS 7098`) identified by the Technical Agent and builds a "Bill of Tests":
+* **Routine Tests:** Charged per drum (e.g., High Voltage).
+* **Type Tests:** Charged once per lot (e.g., Impulse Test).
+* **Source:** `test_master.json`
 
-### B. Strategic Layer (`database/strategic factors/`)
-| File | Purpose |
-| :--- | :--- |
-| **`client_master.csv`** | Client Tiers (Gold/Silver), Payment Terms, and Strategic Value. |
-| **`competitor_intelligence.csv`** | Profiles of rivals (Aggressive vs. Premium) and Undercut %. |
-| **`past_tender_history.csv`** | Historical Win/Loss data used to calculate Win Rates. |
-
-### C. Surcharge Layer (`database/surcharge factor/`)
-| File | Purpose |
-| :--- | :--- |
-| **`logistics_rules.csv`** | Zone-based multipliers (Hilly, Coastal, Urban) and freight rates. |
+### C. Logistics Engine
+Calculates freight based on **Weight x Distance**:
+* **Step 1:** Calculates total cable weight (e.g., 5km x 4.5kg/m = 22.5 Tons).
+* **Step 2:** Maps Delivery Location to a Zone (North/South/East/West).
+* **Step 3:** Applies LTL (Less-than-Truckload) or FTL rates from `logistic_master.json`.
 
 ---
 
-## ⚙️ How It Works (The Execution Flow)
-
-1.  **Input:** The agent receives a JSON payload (`input.json`) containing the RFP details (Client ID, Delivery Zone, Competitor ID, Requested Items).
-2.  **Factory Check:** It loops through requested items. If `Qty > Stock`, it triggers "Make-to-Order" logic.
-3.  **Cost Buildup:**
-    * *Material Cost* = Sum(Ingredient Cost × Qty × Market Factor)
-    * *Production Cost* = Material + Labor + (Setup / Qty)
-4.  **Overheads Calculation:**
-    * *Transport* = Weight × Distance × Zone Rate
-    * *Finance* = Cost × Interest Rate (if Payment Terms > 90 Days)
-5.  **Strategic Pricing:** The AI adjusts the margin based on the Rival + Client analysis.
-6.  **Output:** Generates a detailed financial breakdown in `output.json` including a **Strict Accounting Ledger** (Production vs. Overheads vs. Profit).
-
----
-
-## 💻 Usage Instructions
-
-### Prerequisites
-* Python 3.x
-* Pandas Library (`pip install pandas`)
-
-### Running the Agent
-1.  Ensure the `database/` folder is populated with the CSV files.
-2.  Configure your scenario in `input.json`.
-3.  Run the script:
-    ```bash
-    python pricing_agent_final.py
-    ```
-4.  Check the results in `output.json`.
-
----
-
-## 📊 Example Output Snippet
-
-```json
-"tender_summary": {
-    "client": "Sharma Infra",
-    "logistics_param": "1250 km to Hilly_Remote",
-    "total_production_cost": 22840875.0,
-    "total_overheads_cost": 10247726.25,
-    "total_project_cost": 33088601.25,
-    "estimated_net_profit": 4301518.16,
-    "grand_total_bid": 37390119.41,
-    "final_margin_percentage": "13.0%"
-},
-"margin_composition_report": {
-    "standard_company_margin": "20.0%",
-    "adjustments_applied": [
-        { "reason": "Competitor Aggression (RivalCables Ltd)", "value": "-5.0%" },
-        { "reason": "Client Loyalty Discount (Gold)", "value": "-2.0%" }
-    ],
-    "final_effective_margin": "13.0%"
-}
+## 📂 Data Flow
+1. **Input:** `central_rfp_database.json` (Consumed from Tech/Sales Agents).
+2. **Processing:** Matches SKU -> Calculates BOM -> Applies Strategy.
+3. **Output:** Generates a detailed **Cost Sheet** and updates the Central DB.
