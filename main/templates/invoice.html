@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice {{ rfp.rfp_unique_id }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-10 font-sans">
+    <div class="max-w-4xl mx-auto bg-white p-12 shadow-lg">
+        <div class="flex justify-between items-start border-b pb-8 mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-900">PROFORMA INVOICE</h1>
+                <p class="text-gray-500 mt-1">Ref: {{ rfp.rfp_unique_id }}</p>
+            </div>
+            <div class="text-right">
+                <h2 class="font-bold text-lg text-slate-800">Your Company Ltd.</h2>
+                <p class="text-sm text-gray-500">Global HQ, Tech Park</p>
+                <p class="text-sm text-gray-500">Mumbai, India</p>
+            </div>
+        </div>
+
+        <div class="flex justify-between mb-12">
+            <div>
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wide">Client</p>
+                <h3 class="text-xl font-bold text-slate-800 mt-1">{{ rfp.sales_agent_output.summary.client_name }}</h3>
+                <p class="text-sm text-gray-600">{{ rfp.sales_agent_output.logistics_constraints.delivery_location }}</p>
+            </div>
+            <div class="text-right">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wide">Issue Date</p>
+                <p class="font-bold text-slate-800">{{ date }}</p>
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mt-4">Due Date</p>
+                <p class="font-bold text-red-600">{{ rfp.sales_agent_output.summary.submission_deadline }}</p>
+            </div>
+        </div>
+
+        <table class="w-full mb-10">
+            <thead class="bg-gray-50 border-b-2 border-gray-100">
+                <tr>
+                    <th class="text-left py-4 px-4 text-xs font-bold text-gray-500 uppercase">Item Description</th>
+                    <th class="text-center py-4 px-4 text-xs font-bold text-gray-500 uppercase">Qty</th>
+                    <th class="text-right py-4 px-4 text-xs font-bold text-gray-500 uppercase">Amount (INR)</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                <tr>
+                    <td class="py-4 px-4">
+                        <p class="font-bold text-slate-700">Total Material Cost</p>
+                        <p class="text-xs text-gray-500">Base manufacturing cost for extracted BOM</p>
+                    </td>
+                    <td class="text-center py-4 px-4 text-gray-600">-</td>
+                    <td class="text-right py-4 px-4 font-mono font-medium">₹ {{ "{:,.2f}".format(rfp.pricing_agent_output.financial_summary.total_material_cost) }}</td>
+                </tr>
+                <tr>
+                    <td class="py-4 px-4">
+                        <p class="font-bold text-slate-700">Logistics & Freight</p>
+                        <p class="text-xs text-gray-500">Delivery to {{ rfp.sales_agent_output.logistics_constraints.delivery_location }}</p>
+                    </td>
+                    <td class="text-center py-4 px-4 text-gray-600">1</td>
+                    <td class="text-right py-4 px-4 font-mono font-medium">₹ {{ "{:,.2f}".format(rfp.pricing_agent_output.financial_summary.total_logistics_cost) }}</td>
+                </tr>
+                <tr>
+                    <td class="py-4 px-4">
+                        <p class="font-bold text-slate-700">Special Packaging</p>
+                        <p class="text-xs text-gray-500">Export grade drum packing</p>
+                    </td>
+                    <td class="text-center py-4 px-4 text-gray-600">1</td>
+                    <td class="text-right py-4 px-4 font-mono font-medium">₹ {{ "{:,.2f}".format(rfp.pricing_agent_output.financial_summary.total_packaging_cost) }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="flex justify-end">
+            <div class="w-64">
+                <div class="flex justify-between py-2 border-b border-gray-100">
+                    <span class="text-sm text-gray-600">Margin Applied</span>
+                    <span class="font-mono text-sm">{{ rfp.pricing_agent_output.financial_summary.margin_percentage }}</span>
+                </div>
+                <div class="flex justify-between py-4">
+                    <span class="font-bold text-lg text-slate-800">Total Bid</span>
+                    <span class="font-bold text-lg text-blue-600 font-mono">₹ {{ "{:,.2f}".format(rfp.pricing_agent_output.financial_summary.final_bid_value) }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-100 text-center">
+            <button onclick="window.print()" class="bg-slate-900 text-white px-6 py-3 rounded hover:bg-black transition print:hidden">
+                <i class="fas fa-print mr-2"></i> Print Invoice
+            </button>
+        </div>
+    </div>
+</body>
+</html>

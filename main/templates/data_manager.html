@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block header %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col h-[85vh]">
+    
+    <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+        <div class="relative w-96">
+            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            <input type="text" id="searchInput" placeholder="Search records..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+        </div>
+        <button onclick="attemptSave()" class="bg-slate-900 text-white px-6 py-2 rounded-lg font-bold hover:bg-black transition shadow flex items-center gap-2">
+            <i class="fas fa-lock"></i> Save Changes
+        </button>
+    </div>
+
+    <div class="flex-1 overflow-auto p-0">
+        <table class="w-full text-sm text-left text-gray-600">
+            <thead class="bg-gray-100 text-gray-700 uppercase text-xs font-bold sticky top-0 z-10 shadow-sm">
+                <tr>
+                    {% if data and data|length > 0 %}
+                        {% for key in data[0].keys() %}
+                        <th class="px-6 py-3 border-b whitespace-nowrap">{{ key|replace('_', ' ') }}</th>
+                        {% endfor %}
+                        <th class="px-6 py-3 border-b text-right">Action</th>
+                    {% else %}
+                        <th class="px-6 py-3">No Data Found</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody id="tableBody" class="divide-y divide-gray-100">
+                {% for item in data %}
+                <tr class="hover:bg-blue-50 transition group">
+                    {% for key, value in item.items() %}
+                    <td class="px-6 py-3 align-middle">
+                        {% if value is mapping or value is iterable and value is not string %}
+                            <textarea class="w-full bg-transparent border border-transparent focus:border-blue-300 focus:bg-white rounded px-2 py-1 text-xs font-mono text-blue-600 editable-field" 
+                                      data-key="{{ key }}" 
+                                      rows="1">{{ value | tojson }}</textarea>
+                        {% else %}
+                            <input type="text" class="w-full bg-transparent border-none focus:ring-0 focus:bg-white focus:shadow-sm rounded px-2 py-1 text-gray-800 font-medium editable-field" 
+                                   data-key="{{ key }}" value="{{ value }}">
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                    <td class="px-6 py-3 text-right">
+                        <button onclick="deleteRow(this)" class="text-gray-300 hover:text-red-500 transition"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<form id="saveForm" method="POST" action="/manage/{{ filename }}" class="hidden">
+    <input type="hidden" name="json_data" id="jsonDataInput">
+    <input type="hidden" name="passkey" id="passKeyInput"> </form>
+
+<script>
+    // 1. Search Logic
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let filter = this.value.toLowerCase();
+        document.querySelectorAll('#tableBody tr').forEach(row => {
+            row.style.display = row.innerText.toLowerCase().includes(filter) ? '' : 'none';
+        });
+    });
+
+    // 2. Delete Logic
+    function deleteRow(btn) {
+        if(confirm("Are you sure you want to remove this record?")) {
+            btn.closest('tr').remove();
+        }
+    }
+
+    // 3. Save Logic with Passkey
+    function attemptSave() {
+        // Prompt for Password
+        let key = prompt("🔒 SECURITY CHECK\nPlease enter the Admin Pass Key to save changes:");
+        
+        if (key === null) return; // User cancelled
+        if (key.trim() === "") {
+            alert("Pass Key cannot be empty.");
+            return;
+        }
+
+        document.getElementById('passKeyInput').value = key; // Set key for backend check
+
+        let newData = [];
+        
+        document.querySelectorAll('#tableBody tr').forEach(row => {
+            let obj = {};
+            row.querySelectorAll('.editable-field').forEach(input => {
+                let key = input.getAttribute('data-key');
+                let val = input.value;
+                
+                // Smart Parsing: Try to convert back to JSON/Number
+                if (!isNaN(val) && val.trim() !== '') {
+                    val = Number(val);
+                } else if (val.startsWith('[') || val.startsWith('{')) {
+                    try { val = JSON.parse(val); } catch(e) {
+                        // If parsing fails, keep it as string
+                    } 
+                }
+                
+                obj[key] = val;
+            });
+            if (Object.keys(obj).length > 0) newData.push(obj);
+        });
+
+        document.getElementById('jsonDataInput').value = JSON.stringify(newData);
+        document.getElementById('saveForm').submit();
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block header %}Competitor Intelligence Database{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+    <table class="w-full text-sm text-left text-gray-600">
+        <thead class="bg-gray-50 text-gray-700 uppercase text-xs font-bold">
+            <tr>
+                <th class="px-6 py-3">Competitor Name</th>
+                <th class="px-6 py-3">Tier / Category</th>
+                <th class="px-6 py-3">Strong Regions</th>
+                <th class="px-6 py-3">Aggression Score</th>
+                <th class="px-6 py-3">Win Rate vs Us</th>
+                <th class="px-6 py-3">Strategy Profile</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+            {% for comp in competitors %}
+            <tr class="hover:bg-gray-50 transition">
+                <td class="px-6 py-4 font-bold text-gray-900">
+                    {{ comp.name }}
+                    <div class="text-xs text-gray-400 font-normal">{{ comp.competitor_id }}</div>
+                </td>
+                <td class="px-6 py-4">
+                    <span class="px-2 py-1 rounded text-xs font-bold 
+                        {% if 'Tier-1' in comp.tier %}bg-purple-100 text-purple-700
+                        {% elif 'Tier-2' in comp.tier %}bg-blue-100 text-blue-700
+                        {% else %}bg-gray-100 text-gray-700{% endif %}">
+                        {{ comp.tier }}
+                    </span>
+                </td>
+                <td class="px-6 py-4">
+                    <div class="flex flex-wrap gap-1">
+                        {% for region in comp.strong_regions %}
+                        <span class="text-xs bg-gray-100 border border-gray-200 px-1.5 py-0.5 rounded">{{ region }}</span>
+                        {% endfor %}
+                    </div>
+                </td>
+                <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-16 bg-gray-200 rounded-full h-1.5">
+                            <div class="bg-red-500 h-1.5 rounded-full" style="width: {{ comp.pricing_intelligence.aggression_score * 10 }}%"></div>
+                        </div>
+                        <span class="text-xs font-bold">{{ comp.pricing_intelligence.aggression_score }}/10</span>
+                    </div>
+                </td>
+                <td class="px-6 py-4 font-mono font-bold text-slate-700">
+                    {{ (comp.performance_metrics.win_rate_against_us * 100)|round|int }}%
+                </td>
+                <td class="px-6 py-4 text-xs italic text-gray-500">
+                    "{{ comp.pricing_intelligence.strategic_behavior }}"
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

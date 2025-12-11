@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techathon Local Ingestion</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; height: 100vh; align-items: center; background: #eee; }
+        .card { background: white; padding: 40px; border-radius: 10px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        button { padding: 10px 20px; background: #333; color: #fff; border: none; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #000; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>📂 Local RFP Upload</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="rfp_file" accept=".pdf" required>
+            <br><br>
+            <button type="submit">Process & Store Locally</button>
+        </form>
+    </div>
+</body>
+</html>
