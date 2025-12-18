@@ -1,12 +1,20 @@
-# 🚀 Techathon Project: AI-Powered Smart Bidding System
+<div align="center">
 
 ![SmartBid Banner](./techathon_app/static/smartbid_banner.png)
 
-[![Live Demo](https://img.shields.io/badge/🔴_Live_Demo-Click_Here-red?style=for-the-badge&logo=render)](https://techathon-app-1.onrender.com/)
+# 🚀 AI-Powered Smart Bidding System
+
+### [🔴 CLICK HERE TO OPEN LIVE WEB APP](https://techathon-app-1.onrender.com/)
+*(Accessible & Live on Render)*
+
+<br>
+
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-Framework-green?style=for-the-badge&logo=flask)](https://flask.palletsprojects.com/)
 [![Alpine.js](https://img.shields.io/badge/Alpine.js-Frontend-teal?style=for-the-badge&logo=alpinedotjs)](https://alpinejs.dev/)
 [![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge)]()
+
+</div>
 
 ## 🌟 Overview
 Welcome to the generic-defying **SmartBid System**. This application revolutionizes the RFP (Request for Proposal) bidding process by deploying a multi-agent AI squad to parse, analyze, price, and generate competitive bids in real-time.
