@@ -9,7 +9,8 @@ venv/
 .ipynb_checkpoints
 temp_uploads/
 .DS_Store
-*.mp4
-*.mov
-*.avi
-*.mkv
+# Video files (Allowed)
+# *.mp4
+# *.mov
+# *.avi
+# *.mkv
