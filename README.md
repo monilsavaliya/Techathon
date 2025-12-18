@@ -1,6 +1,6 @@
 <div align="center">
 
-![SmartBid Banner](./techathon_app/static/smartbid_banner.png)
+[![SmartBid Banner](./techathon_app/static/smartbid_banner.png)](https://techathon-app-1.onrender.com/)
 
 # 🚀 AI-Powered Smart Bidding System
 
