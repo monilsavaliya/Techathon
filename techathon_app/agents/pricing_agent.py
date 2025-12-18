@@ -141,12 +141,23 @@ class PricingEngine:
                     else:
                         breakdown.append(f"   - {mat.get('material_name')}: {qty_per_meter} units/m @ {final_rate:.2f}")
                 else:
-                    mat_cost_total += (qty_per_meter * 500 * total_qty_mtr) # Fallback
+                    # Fallback if material not found in DB
+                    fallback_cost = qty_per_meter * 500 * total_qty_mtr
+                    mat_cost_total += fallback_cost
+                    breakdown.append(f"   - {item.get('material_id')}: Unknown Material (Used Fallback ₹500/unit)")
         else:
-            # Commercial fallback
+             # Commercial fallback (No BOM found)
              base_rate = prod.get('commercial', {}).get('base_manufacturing_cost', 1000)
              mat_cost_total = base_rate * total_qty_mtr
-             breakdown.append(f"  > Base Rate Applied: {base_rate}/m")
+             breakdown.append(f"  > ⚠️ NO BOM FOUND. Applied Base Rate: {base_rate}/m")
+        
+        # SAFETY CHECK: Quantity Extraction Failure
+        if total_qty_mtr == 1.0:
+            breakdown.append("  > ⚠️ WARNING: Quantity is 1.0. Check if `sales_agent` failed to extract length.")
+
+        # SAFETY CHECK: Ultra Low Cost Alert
+        if mat_cost_total < 1000:
+            breakdown.append("  > ⚠️ CRITICAL: Material Cost is near zero. Bid likely invalid.")
 
         # Factory Overhead
         mfg_overhead = mat_cost_total * self.config["OPERATIONAL"]["FACTORY_OVERHEAD_RATE"]
@@ -306,6 +317,108 @@ class PricingEngine:
 
         return margin_adj, reasons
 
+        return margin_adj, reasons
+
+    def analyze_contract_risk(self, commercial_terms, logistics_terms):
+        """Analyzes Penalty Clauses and Unloading Scope to adjust margin/risk."""
+        risk_adj = 0.0
+        reasons = []
+        
+        # 1. Penalty / LD Clauses
+        penalty = str(commercial_terms.get('penalty_clause', '')).lower()
+        if "penalty" in penalty or "ld" in penalty or "liquidated" in penalty:
+            # Check severity
+            # If > 1% per week, it's high risk
+            if "1%" in penalty or "0.5%" in penalty:
+                # Moderate/High LD
+                risk_adj += 0.015 # +1.5% Buffer
+                reasons.append(f"Contract Risk (Strict LD Clause): +1.5% Buffer")
+            else:
+                risk_adj += 0.005 # +0.5% Standard Buffer
+                reasons.append(f"Contract Risk (LD Clause present): +0.5% Buffer")
+
+        # 2. Unloading Scope
+        unloading = str(logistics_terms.get('unloading_scope', '')).lower()
+        if "client" in unloading:
+            # Client unloads -> Less risk for us, quicker turnaround
+            risk_adj -= 0.005 # -0.5% Discount (Efficiency)
+            reasons.append("Logistics Efficiency (Client Unloading): -0.5% Margin")
+        elif "vendor" in unloading or "supplier" in unloading:
+            # We unload -> Hiring cranes etc.
+            # Usually covered in freight but adds risk of delay
+            risk_adj += 0.005
+            reasons.append("Logistics Risk (Vendor Unloading): +0.5% Buffer")
+            
+        return risk_adj, reasons
+
+    def simulate_volatility(self, base_mfg, base_log, base_margin, iterations=100):
+        """
+        Runs a Monte Carlo Simulation (100 futures) to predict price risks.
+        Varies: Material Cost (+/- 8%), Logistics Fuel (+/- 5%), Competitor Panic (Random).
+        Returns: {min_price, max_price, confidence_score}
+        """
+        import random
+        sim_prices = []
+        
+        for _ in range(iterations):
+            # 1. Material Volatility (Copper/Aluminium fluctuate daily)
+            # Std Dev of 3% means 68% of time it's within +/-3%, but can spike to 8%
+            mat_vol = random.gauss(0, 0.03) 
+            sim_mfg = base_mfg * (1 + mat_vol)
+            
+            # 2. Logistics Volatility (Fuel spikes, delays)
+            log_vol = random.gauss(0, 0.02)
+            sim_log = base_log * (1 + log_vol)
+            
+            # 3. Market Sentiment (Competitor moves)
+            # 10% chance a competitor drops out (Margin improves)
+            # 10% chance a competitor gets aggressive (Margin drops)
+            sim_margin = base_margin
+            event = random.random()
+            if event < 0.1: sim_margin -= 0.02 # Price War
+            elif event > 0.9: sim_margin += 0.01 # Rival Stockout (Opportunity)
+            
+            # Floor check
+            if sim_margin < 0.04: sim_margin = 0.04
+            
+            final_p = (sim_mfg + sim_log) * (1 + sim_margin)
+            sim_prices.append(final_p)
+            
+        sim_prices.sort()
+        # 90% Confidence Interval (Exclude top/bottom 5%)
+        p5 = int(iterations * 0.05)
+        p95 = int(iterations * 0.95)
+        
+        return {
+            "min_safe": sim_prices[p5],
+            "max_profit": sim_prices[p95],
+            "mean": sum(sim_prices)/iterations,
+            "volatility_index": (sim_prices[p95] - sim_prices[p5]) / sim_prices[p5] # High index = Unstable
+        }
+
+    def generate_negotiation_script(self, volatility, strategy_notes):
+        """Generates talking points for the Sales Human based on Math."""
+        script = []
+        
+        # 1. Volatility Defense
+        if volatility['volatility_index'] > 0.1:
+            script.append("⚠️ Market is Highly Volatile: Suggest locking price in 48hrs.")
+            script.append(f"   > Reasoning: commodity simulation shows potential {volatility['volatility_index']*100:.1f}% upside risk.")
+        
+        # 2. Strategy Translation
+        for note in strategy_notes:
+            if "Loyalty" in note:
+                script.append("🤝 Remind client of Gold/Silver Tier savings applied.")
+            if "Zone Risk" in note:
+                script.append("🚚 Highlight specialized logistics handling for their difficult terrain.")
+            if "Contract Risk" in note:
+                script.append("⚖️ Mention that price includes buffer for strict LD clauses.")
+        
+        if not script:
+            script.append("✅ Standard Commercial Terms. Price is competitive.")
+            
+        return script
+
 # ==============================================================================
 # 4. AUDIT REPORT GENERATOR (PDF)
 # ==============================================================================
@@ -390,62 +503,85 @@ class RealPricingAgent:
         # --- A. DETAILED COSTING ---
         for item in items:
             pid = item.get('matched_sku_id', 'UNKNOWN')
-            qty = float(item.get('quantity') or 0)
-            if qty == 0: qty = 1000.0 # Safety
+            # CLEAN QUANTITY (Handle "5000 Meters" etc)
+            raw_qty = str(item.get('quantity') or 0)
+            import re
+            qty_clean = re.findall(r"[\d\.]+", raw_qty)
+            qty = float(qty_clean[0]) if qty_clean else 0.0
+            
+            if qty == 0: qty = 1000.0 # Safety default only if truly 0
             
             # 1. Material (Micro-BOM)
             mfg, wt, breakdown, risk, oh = self.brain.calculate_micro_bom_cost(pid, qty)
             total_mfg += mfg
             total_weight_all += wt
             
-            # 2. Packaging
-            drums = math.ceil(qty / 500)
-            p_cost = drums * (self.brain.config["PACKAGING"]["STEEL_DRUM_COST"] if "33KV" in str(pid).upper() else self.brain.config["PACKAGING"]["WOODEN_DRUM_COST"])
-            total_pkg += p_cost
+            # 2. Packaging (Advanced Logic)
+            # Estimate Cable Diameter based on Cross Section (approx formula: sqrt(sqmm) * K + armour)
+            # This is a heuristic. 400sqmm -> ~20mm radius -> 40mm dia + layers -> ~60-70mm
+            try:
+                # Use Tech Agent's extracted 'cross_section_sqmm' if available in item, else infer from PID
+                sqmm = 0
+                if '400' in str(pid): sqmm = 400
+                elif '300' in str(pid): sqmm = 300
+                elif '185' in str(pid): sqmm = 185
+                elif '95' in str(pid): sqmm = 95
+                else: sqmm = 50 # Default small
 
-            # 3. Testing (Using Tech Agent Codes)
+                # Drum Selection
+                # Standard Drum: 500m of large cable or 1000m of small cable
+                capacity_per_drum = 500 if sqmm > 150 else 1000
+                drums = math.ceil(qty / capacity_per_drum)
+                
+                # Steel vs Wooden
+                # HV (33KV) or Heavy cables (>240sqmm) use Steel
+                is_heavy = sqmm >= 240 or "33KV" in str(pid).upper()
+                drum_cost_unit = self.brain.config["PACKAGING"]["STEEL_DRUM_COST"] if is_heavy else self.brain.config["PACKAGING"]["WOODEN_DRUM_COST"]
+                
+                p_cost = drums * drum_cost_unit
+                total_pkg += p_cost
+            except:
+                # Fallback
+                drums = math.ceil(qty / 500)
+                p_cost = drums * self.brain.config["PACKAGING"]["WOODEN_DRUM_COST"]
+                total_pkg += p_cost
+
+            # 3. Testing (Quantity-Based Logic)
             t_cost = 0
             t_breakdown = []
             
-            # Tech Agent should now provide 'required_test_codes' in tech_out, OR we infer for this item
-            # Currently Tech Agent returns 'required_test_codes' as a global list for the RFP, not per item (in my implementation)
-            # But here we are iterating items.
-            # Let's verify how I implemented TechAgent. I implemented calculate_testing_costs to return a global 'test_codes' list.
-            # But the pricing logic is per item. 
-            # Let's infer per item or use the global list distributively?
-            # User said: "tech must give out test codew then pricing will look into test data"
-            # I'll rely on global codes for now but filter by item type inside here again strictly for cost accuracy?
-            # Actually, to be safer and "Finest", let's replicate the user's logic which looks up tests "relevant tests in DB".
-            # BUT, I will try to use the codes if passed.
-            
             required_tests = tech_out.get('required_test_codes', [])
             
-            # Convert codes to cost
             if required_tests:
-                # Filter codes that apply to THIS item (Optional complexity) or just apply relevant ones?
-                # Simpler: If "TEST-RT-001" is in list, we add it. 
-                # But tests are usually per drum/length.
-                # Let's iterate all tests in DB, check if their ID is in 'required_tests', AND RE-CHECK applicability to be safe?
-                # Or just trust Tech?
-                # Trusting Tech:
                 for t_code in required_tests:
                     test_obj = next((t for t in self.db.data["TESTS"] if t['test_id'] == t_code), None)
                     if test_obj:
                         c = test_obj.get('base_test_cost', 0)
-                        # Check logic for 'per drum' or 'per km' - usually in description or category
-                        if "Routine" in test_obj.get('test_category', ''):
-                            c *= drums
+                        cat = test_obj.get('test_category', 'Type Test')
                         
-                        # Optimization: Don't triple count if multiple items need same type test? 
-                        # Usually routine tests are per cable length. So we add it.
-                        t_cost += c
-                        t_breakdown.append(f"- {test_obj['test_name'][:30]}: {c:,.0f}")
+                        # Logic:
+                        # Routine Tests: Performed on every drum/length -> Multiply by Quantity/KM
+                        # Type Tests: Performed once per Lot/Design -> Fixed Cost
+                        
+                        if "Routine" in cat or "Acceptance" in cat:
+                            # Routine tests usually per Drum or per KM.
+                            # Let's assume per Drum for physical tests, per KM for electrical.
+                            # Hybrid approach: Multiply by drums (batch count)
+                            line_t_cost = c * drums
+                            t_breakdown.append(f"- {test_obj['test_name'][:20]} (x{drums}): {line_t_cost:,.0f}")
+                        else:
+                            # Type Test (One-time)
+                            line_t_cost = c
+                            t_breakdown.append(f"- {test_obj['test_name'][:20]} (Lot): {line_t_cost:,.0f}")
+                            
+                        t_cost += line_t_cost
             else:
-                # Fallback to simple logic if no codes found
+                # Fallback Estimate
                 is_hv = "33KV" in str(pid).upper()
-                c = self.brain.config["TESTING"]["HV_BASE_COST"] if is_hv else self.brain.config["TESTING"]["LV_BASE_COST"]
-                t_cost += c
-                t_breakdown.append(f"- Standard Tests (Est): {c}")
+                base_c = self.brain.config["TESTING"]["HV_BASE_COST"] if is_hv else self.brain.config["TESTING"]["LV_BASE_COST"]
+                # Scale routine part by km
+                t_cost = base_c + (500 * (qty/1000)) # Base + 500/km variable
+                t_breakdown.append(f"- Est Standard Tests: {t_cost:,.0f}")
 
             total_test += t_cost
             
@@ -465,6 +601,12 @@ class RealPricingAgent:
         # --- B. STRATEGIC ADJUSTMENTS ---
         strategy_notes = []
         
+        # 0. Partial Bid Detection
+        requested_count = len(sales_out.get('line_items_extracted', []))
+        matched_count = len(items)
+        if matched_count < requested_count:
+            strategy_notes.append(f"⚠️ PARTIAL BID: {matched_count}/{requested_count} Line Items Matched. Total Value Understated.")
+        
         # 1. Factory Load (Use first item as proxy)
         first_pid = items[0].get('matched_sku_id') if items else "UNKNOWN"
         fact_adj_pct, fact_reason = self.brain.analyze_factory_load(first_pid) 
@@ -475,6 +617,12 @@ class RealPricingAgent:
         fin_cost, credit_days, loy_disc = self.brain.analyze_financials(client_name, base_cost)
         if fin_cost > 0: strategy_notes.append(f"Credit Cost ({credit_days} days): +INR {int(fin_cost)}")
         if loy_disc != 0: strategy_notes.append(f"Loyalty Discount: {loy_disc*100}%")
+
+        # 3. Contractual Risk (New)
+        comm_terms = sales_out.get('commercial_terms', {})
+        cont_adj, cont_notes = self.brain.analyze_contract_risk(comm_terms, logistics)
+        if cont_adj != 0:
+             strategy_notes.extend(cont_notes)
 
         # 3. Game Theory (Competitor Codes from Tech Agent)
         rivals = tech_out.get('competitor_codes', [])
@@ -489,7 +637,7 @@ class RealPricingAgent:
         target_margin = self.brain.config["FINANCIAL"]["TARGET_NET_MARGIN"]
         
         # Apply Adjustments
-        final_margin = target_margin + fact_adj_pct + loy_disc + comp_adj + log_risk_pct
+        final_margin = target_margin + fact_adj_pct + loy_disc + comp_adj + log_risk_pct + cont_adj
         if final_margin < self.brain.config["FINANCIAL"]["MIN_SURVIVAL_MARGIN"]:
             final_margin = self.brain.config["FINANCIAL"]["MIN_SURVIVAL_MARGIN"]
             strategy_notes.append("EMERGENCY: Margin Floor Hit (Survival Mode)")
@@ -497,6 +645,12 @@ class RealPricingAgent:
         full_cost_base = base_cost + fin_cost
         bid_value = full_cost_base * (1 + final_margin)
         gst_val = bid_value * self.brain.config["FINANCIAL"]["GST_RATE"] # GST on top
+
+        # --- D. MONTE CARLO SIMULATION (Advanced Tech) ---
+        # "100 Steps Ahead" - Simulate 100 Futures
+        sim_results = self.brain.simulate_volatility(total_mfg, log_cost, final_margin)
+        negotiation_points = self.brain.generate_negotiation_script(sim_results, strategy_notes)
+
 
         # --- D. PDF REPORT ---
         report_url = "#"
@@ -568,6 +722,12 @@ class RealPricingAgent:
                     "rationale": strategy_notes, 
                     "competitor_impact": f"{comp_adj*100:+.1f}%", 
                     "zone_risk": f"{log_risk_pct*100}%"
+                },
+                "simulation": {
+                    "min_safe_price": int(sim_results['min_safe']),
+                    "max_profit_price": int(sim_results['max_profit']),
+                    "volatility_risk": f"{sim_results['volatility_index']*100:.1f}%",
+                    "negotiation_script": negotiation_points
                 }
             },
             "audit_report_url": report_url

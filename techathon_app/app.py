@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 import os
 import json
 import datetime
@@ -15,6 +15,20 @@ from agents.priority_agent import RealPriorityAgent
 
 app = Flask(__name__, template_folder='templates')
 app.secret_key = "super_secret_key" 
+
+# ACCESS CODE
+ACCESS_CODE = "16c21d17"
+
+# Middleware to inject user status into all templates
+@app.context_processor
+def inject_user_status():
+    return dict(is_admin=session.get('is_admin', False))
+
+@app.before_request
+def check_access_control():
+    # RELAXED MODE: Allow Public Read Access
+    # Only specific routes will be blocked manually
+    return 
 
 # Initialize Orchestrator
 agent = MainAgent()
@@ -52,6 +66,26 @@ def save_json(path, data):
 # ROUTES
 # ==============================================================================
 
+@app.route('/login', methods=['GET', 'POST'])
+def login_page():
+    if request.method == 'GET':
+        return render_template('login.html')
+    
+    code = request.form.get('access_code')
+    if code == ACCESS_CODE:
+        session['is_admin'] = True
+        flash("Admin Access Granted.", "success")
+        return redirect(url_for('dashboard'))
+    else:
+        flash("Invalid Access Code.", "error")
+        return redirect(url_for('login_page'))
+
+@app.route('/logout')
+def logout():
+    session.pop('is_admin', None)
+    flash("Logged out. Returned to Read-Only mode.", "info")
+    return redirect(url_for('dashboard'))
+
 @app.route('/')
 def dashboard():
     """
@@ -80,6 +114,9 @@ def dashboard():
 
 @app.route('/upload_page')
 def upload_page():
+    if not session.get('is_admin', False):
+         flash("Please Login to access Uploads.", "error")
+         return redirect(url_for('login_page'))
     return render_template('upload.html')
 
 @app.route('/upload', methods=['POST'])
@@ -87,6 +124,10 @@ def upload_file():
     if 'rfp_file' not in request.files:
         flash("No file part", "error")
         return redirect(request.url)
+    
+    if not session.get('is_admin', False):
+         flash("Read-Only Mode. Cannot upload.", "error")
+         return redirect(request.url)
         
     file = request.files['rfp_file']
     if file.filename == '':
@@ -218,6 +259,9 @@ def run_specific_agent(agent_type, rfp_id):
 
 @app.route('/archive_rfp/<rfp_id>')
 def archive_rfp(rfp_id):
+    if not session.get('is_admin', False):
+         flash("Admin Access Required to Archive.", "error")
+         return redirect(url_for('login_page'))
     agent.toggle_archive_status(rfp_id)
     # Trigger Priority Re-Calc on archive toggle
     try: RealPriorityAgent().recalculate_all_priorities()
@@ -226,6 +270,9 @@ def archive_rfp(rfp_id):
 
 @app.route('/delete_rfp/<rfp_id>')
 def delete_rfp(rfp_id):
+    if not session.get('is_admin', False):
+         flash("Admin Access Required to Delete.", "error")
+         return redirect(url_for('login_page'))
     data = load_json(CENTRAL_DB)
     # Remove record
     data = [d for d in data if d['rfp_unique_id'] != rfp_id]
@@ -241,6 +288,10 @@ def delete_rfp(rfp_id):
 # --- DATA MANAGER ROUTE (Updated for Robustness) ---
 @app.route('/manage/<filename>', methods=['GET', 'POST'])
 def manage_db(filename):
+
+    # VIEW IS FREE - EDIT IS LOCKED
+    # if not session.get('is_admin', False): ... (REMOVED)
+
     file_path = os.path.join(DB_FOLDER, f"{filename}.json")
     
     if request.method == 'POST':
@@ -296,6 +347,11 @@ def manage_db(filename):
 
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
+    # SECURE: Admin Access Only
+    if not session.get('is_admin', False):
+         flash("Admin Access Required to Change Settings.", "error")
+         return redirect(url_for('login_page'))
+
     if request.method == 'POST':
         try:
             new_config = {
@@ -321,6 +377,10 @@ def settings():
                     "weight_relationship": float(request.form.get('w_rel', 0.4)),
                     "weight_urgency": float(request.form.get('w_urgency', 0.2)),
                     "max_urgency_days": int(request.form.get('max_days', 90))
+                },
+                "warehouse_config": {
+                    "latitude": float(request.form.get('wh_lat', 0.0)),
+                    "longitude": float(request.form.get('wh_long', 0.0))
                 }
             }
             with open(SETTINGS_FILE, 'w') as f: json.dump(new_config, f, indent=2)
@@ -333,7 +393,7 @@ def settings():
     if not os.path.exists(SETTINGS_FILE): config = {}
     else:
         with open(SETTINGS_FILE, 'r') as f: config = json.load(f)
+    
     return render_template('settings.html', config=config)
-
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

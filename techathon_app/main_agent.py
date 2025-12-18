@@ -112,12 +112,15 @@ class MainAgent:
         print(f"🧵 [Pipeline] Started for {rfp_id} | Mode: {'AUTO' if auto_mode else 'MANUAL'}")
         
         # ---------------- STEP 1: REAL SALES AGENT ----------------
-        # ---------------- STEP 1: REAL SALES AGENT (VIA API) ----------------
         try:
              print(f"🤖 Calling Sales Agent API on {filename}...")
              
              import requests
-             url = "http://127.0.0.1:8000/process-rfp"
+             # USE ENVIRONMENT VARIABLE FOR FLEXIBLE DEPLOYMENT
+             api_base = os.getenv("BACKEND_API_URL", "http://127.0.0.1:8000")
+             url = f"{api_base}/process-rfp"
+             # Remove trailing slash double issues if present
+             if "//process" in url: url = url.replace("//process", "/process")
              
              with open(filepath, 'rb') as f:
                  files = {'file': (filename, f, 'application/pdf')}

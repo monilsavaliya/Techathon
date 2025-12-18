@@ -20,37 +20,54 @@
     }
 </script>
 
-<div class="flex flex-col h-full" x-data="{ 
-    search: '', 
-    items: window.dbData || [],
-    selectedItem: null,
-    viewMode: 'cards',
+<script>
+    function dataManager() {
+        console.log("Initializing DataManager. DB Data:", window.dbData);
+        return {
+            search: '',
+            items: window.dbData || [],
+            selectedItem: null,
+            viewMode: 'cards',
 
-    get filteredItems() {
-        if (!this.search) return this.items;
-        const s = this.search.toLowerCase();
-        return this.items.filter(item => JSON.stringify(item).toLowerCase().includes(s));
-    },
+            get filteredItems() {
+                try {
+                    if (!this.search) return this.items || [];
+                    const s = this.search.toLowerCase();
+                    return this.items.filter(item => item && JSON.stringify(item).toLowerCase().includes(s));
+                } catch (e) {
+                    console.error("Filter Error:", e);
+                    return [];
+                }
+            },
 
-    // --- SMART HELPERS FOR DIFFERENT FILES ---
-    getName(item) {
-        // Production & RFP specific
-        if (item.line_type && item.batch_id) return `${item.batch_id} (${item.line_type})`;
-        if (item.project_title) return item.project_title;
-        if (item.rfp_unique_id) return item.rfp_unique_id;
-        
-        // General
-        return item.product_name || item.client_name || item.name || item.test_name || item.material_name || item.zone_type || 'Record';
-    },
+            // --- SMART HELPERS FOR DIFFERENT FILES ---
+            getName(item) {
+                if (!item) return 'Unknown';
+                try {
+                    // Production & RFP specific
+                    if (item.line_type && item.batch_id) return `${item.batch_id} (${item.line_type})`;
+                    if (item.project_title) return item.project_title;
+                    if (item.rfp_unique_id) return item.rfp_unique_id;
 
-    getId(item) {
-        return item.product_id || item.client_id || item.competitor_id || item.test_id || item.material_id || item.zone_code || item.batch_id || item.rfp_unique_id || '#';
-    },
+                    // General
+                    return item.product_name || item.client_name || item.name || item.test_name || item.material_name || item.zone_type || 'Record';
+                } catch (e) { return 'Error'; }
+            },
 
-    getBadge(item) {
-        return item.category || item.tier || item.loyalty_status || item.zone_code || item.volatility_risk_level || item.test_category || null;
+            getId(item) {
+                if (!item) return Math.random().toString(36).substr(2, 9);
+                return item.product_id || item.client_id || item.competitor_id || item.test_id || item.material_id || item.zone_code || item.batch_id || item.rfp_unique_id || '#';
+            },
+
+            getBadge(item) {
+                if (!item) return null;
+                return item.category || item.tier || item.loyalty_status || item.zone_code || item.volatility_risk_level || item.test_category || null;
+            }
+        }
     }
-}">
+</script>
+
+<div class="flex flex-col h-full" x-data="dataManager()">
 
     <div
         class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 mb-6 flex justify-between items-center sticky top-0 z-10">
@@ -85,7 +102,7 @@
 
         <template x-if="viewMode === 'cards' && items.length > 0">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
-                <template x-for="item in filteredItems" :key="getId(item)">
+                <template x-for="(item, index) in filteredItems" :key="index">
                     <div @click="selectedItem = item"
                         class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group relative overflow-hidden flex flex-col h-full">
 
@@ -167,13 +184,13 @@
                             <template x-for="key in Object.keys(items[0] || {})">
                                 <th class="px-6 py-4 whitespace-nowrap"
                                     x-show="!['bill_of_materials', 'technical_specs', 'pricing_intelligence', 'performance_metrics', 'commercial', 'performance_data', 'quality_assurance_requirements'].includes(key)"
-                                    x-text="key.replace(/_/g, ' ')"></th>
+                                    x-text="(key + '').replace(/_/g, ' ')"></th>
                             </template>
                             <th class="px-6 py-4 text-right bg-slate-50">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody" class="divide-y divide-slate-100">
-                        <template x-for="item in filteredItems" :key="getId(item)">
+                        <template x-for="(item, index) in filteredItems" :key="index">
                             <tr class="hover:bg-blue-50/30 transition-colors group">
                                 <template x-for="(val, key) in item">
                                     <td class="px-6 py-3 font-mono text-slate-600 align-middle"
@@ -219,36 +236,16 @@
                         <template x-if="typeof val !== 'object' && val !== null">
                             <div class="flex justify-between items-center">
                                 <span class="text-sm font-medium text-slate-500 capitalize"
-                                    x-text="key.replace(/_/g, ' ')"></span>
+                                    x-text="(key + '').replace(/_/g, ' ')"></span>
                                 <span class="text-sm font-bold text-slate-800 text-right" x-text="val"></span>
                             </div>
                         </template>
-                        <template x-if="typeof val === 'object' && val !== null && !Array.isArray(val)">
+                        <template x-if="typeof val === 'object' && val !== null">
                             <div class="mt-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                                <p class="text-xs font-bold text-blue-600 uppercase mb-3 tracking-wider"
-                                    x-text="key.replace(/_/g, ' ')"></p>
-                                <div class="grid grid-cols-2 gap-y-2 gap-x-8">
-                                    <template x-for="(subVal, subKey) in val">
-                                        <div class="flex justify-between text-xs">
-                                            <span class="text-slate-500 capitalize"
-                                                x-text="subKey.replace(/_/g, ' ')"></span>
-                                            <span class="font-mono font-medium text-slate-700" x-text="subVal"></span>
-                                        </div>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
-                        <template x-if="Array.isArray(val)">
-                            <div class="mt-2">
-                                <p class="text-xs font-bold text-slate-400 uppercase mb-2"
-                                    x-text="key.replace(/_/g, ' ')"></p>
-                                <div class="flex flex-wrap gap-2">
-                                    <template x-for="item in val">
-                                        <span
-                                            class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-lg border border-slate-200"
-                                            x-text="typeof item === 'object' ? (item.name || item.material_id || 'Object') : item"></span>
-                                    </template>
-                                </div>
+                                <p class="text-xs font-bold text-blue-600 uppercase mb-2 tracking-wider"
+                                    x-text="(key + '').replace(/_/g, ' ')"></p>
+                                <pre class="text-[10px] font-mono text-slate-600 overflow-x-auto whitespace-pre-wrap"
+                                    x-text="JSON.stringify(val, null, 2).replace(/[\{\}\[\],]/g, '').trim()"></pre>
                             </div>
                         </template>
                     </div>

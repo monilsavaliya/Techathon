@@ -43,7 +43,7 @@ class RealSalesAgent:
 
     def load_api_keys(self):
         keys = []
-        for i in range(1, 6):
+        for i in range(1, 11):
             k = os.getenv(f"GOOGLE_API_KEY_{i}")
             if k: keys.append(k)
         if os.getenv("GOOGLE_API_KEY"):
@@ -233,13 +233,27 @@ PDF Text:
 
     def safe_parse_json(self, text):
         if not text: return {}
+        
+        # 1. Strip Markdown Code Blocks
+        clean_text = text.strip()
+        if "```json" in clean_text:
+            clean_text = clean_text.split("```json")[1].split("```")[0].strip()
+        elif "```" in clean_text:
+            clean_text = clean_text.split("```")[1].split("```")[0].strip()
+            
         try:
-            return json.loads(text)
+            return json.loads(clean_text)
         except Exception:
-            m = re.search(r"\{.*\}", text, flags=re.S)
-            if m:
-                try: return json.loads(m.group(0))
-                except: pass
+            # 2. Robust Regex Search (Non-Greedy is safer for multiple blocks, but mostly we want the main one)
+            # Find the first opening { and last closing }
+            try:
+                start = clean_text.find('{')
+                end = clean_text.rfind('}')
+                if start != -1 and end != -1:
+                    json_str = clean_text[start:end+1]
+                    return json.loads(json_str)
+            except: pass
+            
         return {}
 
     def sanitize_and_fill(self, parsed):

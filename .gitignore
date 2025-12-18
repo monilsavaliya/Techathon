@@ -1,16 +1,1 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.env
-.ipynb_checkpoints
-temp_uploads/
-.DS_Store
-# Video files (Allowed)
-# *.mp4
-# *.mov
-# *.avi
-# *.mkv
+

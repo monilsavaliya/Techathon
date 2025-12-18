@@ -56,9 +56,24 @@ class RealTechAgent:
         return str(v).strip().lower()
 
     def normalize_material(self, v):
-        mat_map = {"aluminum": "aluminium", "al": "aluminium", "cu": "copper"}
+        # Remove qualifications like (Flexible), (Solid)
         n = self.normalize(v)
-        return mat_map.get(n, n)
+        if not n: return None
+        n = re.sub(r"\(.*?\)", "", n).strip()
+        
+        # 1. Exact Map
+        mat_map = {"aluminum": "aluminium", "al": "aluminium", "alu": "aluminium", "cu": "copper", "copper": "copper", "aluminium": "aluminium"}
+        if n in mat_map: return mat_map[n]
+
+        # 2. Fuzzy Containment
+        # Check for word boundaries to avoid false positives (e.g. 'cal' should not match 'al')
+        tokens = n.split()
+        if "al" in tokens or "aluminum" in tokens or "aluminium" in tokens or "alu" in tokens:
+            return "aluminium"
+        if "cu" in tokens or "copper" in tokens:
+            return "copper"
+            
+        return n
 
     def is_not_specified(self, v):
         return v in [None, "NOT SPECIFIED", ""]
@@ -72,6 +87,53 @@ class RealTechAgent:
 
     # ================= MATCHING LOGIC (From main_code.py) =================
     # ================= SMART NORMALIZATION & MATCHING =================
+    def normalize_standard(self, s):
+        if not s: return None
+        s = self.normalize(s)
+        s = re.sub(r"\(.*?\)", "", s)
+        s = re.sub(r":\d{4}", "", s)
+        return s.replace("part-", "part ").strip()
+
+    # ================= MATCHING LOGIC (Using Advanced Legacy Algorithms) =================
+    
+    def match_cross_section(self, rfp_val, inv_val):
+        if self.is_not_specified(rfp_val): return 1.0 # Loose match
+        try:
+            r = float(rfp_val)
+            i = float(inv_val)
+        except: return 0.0
+        
+        # Percentage difference score: 1.0 - error
+        score = 1.0 - abs(i - r) / r
+        return max(0.0, round(score, 3))
+
+    def match_standards(self, rfp_list, inv_list):
+        """
+        - Total standards weight = 1.0
+        - Divided equally among all RFP standards
+        - Each standard checked independently
+        """
+        if not rfp_list: return 1.0 # No requirement = Perfect match
+        
+        # Ensure lists
+        if isinstance(rfp_list, str): rfp_list = [rfp_list]
+        if isinstance(inv_list, str): inv_list = [inv_list]
+        
+        rfp_norm = [self.normalize_standard(s) for s in rfp_list]
+        inv_norm = set(self.normalize_standard(s) for s in (inv_list or []))
+        
+        total = len(rfp_norm)
+        if total == 0: return 1.0
+        
+        score = 0.0
+        per_std_weight = 1.0 / total
+        
+        for std in rfp_norm:
+            if std == "isi marked": score += per_std_weight
+            elif std in inv_norm: score += per_std_weight
+            
+        return round(score, 3)
+
     def normalize_voltage(self, v):
         """Converts 1.1kV -> 1100, 1100V -> 1100"""
         if not v: return 0
@@ -86,29 +148,28 @@ class RealTechAgent:
 
     def calculate_weighted_score(self, rfp, inv):
         """
-        Calculates a 'Smart Score' based on weighted criticality.
-        Critical: Voltage, Cores, Size, Material (Must be close)
-        Secondary: Insulation, Armour, Sheath (Can deviate slightly)
+        Calculates a 'Smart Score' using 7-Factor Legacy Logic.
         """
         score = 0.0
         max_score = 0.0
         
-        # Weights Configuration
+        # Weights Configuration (Total 100)
         weights = {
-            "voltage_grade": 25,       # Critical safety constraint
-            "core_count": 20,          # Fundamental physical constraint
-            "cross_section_sqmm": 20,  # Capacity constraint
-            "conductor_material": 15,  # Cost constraint
+            "voltage_grade": 20,       
+            "core_count": 15,          
+            "cross_section_sqmm": 15,  
+            "conductor_material": 15,  
             "insulation": 10,
             "sheath": 5,
-            "armour_type": 5
+            "armour_type": 5,
+            "standards": 15 # Added Standards
         }
         
-        # 1. Voltage (Strict Tolerance)
+        # 1. Voltage (Strict)
         rfp_v = self.normalize_voltage(rfp.get("voltage_grade"))
         inv_v = self.normalize_voltage(inv.get("voltage_grade"))
         if rfp_v == inv_v: score += weights["voltage_grade"]
-        elif rfp_v and inv_v and abs(rfp_v - inv_v) / rfp_v < 0.1: score += weights["voltage_grade"] * 0.5 # 10% tolerance
+        elif rfp_v and inv_v and abs(rfp_v - inv_v) / rfp_v < 0.1: score += weights["voltage_grade"] * 0.5 
         max_score += weights["voltage_grade"]
         
         # 2. Core Count (Exact)
@@ -118,13 +179,9 @@ class RealTechAgent:
         except: pass
         max_score += weights["core_count"]
 
-        # 3. Size (Fuzzy)
-        try:
-            r_sz = float(rfp.get("cross_section_sqmm", 0))
-            i_sz = float(inv.get("cross_section_sqmm", 0))
-            if r_sz == i_sz: score += weights["cross_section_sqmm"]
-            elif r_sz > 0 and abs(r_sz - i_sz)/r_sz < 0.05: score += weights["cross_section_sqmm"] * 0.9 # 5% diff ok
-        except: pass
+        # 3. Size (Fuzzy Percentage Score)
+        sz_score = self.match_cross_section(rfp.get("cross_section_sqmm"), inv.get("cross_section_sqmm"))
+        score += weights["cross_section_sqmm"] * sz_score
         max_score += weights["cross_section_sqmm"]
 
         # 4. Material (Synonyms)
@@ -133,11 +190,16 @@ class RealTechAgent:
         if r_mat == i_mat: score += weights["conductor_material"]
         max_score += weights["conductor_material"]
 
-        # 5. Rest (Normal string match)
+        # 5. Standards (New)
+        std_score = self.match_standards(rfp.get("standards"), inv.get("standards"))
+        score += weights["standards"] * std_score
+        max_score += weights["standards"]
+
+        # 6. Rest (Normal string match)
         for field in ["insulation", "sheath", "armour_type"]:
             r_val = self.normalize(rfp.get(field))
             i_val = self.normalize(inv.get(field))
-            if r_val and i_val and (r_val in i_val or i_val in r_val): # Substring match
+            if r_val and i_val and (r_val in i_val or i_val in r_val): 
                 score += weights[field]
             max_score += weights[field]
 
@@ -169,6 +231,7 @@ class RealTechAgent:
                 "matched_sku_id": best_match.get("product_id") if best_match else "NO_MATCH",
                 "matched_sku_name": best_match.get("product_name") if best_match else "No Suitable Product Found",
                 "match_score": highest_score,
+                "quantity": item.get("quantity"),  # Preserve Quantity for Pricing
                 "technical_breakdown": breakdown,
                 "commercial_ref": best_match.get("commercial", {}) if best_match else {}
             })
@@ -187,9 +250,11 @@ class RealTechAgent:
             r_val = rfp_specs.get(f, "N/A")
             s_val = sku_specs.get(f, "N/A")
             
-            # FIX: Use specialized material normalization
+            # FIX: Use specialized material comparisons
             if f == "conductor_material":
                  is_match = self.normalize_material(str(r_val)) == self.normalize_material(str(s_val))
+            elif f == "voltage_grade":
+                 is_match = self.normalize_voltage(r_val) == self.normalize_voltage(s_val)
             else:
                  is_match = self.normalize(str(r_val)) == self.normalize(str(s_val))
             

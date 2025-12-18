@@ -54,15 +54,22 @@
                     <i class="fas fa-bolt text-yellow-400"></i> Top Opportunity
                 </p>
                 <h3 class="text-lg font-bold leading-tight mt-2 truncate w-48">
-                    {% if rfps and rfps[0].sales_agent_2_output and rfps[0].sales_agent_2_output.rank == 1 %}
-                    {{ rfps[0].sales_agent_output.get('summary', {}).get('client_name', 'Unknown') }}
+                    {% set ns = namespace(top=None) %}
+                    {% for r in rfps if not r.is_archived %}
+                    {% if r.sales_agent_2_output and r.sales_agent_2_output.rank == 1 %}
+                    {% set ns.top = r %}
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if ns.top %}
+                    {{ ns.top.sales_agent_output.get('summary', {}).get('client_name', 'Unknown') }}
                     {% else %}
                     No Data Yet
                     {% endif %}
                 </h3>
                 <p class="text-xs text-indigo-100 mt-1 opacity-80">
-                    {% if rfps and rfps[0].sales_agent_2_output and rfps[0].sales_agent_2_output.rank == 1 %}
-                    Rank #1 • {{ rfps[0].sales_agent_2_output.priority_score }}% Win Prob
+                    {% if ns.top %}
+                    Rank #1 • {{ ns.top.sales_agent_2_output.priority_score }}% Win Prob
                     {% else %}
                     Upload a PDF to start ranking
                     {% endif %}

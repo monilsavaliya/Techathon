@@ -160,8 +160,16 @@ class RealPriorityAgent:
             sales_out = rfp.get('sales_agent_output', {})
             summary = sales_out.get('summary', {})
             
-            # A. Product Fit
-            p_score = self.get_product_fit_score(sales_out.get('line_items_extracted', []))
+            # A. Product Fit (Smart Upgrade)
+            tech_out = rfp.get('tech_agent_output', {})
+            if tech_out and tech_out.get('matched_line_items'):
+                # Use Verified Tech Match!
+                items = tech_out.get('matched_line_items', [])
+                total_match = sum([item.get('match_score', 0) for item in items])
+                p_score = (total_match / len(items)) / 100.0 if items else 0.0
+            else:
+                # Fallback to Sales Estimation
+                p_score = self.get_product_fit_score(sales_out.get('line_items_extracted', []))
             
             # B. Relationship
             r_score = self.get_relationship_score(summary.get('client_name', ''))
@@ -169,12 +177,19 @@ class RealPriorityAgent:
             # C. Urgency
             u_score = self.get_urgency_score(summary.get('submission_deadline'))
             
-            # D. Weighted Sum
-            total_score = (
-                (p_score * self.weights["PRODUCT_FIT"]) +
-                (r_score * self.weights["RELATIONSHIP"]) +
-                (u_score * self.weights["URGENCY"])
-            )
+            # D. Multiplicative Priority Logic (Legacy Agent Style)
+            # 1. Estimate Win Probability (average of Fit and Relationship)
+            p_win = (p_score + r_score) / 2.0
+            
+            # 2. Apply Urgency Multiplier (Gamma = 0.5)
+            # Priority = P(Win) * (1 + Gamma * Urgency)
+            gamma = 0.5
+            total_score = p_win * (1.0 + (gamma * u_score))
+            
+            # Normalize to roughly 0-1 range for consistency, though >1 is possible
+            # Max possible = 1.0 * 1.5 = 1.5. So divide by 1.5 to keep 0-1 scale?
+            # User wants "detailed ordering", raw score is fine.
+            # But UI expects 0-100 usually. 
             
             scored_rfps.append({
                 "id": rfp['rfp_unique_id'],
@@ -182,7 +197,8 @@ class RealPriorityAgent:
                 "breakdown": {
                     "product_fit": round(p_score, 2),
                     "relationship": round(r_score, 2),
-                    "urgency": round(u_score, 2)
+                    "urgency": round(u_score, 2),
+                    "p_win_est": round(p_win, 2)
                 }
             })
 

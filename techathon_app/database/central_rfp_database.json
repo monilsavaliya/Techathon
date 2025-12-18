@@ -1,5 +1,1531 @@
 [
   {
+    "rfp_unique_id": "RFP-1766045391",
+    "status": "Bid Ready for Review",
+    "is_archived": false,
+    "created_at": "2025-12-18T13:39:51.339564",
+    "local_file_name": "sample rfp 2.pdf",
+    "document_url": "/static/rfp_docs/sample rfp 2.pdf",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "Completed",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "ITI Limited",
+        "project_title": "Supply of Power and Earthing Cable",
+        "tender_ref_no": "ITI/NSU/ASCON Ph- IV/Cables/PS/2023-24/001",
+        "submission_deadline": "2024-07-31T14:00:00",
+        "contract_currency": "INR",
+        "emd_amount": "205000.0",
+        "emd_type": "Demand Draft / Bankers Cheque / Online Payment"
+      },
+      "logistics_constraints": {
+        "delivery_location": "ITI Limited Warehouses in Srinagar and Rae Bareli",
+        "delivery_coordinates": {
+          "lat": 34.0836,
+          "lon": 74.7973
+        },
+        "distance_from_factory_km": 1448.81,
+        "zone_code": "Z-02",
+        "zone_type": "Hilly_Remote",
+        "delivery_timeline_days": 153,
+        "unloading_scope": "Bidder Scope",
+        "factory_coordinates": {
+          "lat": 21.1702,
+          "lon": 72.8311
+        }
+      },
+      "commercial_terms": {
+        "payment_terms": "100% against actual delivery and acceptance",
+        "penalty_clause": "0.5% of PO value per week, max 10% of order value",
+        "price_basis": "Firm Price, FOR Destination"
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L001",
+          "raw_description": "70 sq mm Cable, 3.5 Core XLPE armoured Cable Al",
+          "quantity": 960,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 3.5,
+            "cross_section_sqmm": 70,
+            "conductor_material": "Aluminum",
+            "insulation": "XLPE",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "Aluminum Wire",
+            "sheath": "NOT SPECIFIED",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L002",
+          "raw_description": "50 sq mm Cable, 3.5 Core XLPE armoured Cable Al",
+          "quantity": 11160,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 3.5,
+            "cross_section_sqmm": 50,
+            "conductor_material": "Aluminum",
+            "insulation": "XLPE",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "Aluminum Wire",
+            "sheath": "NOT SPECIFIED",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L003",
+          "raw_description": "35 sq mm Cable, 3.5 Core XLPE armoured Al",
+          "quantity": 4450,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 3.5,
+            "cross_section_sqmm": 35,
+            "conductor_material": "Aluminum",
+            "insulation": "XLPE",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "Aluminum Wire",
+            "sheath": "NOT SPECIFIED",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L004",
+          "raw_description": "25 sq mm Cable, 3.5 Core XLPE armoured Al",
+          "quantity": 5100,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 3.5,
+            "cross_section_sqmm": 25,
+            "conductor_material": "Aluminum",
+            "insulation": "XLPE",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "Aluminum Wire",
+            "sheath": "NOT SPECIFIED",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L005",
+          "raw_description": "4 Core XLPE Cable 16 Sq mm Al armored",
+          "quantity": 45,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 4,
+            "cross_section_sqmm": 16,
+            "conductor_material": "Aluminum",
+            "insulation": "XLPE",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "Aluminum Wire",
+            "sheath": "NOT SPECIFIED",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L006",
+          "raw_description": "4 Core XLPE Cable 10 Sq mm Al armored",
+          "quantity": 45,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 4,
+            "cross_section_sqmm": 10,
+            "conductor_material": "Aluminum",
+            "insulation": "XLPE",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "Aluminum Wire",
+            "sheath": "NOT SPECIFIED",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L007",
+          "raw_description": "4 Core PVC Cable 6 Sq mm Cu",
+          "quantity": 370,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 4,
+            "cross_section_sqmm": 6,
+            "conductor_material": "Copper",
+            "insulation": "PVC",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "NOT SPECIFIED",
+            "standards": [
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L008",
+          "raw_description": "3 Core PVC Cable 6 Sq mm Cu",
+          "quantity": 5550,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 3,
+            "cross_section_sqmm": 6,
+            "conductor_material": "Copper",
+            "insulation": "PVC",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "NOT SPECIFIED",
+            "standards": [
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L009",
+          "raw_description": "25 Sq mm Cu single core cable Black",
+          "quantity": 12500,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 25,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Black",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L010",
+          "raw_description": "25 Sq mm Cu single core cable Red",
+          "quantity": 12500,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 25,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Red",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L011",
+          "raw_description": "16 Sq mm Cu single core cable Red",
+          "quantity": 9920,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 16,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Red",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L012",
+          "raw_description": "16 Sq mm Cu single core cable Black",
+          "quantity": 9920,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 16,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Black",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L013",
+          "raw_description": "Power cable Red 10 Sqmm Cu Single Core",
+          "quantity": 7400,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 10,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Red",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L014",
+          "raw_description": "Power cable Black 10 Sqmm Cu Single Core",
+          "quantity": 7400,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 10,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Black",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L015",
+          "raw_description": "Power cable Red 4 Sqmm Cu Single Core",
+          "quantity": 1050,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 4,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Red",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L016",
+          "raw_description": "Power cable Black 4 Sqmm Cu Single Core",
+          "quantity": 1050,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 4,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Black",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L017",
+          "raw_description": "Earthing Cable 35 Sqmm Cu Single core (Green)",
+          "quantity": 21000,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 35,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Green",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        },
+        {
+          "lot_id": "L018",
+          "raw_description": "Earthing Cable 6 Sqmm Cu Single core (Green)",
+          "quantity": 3640,
+          "unit": "Meter",
+          "technical_attributes": {
+            "voltage_grade": "NOT SPECIFIED",
+            "core_count": 1,
+            "cross_section_sqmm": 6,
+            "conductor_material": "Copper",
+            "insulation": "NOT SPECIFIED",
+            "screen": "NOT SPECIFIED",
+            "armour_type": "NOT SPECIFIED",
+            "sheath": "Green",
+            "standards": [
+              "IS 7098 Part 1 (1988)",
+              "IS 1554 Part 1 (1988)",
+              "IS 694:1990",
+              "ISI Marked"
+            ]
+          }
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Completed",
+      "matched_line_items": [
+        {
+          "lot_id": "L001",
+          "rfp_description": "70 sq mm Cable, 3.5 Core XLPE armoured Cable Al",
+          "matched_sku_id": "PC-LT-AL-3.5C-70",
+          "matched_sku_name": "Polycab 1.1kV 3.5 Core 70sqmm Aluminium Armoured Cable",
+          "match_score": 65.0,
+          "quantity": 960,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 3.5,
+              "actual": 3.5,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 70,
+              "actual": 70,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Aluminum",
+              "actual": "Aluminium",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "XLPE",
+              "actual": "XLPE",
+              "status": "Match"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 325.0,
+            "setup_cost": 1500.0,
+            "inventory_stock": 800,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L002",
+          "rfp_description": "50 sq mm Cable, 3.5 Core XLPE armoured Cable Al",
+          "matched_sku_id": "PC-LT-AL-3.5C-50",
+          "matched_sku_name": "Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable",
+          "match_score": 65.0,
+          "quantity": 11160,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 3.5,
+              "actual": 3.5,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 50,
+              "actual": 50,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Aluminum",
+              "actual": "Aluminium",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "XLPE",
+              "actual": "XLPE",
+              "status": "Match"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 240.0,
+            "setup_cost": 1500.0,
+            "inventory_stock": 1200,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L003",
+          "rfp_description": "35 sq mm Cable, 3.5 Core XLPE armoured Al",
+          "matched_sku_id": "PC-LT-AL-3.5C-35",
+          "matched_sku_name": "Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable",
+          "match_score": 65.0,
+          "quantity": 4450,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 3.5,
+              "actual": 3.5,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 35,
+              "actual": 35,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Aluminum",
+              "actual": "Aluminium",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "XLPE",
+              "actual": "XLPE",
+              "status": "Match"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 185.0,
+            "setup_cost": 1200.0,
+            "inventory_stock": 320,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L004",
+          "rfp_description": "25 sq mm Cable, 3.5 Core XLPE armoured Al",
+          "matched_sku_id": "PC-LT-AL-3.5C-25",
+          "matched_sku_name": "Polycab 1.1kV 3.5 Core 25sqmm Aluminium Armoured Cable",
+          "match_score": 65.0,
+          "quantity": 5100,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 3.5,
+              "actual": 3.5,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 25,
+              "actual": 25,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Aluminum",
+              "actual": "Aluminium",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "XLPE",
+              "actual": "XLPE",
+              "status": "Match"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 145.0,
+            "setup_cost": 1200.0,
+            "inventory_stock": 450,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L005",
+          "rfp_description": "4 Core XLPE Cable 16 Sq mm Al armored",
+          "matched_sku_id": "PC-LT-AL-4C-16",
+          "matched_sku_name": "Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable",
+          "match_score": 65.0,
+          "quantity": 45,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 4,
+              "actual": 4,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 16,
+              "actual": 16,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Aluminum",
+              "actual": "Aluminium",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "XLPE",
+              "actual": "XLPE",
+              "status": "Match"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 95.0,
+            "setup_cost": 800.0,
+            "inventory_stock": 1500,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L006",
+          "rfp_description": "4 Core XLPE Cable 10 Sq mm Al armored",
+          "matched_sku_id": "PC-LT-AL-4C-16",
+          "matched_sku_name": "Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable",
+          "match_score": 56.0,
+          "quantity": 45,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 4,
+              "actual": 4,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 10,
+              "actual": 16,
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Aluminum",
+              "actual": "Aluminium",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "XLPE",
+              "actual": "XLPE",
+              "status": "Match"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 95.0,
+            "setup_cost": 800.0,
+            "inventory_stock": 1500,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L007",
+          "rfp_description": "4 Core PVC Cable 6 Sq mm Cu",
+          "matched_sku_id": "PC-LT-CU-4C-6",
+          "matched_sku_name": "Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable",
+          "match_score": 52.5,
+          "quantity": 370,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 4,
+              "actual": 4,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 6,
+              "actual": 6,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "PVC",
+              "actual": "XLPE",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 220.0,
+            "setup_cost": 500.0,
+            "inventory_stock": 2000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L008",
+          "rfp_description": "3 Core PVC Cable 6 Sq mm Cu",
+          "matched_sku_id": "PC-LT-CU-3C-6",
+          "matched_sku_name": "Polycab 1.1kV 3 Core 6sqmm Copper Armoured Cable",
+          "match_score": 52.5,
+          "quantity": 5550,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 3,
+              "actual": 3,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 6,
+              "actual": 6,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "PVC",
+              "actual": "XLPE",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 180.0,
+            "setup_cost": 500.0,
+            "inventory_stock": 2000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L009",
+          "rfp_description": "25 Sq mm Cu single core cable Black",
+          "matched_sku_id": "PC-LT-CU-1C-25-RED",
+          "matched_sku_name": "Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)",
+          "match_score": 52.5,
+          "quantity": 12500,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 25,
+              "actual": 25,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper (Flexible)",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 280.0,
+            "setup_cost": 300.0,
+            "inventory_stock": 5000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L010",
+          "rfp_description": "25 Sq mm Cu single core cable Red",
+          "matched_sku_id": "PC-LT-CU-1C-25-RED",
+          "matched_sku_name": "Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)",
+          "match_score": 52.5,
+          "quantity": 12500,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 25,
+              "actual": 25,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper (Flexible)",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 280.0,
+            "setup_cost": 300.0,
+            "inventory_stock": 5000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L011",
+          "rfp_description": "16 Sq mm Cu single core cable Red",
+          "matched_sku_id": "PC-LT-CU-1C-16-RED",
+          "matched_sku_name": "Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)",
+          "match_score": 52.5,
+          "quantity": 9920,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 16,
+              "actual": 16,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper (Flexible)",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 185.0,
+            "setup_cost": 300.0,
+            "inventory_stock": 6000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L012",
+          "rfp_description": "16 Sq mm Cu single core cable Black",
+          "matched_sku_id": "PC-LT-CU-1C-16-RED",
+          "matched_sku_name": "Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)",
+          "match_score": 52.5,
+          "quantity": 9920,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 16,
+              "actual": 16,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper (Flexible)",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 185.0,
+            "setup_cost": 300.0,
+            "inventory_stock": 6000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L013",
+          "rfp_description": "Power cable Red 10 Sqmm Cu Single Core",
+          "matched_sku_id": "PC-LT-CU-1C-10-RED",
+          "matched_sku_name": "Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)",
+          "match_score": 52.5,
+          "quantity": 7400,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 10,
+              "actual": 10,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper (Flexible)",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 120.0,
+            "setup_cost": 250.0,
+            "inventory_stock": 8000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L014",
+          "rfp_description": "Power cable Black 10 Sqmm Cu Single Core",
+          "matched_sku_id": "PC-LT-CU-1C-10-RED",
+          "matched_sku_name": "Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)",
+          "match_score": 52.5,
+          "quantity": 7400,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 10,
+              "actual": 10,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper (Flexible)",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 120.0,
+            "setup_cost": 250.0,
+            "inventory_stock": 8000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L015",
+          "rfp_description": "Power cable Red 4 Sqmm Cu Single Core",
+          "matched_sku_id": "PC-CU-4",
+          "matched_sku_name": "Polycab Copper Wire 4 sqmm",
+          "match_score": 52.5,
+          "quantity": 1050,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1.1kV",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 4,
+              "actual": 4,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC FRLS",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 28.0,
+            "currency": "INR",
+            "min_order_quantity": 9000
+          }
+        },
+        {
+          "lot_id": "L016",
+          "rfp_description": "Power cable Black 4 Sqmm Cu Single Core",
+          "matched_sku_id": "PC-CU-4",
+          "matched_sku_name": "Polycab Copper Wire 4 sqmm",
+          "match_score": 52.5,
+          "quantity": 1050,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1.1kV",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 4,
+              "actual": 4,
+              "status": "Match"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC FRLS",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 28.0,
+            "currency": "INR",
+            "min_order_quantity": 9000
+          }
+        },
+        {
+          "lot_id": "L017",
+          "rfp_description": "Earthing Cable 35 Sqmm Cu Single core (Green)",
+          "matched_sku_id": "PC-LT-CU-1C-25-RED",
+          "matched_sku_name": "Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)",
+          "match_score": 48.2,
+          "quantity": 21000,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 35,
+              "actual": 25,
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper (Flexible)",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 280.0,
+            "setup_cost": 300.0,
+            "inventory_stock": 5000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L018",
+          "rfp_description": "Earthing Cable 6 Sqmm Cu Single core (Green)",
+          "matched_sku_id": "PC-CU-4",
+          "matched_sku_name": "Polycab Copper Wire 4 sqmm",
+          "match_score": 47.5,
+          "quantity": 3640,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1.1kV",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 6,
+              "actual": 4,
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC FRLS",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 28.0,
+            "currency": "INR",
+            "min_order_quantity": 9000
+          }
+        }
+      ],
+      "competitor_analysis": [
+        {
+          "lot_id": "L002",
+          "competitor": "Rho Cables",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-AL-3.5C-50"
+        },
+        {
+          "lot_id": "L003",
+          "competitor": "City Electricals",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-AL-3.5C-35"
+        },
+        {
+          "lot_id": "L004",
+          "competitor": "Bonton Cables",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-AL-3.5C-25"
+        },
+        {
+          "lot_id": "L005",
+          "competitor": "Gemscab",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-AL-4C-16"
+        },
+        {
+          "lot_id": "L005",
+          "competitor": "V-Flow Tech Cables",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-AL-4C-16"
+        },
+        {
+          "lot_id": "L006",
+          "competitor": "Gemscab",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-AL-4C-16"
+        },
+        {
+          "lot_id": "L006",
+          "competitor": "V-Flow Tech Cables",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-AL-4C-16"
+        },
+        {
+          "lot_id": "L008",
+          "competitor": "Finolex Cables",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-CU-3C-6"
+        },
+        {
+          "lot_id": "L011",
+          "competitor": "Theta Cables",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-CU-1C-16-RED"
+        },
+        {
+          "lot_id": "L012",
+          "competitor": "Theta Cables",
+          "risk": "High",
+          "comment": "Direct competitor for PC-LT-CU-1C-16-RED"
+        },
+        {
+          "lot_id": "L015",
+          "competitor": "Havells India",
+          "risk": "High",
+          "comment": "Direct competitor for PC-CU-4"
+        },
+        {
+          "lot_id": "L015",
+          "competitor": "V-Guard",
+          "risk": "High",
+          "comment": "Direct competitor for PC-CU-4"
+        },
+        {
+          "lot_id": "L015",
+          "competitor": "Beta Wires Ltd",
+          "risk": "High",
+          "comment": "Direct competitor for PC-CU-4"
+        },
+        {
+          "lot_id": "L016",
+          "competitor": "Havells India",
+          "risk": "High",
+          "comment": "Direct competitor for PC-CU-4"
+        },
+        {
+          "lot_id": "L016",
+          "competitor": "V-Guard",
+          "risk": "High",
+          "comment": "Direct competitor for PC-CU-4"
+        },
+        {
+          "lot_id": "L016",
+          "competitor": "Beta Wires Ltd",
+          "risk": "High",
+          "comment": "Direct competitor for PC-CU-4"
+        },
+        {
+          "lot_id": "L018",
+          "competitor": "Havells India",
+          "risk": "High",
+          "comment": "Direct competitor for PC-CU-4"
+        },
+        {
+          "lot_id": "L018",
+          "competitor": "V-Guard",
+          "risk": "High",
+          "comment": "Direct competitor for PC-CU-4"
+        },
+        {
+          "lot_id": "L018",
+          "competitor": "Beta Wires Ltd",
+          "risk": "High",
+          "comment": "Direct competitor for PC-CU-4"
+        }
+      ],
+      "competitor_codes": [
+        "Beta Wires Ltd",
+        "Havells India",
+        "Bonton Cables",
+        "Theta Cables",
+        "Finolex Cables",
+        "V-Flow Tech Cables",
+        "V-Guard",
+        "Gemscab",
+        "City Electricals",
+        "Rho Cables"
+      ],
+      "required_test_codes": [
+        "TEST-AT-002",
+        "TEST-RT-001",
+        "TEST-RT-002",
+        "TEST-AT-004",
+        "TEST-AT-001",
+        "TEST-AT-003"
+      ],
+      "testing_cost_estimate": 352170.0,
+      "compliance_report_html": "<h3>Technical Compliance Matrix</h3><table border='1' style='border-collapse: collapse; width: 100%;'><tr style='background-color: #f2f2f2;'><th>Lot ID</th><th>Requested</th><th>Matched Product</th><th>Score</th><th>Status</th></tr><tr><td>L001</td><td>70 sq mm Cable, 3.5 Core XLPE armoured Cable Al</td><td>Polycab 1.1kV 3.5 Core 70sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L002</td><td>50 sq mm Cable, 3.5 Core XLPE armoured Cable Al</td><td>Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L003</td><td>35 sq mm Cable, 3.5 Core XLPE armoured Al</td><td>Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L004</td><td>25 sq mm Cable, 3.5 Core XLPE armoured Al</td><td>Polycab 1.1kV 3.5 Core 25sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L005</td><td>4 Core XLPE Cable 16 Sq mm Al armored</td><td>Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L006</td><td>4 Core XLPE Cable 10 Sq mm Al armored</td><td>Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>56.0%</td><td>Deviation</td></tr><tr><td>L007</td><td>4 Core PVC Cable 6 Sq mm Cu</td><td>Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L008</td><td>3 Core PVC Cable 6 Sq mm Cu</td><td>Polycab 1.1kV 3 Core 6sqmm Copper Armoured Cable</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L009</td><td>25 Sq mm Cu single core cable Black</td><td>Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L010</td><td>25 Sq mm Cu single core cable Red</td><td>Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L011</td><td>16 Sq mm Cu single core cable Red</td><td>Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L012</td><td>16 Sq mm Cu single core cable Black</td><td>Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L013</td><td>Power cable Red 10 Sqmm Cu Single Core</td><td>Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L014</td><td>Power cable Black 10 Sqmm Cu Single Core</td><td>Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L015</td><td>Power cable Red 4 Sqmm Cu Single Core</td><td>Polycab Copper Wire 4 sqmm</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L016</td><td>Power cable Black 4 Sqmm Cu Single Core</td><td>Polycab Copper Wire 4 sqmm</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L017</td><td>Earthing Cable 35 Sqmm Cu Single core (Green)</td><td>Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)</td><td style='color:red; font-weight:bold;'>48.2%</td><td>Deviation</td></tr><tr><td>L018</td><td>Earthing Cable 6 Sqmm Cu Single core (Green)</td><td>Polycab Copper Wire 4 sqmm</td><td style='color:red; font-weight:bold;'>47.5%</td><td>Deviation</td></tr></table>"
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "final_bid_value": 28652817,
+        "margin_percentage": "14.0%",
+        "total_cost_base": 25134050,
+        "total_material_cost": 21729618,
+        "total_logistics_cost": 1187355,
+        "total_packaging_cost": 1488000,
+        "total_testing_cost": 483600,
+        "finance_cost": 245476
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 21729618.3078,
+          "breakdown": [
+            "   - EC Grade Aluminium (H2/H4 Grade): 0.76 units/m @ 231.00",
+            "   - XLPE Compound (Low Voltage Grade): 0.18 units/m @ 147.90",
+            "   - EC Grade Aluminium (H2/H4 Grade): 0.54 units/m @ 231.00",
+            "   - XLPE Compound (Low Voltage Grade): 0.14 units/m @ 147.90",
+            "   - EC Grade Aluminium (H2/H4 Grade): 0.38 units/m @ 231.00",
+            "   - XLPE Compound (Low Voltage Grade): 0.1 units/m @ 147.90",
+            "   - EC Grade Aluminium (H2/H4 Grade): 0.27 units/m @ 231.00",
+            "   - XLPE Compound (Low Voltage Grade): 0.08 units/m @ 147.90",
+            "   - EC Grade Aluminium (H2/H4 Grade): 0.18 units/m @ 231.00",
+            "   - XLPE Compound (Low Voltage Grade): 0.06 units/m @ 147.90",
+            "   - EC Grade Aluminium (H2/H4 Grade): 0.18 units/m @ 231.00",
+            "   - XLPE Compound (Low Voltage Grade): 0.06 units/m @ 147.90",
+            "   - EC Grade Copper (99.9% Pure): 0.22 units/m (High Volatility Risk +1591)",
+            "   - XLPE Compound (Low Voltage Grade): 0.05 units/m @ 147.90",
+            "   - EC Grade Copper (99.9% Pure): 0.17 units/m (High Volatility Risk +18445)",
+            "   - XLPE Compound (Low Voltage Grade): 0.04 units/m @ 147.90",
+            "   - EC Grade Copper (99.9% Pure): 0.23 units/m (High Volatility Risk +56206)",
+            "   - PVC Compound (Type A - General): 0.03 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.23 units/m (High Volatility Risk +56206)",
+            "   - PVC Compound (Type A - General): 0.03 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.15 units/m (High Volatility Risk +29090)",
+            "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.15 units/m (High Volatility Risk +29090)",
+            "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.09 units/m (High Volatility Risk +13020)",
+            "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.09 units/m (High Volatility Risk +13020)",
+            "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.036 units/m (High Volatility Risk +738)",
+            "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.036 units/m (High Volatility Risk +738)",
+            "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.23 units/m (High Volatility Risk +94426)",
+            "   - PVC Compound (Type A - General): 0.03 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.036 units/m (High Volatility Risk +2561)",
+            "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00"
+          ],
+          "formula": "Micro-BOM"
+        },
+        "packaging": {
+          "total": 1488000,
+          "breakdown": [
+            "330 Drums Est"
+          ]
+        },
+        "testing": {
+          "total": 483600.0,
+          "breakdown": [
+            "Per Tech Agent Codes"
+          ]
+        },
+        "logistics": {
+          "total": 1187355.52806336,
+          "formula": "(108.62T x 1448.81km x 4.5 Rate x 1.0 Zone (Z-01))"
+        },
+        "strategy": {
+          "rationale": [
+            "Credit Cost (30 days): +INR 245476",
+            "Low-Cost Rival: Beta Wires Ltd -> -4% Margin",
+            "Price War Alert: Bonton Cables (Aggressive) -> -3% Margin",
+            "Price War Alert: Theta Cables (Aggressive) -> -3% Margin",
+            "Price War Alert: V-Flow Tech Cables (Aggressive) -> -3% Margin",
+            "Price War Alert: Gemscab (Aggressive) -> -3% Margin",
+            "Market Pressure Buildup (4 extra rivals): -2.0%",
+            "Zone Risk (Plains_Highway): +2.0%"
+          ],
+          "competitor_impact": "-6.0%",
+          "zone_risk": "2.0%"
+        },
+        "simulation": {
+          "min_safe_price": 24910349,
+          "max_profit_price": 27614665,
+          "volatility_risk": "10.9%",
+          "negotiation_script": [
+            "\u26a0\ufe0f Market is Highly Volatile: Suggest locking price in 48hrs.",
+            "   > Reasoning: commodity simulation shows potential 10.9% upside risk.",
+            "\ud83d\ude9a Highlight specialized logistics handling for their difficult terrain."
+          ]
+        }
+      },
+      "audit_report_url": "/static/audit_reports/RFP-1766045391_AUDIT.pdf"
+    },
+    "sales_agent_2_output": {
+      "rank": 3,
+      "priority_score": 52.8,
+      "breakdown": {
+        "product_fit": 0.56,
+        "relationship": 0.5,
+        "urgency": 0.0,
+        "p_win_est": 0.53
+      }
+    },
+    "last_updated": "2025-12-18T13:40:44.111802"
+  },
+  {
     "rfp_unique_id": "RFP-1766037844",
     "status": "Bid Ready for Review",
     "is_archived": false,
@@ -450,7 +1976,8 @@
           "rfp_description": "70 sq mm Cable, 3.5 Core XLPE armoured Cable Al",
           "matched_sku_id": "PC-LT-AL-3.5C-70",
           "matched_sku_name": "Polycab 1.1kV 3.5 Core 70sqmm Aluminium Armoured Cable",
-          "match_score": 65.0,
+          "match_score": 62.5,
+          "quantity": 960,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -474,7 +2001,7 @@
               "spec": "Conductor Material",
               "requested": "Aluminum",
               "actual": "Aluminium",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -496,7 +2023,8 @@
           "rfp_description": "50 sq mm Cable, 3.5 Core XLPE armoured Cable Al",
           "matched_sku_id": "PC-LT-AL-3.5C-50",
           "matched_sku_name": "Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable",
-          "match_score": 65.0,
+          "match_score": 62.5,
+          "quantity": 11160,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -520,7 +2048,7 @@
               "spec": "Conductor Material",
               "requested": "Aluminum",
               "actual": "Aluminium",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -542,7 +2070,8 @@
           "rfp_description": "35 sq mm Cable, 3.5 Core XLPE armoured Al",
           "matched_sku_id": "PC-LT-AL-3.5C-35",
           "matched_sku_name": "Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable",
-          "match_score": 65.0,
+          "match_score": 62.5,
+          "quantity": 4450,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -566,7 +2095,7 @@
               "spec": "Conductor Material",
               "requested": "Aluminum",
               "actual": "Aluminium",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -588,7 +2117,8 @@
           "rfp_description": "25 sq mm Cable, 3.5 Core XLPE armoured Al",
           "matched_sku_id": "PC-LT-AL-3.5C-25",
           "matched_sku_name": "Polycab 1.1kV 3.5 Core 25sqmm Aluminium Armoured Cable",
-          "match_score": 65.0,
+          "match_score": 62.5,
+          "quantity": 5100,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -612,7 +2142,7 @@
               "spec": "Conductor Material",
               "requested": "Aluminum",
               "actual": "Aluminium",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -634,7 +2164,8 @@
           "rfp_description": "4 Core XLPE Cable 16 Sq mm Al armored",
           "matched_sku_id": "PC-LT-AL-4C-16",
           "matched_sku_name": "Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable",
-          "match_score": 65.0,
+          "match_score": 62.5,
+          "quantity": 45,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -658,7 +2189,7 @@
               "spec": "Conductor Material",
               "requested": "Aluminum",
               "actual": "Aluminium",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -680,7 +2211,8 @@
           "rfp_description": "4 Core XLPE Cable 10 Sq mm Al armored",
           "matched_sku_id": "PC-LT-AL-4C-16",
           "matched_sku_name": "Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable",
-          "match_score": 45.0,
+          "match_score": 53.5,
+          "quantity": 45,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -704,7 +2236,7 @@
               "spec": "Conductor Material",
               "requested": "Aluminum",
               "actual": "Aluminium",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -726,7 +2258,8 @@
           "rfp_description": "4 Core PVC Cable 6 Sq mm Cu",
           "matched_sku_id": "PC-LT-CU-4C-6",
           "matched_sku_name": "Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable",
-          "match_score": 55.0,
+          "match_score": 52.5,
+          "quantity": 370,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -772,7 +2305,8 @@
           "rfp_description": "3 Core PVC Cable 6 Sq mm Cu",
           "matched_sku_id": "PC-LT-CU-3C-6",
           "matched_sku_name": "Polycab 1.1kV 3 Core 6sqmm Copper Armoured Cable",
-          "match_score": 55.0,
+          "match_score": 52.5,
+          "quantity": 5550,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -818,7 +2352,8 @@
           "rfp_description": "25 Sq mm Cu single core cable Black",
           "matched_sku_id": "PC-LT-CU-1C-25-RED",
           "matched_sku_name": "Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)",
-          "match_score": 40.0,
+          "match_score": 52.5,
+          "quantity": 12500,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -842,7 +2377,7 @@
               "spec": "Conductor Material",
               "requested": "Copper",
               "actual": "Copper (Flexible)",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -864,7 +2399,8 @@
           "rfp_description": "25 Sq mm Cu single core cable Red",
           "matched_sku_id": "PC-LT-CU-1C-25-RED",
           "matched_sku_name": "Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)",
-          "match_score": 40.0,
+          "match_score": 52.5,
+          "quantity": 12500,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -888,7 +2424,7 @@
               "spec": "Conductor Material",
               "requested": "Copper",
               "actual": "Copper (Flexible)",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -910,7 +2446,8 @@
           "rfp_description": "16 Sq mm Cu single core cable Red",
           "matched_sku_id": "PC-LT-CU-1C-16-RED",
           "matched_sku_name": "Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)",
-          "match_score": 40.0,
+          "match_score": 52.5,
+          "quantity": 9920,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -934,7 +2471,7 @@
               "spec": "Conductor Material",
               "requested": "Copper",
               "actual": "Copper (Flexible)",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -956,7 +2493,8 @@
           "rfp_description": "16 Sq mm Cu single core cable Black",
           "matched_sku_id": "PC-LT-CU-1C-16-RED",
           "matched_sku_name": "Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)",
-          "match_score": 40.0,
+          "match_score": 52.5,
+          "quantity": 9920,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -980,7 +2518,7 @@
               "spec": "Conductor Material",
               "requested": "Copper",
               "actual": "Copper (Flexible)",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -1002,7 +2540,8 @@
           "rfp_description": "Power cable Red 10 Sqmm Cu Single Core",
           "matched_sku_id": "PC-LT-CU-1C-10-RED",
           "matched_sku_name": "Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)",
-          "match_score": 40.0,
+          "match_score": 52.5,
+          "quantity": 7400,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -1026,7 +2565,7 @@
               "spec": "Conductor Material",
               "requested": "Copper",
               "actual": "Copper (Flexible)",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -1048,7 +2587,8 @@
           "rfp_description": "Power cable Black 10 Sqmm Cu Single Core",
           "matched_sku_id": "PC-LT-CU-1C-10-RED",
           "matched_sku_name": "Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)",
-          "match_score": 40.0,
+          "match_score": 52.5,
+          "quantity": 7400,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -1072,7 +2612,7 @@
               "spec": "Conductor Material",
               "requested": "Copper",
               "actual": "Copper (Flexible)",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Insulation",
@@ -1094,7 +2634,8 @@
           "rfp_description": "Power cable Red 4 Sqmm Cu Single Core",
           "matched_sku_id": "PC-CU-4",
           "matched_sku_name": "Polycab Copper Wire 4 sqmm",
-          "match_score": 55.0,
+          "match_score": 52.5,
+          "quantity": 1050,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -1138,7 +2679,8 @@
           "rfp_description": "Power cable Black 4 Sqmm Cu Single Core",
           "matched_sku_id": "PC-CU-4",
           "matched_sku_name": "Polycab Copper Wire 4 sqmm",
-          "match_score": 55.0,
+          "match_score": 52.5,
+          "quantity": 1050,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -1180,9 +2722,57 @@
         {
           "lot_id": "L017",
           "rfp_description": "Earthing Cable 35 Sqmm Cu Single core (Green)",
-          "matched_sku_id": "PC-CU-2.5",
-          "matched_sku_name": "Polycab Copper Wire 2.5 sqmm",
-          "match_score": 35.0,
+          "matched_sku_id": "PC-LT-CU-1C-25-RED",
+          "matched_sku_name": "Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)",
+          "match_score": 48.2,
+          "quantity": 21000,
+          "technical_breakdown": [
+            {
+              "spec": "Voltage Grade",
+              "requested": "NOT SPECIFIED",
+              "actual": "1100V",
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Core Count",
+              "requested": 1,
+              "actual": 1,
+              "status": "Match"
+            },
+            {
+              "spec": "Cross Section Sqmm",
+              "requested": 35,
+              "actual": 25,
+              "status": "Mismatch"
+            },
+            {
+              "spec": "Conductor Material",
+              "requested": "Copper",
+              "actual": "Copper (Flexible)",
+              "status": "Match"
+            },
+            {
+              "spec": "Insulation",
+              "requested": "NOT SPECIFIED",
+              "actual": "PVC",
+              "status": "Mismatch"
+            }
+          ],
+          "commercial_ref": {
+            "base_mfg_cost_per_meter": 280.0,
+            "setup_cost": 300.0,
+            "inventory_stock": 5000,
+            "unit_of_measure": "Meter",
+            "currency": "INR"
+          }
+        },
+        {
+          "lot_id": "L018",
+          "rfp_description": "Earthing Cable 6 Sqmm Cu Single core (Green)",
+          "matched_sku_id": "PC-CU-4",
+          "matched_sku_name": "Polycab Copper Wire 4 sqmm",
+          "match_score": 47.5,
+          "quantity": 3640,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
@@ -1198,8 +2788,8 @@
             },
             {
               "spec": "Cross Section Sqmm",
-              "requested": 35,
-              "actual": 2.5,
+              "requested": 6,
+              "actual": 4,
               "status": "Mismatch"
             },
             {
@@ -1216,55 +2806,9 @@
             }
           ],
           "commercial_ref": {
-            "base_mfg_cost_per_meter": 18.5,
+            "base_mfg_cost_per_meter": 28.0,
             "currency": "INR",
             "min_order_quantity": 9000
-          }
-        },
-        {
-          "lot_id": "L018",
-          "rfp_description": "Earthing Cable 6 Sqmm Cu Single core (Green)",
-          "matched_sku_id": "PC-LT-CU-4C-6",
-          "matched_sku_name": "Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable",
-          "match_score": 35.0,
-          "technical_breakdown": [
-            {
-              "spec": "Voltage Grade",
-              "requested": "NOT SPECIFIED",
-              "actual": "1100V",
-              "status": "Mismatch"
-            },
-            {
-              "spec": "Core Count",
-              "requested": 1,
-              "actual": 4,
-              "status": "Mismatch"
-            },
-            {
-              "spec": "Cross Section Sqmm",
-              "requested": 6,
-              "actual": 6,
-              "status": "Match"
-            },
-            {
-              "spec": "Conductor Material",
-              "requested": "Copper",
-              "actual": "Copper",
-              "status": "Match"
-            },
-            {
-              "spec": "Insulation",
-              "requested": "NOT SPECIFIED",
-              "actual": "XLPE",
-              "status": "Mismatch"
-            }
-          ],
-          "commercial_ref": {
-            "base_mfg_cost_per_meter": 220.0,
-            "setup_cost": 500.0,
-            "inventory_stock": 2000,
-            "unit_of_measure": "Meter",
-            "currency": "INR"
           }
         }
       ],
@@ -1366,78 +2910,62 @@
           "comment": "Direct competitor for PC-CU-4"
         },
         {
-          "lot_id": "L017",
-          "competitor": "Polycab India Ltd",
+          "lot_id": "L018",
+          "competitor": "Havells India",
           "risk": "High",
-          "comment": "Direct competitor for PC-CU-2.5"
+          "comment": "Direct competitor for PC-CU-4"
         },
         {
-          "lot_id": "L017",
-          "competitor": "RR Kabel",
-          "risk": "High",
-          "comment": "Direct competitor for PC-CU-2.5"
-        },
-        {
-          "lot_id": "L017",
+          "lot_id": "L018",
           "competitor": "V-Guard",
           "risk": "High",
-          "comment": "Direct competitor for PC-CU-2.5"
+          "comment": "Direct competitor for PC-CU-4"
         },
         {
-          "lot_id": "L017",
-          "competitor": "Ultracab India",
+          "lot_id": "L018",
+          "competitor": "Beta Wires Ltd",
           "risk": "High",
-          "comment": "Direct competitor for PC-CU-2.5"
-        },
-        {
-          "lot_id": "L017",
-          "competitor": "Sigma Wires",
-          "risk": "High",
-          "comment": "Direct competitor for PC-CU-2.5"
+          "comment": "Direct competitor for PC-CU-4"
         }
       ],
       "competitor_codes": [
-        "Sigma Wires",
-        "Finolex Cables",
-        "RR Kabel",
-        "Theta Cables",
-        "Gemscab",
-        "V-Guard",
-        "Polycab India Ltd",
-        "V-Flow Tech Cables",
         "Beta Wires Ltd",
+        "Havells India",
         "Bonton Cables",
-        "Rho Cables",
-        "Ultracab India",
+        "Theta Cables",
+        "Finolex Cables",
+        "V-Flow Tech Cables",
+        "V-Guard",
+        "Gemscab",
         "City Electricals",
-        "Havells India"
+        "Rho Cables"
       ],
       "required_test_codes": [
-        "TEST-RT-001",
-        "TEST-AT-003",
         "TEST-AT-002",
-        "TEST-AT-001",
+        "TEST-RT-001",
         "TEST-RT-002",
-        "TEST-AT-004"
+        "TEST-AT-004",
+        "TEST-AT-001",
+        "TEST-AT-003"
       ],
-      "testing_cost_estimate": 66150.0,
-      "compliance_report_html": "<h3>Technical Compliance Matrix</h3><table border='1' style='border-collapse: collapse; width: 100%;'><tr style='background-color: #f2f2f2;'><th>Lot ID</th><th>Requested</th><th>Matched Product</th><th>Score</th><th>Status</th></tr><tr><td>L001</td><td>70 sq mm Cable, 3.5 Core XLPE armoured Cable Al</td><td>Polycab 1.1kV 3.5 Core 70sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L002</td><td>50 sq mm Cable, 3.5 Core XLPE armoured Cable Al</td><td>Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L003</td><td>35 sq mm Cable, 3.5 Core XLPE armoured Al</td><td>Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L004</td><td>25 sq mm Cable, 3.5 Core XLPE armoured Al</td><td>Polycab 1.1kV 3.5 Core 25sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L005</td><td>4 Core XLPE Cable 16 Sq mm Al armored</td><td>Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>65.0%</td><td>Deviation</td></tr><tr><td>L006</td><td>4 Core XLPE Cable 10 Sq mm Al armored</td><td>Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable</td><td style='color:red; font-weight:bold;'>45.0%</td><td>Deviation</td></tr><tr><td>L007</td><td>4 Core PVC Cable 6 Sq mm Cu</td><td>Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable</td><td style='color:orange; font-weight:bold;'>55.0%</td><td>Deviation</td></tr><tr><td>L008</td><td>3 Core PVC Cable 6 Sq mm Cu</td><td>Polycab 1.1kV 3 Core 6sqmm Copper Armoured Cable</td><td style='color:orange; font-weight:bold;'>55.0%</td><td>Deviation</td></tr><tr><td>L009</td><td>25 Sq mm Cu single core cable Black</td><td>Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)</td><td style='color:red; font-weight:bold;'>40.0%</td><td>Deviation</td></tr><tr><td>L010</td><td>25 Sq mm Cu single core cable Red</td><td>Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)</td><td style='color:red; font-weight:bold;'>40.0%</td><td>Deviation</td></tr><tr><td>L011</td><td>16 Sq mm Cu single core cable Red</td><td>Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)</td><td style='color:red; font-weight:bold;'>40.0%</td><td>Deviation</td></tr><tr><td>L012</td><td>16 Sq mm Cu single core cable Black</td><td>Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)</td><td style='color:red; font-weight:bold;'>40.0%</td><td>Deviation</td></tr><tr><td>L013</td><td>Power cable Red 10 Sqmm Cu Single Core</td><td>Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)</td><td style='color:red; font-weight:bold;'>40.0%</td><td>Deviation</td></tr><tr><td>L014</td><td>Power cable Black 10 Sqmm Cu Single Core</td><td>Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)</td><td style='color:red; font-weight:bold;'>40.0%</td><td>Deviation</td></tr><tr><td>L015</td><td>Power cable Red 4 Sqmm Cu Single Core</td><td>Polycab Copper Wire 4 sqmm</td><td style='color:orange; font-weight:bold;'>55.0%</td><td>Deviation</td></tr><tr><td>L016</td><td>Power cable Black 4 Sqmm Cu Single Core</td><td>Polycab Copper Wire 4 sqmm</td><td style='color:orange; font-weight:bold;'>55.0%</td><td>Deviation</td></tr><tr><td>L017</td><td>Earthing Cable 35 Sqmm Cu Single core (Green)</td><td>Polycab Copper Wire 2.5 sqmm</td><td style='color:red; font-weight:bold;'>35.0%</td><td>Deviation</td></tr><tr><td>L018</td><td>Earthing Cable 6 Sqmm Cu Single core (Green)</td><td>Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable</td><td style='color:red; font-weight:bold;'>35.0%</td><td>Deviation</td></tr></table>"
+      "testing_cost_estimate": 352170.0,
+      "compliance_report_html": "<h3>Technical Compliance Matrix</h3><table border='1' style='border-collapse: collapse; width: 100%;'><tr style='background-color: #f2f2f2;'><th>Lot ID</th><th>Requested</th><th>Matched Product</th><th>Score</th><th>Status</th></tr><tr><td>L001</td><td>70 sq mm Cable, 3.5 Core XLPE armoured Cable Al</td><td>Polycab 1.1kV 3.5 Core 70sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>62.5%</td><td>Deviation</td></tr><tr><td>L002</td><td>50 sq mm Cable, 3.5 Core XLPE armoured Cable Al</td><td>Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>62.5%</td><td>Deviation</td></tr><tr><td>L003</td><td>35 sq mm Cable, 3.5 Core XLPE armoured Al</td><td>Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>62.5%</td><td>Deviation</td></tr><tr><td>L004</td><td>25 sq mm Cable, 3.5 Core XLPE armoured Al</td><td>Polycab 1.1kV 3.5 Core 25sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>62.5%</td><td>Deviation</td></tr><tr><td>L005</td><td>4 Core XLPE Cable 16 Sq mm Al armored</td><td>Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>62.5%</td><td>Deviation</td></tr><tr><td>L006</td><td>4 Core XLPE Cable 10 Sq mm Al armored</td><td>Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>53.5%</td><td>Deviation</td></tr><tr><td>L007</td><td>4 Core PVC Cable 6 Sq mm Cu</td><td>Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L008</td><td>3 Core PVC Cable 6 Sq mm Cu</td><td>Polycab 1.1kV 3 Core 6sqmm Copper Armoured Cable</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L009</td><td>25 Sq mm Cu single core cable Black</td><td>Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L010</td><td>25 Sq mm Cu single core cable Red</td><td>Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L011</td><td>16 Sq mm Cu single core cable Red</td><td>Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L012</td><td>16 Sq mm Cu single core cable Black</td><td>Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L013</td><td>Power cable Red 10 Sqmm Cu Single Core</td><td>Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L014</td><td>Power cable Black 10 Sqmm Cu Single Core</td><td>Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L015</td><td>Power cable Red 4 Sqmm Cu Single Core</td><td>Polycab Copper Wire 4 sqmm</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L016</td><td>Power cable Black 4 Sqmm Cu Single Core</td><td>Polycab Copper Wire 4 sqmm</td><td style='color:orange; font-weight:bold;'>52.5%</td><td>Deviation</td></tr><tr><td>L017</td><td>Earthing Cable 35 Sqmm Cu Single core (Green)</td><td>Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)</td><td style='color:red; font-weight:bold;'>48.2%</td><td>Deviation</td></tr><tr><td>L018</td><td>Earthing Cable 6 Sqmm Cu Single core (Green)</td><td>Polycab Copper Wire 4 sqmm</td><td style='color:red; font-weight:bold;'>47.5%</td><td>Deviation</td></tr></table>"
     },
     "pricing_agent_output": {
       "status": "Success",
       "financial_summary": {
-        "final_bid_value": 3589287,
-        "margin_percentage": "4.0%",
-        "total_cost_base": 3451238,
-        "total_material_cost": 2725593,
-        "total_logistics_cost": 165437,
-        "total_packaging_cost": 432000,
-        "total_testing_cost": 94500,
-        "finance_cost": 33707
+        "final_bid_value": 28652376,
+        "margin_percentage": "14.0%",
+        "total_cost_base": 25133663,
+        "total_material_cost": 21729618,
+        "total_logistics_cost": 1186972,
+        "total_packaging_cost": 1488000,
+        "total_testing_cost": 483600,
+        "finance_cost": 245472
       },
       "audit_details": {
         "manufacturing": {
-          "total": 2725593.48,
+          "total": 21729618.3078,
           "breakdown": [
             "   - EC Grade Aluminium (H2/H4 Grade): 0.76 units/m @ 231.00",
             "   - XLPE Compound (Low Voltage Grade): 0.18 units/m @ 147.90",
@@ -1451,75 +2979,82 @@
             "   - XLPE Compound (Low Voltage Grade): 0.06 units/m @ 147.90",
             "   - EC Grade Aluminium (H2/H4 Grade): 0.18 units/m @ 231.00",
             "   - XLPE Compound (Low Voltage Grade): 0.06 units/m @ 147.90",
-            "   - EC Grade Copper (99.9% Pure): 0.22 units/m (High Volatility Risk +4300)",
+            "   - EC Grade Copper (99.9% Pure): 0.22 units/m (High Volatility Risk +1591)",
             "   - XLPE Compound (Low Voltage Grade): 0.05 units/m @ 147.90",
-            "   - EC Grade Copper (99.9% Pure): 0.17 units/m (High Volatility Risk +3323)",
+            "   - EC Grade Copper (99.9% Pure): 0.17 units/m (High Volatility Risk +18445)",
             "   - XLPE Compound (Low Voltage Grade): 0.04 units/m @ 147.90",
-            "   - EC Grade Copper (99.9% Pure): 0.23 units/m (High Volatility Risk +4496)",
+            "   - EC Grade Copper (99.9% Pure): 0.23 units/m (High Volatility Risk +56206)",
             "   - PVC Compound (Type A - General): 0.03 units/m @ 95.00",
-            "   - EC Grade Copper (99.9% Pure): 0.23 units/m (High Volatility Risk +4496)",
+            "   - EC Grade Copper (99.9% Pure): 0.23 units/m (High Volatility Risk +56206)",
             "   - PVC Compound (Type A - General): 0.03 units/m @ 95.00",
-            "   - EC Grade Copper (99.9% Pure): 0.15 units/m (High Volatility Risk +2932)",
+            "   - EC Grade Copper (99.9% Pure): 0.15 units/m (High Volatility Risk +29090)",
             "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
-            "   - EC Grade Copper (99.9% Pure): 0.15 units/m (High Volatility Risk +2932)",
+            "   - EC Grade Copper (99.9% Pure): 0.15 units/m (High Volatility Risk +29090)",
             "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
-            "   - EC Grade Copper (99.9% Pure): 0.09 units/m (High Volatility Risk +1759)",
+            "   - EC Grade Copper (99.9% Pure): 0.09 units/m (High Volatility Risk +13020)",
             "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
-            "   - EC Grade Copper (99.9% Pure): 0.09 units/m (High Volatility Risk +1759)",
+            "   - EC Grade Copper (99.9% Pure): 0.09 units/m (High Volatility Risk +13020)",
             "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
-            "   - EC Grade Copper (99.9% Pure): 0.036 units/m (High Volatility Risk +703)",
+            "   - EC Grade Copper (99.9% Pure): 0.036 units/m (High Volatility Risk +738)",
             "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
-            "   - EC Grade Copper (99.9% Pure): 0.036 units/m (High Volatility Risk +703)",
+            "   - EC Grade Copper (99.9% Pure): 0.036 units/m (High Volatility Risk +738)",
             "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00",
-            "   - EC Grade Copper (99.9% Pure): 0.022 units/m (High Volatility Risk +430)",
-            "   - PVC Compound (Type A - General): 0.015 units/m @ 95.00",
-            "   - EC Grade Copper (99.9% Pure): 0.22 units/m (High Volatility Risk +4300)",
-            "   - XLPE Compound (Low Voltage Grade): 0.05 units/m @ 147.90"
+            "   - EC Grade Copper (99.9% Pure): 0.23 units/m (High Volatility Risk +94426)",
+            "   - PVC Compound (Type A - General): 0.03 units/m @ 95.00",
+            "   - EC Grade Copper (99.9% Pure): 0.036 units/m (High Volatility Risk +2561)",
+            "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00"
           ],
           "formula": "Micro-BOM"
         },
         "packaging": {
-          "total": 432000,
+          "total": 1488000,
           "breakdown": [
-            "96 Drums Est"
+            "330 Drums Est"
           ]
         },
         "testing": {
-          "total": 94500.0,
+          "total": 483600.0,
           "breakdown": [
             "Per Tech Agent Codes"
           ]
         },
         "logistics": {
-          "total": 165437.538656,
-          "formula": "(15.14T x 1448.32km x 4.5 Rate x 1.0 Zone (Z-01))"
+          "total": 1186972.3220659199,
+          "formula": "(108.62T x 1448.32km x 4.5 Rate x 1.0 Zone (Z-01))"
         },
         "strategy": {
           "rationale": [
-            "Credit Cost (30 days): +INR 33707",
-            "Price War Alert: Sigma Wires (Aggressive) -> -3% Margin",
-            "Price War Alert: Theta Cables (Aggressive) -> -3% Margin",
-            "Price War Alert: Gemscab (Aggressive) -> -3% Margin",
-            "Price War Alert: V-Flow Tech Cables (Aggressive) -> -3% Margin",
+            "Credit Cost (30 days): +INR 245472",
             "Low-Cost Rival: Beta Wires Ltd -> -4% Margin",
             "Price War Alert: Bonton Cables (Aggressive) -> -3% Margin",
-            "Price War Alert: Ultracab India (Aggressive) -> -3% Margin",
-            "Zone Risk (Plains_Highway): +2.0%",
-            "EMERGENCY: Margin Floor Hit (Survival Mode)"
+            "Price War Alert: Theta Cables (Aggressive) -> -3% Margin",
+            "Price War Alert: V-Flow Tech Cables (Aggressive) -> -3% Margin",
+            "Price War Alert: Gemscab (Aggressive) -> -3% Margin",
+            "Market Pressure Buildup (4 extra rivals): -2.0%",
+            "Zone Risk (Plains_Highway): +2.0%"
           ],
-          "competitor_impact": "-22.0%",
+          "competitor_impact": "-6.0%",
           "zone_risk": "2.0%"
+        },
+        "simulation": {
+          "min_safe_price": 24900321,
+          "max_profit_price": 27271823,
+          "volatility_risk": "9.5%",
+          "negotiation_script": [
+            "\ud83d\ude9a Highlight specialized logistics handling for their difficult terrain."
+          ]
         }
       },
       "audit_report_url": "/static/audit_reports/RFP-1766037844_AUDIT.pdf"
     },
     "sales_agent_2_output": {
-      "rank": 1,
-      "priority_score": 35.1,
+      "rank": 4,
+      "priority_score": 52.4,
       "breakdown": {
-        "product_fit": 0.38,
+        "product_fit": 0.55,
         "relationship": 0.5,
-        "urgency": 0.0
+        "urgency": 0.0,
+        "p_win_est": 0.52
       }
     },
     "last_updated": "2025-12-18T11:34:51.196788"
@@ -1527,7 +3062,7 @@
   {
     "rfp_unique_id": "RFP-1765978706",
     "status": "Bid Ready for Review",
-    "is_archived": true,
+    "is_archived": false,
     "created_at": "2025-12-17T19:08:26.933767",
     "local_file_name": "sample rfp 4.pdf",
     "document_url": "/static/rfp_docs/sample rfp 4.pdf",
@@ -1618,12 +3153,13 @@
           "matched_sku_id": "PROD-008",
           "matched_sku_name": "Solar DC Cable 4sqmm Tinned Copper EN 50618",
           "match_score": 80.0,
+          "quantity": 150000,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
               "requested": "1.5kV DC / 1.0kV AC",
               "actual": "1.5kV DC",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Core Count",
@@ -1658,27 +3194,28 @@
         {
           "lot_id": "L002",
           "rfp_description": "1100V Grade, 4 Core x 240 sq.mm Aluminium Conductor, XLPE Insulated, PVC ST2 Inner Sheath, Galvanized Steel Strip Armoured, PVC FRLS Outer Sheathed Cable. Standard: IS 7098 Part-1. Construction Details: Conductor: H4 Grade Aluminium stranded compacted. Armouring: Galvanized Steel Strip (GS Flat). Sheath Color: Black.",
-          "matched_sku_id": "PC-LT-AL-3.5C-240",
-          "matched_sku_name": "Polycab 1.1kV 3.5 Core 240sqmm Aluminium Armoured Cable",
-          "match_score": 70.0,
+          "matched_sku_id": "PC-LT-AL-4C-185",
+          "matched_sku_name": "Polycab 1.1kV 4 Core 185sqmm Aluminium Armoured Cable",
+          "match_score": 86.6,
+          "quantity": 2500,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
               "requested": "1100V",
-              "actual": "1100V",
+              "actual": "1.1kV",
               "status": "Match"
             },
             {
               "spec": "Core Count",
               "requested": 4,
-              "actual": 3.5,
-              "status": "Mismatch"
+              "actual": 4,
+              "status": "Match"
             },
             {
               "spec": "Cross Section Sqmm",
               "requested": 240,
-              "actual": 240,
-              "status": "Match"
+              "actual": 185,
+              "status": "Mismatch"
             },
             {
               "spec": "Conductor Material",
@@ -1694,11 +3231,9 @@
             }
           ],
           "commercial_ref": {
-            "base_mfg_cost_per_meter": 1050.0,
-            "setup_cost": 2500.0,
-            "inventory_stock": 180,
-            "unit_of_measure": "Meter",
-            "currency": "INR"
+            "base_mfg_cost_per_meter": 950.0,
+            "currency": "INR",
+            "min_order_quantity": 500
           }
         }
       ],
@@ -1708,99 +3243,106 @@
           "competitor": "Delta Power Systems",
           "risk": "High",
           "comment": "Direct competitor for PROD-008"
-        },
-        {
-          "lot_id": "L002",
-          "competitor": "Gupta Power",
-          "risk": "High",
-          "comment": "Direct competitor for PC-LT-AL-3.5C-240"
         }
       ],
       "competitor_codes": [
-        "Gupta Power",
         "Delta Power Systems"
       ],
       "required_test_codes": [
-        "TEST-AT-002",
         "TEST-AT-001",
-        "TEST-AT-003",
-        "TEST-RT-001",
+        "TEST-AT-004",
+        "TEST-AT-002",
         "TEST-RT-002",
-        "TEST-AT-004"
+        "TEST-RT-001",
+        "TEST-AT-003"
       ],
-      "testing_cost_estimate": 7350.0,
-      "compliance_report_html": "<h3>Technical Compliance Matrix</h3><table border='1' style='border-collapse: collapse; width: 100%;'><tr style='background-color: #f2f2f2;'><th>Lot ID</th><th>Requested</th><th>Matched Product</th><th>Score</th><th>Status</th></tr><tr><td>L001</td><td>4 sq.mm Single Core, Tinned Copper Conductor, Electron Beam Cross-linked, XLPO Insulated and Sheathed Solar Cable. Standard: EN 50618:2014 (H1Z2Z2-K). Specific Requirements: Color Configuration: 75,000 Meters Black and 75,000 Meters Red. UV Resistance: Valid test report certifying 25 years of life is mandatory. Halogen Free: The cable must be LSZH (Low Smoke Zero Halogen).</td><td>Solar DC Cable 4sqmm Tinned Copper EN 50618</td><td style='color:green; font-weight:bold;'>80.0%</td><td>Deviation</td></tr><tr><td>L002</td><td>1100V Grade, 4 Core x 240 sq.mm Aluminium Conductor, XLPE Insulated, PVC ST2 Inner Sheath, Galvanized Steel Strip Armoured, PVC FRLS Outer Sheathed Cable. Standard: IS 7098 Part-1. Construction Details: Conductor: H4 Grade Aluminium stranded compacted. Armouring: Galvanized Steel Strip (GS Flat). Sheath Color: Black.</td><td>Polycab 1.1kV 3.5 Core 240sqmm Aluminium Armoured Cable</td><td style='color:orange; font-weight:bold;'>70.0%</td><td>Deviation</td></tr></table>"
+      "testing_cost_estimate": 416400.0,
+      "compliance_report_html": "<h3>Technical Compliance Matrix</h3><table border='1' style='border-collapse: collapse; width: 100%;'><tr style='background-color: #f2f2f2;'><th>Lot ID</th><th>Requested</th><th>Matched Product</th><th>Score</th><th>Status</th></tr><tr><td>L001</td><td>4 sq.mm Single Core, Tinned Copper Conductor, Electron Beam Cross-linked, XLPO Insulated and Sheathed Solar Cable. Standard: EN 50618:2014 (H1Z2Z2-K). Specific Requirements: Color Configuration: 75,000 Meters Black and 75,000 Meters Red. UV Resistance: Valid test report certifying 25 years of life is mandatory. Halogen Free: The cable must be LSZH (Low Smoke Zero Halogen).</td><td>Solar DC Cable 4sqmm Tinned Copper EN 50618</td><td style='color:green; font-weight:bold;'>80.0%</td><td>Deviation</td></tr><tr><td>L002</td><td>1100V Grade, 4 Core x 240 sq.mm Aluminium Conductor, XLPE Insulated, PVC ST2 Inner Sheath, Galvanized Steel Strip Armoured, PVC FRLS Outer Sheathed Cable. Standard: IS 7098 Part-1. Construction Details: Conductor: H4 Grade Aluminium stranded compacted. Armouring: Galvanized Steel Strip (GS Flat). Sheath Color: Black.</td><td>Polycab 1.1kV 4 Core 185sqmm Aluminium Armoured Cable</td><td style='color:green; font-weight:bold;'>86.6%</td><td>Deviation</td></tr></table>"
     },
     "pricing_agent_output": {
       "status": "Success",
       "financial_summary": {
-        "final_bid_value": 1117366,
-        "margin_percentage": "16.0%",
-        "total_cost_base": 963246,
-        "total_material_cost": 890840,
-        "total_logistics_cost": 4498,
-        "total_packaging_cost": 48000,
-        "total_testing_cost": 10500,
-        "finance_cost": 9407
+        "final_bid_value": 12962812,
+        "margin_percentage": "19.0%",
+        "total_cost_base": 10893120,
+        "total_material_cost": 8225836,
+        "total_logistics_cost": 96394,
+        "total_packaging_cost": 1860000,
+        "total_testing_cost": 604500,
+        "finance_cost": 106389
       },
       "audit_details": {
         "manufacturing": {
-          "total": 890840.49,
+          "total": 8225836.3,
           "breakdown": [
-            "   - EC Grade Copper (99.9% Pure): 0.035 units/m (High Volatility Risk +684)",
-            "   - XLPE Compound (MV Tree Retardant): 0.02 units/m (High Volatility Risk +79)",
-            "   - EC Grade Aluminium (H2/H4 Grade): 2.59 units/m @ 231.00",
+            "   - EC Grade Copper (99.9% Pure): 0.035 units/m (High Volatility Risk +102637)",
+            "   - XLPE Compound (MV Tree Retardant): 0.02 units/m (High Volatility Risk +11988)",
+            "   - EC Grade Aluminium (H2/H4 Grade): 2.12 units/m @ 231.00",
             "   - XLPE Compound (Low Voltage Grade): 0.45 units/m @ 147.90"
           ],
           "formula": "Micro-BOM"
         },
         "packaging": {
-          "total": 48000,
+          "total": 1860000,
           "breakdown": [
-            "10 Drums Est"
+            "413 Drums Est"
           ]
         },
         "testing": {
-          "total": 10500.0,
+          "total": 604500.0,
           "breakdown": [
             "Per Tech Agent Codes"
           ]
         },
         "logistics": {
-          "total": 4498.39264,
-          "formula": "(1.08T x 379.79km x 5.0 Rate x 1.2 Zone (Z-05))"
+          "total": 96394.128,
+          "formula": "(23.25T x 379.79km x 5.0 Rate x 1.2 Zone (Z-05))"
         },
         "strategy": {
           "rationale": [
-            "Credit Cost (30 days): +INR 9407",
-            "Price War Alert: Gupta Power (Aggressive) -> -3% Margin",
+            "Credit Cost (30 days): +INR 106389",
             "Price War Alert: Delta Power Systems (Aggressive) -> -3% Margin",
             "Zone Risk (Desert_HighHeat): +4.0%"
           ],
-          "competitor_impact": "-6.0%",
+          "competitor_impact": "-3.0%",
           "zone_risk": "4.0%"
+        },
+        "simulation": {
+          "min_safe_price": 9443059,
+          "max_profit_price": 10405655,
+          "volatility_risk": "10.2%",
+          "negotiation_script": [
+            "\u26a0\ufe0f Market is Highly Volatile: Suggest locking price in 48hrs.",
+            "   > Reasoning: commodity simulation shows potential 10.2% upside risk.",
+            "\ud83d\ude9a Highlight specialized logistics handling for their difficult terrain."
+          ]
         }
       },
       "audit_report_url": "/static/audit_reports/RFP-1765978706_AUDIT.pdf"
     },
     "sales_agent_2_output": {
-      "rank": -1,
-      "priority_score": 0,
-      "status": "Archived"
+      "rank": 2,
+      "priority_score": 66.6,
+      "breakdown": {
+        "product_fit": 0.83,
+        "relationship": 0.5,
+        "urgency": 0.0,
+        "p_win_est": 0.67
+      }
     },
     "last_updated": "2025-12-17T19:10:02.817893"
   },
   {
     "rfp_unique_id": "RFP-1765967039",
-    "status": "Technical Analysis Done",
-    "is_archived": true,
+    "status": "Bid Ready for Review",
+    "is_archived": false,
     "created_at": "2025-12-17T15:53:59.645570",
     "local_file_name": "sample rfp 6.pdf",
     "document_url": "/static/rfp_docs/sample rfp 6.pdf",
     "processing_stage_tracker": {
       "sales_agent": "Completed",
       "tech_agent": "Completed",
-      "pricing_agent": "Pending",
+      "pricing_agent": "Completed",
       "final_review": "Pending"
     },
     "sales_agent_output": {
@@ -1905,13 +3447,14 @@
           "rfp_description": "Supply of 1.1kV Grade, 4 Core 16 sq.mm Aluminium Conductor, XLPE Insulated, PVC Sheathed, Galvanized Steel Wire Armoured Cable for Pole Loop wiring. Make: Havells / Polycab",
           "matched_sku_id": "PC-LT-AL-4C-16",
           "matched_sku_name": "Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable",
-          "match_score": 95.0,
+          "match_score": 80.0,
+          "quantity": 25000,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
               "requested": "1.1kV",
               "actual": "1100V",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Core Count",
@@ -1951,13 +3494,14 @@
           "rfp_description": "Supply of 1.1kV Grade, 4 Core 25 sq.mm Aluminium Conductor, XLPE Insulated, PVC Sheathed, Galvanized Steel Strip Armoured Cable for Feeder Pillar interconnection.",
           "matched_sku_id": "PC-LT-AL-4C-25",
           "matched_sku_name": "Polycab 1.1kV 4 Core 25sqmm Aluminium Armoured Cable",
-          "match_score": 95.0,
+          "match_score": 80.0,
+          "quantity": 10000,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
               "requested": "1.1kV",
               "actual": "1100V",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Core Count",
@@ -1995,45 +3539,46 @@
         {
           "lot_id": "L003",
           "rfp_description": "Supply of 10 sq.mm 4 Core Cu Flexible Cable (Unarmoured)",
-          "matched_sku_id": "PC-LT-CU-4C-6",
-          "matched_sku_name": "Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable",
-          "match_score": 60.0,
+          "matched_sku_id": "PC-LT-CU-1C-10-RED",
+          "matched_sku_name": "Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)",
+          "match_score": 62.5,
+          "quantity": 2000,
           "technical_breakdown": [
             {
               "spec": "Voltage Grade",
               "requested": "1.1kV",
               "actual": "1100V",
-              "status": "Mismatch"
+              "status": "Match"
             },
             {
               "spec": "Core Count",
               "requested": 4,
-              "actual": 4,
-              "status": "Match"
+              "actual": 1,
+              "status": "Mismatch"
             },
             {
               "spec": "Cross Section Sqmm",
               "requested": 10,
-              "actual": 6,
-              "status": "Mismatch"
+              "actual": 10,
+              "status": "Match"
             },
             {
               "spec": "Conductor Material",
               "requested": "Copper",
-              "actual": "Copper",
+              "actual": "Copper (Flexible)",
               "status": "Match"
             },
             {
               "spec": "Insulation",
               "requested": "Not Specified",
-              "actual": "XLPE",
+              "actual": "PVC",
               "status": "Mismatch"
             }
           ],
           "commercial_ref": {
-            "base_mfg_cost_per_meter": 220.0,
-            "setup_cost": 500.0,
-            "inventory_stock": 2000,
+            "base_mfg_cost_per_meter": 120.0,
+            "setup_cost": 250.0,
+            "inventory_stock": 8000,
             "unit_of_measure": "Meter",
             "currency": "INR"
           }
@@ -2065,75 +3610,90 @@
         "Gemscab"
       ],
       "required_test_codes": [
-        "TEST-RT-002",
-        "TEST-AT-001",
+        "TEST-AT-002",
         "TEST-AT-003",
-        "TEST-AT-004",
+        "TEST-RT-002",
         "TEST-RT-001",
-        "TEST-AT-002"
+        "TEST-AT-004",
+        "TEST-AT-001"
       ],
-      "testing_cost_estimate": 11700.0,
-      "compliance_report_html": "<h3>Technical Compliance Matrix</h3><table border='1' style='border-collapse: collapse; width: 100%;'><tr style='background-color: #f2f2f2;'><th>Lot ID</th><th>Requested</th><th>Matched Product</th><th>Score</th><th>Status</th></tr><tr><td>L001</td><td>Supply of 1.1kV Grade, 4 Core 16 sq.mm Aluminium Conductor, XLPE Insulated, PVC Sheathed, Galvanized Steel Wire Armoured Cable for Pole Loop wiring. Make: Havells / Polycab</td><td>Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable</td><td style='color:green; font-weight:bold;'>95.0%</td><td>Deviation</td></tr><tr><td>L002</td><td>Supply of 1.1kV Grade, 4 Core 25 sq.mm Aluminium Conductor, XLPE Insulated, PVC Sheathed, Galvanized Steel Strip Armoured Cable for Feeder Pillar interconnection.</td><td>Polycab 1.1kV 4 Core 25sqmm Aluminium Armoured Cable</td><td style='color:green; font-weight:bold;'>95.0%</td><td>Deviation</td></tr><tr><td>L003</td><td>Supply of 10 sq.mm 4 Core Cu Flexible Cable (Unarmoured)</td><td>Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable</td><td style='color:orange; font-weight:bold;'>60.0%</td><td>Deviation</td></tr></table>"
+      "testing_cost_estimate": 107100.0,
+      "compliance_report_html": "<h3>Technical Compliance Matrix</h3><table border='1' style='border-collapse: collapse; width: 100%;'><tr style='background-color: #f2f2f2;'><th>Lot ID</th><th>Requested</th><th>Matched Product</th><th>Score</th><th>Status</th></tr><tr><td>L001</td><td>Supply of 1.1kV Grade, 4 Core 16 sq.mm Aluminium Conductor, XLPE Insulated, PVC Sheathed, Galvanized Steel Wire Armoured Cable for Pole Loop wiring. Make: Havells / Polycab</td><td>Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable</td><td style='color:green; font-weight:bold;'>80.0%</td><td>Deviation</td></tr><tr><td>L002</td><td>Supply of 1.1kV Grade, 4 Core 25 sq.mm Aluminium Conductor, XLPE Insulated, PVC Sheathed, Galvanized Steel Strip Armoured Cable for Feeder Pillar interconnection.</td><td>Polycab 1.1kV 4 Core 25sqmm Aluminium Armoured Cable</td><td style='color:green; font-weight:bold;'>80.0%</td><td>Deviation</td></tr><tr><td>L003</td><td>Supply of 10 sq.mm 4 Core Cu Flexible Cable (Unarmoured)</td><td>Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)</td><td style='color:orange; font-weight:bold;'>62.5%</td><td>Deviation</td></tr></table>"
     },
     "pricing_agent_output": {
       "status": "Success",
       "financial_summary": {
-        "final_bid_value": 628246,
-        "margin_percentage": "12.5%",
-        "total_cost_base": 558441,
-        "total_material_cost": 441456,
-        "total_logistics_cost": 13186,
-        "total_packaging_cost": 72000,
-        "total_testing_cost": 15750,
-        "finance_cost": 16048
+        "final_bid_value": 4522170,
+        "margin_percentage": "15.0%",
+        "total_cost_base": 3932322,
+        "total_material_cost": 3068382,
+        "total_logistics_cost": 162630,
+        "total_packaging_cost": 444000,
+        "total_testing_cost": 144300,
+        "finance_cost": 113009
       },
       "audit_details": {
         "manufacturing": {
-          "total": 441456.5999999999,
+          "total": 3068382.2,
           "breakdown": [
             "   - EC Grade Aluminium (H2/H4 Grade): 0.18 units/m @ 231.00",
             "   - XLPE Compound (Low Voltage Grade): 0.06 units/m @ 147.90",
             "   - EC Grade Aluminium (H2/H4 Grade): 0.29 units/m @ 231.00",
             "   - XLPE Compound (Low Voltage Grade): 0.09 units/m @ 147.90",
-            "   - EC Grade Copper (99.9% Pure): 0.22 units/m (High Volatility Risk +4300)",
-            "   - XLPE Compound (Low Voltage Grade): 0.05 units/m @ 147.90"
+            "   - EC Grade Copper (99.9% Pure): 0.09 units/m (High Volatility Risk +3518)",
+            "   - PVC Compound (Type A - General): 0.02 units/m @ 95.00"
           ],
           "formula": "Micro-BOM"
         },
         "packaging": {
-          "total": 72000,
+          "total": 444000,
           "breakdown": [
-            "16 Drums Est"
+            "98 Drums Est"
           ]
         },
         "testing": {
-          "total": 15750.0,
+          "total": 144300.0,
           "breakdown": [
             "Per Tech Agent Codes"
           ]
         },
         "logistics": {
-          "total": 13186.248,
-          "formula": "(3.00T x 541.03km x 4.5 Rate x 1.0 Zone (Z-01))"
+          "total": 162630.392,
+          "formula": "(37.00T x 541.03km x 4.5 Rate x 1.0 Zone (Z-01))"
         },
         "strategy": {
           "rationale": [
-            "Credit Cost (90 days): +INR 16048",
+            "Credit Cost (90 days): +INR 113009",
             "Loyalty Discount: -1.5%",
-            "Price War Alert: Gemscab (Aggressive) -> -3% Margin",
             "Price War Alert: V-Flow Tech Cables (Aggressive) -> -3% Margin",
+            "Price War Alert: Gemscab (Aggressive) -> -3% Margin",
+            "Market Pressure Buildup (1 extra rivals): -0.5%",
             "Zone Risk (Plains_Highway): +2.0%"
           ],
-          "competitor_impact": "-6.0%",
+          "competitor_impact": "-3.5%",
           "zone_risk": "2.0%"
+        },
+        "simulation": {
+          "min_safe_price": 3559940,
+          "max_profit_price": 3883641,
+          "volatility_risk": "9.1%",
+          "negotiation_script": [
+            "\ud83e\udd1d Remind client of Gold/Silver Tier savings applied.",
+            "\ud83d\ude9a Highlight specialized logistics handling for their difficult terrain."
+          ]
         }
       },
       "audit_report_url": "/static/audit_reports/RFP-1765967039_AUDIT.pdf"
     },
     "sales_agent_2_output": {
-      "rank": -1,
-      "priority_score": 0,
-      "status": "Archived"
+      "rank": 1,
+      "priority_score": 88.2,
+      "breakdown": {
+        "product_fit": 0.74,
+        "relationship": 0.8,
+        "urgency": 0.29,
+        "p_win_est": 0.77
+      }
     },
     "last_updated": "2025-12-17T15:55:02.226329"
   }

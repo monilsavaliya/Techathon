@@ -21,5 +21,9 @@
     "weight_relationship": 0.4,
     "weight_urgency": 0.2,
     "max_urgency_days": 90
+  },
+  "warehouse_config": {
+    "latitude": 21.1702,
+    "longitude": 72.8311
   }
 }

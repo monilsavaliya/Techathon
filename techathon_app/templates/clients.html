@@ -7,10 +7,12 @@
         <p class="text-xs text-slate-500 mt-1">CRM & Financial Terms</p>
     </div>
     <div class="flex gap-2">
+        {% if is_admin %}
         <a href="/manage/client_master"
             class="px-4 py-2 text-xs font-bold text-slate-600 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
             <i class="fas fa-edit mr-2"></i> Manage Raw Data
         </a>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

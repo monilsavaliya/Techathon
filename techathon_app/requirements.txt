@@ -1,0 +1,10 @@
+flask
+python-dotenv
+pandas
+google-generativeai
+openai
+requests
+werkzeug
+gunicorn
+fpdf2
+PyPDF2
