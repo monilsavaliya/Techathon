@@ -119,21 +119,43 @@ class RealPriorityAgent:
         
         return 0.5 # Completely unknown
 
-    # --- 3. URGENCY LOGIC ---
+    # --- 3. URGENCY LOGIC (TIMEZONE-AWARE FOR RENDER DEPLOYMENT) ---
     def get_urgency_score(self, deadline_str):
+        """
+        Calculate urgency based on days remaining until deadline.
+        Uses UTC timezone-aware datetime for consistency across deployments.
+        """
         if not deadline_str: return 0.0
         try:
-            # Parse ISO format
-            deadline = datetime.datetime.fromisoformat(str(deadline_str))
-            now = datetime.datetime.now()
+            # Parse deadline (remove 'Z' suffix if present, treat as UTC)
+            deadline_clean = str(deadline_str).replace('Z', '+00:00')
+            deadline = datetime.datetime.fromisoformat(deadline_clean)
+            
+            # CRITICAL: Always use UTC for deployed environments (Render, etc.)
+            # This ensures urgency is calculated consistently regardless of server timezone
+            now = datetime.datetime.now(datetime.timezone.utc)
+            
+            # If deadline is naive (no timezone), assume UTC
+            if deadline.tzinfo is None:
+                deadline = deadline.replace(tzinfo=datetime.timezone.utc)
+            
             days_left = (deadline - now).days
             
             # Logic: Closer date = Higher score
-            if days_left < 0: return 0.0 # Expired
+            if days_left < 0: 
+                print(f"⚠️ Expired deadline: {deadline_str} (was {abs(days_left)} days ago)")
+                return 0.0
             
             d_clamped = max(0, min(days_left, self.max_urgency_days))
-            return 1.0 - (d_clamped / self.max_urgency_days)
-        except:
+            urgency = 1.0 - (d_clamped / self.max_urgency_days)
+            
+            # Debug log (visible in Render logs)
+            if urgency > 0.5:
+                print(f"⏰ High Urgency: {days_left} days left → {urgency:.2f}")
+            
+            return urgency
+        except Exception as e:
+            print(f"❌ Urgency calc error for '{deadline_str}': {e}")
             return 0.0
 
     # --- MAIN EXECUTION ---

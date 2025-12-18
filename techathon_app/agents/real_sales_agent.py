@@ -21,8 +21,10 @@ class RealSalesAgent:
     def __init__(self, settings_path="settings.json"):
         # 1. Setup Paths
         self.base_dir = Path(__file__).parent
-        self.settings_path = self.base_dir / settings_path
-        self.logistic_master_path = self.base_dir / "logistic_master.json"
+        # FIX: Point to root directory for settings
+        self.settings_path = self.base_dir.parent / settings_path
+        # FIX: Point to database directory for logistic master
+        self.logistic_master_path = self.base_dir.parent / "database" / "logistic_master.json"
 
         # 2. Load API Keys
         self.api_keys = self.load_api_keys()
@@ -206,30 +208,62 @@ PDF Text:
     def try_generate_with_models(self, prompt):
         if genai is None: raise RuntimeError("google.generativeai SDK not installed")
 
-        # --- FIX: USE ONLY VALID PUBLIC MODELS ---
-        model_candidates = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"]
-        max_rotations = len(self.api_keys)
+        # --- UPDATED: VALIDATED MODEL LIST (From debug_models.py) ---
+        # 1. Gemini 2.5 (Newest/Best)
+        # 2. Gemini 2.0 (Fast/Exp)
+        # 3. Generic Aliases (Stable)
+        model_candidates = [
+            "gemini-2.5-flash", 
+            "gemini-2.0-flash",
+            "gemini-2.0-flash-exp",
+            "gemini-flash-latest",
+            "gemini-pro-latest",
+        ]
+        
+        last_error = None
 
-        for _ in range(max_rotations + 1): 
-            for model_name in model_candidates:
+        # MODEL LOOP: Try best model first
+        for model_name in model_candidates:
+            print(f"🤖 Attempting Model: {model_name}...")
+            
+            # KEY LOOP: Try all keys for this model if Quota fails
+            attempts = 0
+            max_attempts = len(self.api_keys)
+            
+            while attempts < max_attempts:
                 try:
+                    self._configure_genai() # Ensure current key is active
                     model = genai.GenerativeModel(model_name)
+                    
+                    # Generate
                     resp = model.generate_content(prompt)
-                    return resp.text
+                    
+                    if resp.text:
+                        print(f"✅ Success with {model_name} (Key #{self.current_key_index + 1})")
+                        return resp.text
+                        
                 except Exception as e:
-                    err = str(e).lower()
-                    print(f"⚠️ Model {model_name} failed: {err}")
-                    if "429" in err or "quota" in err:
-                        print("⏳ Quota Limit. Rotating key...")
+                    err_str = str(e).lower()
+                    last_error = e
+                    print(f"⚠️ Error {model_name} (Key #{self.current_key_index + 1}): {err_str}")
+                    
+                    # CHECK FOR QUOTA / RATE LIMITS
+                    if "429" in err_str or "quota" in err_str or "resourceexhausted" in err_str:
+                        print(f"⏳ Quota Hit. Rotating key and retrying same model...")
                         self.rotate_api_key()
-                        time.sleep(1)
+                        attempts += 1
+                        time.sleep(1) # Backoff
+                        continue # Retry same model with new key
+                    
+                    # If it's NOT a quota error (e.g. Model Not Found, Internal Error), 
+                    # break inner loop to try NEXT MODEL
+                    else:
+                        print(f"❌ Non-Quota Error. Switching to next model...")
                         break 
-                    time.sleep(1)
-                    continue 
             
-            self.rotate_api_key()
+            # If we exhausted keys for this model, or had a non-quota error, loop continues to next model
             
-        raise RuntimeError("All models/keys failed.")
+        raise RuntimeError(f"All models/keys failed. Last Error: {last_error}")
 
     def safe_parse_json(self, text):
         if not text: return {}

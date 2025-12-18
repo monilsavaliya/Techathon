@@ -147,80 +147,106 @@ PDF Text:
 """
     return prompt
 
-def try_generate_with_models(prompt):
     """
-    Robust Retry Logic (Deep Try/Except from Streamlit)
+    Robust Retry Logic with Key Rotation
     """
-    # 1. Load API Key
-    api_key = os.getenv("GOOGLE_API_KEY")
-    if not api_key: api_key = os.getenv("GOOGLE_API_KEY_1")
-    if not api_key: raise RuntimeError("No API Key found")
+    # 1. Load API Keys (Support Rotation)
+    api_keys = []
+    for i in range(1, 11):
+        k = os.getenv(f"GOOGLE_API_KEY_{i}")
+        if k: api_keys.append(k)
+    if os.getenv("GOOGLE_API_KEY"):
+        if os.getenv("GOOGLE_API_KEY") not in api_keys:
+            api_keys.append(os.getenv("GOOGLE_API_KEY"))
 
-    genai.configure(api_key=api_key)
+    if not api_keys: raise RuntimeError("No GOOGLE_API_KEYs found")
 
-    # 2. Your Exact Model List
+    # --- UPDATED: VALIDATED MODEL LIST ---
     model_candidates = [
-        "gemini-2.5-flash",
+        "gemini-2.5-flash", 
         "gemini-2.0-flash",
+        "gemini-2.0-flash-exp",
+        "gemini-flash-latest",
         "gemini-pro-latest",
+        # Fallbacks
+        "gemini-1.5-pro-002",
+        "gemini-1.5-flash-002",
+        "gemini-1.5-flash-8b"
     ]
-    methods = ["generate_content", "generate_text"]
-
+    
+    import time
     last_err = None
     
+    # Try Models in Order
     for m in model_candidates:
-        try:
-            # Init model
-            model = genai.GenerativeModel(m)
-        except Exception as e:
-            last_err = e
-            continue
-
-        for method in methods:
-            if not hasattr(model, method):
-                continue
+        print(f"🤖 API: Attempting Model: {m}...")
+        
+        # Try All Keys for this model
+        for key_idx, key in enumerate(api_keys):
             try:
-                fn = getattr(model, method)
-                # Attempt generation
-                try:
-                    resp = fn(prompt)
-                except TypeError:
-                    resp = fn({"prompt": prompt})
-
-                # Extract Text (Deep Search)
-                text = None
-                if hasattr(resp, "text") and isinstance(resp.text, str):
-                    text = resp.text
-                else:
-                    try:
-                        if hasattr(resp, "to_dict"): d = resp.to_dict()
-                        else: d = resp.__dict__
-                    except: d = None
-                    
-                    def deep_search(o):
-                        if isinstance(o, str): return o
-                        if isinstance(o, dict):
-                            for v in o.values():
-                                r = deep_search(v)
-                                if r: return r
-                        if isinstance(o, list):
-                            for el in o:
-                                r = deep_search(el)
-                                if r: return r
-                        return None
-                    
-                    cand = deep_search(d)
-                    if cand: text = cand
+                genai.configure(api_key=key)
+                model = genai.GenerativeModel(m)
                 
-                if not text: text = str(resp)
-                return text
+                # Try Methods
+                for method in ["generate_content", "generate_text"]:
+                    if not hasattr(model, method): continue
+                    try:
+                        fn = getattr(model, method)
+                        try:
+                            resp = fn(prompt)
+                        except TypeError:
+                            resp = fn({"prompt": prompt})
+                        
+                        text = None
+                        if hasattr(resp, "text") and isinstance(resp.text, str):
+                            text = resp.text
+                        else:
+                            # Deep search for text
+                            try:
+                                if hasattr(resp, "to_dict"): d = resp.to_dict()
+                                else: d = resp.__dict__
+                                def deep_search(o):
+                                    if isinstance(o, str): return o
+                                    if isinstance(o, dict): 
+                                        for v in o.values(): 
+                                            r = deep_search(v)
+                                            if r: return r
+                                    if isinstance(o, list):
+                                        for el in o:
+                                            r = deep_search(el)
+                                            if r: return r
+                                    return None
+                                text = deep_search(d)
+                            except: pass
+                            
+                            if not text: text = str(resp)
+
+                        print(f"✅ Success with {m}")
+                        return text
+
+                    except Exception as e:
+                        # If method fails, try next method
+                        last_err = e
+                        continue
+                
+                # If we got here, methods failed. 
+                # Raise to trigger exception below and check for Quota
+                raise last_err if last_err else RuntimeError("Generation methods failed")
 
             except Exception as e:
-                # IMPORTANT: Swallow 404/API errors here and try next method/model
-                last_err = e
-                continue
+                err_str = str(e).lower()
+                print(f"⚠️ Error {m} (Key #{key_idx+1}): {err_str}")
+                
+                if "429" in err_str or "quota" in err_str or "resourceexhausted" in err_str:
+                     print(f"⏳ Quota. Rotating key...")
+                     time.sleep(1)
+                     continue # Try next key
+                else:
+                    # Non-Quota error (e.g. 404, 403 Leaked) -> Stop trying this model, go to next model
+                    print(f"❌ Non-Quota Error (e.g. 403/404). Switching model...")
+                    break 
 
-    raise RuntimeError(f"All model attempts failed. Last error: {last_err}")
+    raise RuntimeError(f"All models/keys failed. Last: {last_err}")
 
 def safe_parse_json(text):
     if not text: return {}

@@ -76,7 +76,15 @@ class RealTechAgent:
         return n
 
     def is_not_specified(self, v):
-        return v in [None, "NOT SPECIFIED", ""]
+        """Return True if the value indicates an unspecified field.
+        Handles None, empty strings, and case‑insensitive "NOT SPECIFIED".
+        """
+        if v is None:
+            return True
+        if isinstance(v, str):
+            stripped = v.strip()
+            return stripped.upper() == "NOT SPECIFIED" or stripped == ""
+        return False
 
     def normalize_standard(self, s):
         if not s: return None

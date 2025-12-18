@@ -33,6 +33,39 @@ from agents.tech_agent import RealTechAgent
 from agents.pricing_agent import RealPricingAgent
 from agents.priority_agent import RealPriorityAgent
 
+# --- BACKGROUND SCHEDULER: AUTO-UPDATE PRIORITY EVERY HOUR ---
+from apscheduler.schedulers.background import BackgroundScheduler
+import atexit
+
+def auto_update_priority():
+    """
+    Background job that runs every hour to recalculate priority scores.
+    This ensures urgency scores stay accurate as deadlines approach.
+    """
+    try:
+        print("⏰ [Scheduler] Running hourly priority update...")
+        priority_agent = RealPriorityAgent()
+        priority_agent.recalculate_all_priorities()
+        print("✅ [Scheduler] Priority update complete.")
+    except Exception as e:
+        print(f"❌ [Scheduler] Error during auto-update: {e}")
+
+# Initialize scheduler (runs in background thread, non-blocking)
+scheduler = BackgroundScheduler(daemon=True)
+scheduler.add_job(
+    func=auto_update_priority,
+    trigger="interval",
+    hours=1,  # Run every 1 hour
+    id="priority_recalc",
+    name="Hourly Priority Recalculation",
+    replace_existing=True
+)
+scheduler.start()
+print("🕐 [Scheduler] Hourly priority auto-update enabled.")
+
+# Shut down scheduler gracefully on app exit
+atexit.register(lambda: scheduler.shutdown())
+
 app = Flask(__name__, template_folder='templates')
 app.secret_key = "super_secret_key" 
 
