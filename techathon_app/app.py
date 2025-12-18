@@ -2,10 +2,30 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 import os
 import json
 import datetime
+import threading
+import time
+import requests
 from dotenv import load_dotenv
 
 # 1. LOAD ENV VARS IMMEDIATELY
 load_dotenv()
+
+# --- SELF-HEALING KEEP-ALIVE ---
+def keep_alive_worker():
+    """Background thread to ping the app every 14 mins to prevent sleep."""
+    URL = "https://techathon-app-1.onrender.com/"
+    print(f"🚀 Keep-Alive Worker Started for: {URL}")
+    while True:
+        time.sleep(840) # 14 Minutes
+        try:
+            print(f"⏰ Keep-Alive: Pinging {URL}...")
+            requests.get(URL, timeout=10)
+            print("✅ Keep-Alive: Ping Successful.")
+        except Exception as e:
+            print(f"⚠️ Keep-Alive: Ping Failed: {e}")
+
+# Start the worker daemon
+threading.Thread(target=keep_alive_worker, daemon=True).start()
 
 # --- IMPORT AGENTS ---
 from main_agent import MainAgent
