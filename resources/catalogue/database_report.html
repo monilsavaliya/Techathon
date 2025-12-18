@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techathon System Architecture - Database Bible</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --primary: #2563eb;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --bg-body: #ffffff;
+            --bg-sidebar: #f8fafc;
+            --bg-code: #0f172a;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR NAVIGATION */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 30px;
+            top: 0;
+            left: 0;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-group {
+            margin-bottom: 30px;
+        }
+
+        .nav-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .nav-link {
+            display: block;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 0;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .nav-link i {
+            width: 20px;
+            color: var(--text-muted);
+        }
+
+        /* MAIN CONTENT */
+        .main {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 60px 80px;
+            max-width: 1000px;
+            /* Readable line length */
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .doc-meta {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #334155;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        /* TECH TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 13px;
+        }
+
+        th {
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 2px solid var(--border);
+            color: var(--text-muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-main);
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        .tag {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tag-pk {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* PK */
+        .tag-fk {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        /* FK */
+        .tag-enum {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        /* Enum */
+        .tag-float {
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        /* CODE BLOCKS */
+        .code-panel {
+            background: var(--bg-code);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: #e2e8f0;
+        }
+
+        .k {
+            color: #ff79c6;
+        }
+
+        /* Key */
+        .s {
+            color: #f1fa8c;
+        }
+
+        /* String */
+        .n {
+            color: #bd93f9;
+        }
+
+        /* Number */
+        .c {
+            color: #6272a4;
+            font-style: italic;
+        }
+
+        /* Comment */
+
+        /* CALLOUTS */
+        .callout {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            border-radius: 0 4px 4px 0;
+            margin: 30px 0;
+        }
+
+        .callout h4 {
+            margin: 0 0 10px 0;
+            color: #92400e;
+            font-size: 14px;
+        }
+
+        .callout p {
+            margin: 0;
+            color: #78350f;
+            font-size: 13px;
+        }
+
+        @media print {
+            .sidebar {
+                display: none;
+            }
+
+            .main {
+                margin: 0;
+                padding: 40px;
+            }
+
+            body {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION SIDEBAR -->
+    <nav class="sidebar">
+        <div class="brand">
+            <i class="fas fa-database"></i> SYSTEM DOCS
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-title">Architecture</div>
+            <a href="#overview" class="nav-link"><i class="fas fa-home"></i> System Overview</a>
+            <a href="#erd" class="nav-link"><i class="fas fa-project-diagram"></i> Entity Relationships</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-title">Master Data Layer</div>
+            <a href="#product-master" class="nav-link"><i class="fas fa-box"></i> Product Master</a>
+            <a href="#client-master" class="nav-link"><i class="fas fa-users"></i> Client Master</a>
+            <a href="#test-master" class="nav-link"><i class="fas fa-vial"></i> Test Standards</a>
+            <a href="#logistics-master" class="nav-link"><i class="fas fa-truck"></i> Logicstics Data</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-title">Strategic Layer</div>
+            <a href="#competitor-intel" class="nav-link"><i class="fas fa-chess"></i> Competitor Intel</a>
+            <a href="#factory-ops" class="nav-link"><i class="fas fa-industry"></i> Factory Ops</a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-title">Transactional Layer</div>
+            <a href="#rfp-core" class="nav-link"><i class="fas fa-file-contract"></i> Central RFP</a>
+        </div>
+    </nav>
+
+    <!-- CONTENT AREA -->
+    <div class="main">
+
+        <div id="overview">
+            <h1>Database Architecture Bible</h1>
+            <div class="doc-meta">
+                Version 3.5.0 &bull; Last Updated: Dec 17, 2025 &bull; Classification: <strong>Confidential</strong>
+            </div>
+
+            <p>
+                The <strong>AI Sales Agent System</strong> is powered by a high-performance, file-based relational
+                database architecture (FRDA).
+                Unlike monolithic storage, this system distributes intelligence across <strong>6 specialized JSON
+                    repositories</strong>,
+                minimizing latency and ensuring Data Sovereignty for each autonomous agent.
+            </p>
+            <p>
+                This document serves as the single source of truth for the schema definitions, validation rules, and
+                inter-agent data contracts.
+            </p>
+        </div>
+
+        <!-- PRODUCT MASTER -->
+        <h2 id="product-master">1. Product Master Enriched (`product_master_enriched.json`)</h2>
+        <p>
+            The cornerstone of the Technical Agent. Contains over 4,000 SKUs with deep technical specifications.
+            Used for <strong>O(1) Exact Matching</strong> and <strong>O(log n) Nearest Neighbor Search</strong>.
+        </p>
+
+        <h3>Schema Definition</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>product_id</code></td>
+                    <td><span class="tag tag-pk">PrimaryKey</span></td>
+                    <td>Yes</td>
+                    <td>Unique Identifier. Format: <code>PC-{GRID}-{MAT}-{CORE}-{SIZE}</code></td>
+                </tr>
+                <tr>
+                    <td><code>technical_specs</code></td>
+                    <td><span class="tag">Object</span></td>
+                    <td>Yes</td>
+                    <td>Container for all matching parameters (Voltage, Insulation, etc).</td>
+                </tr>
+                <tr>
+                    <td><code>commercial.base_mfg_cost</code></td>
+                    <td><span class="tag tag-float">Float</span></td>
+                    <td>Yes</td>
+                    <td>The raw ex-factory cost. <strong>CRITICAL:</strong> Not visible to Sales Agent.</td>
+                </tr>
+                <tr>
+                    <td><code>inventory_stock</code></td>
+                    <td><span class="tag tag-float">Integer</span></td>
+                    <td>Yes</td>
+                    <td>Current physical stock. Triggers "Check Factory" logic if 0.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="code-panel">
+            <div style="font-size: 11px; color: #94a3b8; margin-bottom: 10px;">EXAMPLE 1: High Voltage Aluminium Cable
+                (Infrastructure)</div>
+            <pre>
+{
+  <span class="k">"product_id"</span>: <span class="s">"PC-HT-AL-3C-400"</span>,
+  <span class="k">"technical_specs"</span>: {
+    <span class="k">"voltage_grade"</span>: <span class="s">"11kV"</span>,
+    <span class="k">"conductor_material"</span>: <span class="s">"Aluminium"</span>,
+    <span class="k">"insulation"</span>: <span class="s">"XLPE"</span>,
+    <span class="k">"armour_type"</span>: <span class="s">"Flat Strip"</span>,
+    <span class="k">"standards"</span>: [<span class="s">"IS 7098 Part-2"</span>]
+  },
+  <span class="k">"commercial"</span>: {
+    <span class="k">"base_mfg_cost_per_meter"</span>: <span class="n">4500.0</span>,
+    <span class="k">"inventory_stock"</span>: <span class="n">50</span>
+  }
+}</pre>
+            <div
+                style="font-size: 11px; color: #94a3b8; margin: 15px 0 10px; border-top: 1px solid #334155; padding-top: 10px;">
+                EXAMPLE 2: Low Voltage Copper Flexible (Domestic/Industrial)</div>
+            <pre>
+{
+  <span class="k">"product_id"</span>: <span class="s">"PC-LT-CU-1C-2.5"</span>,
+  <span class="k">"technical_specs"</span>: {
+    <span class="k">"voltage_grade"</span>: <span class="s">"1100V"</span>,
+    <span class="k">"conductor_material"</span>: <span class="s">"Copper"</span>,
+    <span class="k">"core_count"</span>: <span class="n">1</span>,
+    <span class="k">"cross_section_sqmm"</span>: <span class="n">2.5</span>
+  },
+  <span class="k">"commercial"</span>: {
+    <span class="k">"base_mfg_cost_per_meter"</span>: <span class="n">45.0</span>,
+    <span class="k">"inventory_stock"</span>: <span class="n">10000</span> <span class="c">// High volume SKU</span>
+  }
+}</pre>
+        </div>
+
+        <!-- COMPETITOR INTEL -->
+        <h2 id="competitor-intel">2. Competitor Intelligence (`competitors.json`)</h2>
+        <p>
+            Provides the bounding constraints for "Game Theory Pricing".
+            The system assumes competitors act rationally to maximize their own Win Rate.
+        </p>
+
+        <h3>Strategic Fields</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Logic</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>competitor_id</code></td>
+                    <td><span class="tag tag-pk">PK</span></td>
+                    <td>Internal reference ID (e.g., COMP-001).</td>
+                </tr>
+                <tr>
+                    <td><code>colliding_skus</code></td>
+                    <td><span class="tag tag-fk">ForeignKey[]</span></td>
+                    <td>List of <code>product_id</code>s where they directly compete.</td>
+                </tr>
+                <tr>
+                    <td><code>pricing_intelligence.aggression_score</code></td>
+                    <td><span class="tag tag-enum">1-10</span></td>
+                    <td>
+                        <strong>Score 1-4:</strong> Ignore.<br>
+                        <strong>Score 5-7:</strong> Match Price.<br>
+                        <strong>Score 8-10:</strong> Undercut by 2%.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Usage in Code (pricing_agent.py)</h3>
+        <div class="code-panel" style="border-left: 3px solid #f59e0b;">
+            <pre>
+<span class="c"># Game Theory: Nash Equilibrium Adjustment</span>
+<span class="k">if</span> competitor[<span class="s">'pricing_intelligence'</span>][<span class="s">'aggression_score'</span>] > <span class="n">7</span>:
+    <span class="c"># Competitor is Aggressive -> We sacrifice margin to win</span>
+    target_margin = <span class="n">0.04</span>  <span class="c"># Drop to 4% "Survival Cost"</span>
+    strategy_note = <span class="s">"Defensive Pricing Triggered"</span>
+<span class="k">else</span>:
+    target_margin = <span class="n">0.15</span>  <span class="c"># Maintain 15% Healthy Margin</span></pre>
+        </div>
+
+        <!-- CLIENT MASTER -->
+        <h2 id="client-master">3. Client Master (`client_master.json`)</h2>
+        <p>Dictates the "Risk Premium" added to the base margin.</p>
+
+        <div class="callout">
+            <h4><i class="fas fa-lightbulb"></i> Business Logic</h4>
+            <p>A "Tier-1" client gets a 5% discount but stringent penalty clauses.
+                A "Tier-3" client pays full price but gets flexible payment terms.</p>
+        </div>
+
+        <div class="code-panel">
+            <div style="font-size: 11px; color: #94a3b8; margin-bottom: 10px;">EXAMPLE 1: Tier-1 Infrastructure Major
+                (Strategic)</div>
+            <pre>
+{
+  <span class="k">"client_id"</span>: <span class="s">"CL-ORN-001"</span>,
+  <span class="k">"tier"</span>: <span class="s">"Tier-1 (Infrastructure Major)"</span>,
+  <span class="k">"loyalty_status"</span>: <span class="s">"Gold"</span>,
+  <span class="k">"payment_terms"</span>: <span class="s">"90 Days Credit"</span>,
+  <span class="k">"risk_profile"</span>: <span class="s">"Low"</span>
+}</pre>
+            <div
+                style="font-size: 11px; color: #94a3b8; margin: 15px 0 10px; border-top: 1px solid #334155; padding-top: 10px;">
+                EXAMPLE 2: Tier-3 Contractor (Transactional)</div>
+            <pre>
+{
+  <span class="k">"client_id"</span>: <span class="s">"CL-SML-992"</span>,
+  <span class="k">"tier"</span>: <span class="s">"Tier-3 (Private Contractor)"</span>,
+  <span class="k">"loyalty_status"</span>: <span class="s">"New"</span>,
+  <span class="k">"payment_terms"</span>: <span class="s">"100% Advance"</span>,
+  <span class="k">"risk_profile"</span>: <span class="s">"High"</span>
+}</pre>
+        </div>
+
+        <h3>Usage in Code (pricing_agent.py)</h3>
+        <div class="code-panel" style="border-left: 3px solid #6366f1;">
+            <pre>
+<span class="c"># Determine Risk Premium based on Client Tier</span>
+<span class="k">if</span> client[<span class="s">'payment_terms'</span>] == <span class="s">"90 Days Credit"</span>:
+    interest_cost = total_price * <span class="n">0.03</span>  <span class="c"># 3% Cost of Capital</span>
+    final_price += interest_cost
+<span class="k">elif</span> client[<span class="s">'tier'</span>] == <span class="s">"Tier-3"</span>:
+    margin = margin + <span class="n">0.05</span> <span class="c"># Add 5% Risk Buffer</span></pre>
+        </div>
+
+        <!-- FACTORY OPS -->
+        <h2 id="factory-ops">4. Factory Production Schedule (`factory_production_schedule.json`)</h2>
+        <p>Mimics a read-only feed from the Manufacturing Execution System (MES).</p>
+
+        <h3>Validation Rules</h3>
+        <ul>
+            <li><strong>Line Utilization > 100%</strong>: Impossible. System throws validation error.</li>
+            <li><strong>Utilization > 90%</strong>: Triggers "Surge Pricing" (+5% Markup) and "Lead Time Extension" (+14
+                Days).</li>
+        </ul>
+
+        <!-- LOGISTICS MASTER -->
+        <h2 id="logistics-master">5. Logistics Master (`logistic_master.json`)</h2>
+        <p>Geospatial pricing logic. Defines costs based on Zonal Complexity.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Zone Code</th>
+                    <th>Zone Type</th>
+                    <th>Multiplier</th>
+                    <th>Justification</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>Z-02</code></td>
+                    <td>Hilly / Remote</td>
+                    <td><strong>2.50x</strong></td>
+                    <td>Difficult terrain, requires smaller trucks.</td>
+                </tr>
+                <tr>
+                    <td><code>Z-06</code></td>
+                    <td>Island / Shipping</td>
+                    <td><strong>3.00x</strong></td>
+                    <td>Requires sea-worthy packaging & port handling.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- CENTRAL RFP -->
+        <h2 id="rfp-core">6. Central RFP Database (`central_rfp_database.json`)</h2>
+        <p>
+            The <strong>State Object</strong>. This file is transactional and high-velocity.
+            It uses a "Stage Tracker" to ensure ACID-like consistency across agents.
+        </p>
+
+        <h3>State Machine Transition</h3>
+        <code>Approved</code>
+        </p>
+
+        <h3>Usage in Code (main_agent.py)</h3>
+        <div class="code-panel" style="border-left: 3px solid #6366f1;">
+            <pre>
+<span class="c"># The "Baton Pass" State Machine</span>
+<span class="kw">if</span> rfp[<span class="s">'processing_stage'</span>][<span class="s">'tech_agent'</span>] == <span class="s">"Completed"</span>:
+    <span class="c"># Only run Pricing if Tech is done</span>
+    run_pricing_agent(rfp_id)
+    update_state(rfp_id, <span class="s">"Pricing_In_Progress"</span>)
+<span class="kw">else</span>:
+    <span class="c"># Block execution to prevent data corruption</span>
+    raise StateError(<span class="s">"Dependency checklist failed"</span>)</pre>
+        </div>
+
+        <div class="code-panel">
+            <pre>
+{
+  <span class="k">"rfp_unique_id"</span>: <span class="s">"RFP-2025-XYZ"</span>,
+  <span class="k">"processing_stage_tracker"</span>: {
+    <span class="k">"sales_agent"</span>: <span class="s">"Completed"</span>,
+    <span class="k">"tech_agent"</span>: <span class="s">"Completed"</span>,  <span class="c">// Gatekeeper for Pricing Agent</span>
+    <span class="k">"pricing_agent"</span>: <span class="s">"Pending"</span>
+  },
+  <span class="k">"agent_outputs"</span>: {
+    <span class="c">// Modular storage prevents data overwrites</span>
+    <span class="k">"tech"</span>: { ... },
+    <span class="k">"pricing"</span>: { ... }
+  }
+}</pre>
+        </div>
+
+        <br><br><br>
+        <p style="text-align: center; color: var(--text-muted); font-size: 11px;">
+            End of Specification &bull; Techathon 2025
+        </p>
+
+    </div>
+
+</body>
+
+</html>

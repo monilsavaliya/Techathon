@@ -1,0 +1,127 @@
+lot_id,sku_id,spec_name,rfp_value,sku_value,spec_score
+L001,PC-LT-AL-3.5C-70,voltage_grade,NOT SPECIFIED,1100V,1.0
+L001,PC-LT-AL-3.5C-70,core_count,3.5,3.5,1.0
+L001,PC-LT-AL-3.5C-70,cross_section_sqmm,70,70,1.0
+L001,PC-LT-AL-3.5C-70,conductor_material,Aluminum,Aluminium,1.0
+L001,PC-LT-AL-3.5C-70,insulation_type,XLPE,XLPE,1.0
+L001,PC-LT-AL-3.5C-70,sheath_type,Armoured,armour_type present,1.0
+L001,PC-LT-AL-3.5C-70,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 7098, IS 7098 Part-1, IS 10810 Part 6",0.5
+L002,PC-LT-AL-3.5C-50,voltage_grade,NOT SPECIFIED,1100V,1.0
+L002,PC-LT-AL-3.5C-50,core_count,3.5,3.5,1.0
+L002,PC-LT-AL-3.5C-50,cross_section_sqmm,50,50,1.0
+L002,PC-LT-AL-3.5C-50,conductor_material,Aluminum,Aluminium,1.0
+L002,PC-LT-AL-3.5C-50,insulation_type,XLPE,XLPE,1.0
+L002,PC-LT-AL-3.5C-50,sheath_type,Armoured,armour_type present,1.0
+L002,PC-LT-AL-3.5C-50,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 10810 Part 53, IS 7098 Part-1, IS 5831",0.5
+L003,PC-LT-AL-3.5C-35,voltage_grade,NOT SPECIFIED,1100V,1.0
+L003,PC-LT-AL-3.5C-35,core_count,3.5,3.5,1.0
+L003,PC-LT-AL-3.5C-35,cross_section_sqmm,35,35,1.0
+L003,PC-LT-AL-3.5C-35,conductor_material,Aluminum,Aluminium,1.0
+L003,PC-LT-AL-3.5C-35,insulation_type,XLPE,XLPE,1.0
+L003,PC-LT-AL-3.5C-35,sheath_type,Armoured,armour_type present,1.0
+L003,PC-LT-AL-3.5C-35,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 7098 Part-1, IS 5831, IS 10810 Part 6, IS 7098 Part-2, IS 10810 Part 53",0.5
+L004,PC-LT-AL-3.5C-25,voltage_grade,NOT SPECIFIED,1100V,1.0
+L004,PC-LT-AL-3.5C-25,core_count,3.5,3.5,1.0
+L004,PC-LT-AL-3.5C-25,cross_section_sqmm,25,25,1.0
+L004,PC-LT-AL-3.5C-25,conductor_material,Aluminum,Aluminium,1.0
+L004,PC-LT-AL-3.5C-25,insulation_type,XLPE,XLPE,1.0
+L004,PC-LT-AL-3.5C-25,sheath_type,Armoured,armour_type present,1.0
+L004,PC-LT-AL-3.5C-25,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 8130, IS 7098 Part-1, IS 5831",0.5
+L005,PC-LT-AL-4C-16,voltage_grade,NOT SPECIFIED,1100V,1.0
+L005,PC-LT-AL-4C-16,core_count,4,4,1.0
+L005,PC-LT-AL-4C-16,cross_section_sqmm,16,16,1.0
+L005,PC-LT-AL-4C-16,conductor_material,Aluminum,Aluminium,1.0
+L005,PC-LT-AL-4C-16,insulation_type,XLPE,XLPE,1.0
+L005,PC-LT-AL-4C-16,sheath_type,Armoured,armour_type present,1.0
+L005,PC-LT-AL-4C-16,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 10810 Part 53, IS 7098 Part-1, IS 5831",0.5
+L006,PC-LT-AL-4C-16,voltage_grade,NOT SPECIFIED,1100V,1.0
+L006,PC-LT-AL-4C-16,core_count,4,4,1.0
+L006,PC-LT-AL-4C-16,cross_section_sqmm,10,16,0.4
+L006,PC-LT-AL-4C-16,conductor_material,Aluminum,Aluminium,1.0
+L006,PC-LT-AL-4C-16,insulation_type,XLPE,XLPE,1.0
+L006,PC-LT-AL-4C-16,sheath_type,Armoured,armour_type present,1.0
+L006,PC-LT-AL-4C-16,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 10810 Part 53, IS 7098 Part-1, IS 5831",0.5
+L007,PC-LT-CU-4C-6,voltage_grade,NOT SPECIFIED,1100V,1.0
+L007,PC-LT-CU-4C-6,core_count,4,4,1.0
+L007,PC-LT-CU-4C-6,cross_section_sqmm,6,6,1.0
+L007,PC-LT-CU-4C-6,conductor_material,Copper,Copper,1.0
+L007,PC-LT-CU-4C-6,insulation_type,PVC,XLPE,0.0
+L007,PC-LT-CU-4C-6,sheath_type,NOT SPECIFIED,armour_type present,1.0
+L007,PC-LT-CU-4C-6,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 7098 Part-1, IS 5831, IS 10810 Part 6, IS 10810 Part 53, IS 7098",0.5
+L008,PC-LT-CU-3C-6,voltage_grade,NOT SPECIFIED,1100V,1.0
+L008,PC-LT-CU-3C-6,core_count,3,3,1.0
+L008,PC-LT-CU-3C-6,cross_section_sqmm,6,6,1.0
+L008,PC-LT-CU-3C-6,conductor_material,Copper,Copper,1.0
+L008,PC-LT-CU-3C-6,insulation_type,PVC,XLPE,0.0
+L008,PC-LT-CU-3C-6,sheath_type,NOT SPECIFIED,armour_type present,1.0
+L008,PC-LT-CU-3C-6,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 7098 Part-1, IS 10810 Part 6, IS 10810 Part 43, IS 7098 Part-2, IS 10810 Part 7, IS 8130",0.5
+L009,PC-CU-2.5,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L009,PC-CU-2.5,core_count,1,1,1.0
+L009,PC-CU-2.5,cross_section_sqmm,25,2.5,0.1
+L009,PC-CU-2.5,conductor_material,Copper,Copper,1.0
+L009,PC-CU-2.5,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L009,PC-CU-2.5,sheath_type,NOT SPECIFIED,not armoured,1.0
+L009,PC-CU-2.5,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 8130, IS 7098 Part-1, IS 5831, IS 694",0.75
+L010,PC-CU-2.5,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L010,PC-CU-2.5,core_count,1,1,1.0
+L010,PC-CU-2.5,cross_section_sqmm,25,2.5,0.1
+L010,PC-CU-2.5,conductor_material,Copper,Copper,1.0
+L010,PC-CU-2.5,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L010,PC-CU-2.5,sheath_type,NOT SPECIFIED,not armoured,1.0
+L010,PC-CU-2.5,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 8130, IS 7098 Part-1, IS 5831, IS 694",0.75
+L011,PC-CU-2.5,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L011,PC-CU-2.5,core_count,1,1,1.0
+L011,PC-CU-2.5,cross_section_sqmm,16,2.5,0.156
+L011,PC-CU-2.5,conductor_material,Copper,Copper,1.0
+L011,PC-CU-2.5,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L011,PC-CU-2.5,sheath_type,NOT SPECIFIED,not armoured,1.0
+L011,PC-CU-2.5,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 8130, IS 7098 Part-1, IS 5831, IS 694",0.75
+L012,PC-CU-2.5,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L012,PC-CU-2.5,core_count,1,1,1.0
+L012,PC-CU-2.5,cross_section_sqmm,16,2.5,0.156
+L012,PC-CU-2.5,conductor_material,Copper,Copper,1.0
+L012,PC-CU-2.5,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L012,PC-CU-2.5,sheath_type,NOT SPECIFIED,not armoured,1.0
+L012,PC-CU-2.5,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 8130, IS 7098 Part-1, IS 5831, IS 694",0.75
+L013,PC-CU-2.5,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L013,PC-CU-2.5,core_count,1,1,1.0
+L013,PC-CU-2.5,cross_section_sqmm,10,2.5,0.25
+L013,PC-CU-2.5,conductor_material,Copper,Copper,1.0
+L013,PC-CU-2.5,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L013,PC-CU-2.5,sheath_type,NOT SPECIFIED,not armoured,1.0
+L013,PC-CU-2.5,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 8130, IS 7098 Part-1, IS 5831, IS 694",0.75
+L014,PC-CU-2.5,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L014,PC-CU-2.5,core_count,1,1,1.0
+L014,PC-CU-2.5,cross_section_sqmm,10,2.5,0.25
+L014,PC-CU-2.5,conductor_material,Copper,Copper,1.0
+L014,PC-CU-2.5,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L014,PC-CU-2.5,sheath_type,NOT SPECIFIED,not armoured,1.0
+L014,PC-CU-2.5,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 8130, IS 7098 Part-1, IS 5831, IS 694",0.75
+L015,PC-CU-4,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L015,PC-CU-4,core_count,1,1,1.0
+L015,PC-CU-4,cross_section_sqmm,4,4,1.0
+L015,PC-CU-4,conductor_material,Copper,Copper,1.0
+L015,PC-CU-4,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L015,PC-CU-4,sheath_type,NOT SPECIFIED,not armoured,1.0
+L015,PC-CU-4,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 10810 Part 7, IS 7098, IS 5831, IS 694",0.5
+L016,PC-CU-4,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L016,PC-CU-4,core_count,1,1,1.0
+L016,PC-CU-4,cross_section_sqmm,4,4,1.0
+L016,PC-CU-4,conductor_material,Copper,Copper,1.0
+L016,PC-CU-4,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L016,PC-CU-4,sheath_type,NOT SPECIFIED,not armoured,1.0
+L016,PC-CU-4,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 10810 Part 7, IS 7098, IS 5831, IS 694",0.5
+L017,PC-CU-2.5,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L017,PC-CU-2.5,core_count,1,1,1.0
+L017,PC-CU-2.5,cross_section_sqmm,35,2.5,0.071
+L017,PC-CU-2.5,conductor_material,Copper,Copper,1.0
+L017,PC-CU-2.5,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L017,PC-CU-2.5,sheath_type,NOT SPECIFIED,not armoured,1.0
+L017,PC-CU-2.5,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 8130, IS 7098 Part-1, IS 5831, IS 694",0.75
+L018,PC-CU-2.5,voltage_grade,NOT SPECIFIED,1.1kV,1.0
+L018,PC-CU-2.5,core_count,1,1,1.0
+L018,PC-CU-2.5,cross_section_sqmm,6,2.5,0.417
+L018,PC-CU-2.5,conductor_material,Copper,Copper,1.0
+L018,PC-CU-2.5,insulation_type,NOT SPECIFIED,PVC FRLS,1.0
+L018,PC-CU-2.5,sheath_type,NOT SPECIFIED,not armoured,1.0
+L018,PC-CU-2.5,standards,"ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990","IS 8130, IS 7098 Part-1, IS 5831, IS 694",0.75

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBid: Main Agent Orchestration Log</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --accent-core: #7c4dff;
+            /* Deep Purple for Main Agent */
+            --accent-sales: #448aff;
+            --accent-tech: #00bcd4;
+            --accent-price: #00e676;
+            --border: #333;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin: 0;
+            background: linear-gradient(to right, #7c4dff, #448aff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: #888;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        /* TIMELINE ITEM */
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 60px 1fr;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        /* Time Column */
+        .time-col {
+            text-align: right;
+            font-family: 'JetBrains Mono', monospace;
+            color: #888;
+            font-size: 13px;
+            padding-top: 25px;
+        }
+
+        /* Line Column */
+        .line-col {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .line {
+            width: 2px;
+            background: #333;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            background: var(--bg-dark);
+            border: 4px solid var(--accent-core);
+            border-radius: 50%;
+            z-index: 1;
+            margin-top: 25px;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover .dot {
+            transform: scale(1.3);
+            box-shadow: 0 0 15px rgba(124, 77, 255, 0.4);
+        }
+
+        /* Content Column */
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--card-bg);
+            transform: rotate(45deg);
+            border-left: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .step-badge {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #aaa;
+        }
+
+        .code-snippet {
+            background: #121212;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: #d4d4d4;
+            border-left: 3px solid var(--accent-core);
+            overflow-x: auto;
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #bbb;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .note i {
+            color: var(--accent-core);
+            margin-top: 4px;
+        }
+
+        /* SPECIFIC STEP STYLES */
+        .step-init .dot {
+            border-color: #fff;
+        }
+
+        .step-sales .dot {
+            border-color: var(--accent-sales);
+        }
+
+        .step-tech .dot {
+            border-color: var(--accent-tech);
+        }
+
+        .step-price .dot {
+            border-color: var(--accent-price);
+        }
+
+        .k {
+            color: #c678dd;
+        }
+
+        /* Keyword */
+        .f {
+            color: #61afef;
+        }
+
+        /* Function */
+        .s {
+            color: #98c379;
+        }
+
+        /* String */
+        .c {
+            color: #5c6370;
+        }
+
+        /* Comment */
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Main Agent Control Loop</h1>
+            <p><strong>Role:</strong> System Kernel & Orchestrator &bull; <strong>File:</strong>
+                <code>main_agent.py</code></p>
+        </header>
+
+        <!-- STEP 0: INITIALIZATION -->
+        <div class="timeline-item step-init">
+            <div class="time-col">T + 000ms</div>
+            <div class="line-col">
+                <div class="line"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="content-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-power-off"></i> 1. Request Received</h3>
+                    <span class="step-badge">Thread Spawn</span>
+                </div>
+                <div class="code-snippet">
+                    <span class="k">def</span> <span class="f">process_rfp</span>(filepath):
+                    <span class="c"># 1. Create DB Record Immediately</span>
+                    record = { <span class="s">"status"</span>: <span class="s">"Processing"</span>, <span
+                        class="s">"id"</span>: <span class="f">generate_id()</span> }
+                    db.save(record)
+
+                    <span class="c"># 2. Spawn Non-Blocking Thread</span>
+                    <span class="k">thread</span> = threading.Thread(target=<span class="f">_background_pipeline</span>)
+                    <span class="k">thread</span>.start() <span class="c"># Returns control to UI instantly</span>
+                </div>
+                <div class="note">
+                    <i class="fas fa-info-circle"></i>
+                    <div><strong>Why Threading?</strong> Python Flask is synchronous. We spawn a detached thread so the
+                        UI doesn't freeze while the AI thinks.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 1: SALES AGENT -->
+        <div class="timeline-item step-sales">
+            <div class="time-col">T + 100ms</div>
+            <div class="line-col">
+                <div class="line"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="content-card" style="border-color: var(--accent-sales);">
+                <div class="card-header">
+                    <h3 style="color: var(--accent-sales);"><i class="fas fa-file-contract"></i> 2. Call Sales Agent
+                        (API)</h3>
+                    <span class="step-badge" style="color: var(--accent-sales);">HTTP Request</span>
+                </div>
+                <div class="code-snippet" style="border-left-color: var(--accent-sales);">
+                    <span class="c"># External API Call for Isolation</span>
+                    <span class="k">try:</span>
+                    response = requests.post(<span class="s">"http://localhost:8000/process-rfp"</span>, file=pdf)
+                    data = response.json()
+
+                    <span class="c"># ATOMIC WRITE</span>
+                    <span class="f">save_to_db_record</span>(id, <span class="s">"sales_agent_output"</span>, data)
+                    <span class="k">except</span> ConnectionError:
+                    <span class="f">log_error</span>(<span class="s">"Sales Agent Offline"</span>)
+                </div>
+                <div class="note">
+                    <i class="fas fa-shield-alt" style="color:var(--accent-sales);"></i>
+                    <div><strong>Safety:</strong> Specifically uses HTTP so if the PDF parser crashes (SegFault), it
+                        doesn't kill the Main Orchestrator.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 2: TECH AGENT -->
+        <div class="timeline-item step-tech">
+            <div class="time-col">T + 2500ms</div>
+            <div class="line-col">
+                <div class="line"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="content-card" style="border-color: var(--accent-tech);">
+                <div class="card-header">
+                    <h3 style="color: var(--accent-tech);"><i class="fas fa-microchip"></i> 3. Call Tech Agent (Class)
+                    </h3>
+                    <span class="step-badge" style="color: var(--accent-tech);">Internal Class</span>
+                </div>
+                <div class="code-snippet" style="border-left-color: var(--accent-tech);">
+                    <span class="c"># Instantiate Tech Agent</span>
+                    bot = <span class="f">RealTechAgent()</span>
+
+                    <span class="c"># Pass ONLY Sales Data (Least Privilege)</span>
+                    tech_out = bot.process(sales_data)
+
+                    <span class="c"># Update Status & Save</span>
+                    <span class="f">save_to_db_record</span>(id, <span class="s">"tech_agent_output"</span>, tech_out,
+                    status=<span class="s">"Tech Done"</span>)
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 3: PRICING AGENT -->
+        <div class="timeline-item step-price">
+            <div class="time-col">T + 4000ms</div>
+            <div class="line-col">
+                <div class="line"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="content-card" style="border-color: var(--accent-price);">
+                <div class="card-header">
+                    <h3 style="color: var(--accent-price);"><i class="fas fa-calculator"></i> 4. Call Pricing Agent</h3>
+                    <span class="step-badge" style="color: var(--accent-price);">Aggregation</span>
+                </div>
+                <div class="code-snippet" style="border-left-color: var(--accent-price);">
+                    pricing_bot = <span class="f">RealPricingAgent()</span>
+
+                    <span class="c"># Needs FULL Context (Sales + Tech)</span>
+                    current_state = <span class="f">get_rfp_record(id)</span>
+                    final_bid = pricing_bot.calculate(current_state)
+
+                    <span class="f">save_to_db_record</span>(id, <span class="s">"pricing_agent_output"</span>,
+                    final_bid)
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 4: CLOSURE -->
+        <div class="timeline-item">
+            <div class="time-col">T + 4200ms</div>
+            <div class="line-col">
+                <div class="line" style="background: linear-gradient(to bottom, #333, transparent);"></div>
+                <div class="dot" style="background: #aaa; border-color: #333;"></div>
+            </div>
+            <div class="content-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-flag-checkered"></i> 5. Finalize & Prioritize</h3>
+                </div>
+                <div class="code-snippet">
+                    <span class="c"># Re-Sort Dashboard</span>
+                    <span class="f">recalculate_priorities()</span>
+
+                    <span class="f">print</span>(<span class="s">"✅ [Pipeline] RFP Processed Successfully"</span>)
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+[
+  {
+    "rfp_unique_id": "RFP-2025-101",
+    "status": "In Progress",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Adani Transmission",
+        "project_title": "Khavda Renewable Energy Park - Phase 4",
+        "submission_deadline": "2025-12-20",
+        "contract_currency": "INR",
+        "emd_amount": 5000000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Khavda Desert Zone, Gujarat",
+        "distance_from_factory_km": 680,
+        "delivery_timeline_days": 60
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "33kV 3C 400sqmm Al Cable (Armoured)",
+          "quantity": 15000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "Solar DC Cable 4sqmm EN50618",
+          "quantity": 50000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "COMP-001", 
+        "COMP-003"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "matched_product_id": "PC-33KV-AL-3C-400",
+          "product_name": "Polycab 19/33 kV (E) 3 Core 400sqmm Aluminium Armoured Cable",
+          "confirmed_quantity": 15000,
+          "match_confidence": 0.99
+        },
+        {
+          "lot_id_ref": "L2",
+          "matched_product_id": "PROD-008",
+          "product_name": "Solar DC Cable 4sqmm Tinned Copper",
+          "confirmed_quantity": 50000,
+          "match_confidence": 0.95
+        }
+      ]
+    }
+  },
+  {
+    "rfp_unique_id": "RFP-2025-102",
+    "status": "In Progress",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Tata Projects",
+        "project_title": "Mumbai Metro Line 3 Electrification",
+        "submission_deadline": "2025-12-22",
+        "contract_currency": "INR",
+        "emd_amount": 2500000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Mumbai Metro Yard (Urban Restricted)",
+        "distance_from_factory_km": 280,
+        "delivery_timeline_days": 45
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "11kV 3C 185sqmm Copper Cable",
+          "quantity": 5000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "1.1kV 4C 16sqmm Copper Control Cable",
+          "quantity": 12000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "COMP-002",
+        "COMP-005"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "matched_product_id": "PC-11KV-CU-3C-185",
+          "product_name": "Polycab 6.35/11 kV 3 Core 185sqmm Copper Armoured Cable",
+          "confirmed_quantity": 5000,
+          "match_confidence": 0.98
+        },
+        {
+          "lot_id_ref": "L2",
+          "matched_product_id": "PC-LT-CU-4C-16",
+          "product_name": "Polycab 1.1kV 4 Core 16sqmm Copper Armoured Cable",
+          "confirmed_quantity": 12000,
+          "match_confidence": 0.96
+        }
+      ]
+    }
+  },
+  {
+    "rfp_unique_id": "RFP-2025-103",
+    "status": "In Progress",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "L&T Construction",
+        "project_title": "Zojila Tunnel Connectivity Project",
+        "submission_deadline": "2025-12-28",
+        "contract_currency": "INR",
+        "emd_amount": 10000000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Ladakh Remote Hilly Area",
+        "distance_from_factory_km": 1850,
+        "delivery_timeline_days": 90
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "220kV 1C 1200sqmm EHV Cable",
+          "quantity": 2500,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "COMP-013",
+        "COMP-003"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "matched_product_id": "PC-220KV-CU-1200",
+          "product_name": "Polycab 220kV 1 Core 1200sqmm Copper EHV Cable Lead Sheath",
+          "confirmed_quantity": 2500,
+          "match_confidence": 0.99
+        }
+      ]
+    }
+  }
+]

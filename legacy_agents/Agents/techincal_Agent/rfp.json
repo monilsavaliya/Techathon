@@ -1,0 +1,394 @@
+{
+  "rfp_unique_id": "RFP-2024-ITI-001",
+  "status": "New",
+  "last_updated": "2025-12-12T17:01:36+00:00",
+  "processing_stage_tracker": {
+    "sales_agent": "Completed",
+    "tech_agent": "Pending",
+    "pricing_agent": "Pending",
+    "final_review": "Pending"
+  },
+  "sales_agent_output": {
+    "summary": {
+      "client_name": "ITI Limited",
+      "project_title": "Supply of Power and Earthing Cable",
+      "tender_ref_no": "ITI/NSU/ASCON Ph- IV/Cables/PS/2023-24/001 dated 10.07.2024",
+      "submission_deadline": "2024-07-31T14:00:00",
+      "contract_currency": "INR",
+      "emd_amount": "205000.00",
+      "emd_type": "Demand Draft / Bank Guarantee"
+    },
+    "logistics_constraints": {
+      "delivery_location": "Warehouse of ITI Limited in Srinagar and Rae Bareli",
+      "delivery_timeline_days": "NOT SPECIFIED",
+      "unloading_scope": "Bidder Scope"
+    },
+    "commercial_terms": {
+      "payment_terms": "On actual delivery basis, after checking/testing by Technical Team, against single GST Tax Invoice/E-Invoice.",
+      "penalty_clause": "0.5% of PO value per week, max 10% of order value",
+      "price_basis": "FOR Destination, no escalation"
+    },
+    "line_items_extracted": [
+      {
+        "lot_id": "L001",
+        "raw_description": "70 sq mm Cable, 3.5 Core XLPE armoured Cable Al",
+        "quantity": 960,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 3.5,
+          "cross_section_sqmm": 70,
+          "conductor_material": "Aluminum",
+          "insulation_type": "XLPE",
+          "sheath_type": "Armoured",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L002",
+        "raw_description": "50 sq mm Cable, 3.5 Core XLPE armoured Cable Al",
+        "quantity": 11160,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 3.5,
+          "cross_section_sqmm": 50,
+          "conductor_material": "Aluminum",
+          "insulation_type": "XLPE",
+          "sheath_type": "Armoured",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L003",
+        "raw_description": "35 sq mm Cable, 3.5 Core XLPE armoured Al",
+        "quantity": 4450,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 3.5,
+          "cross_section_sqmm": 35,
+          "conductor_material": "Aluminum",
+          "insulation_type": "XLPE",
+          "sheath_type": "Armoured",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L004",
+        "raw_description": "25 sq mm Cable, 3.5 Core XLPE armoured Al",
+        "quantity": 5100,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 3.5,
+          "cross_section_sqmm": 25,
+          "conductor_material": "Aluminum",
+          "insulation_type": "XLPE",
+          "sheath_type": "Armoured",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L005",
+        "raw_description": "4 Core XLPE Cable 16 Sq mm Al armored",
+        "quantity": 45,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 4,
+          "cross_section_sqmm": 16,
+          "conductor_material": "Aluminum",
+          "insulation_type": "XLPE",
+          "sheath_type": "Armoured",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L006",
+        "raw_description": "4 Core XLPE Cable 10 Sq mm Al armored",
+        "quantity": 45,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 4,
+          "cross_section_sqmm": 10,
+          "conductor_material": "Aluminum",
+          "insulation_type": "XLPE",
+          "sheath_type": "Armoured",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L007",
+        "raw_description": "4 Core PVC Cable 6 Sq mm Cu",
+        "quantity": 370,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 4,
+          "cross_section_sqmm": 6,
+          "conductor_material": "Copper",
+          "insulation_type": "PVC",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L008",
+        "raw_description": "3 Core PVC Cable 6 Sq mm Cu",
+        "quantity": 5550,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 3,
+          "cross_section_sqmm": 6,
+          "conductor_material": "Copper",
+          "insulation_type": "PVC",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L009",
+        "raw_description": "25 Sq mm Cu single core cable Black",
+        "quantity": 12500,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 25,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L010",
+        "raw_description": "25 Sq mm Cu single core cable Red",
+        "quantity": 12500,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 25,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L011",
+        "raw_description": "16 Sq mm Cu single core cable Red",
+        "quantity": 9920,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 16,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L012",
+        "raw_description": "16 Sq mm Cu single core cable Black",
+        "quantity": 9920,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 16,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L013",
+        "raw_description": "Power cable Red 10 Sqmm Cu Single Core",
+        "quantity": 7400,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 10,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L014",
+        "raw_description": "Power cable Black 10 Sqmm Cu Single Core",
+        "quantity": 7400,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 10,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L015",
+        "raw_description": "Power cable Red 4 Sqmm Cu Single Core",
+        "quantity": 1050,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 4,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L016",
+        "raw_description": "Power cable Black 4 Sqmm Cu Single Core",
+        "quantity": 1050,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 4,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L017",
+        "raw_description": "Earthing Cable 35 Sqmm Cu Single core (Green)",
+        "quantity": 21000,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 35,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      },
+      {
+        "lot_id": "L018",
+        "raw_description": "Earthing Cable 6 Sqmm Cu Single core (Green)",
+        "quantity": 3640,
+        "unit": "Meter",
+        "technical_attributes": {
+          "voltage_grade": "NOT SPECIFIED",
+          "core_count": 1,
+          "cross_section_sqmm": 6,
+          "conductor_material": "Copper",
+          "insulation_type": "NOT SPECIFIED",
+          "sheath_type": "NOT SPECIFIED",
+          "standards": [
+            "ISI marked",
+            "IS 7098 Part 1 (1988)",
+            "IS 1554 (Part 1) 1988",
+            "IS 694:1990"
+          ]
+        }
+      }
+    ]
+  }
+}

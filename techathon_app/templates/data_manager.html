@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+{% block header %}{{ title }}{% endblock %}
+
+{% block content %}
+<script id="server-data" type="application/json">
+    {{ data | tojson | safe }}
+</script>
+
+<script>
+    // Data Manager Initialization
+    try {
+        // Read the content from the script tag above
+        var rawData = document.getElementById('server-data').textContent;
+        window.dbData = JSON.parse(rawData);
+
+        if (!Array.isArray(window.dbData)) window.dbData = [];
+    } catch (e) {
+        console.error("Data Load Error:", e);
+        window.dbData = [];
+    }
+</script>
+
+<div class="flex flex-col h-full" x-data="{ 
+    search: '', 
+    items: window.dbData || [],
+    selectedItem: null,
+    viewMode: 'cards',
+
+    get filteredItems() {
+        if (!this.search) return this.items;
+        const s = this.search.toLowerCase();
+        return this.items.filter(item => JSON.stringify(item).toLowerCase().includes(s));
+    },
+
+    // --- SMART HELPERS FOR DIFFERENT FILES ---
+    getName(item) {
+        // Production & RFP specific
+        if (item.line_type && item.batch_id) return `${item.batch_id} (${item.line_type})`;
+        if (item.project_title) return item.project_title;
+        if (item.rfp_unique_id) return item.rfp_unique_id;
+        
+        // General
+        return item.product_name || item.client_name || item.name || item.test_name || item.material_name || item.zone_type || 'Record';
+    },
+
+    getId(item) {
+        return item.product_id || item.client_id || item.competitor_id || item.test_id || item.material_id || item.zone_code || item.batch_id || item.rfp_unique_id || '#';
+    },
+
+    getBadge(item) {
+        return item.category || item.tier || item.loyalty_status || item.zone_code || item.volatility_risk_level || item.test_category || null;
+    }
+}">
+
+    <div
+        class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 mb-6 flex justify-between items-center sticky top-0 z-10">
+        <div class="relative w-96">
+            <i class="fas fa-search absolute left-3 top-3 text-slate-400"></i>
+            <input type="text" x-model="search" placeholder="Search database..."
+                class="w-full pl-10 pr-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow">
+        </div>
+
+        <div class="flex gap-3">
+            <button @click="viewMode = (viewMode === 'cards' ? 'table' : 'cards')"
+                class="px-4 py-2 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-50 transition flex items-center gap-2">
+                <i class="fas" :class="viewMode === 'cards' ? 'fa-table' : 'fa-th-large'"></i>
+                <span x-text="viewMode === 'cards' ? 'Switch to Table' : 'Switch to Cards'"></span>
+            </button>
+
+            <button x-show="viewMode === 'table'" onclick="attemptSave()"
+                class="bg-slate-900 text-white px-6 py-2.5 rounded-lg font-bold hover:bg-black transition shadow-md flex items-center gap-2">
+                <i class="fas fa-save"></i> Save Changes
+            </button>
+        </div>
+    </div>
+
+    <div class="flex-1 overflow-auto custom-scrollbar">
+
+        <template x-if="items.length === 0">
+            <div class="flex flex-col items-center justify-center h-96 text-slate-400">
+                <i class="fas fa-database text-4xl mb-4 opacity-50"></i>
+                <p class="text-lg font-medium">No records found</p>
+            </div>
+        </template>
+
+        <template x-if="viewMode === 'cards' && items.length > 0">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
+                <template x-for="item in filteredItems" :key="getId(item)">
+                    <div @click="selectedItem = item"
+                        class="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group relative overflow-hidden flex flex-col h-full">
+
+                        <div class="flex items-center justify-between mb-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-slate-50 text-slate-600 flex items-center justify-center text-lg font-bold shadow-sm border border-slate-100">
+                                <span x-text="getName(item).charAt(0)"></span>
+                            </div>
+                            <span
+                                class="text-xs font-mono text-slate-400 bg-slate-50 px-2 py-1 rounded border border-slate-100"
+                                x-text="getId(item)"></span>
+                        </div>
+
+                        <h3 class="font-bold text-slate-800 text-md leading-tight mb-2 line-clamp-2 h-10"
+                            x-text="getName(item)"></h3>
+
+                        <div class="mb-4 h-6">
+                            <template x-if="getBadge(item)">
+                                <span
+                                    class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded-md"
+                                    x-text="getBadge(item)"></span>
+                            </template>
+                        </div>
+
+                        <div class="mt-auto pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
+
+                            <template x-if="item.commercial?.base_mfg_cost_per_meter">
+                                <div>
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Base Cost</p>
+                                    <p class="font-bold text-slate-700">₹ <span
+                                            x-text="Math.round(item.commercial.base_mfg_cost_per_meter)"></span></p>
+                                </div>
+                            </template>
+                            <template x-if="item.commercial?.inventory_stock !== undefined">
+                                <div class="text-right">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Stock</p>
+                                    <p class="font-bold"
+                                        :class="item.commercial.inventory_stock > 0 ? 'text-green-600' : 'text-red-500'">
+                                        <span x-text="item.commercial.inventory_stock"></span> m
+                                    </p>
+                                </div>
+                            </template>
+
+                            <template x-if="item.payment_terms">
+                                <div class="col-span-2">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Terms</p>
+                                    <p class="font-bold text-slate-700 text-sm truncate" x-text="item.payment_terms">
+                                    </p>
+                                </div>
+                            </template>
+
+                            <template x-if="item.performance_metrics?.win_rate_against_us !== undefined">
+                                <div class="text-right">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Win Rate</p>
+                                    <p class="font-bold text-slate-700"><span
+                                            x-text="(item.performance_metrics.win_rate_against_us * 100).toFixed(0)"></span>%
+                                    </p>
+                                </div>
+                            </template>
+
+                            <template x-if="!item.commercial && !item.payment_terms && !item.performance_metrics">
+                                <div class="col-span-2">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Details</p>
+                                    <p class="text-xs font-medium text-slate-500">Click card to view</p>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template x-if="viewMode === 'table'">
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mb-20">
+                <table class="w-full text-sm text-left">
+                    <thead
+                        class="bg-slate-50 text-slate-600 font-bold uppercase text-xs border-b border-slate-200 sticky top-0 z-10">
+                        <tr>
+                            <template x-for="key in Object.keys(items[0] || {})">
+                                <th class="px-6 py-4 whitespace-nowrap"
+                                    x-show="!['bill_of_materials', 'technical_specs', 'pricing_intelligence', 'performance_metrics', 'commercial', 'performance_data', 'quality_assurance_requirements'].includes(key)"
+                                    x-text="key.replace(/_/g, ' ')"></th>
+                            </template>
+                            <th class="px-6 py-4 text-right bg-slate-50">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody" class="divide-y divide-slate-100">
+                        <template x-for="item in filteredItems" :key="getId(item)">
+                            <tr class="hover:bg-blue-50/30 transition-colors group">
+                                <template x-for="(val, key) in item">
+                                    <td class="px-6 py-3 font-mono text-slate-600 align-middle"
+                                        x-show="!['bill_of_materials', 'technical_specs', 'pricing_intelligence', 'performance_metrics', 'commercial', 'performance_data', 'quality_assurance_requirements'].includes(key)">
+                                        <input type="text"
+                                            class="w-full bg-transparent border-none focus:ring-0 focus:bg-white focus:shadow-sm rounded px-2 py-1 text-slate-800 font-medium editable-field"
+                                            :data-key="key"
+                                            :value="typeof val === 'object' ? JSON.stringify(val) : val">
+                                    </td>
+                                </template>
+                                <td class="px-6 py-3 text-right">
+                                    <button onclick="deleteRow(this)"
+                                        class="text-slate-300 hover:text-red-500 transition p-2"><i
+                                            class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+    </div>
+
+    <div x-show="selectedItem" x-transition.opacity
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" x-cloak>
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col"
+            @click.away="selectedItem = null">
+
+            <div class="p-6 border-b border-slate-100 flex justify-between items-start bg-slate-50">
+                <div>
+                    <h2 class="text-xl font-bold text-slate-800" x-text="getName(selectedItem)"></h2>
+                    <p class="text-xs font-mono text-slate-500 mt-1 bg-slate-200 px-2 py-0.5 rounded w-fit"
+                        x-text="getId(selectedItem)"></p>
+                </div>
+                <button @click="selectedItem = null"
+                    class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 hover:bg-slate-300 flex items-center justify-center transition"><i
+                        class="fas fa-times"></i></button>
+            </div>
+
+            <div class="p-8 overflow-y-auto custom-scrollbar space-y-4">
+                <template x-for="(val, key) in selectedItem">
+                    <div class="border-b border-slate-50 pb-2">
+                        <template x-if="typeof val !== 'object' && val !== null">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-slate-500 capitalize"
+                                    x-text="key.replace(/_/g, ' ')"></span>
+                                <span class="text-sm font-bold text-slate-800 text-right" x-text="val"></span>
+                            </div>
+                        </template>
+                        <template x-if="typeof val === 'object' && val !== null && !Array.isArray(val)">
+                            <div class="mt-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <p class="text-xs font-bold text-blue-600 uppercase mb-3 tracking-wider"
+                                    x-text="key.replace(/_/g, ' ')"></p>
+                                <div class="grid grid-cols-2 gap-y-2 gap-x-8">
+                                    <template x-for="(subVal, subKey) in val">
+                                        <div class="flex justify-between text-xs">
+                                            <span class="text-slate-500 capitalize"
+                                                x-text="subKey.replace(/_/g, ' ')"></span>
+                                            <span class="font-mono font-medium text-slate-700" x-text="subVal"></span>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                        <template x-if="Array.isArray(val)">
+                            <div class="mt-2">
+                                <p class="text-xs font-bold text-slate-400 uppercase mb-2"
+                                    x-text="key.replace(/_/g, ' ')"></p>
+                                <div class="flex flex-wrap gap-2">
+                                    <template x-for="item in val">
+                                        <span
+                                            class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-lg border border-slate-200"
+                                            x-text="typeof item === 'object' ? (item.name || item.material_id || 'Object') : item"></span>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+
+            <div class="p-4 border-t border-slate-100 bg-slate-50 flex justify-end">
+                <button @click="selectedItem = null"
+                    class="px-6 py-2 bg-slate-900 text-white font-bold rounded-lg hover:bg-black transition shadow-sm">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <form id="saveForm" method="POST" action="/manage/{{ filename }}" class="hidden">
+        <input type="hidden" name="json_data" id="jsonDataInput">
+        <input type="hidden" name="passkey" id="passKeyInput">
+    </form>
+</div>
+
+<script>
+    function deleteRow(btn) {
+        if (confirm("Delete this record?")) { btn.closest('tr').remove(); }
+    }
+
+    function attemptSave() {
+        let key = prompt("🔒 Enter Admin Pass Key:");
+        if (!key) return;
+        document.getElementById('passKeyInput').value = key;
+
+        let newData = [];
+        document.querySelectorAll('#tableBody tr').forEach(row => {
+            let obj = {};
+            row.querySelectorAll('.editable-field').forEach(input => {
+                let key = input.getAttribute('data-key');
+                let val = input.value;
+                if (!isNaN(val) && val.trim() !== '') { val = Number(val); }
+                else if (val.startsWith('[') || val.startsWith('{')) { try { val = JSON.parse(val); } catch (e) { } }
+                obj[key] = val;
+            });
+            if (Object.keys(obj).length > 0) newData.push(obj);
+        });
+
+        document.getElementById('jsonDataInput').value = JSON.stringify(newData);
+        document.getElementById('saveForm').submit();
+    }
+</script>
+{% endblock %}

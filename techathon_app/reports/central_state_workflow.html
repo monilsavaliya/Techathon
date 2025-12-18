@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBid: Central State Lifecycle</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-sales: #3b82f6;
+            /* Blue */
+            --accent-tech: #06b6d4;
+            /* Cyan */
+            --accent-price: #10b981;
+            /* Green */
+            --accent-prior: #f43f5e;
+            /* Rose */
+            --json-key: #9cdcfe;
+            --json-str: #ce9178;
+            --json-num: #b5cea8;
+            --json-bool: #569cd6;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 0 0 10px 0;
+            background: linear-gradient(to right, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 20px;
+        }
+
+        /* TIMELINE LAYOUT */
+        .timeline-wrapper {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        /* The Vertical Line */
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        .stage-block {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        /* STAGE MARKER (The Dot) */
+        .stage-marker {
+            position: absolute;
+            left: -43px;
+            top: 30px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--bg-dark);
+            border: 6px solid #475569;
+            z-index: 10;
+            transition: all 0.3s;
+        }
+
+        .stage-block:hover .stage-marker {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* PROCESS CARD (Left Side) */
+        .process-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid #334155;
+            height: fit-content;
+        }
+
+        .process-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .process-title i {
+            font-size: 18px;
+        }
+
+        .process-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .handoff-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #64748b;
+        }
+
+        .handoff-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .handoff-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: #e2e8f0;
+        }
+
+        /* JSON WINDOW (Right Side) */
+        .json-container {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .json-window {
+            background: #1e1e1e;
+            /* VS Code Dark */
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+
+        .json-header {
+            background: #252526;
+            padding: 10px 20px;
+            font-size: 12px;
+            color: #ccc;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .json-body {
+            padding: 25px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #d4d4d4;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        /* Diff Highlighting */
+        .diff-add {
+            background: rgba(16, 185, 129, 0.1);
+            display: block;
+            margin: 0 -25px;
+            padding: 0 25px;
+            border-left: 2px solid var(--accent-price);
+        }
+
+        .variable {
+            color: #9cdcfe;
+        }
+
+        /* Key */
+        .string {
+            color: #ce9178;
+        }
+
+        /* Value str */
+        .number {
+            color: #b5cea8;
+        }
+
+        /* Value num */
+        .comment {
+            color: #6a9955;
+        }
+
+        /* Comment */
+
+        /* SPECIFIC COLORS */
+        .stage-sales .stage-marker {
+            border-color: var(--accent-sales);
+        }
+
+        .stage-sales .process-title {
+            color: var(--accent-sales);
+        }
+
+        .stage-tech .stage-marker {
+            border-color: var(--accent-tech);
+        }
+
+        .stage-tech .process-title {
+            color: var(--accent-tech);
+        }
+
+        .stage-price .stage-marker {
+            border-color: var(--accent-price);
+        }
+
+        .stage-price .process-title {
+            color: var(--accent-price);
+        }
+
+        .stage-prior .stage-marker {
+            border-color: var(--accent-prior);
+        }
+
+        .stage-prior .process-title {
+            color: var(--accent-prior);
+        }
+
+        /* ARROW CONNECTORS */
+        .connector {
+            position: absolute;
+            left: 210px;
+            /* Center of left col */
+            bottom: -70px;
+            background: #334155;
+            color: #94a3b8;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Central RFP State Lifecycle</h1>
+            <p>Visualizing the "Single Source of Truth" JSON Object as it evolves.</p>
+        </header>
+
+        <div class="timeline-wrapper">
+            <div class="timeline-line"></div>
+
+            <!-- STAGE 1: SALES AGENT -->
+            <div class="stage-block stage-sales">
+                <div class="stage-marker"></div>
+
+                <!-- LEFT: LOGIC -->
+                <div class="process-card">
+                    <div class="process-title"><i class="fas fa-file-contract"></i> 1. Genesis (Sales Agent)</div>
+                    <p class="process-desc">
+                        The user uploads a PDF. The <strong>Sales Agent</strong> is the first to touch the data.
+                        It initializes the record in the Central DB.
+                    </p>
+                    <div class="handoff-box">
+                        <div class="handoff-label">Action:</div>
+                        <div class="handoff-val">Create Record &rarr; Generate ID</div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: STATE -->
+                <div class="json-window">
+                    <div class="json-header">
+                        <span>state_dump_t0.json</span>
+                        <span>Size: 2KB</span>
+                    </div>
+                    <div class="json-body">
+                        {
+                        <span class="variable">"rfp_unique_id"</span>: <span class="string">"RFP-2025-DMRC-003"</span>,
+                        <span class="variable">"status"</span>: <span class="string">"Sales Completed"</span>,
+                        <span class="variable">"created_at"</span>: <span class="string">"2025-12-17T10:05:00"</span>,
+                        <span class="variable">"processing_stage_tracker"</span>: {
+                        <span class="variable">"sales_agent"</span>: <span class="string">"Completed"</span>,
+                        <span class="variable">"tech_agent"</span>: <span class="string">"Pending"</span>
+                        },
+                        <span class="diff-add"><span class="variable">"sales_agent_output"</span>: {
+                            <span class="variable">"client_name"</span>: <span class="string">"Delhi Metro Rail
+                                Corp"</span>,
+                            <span class="variable">"logistics_zone"</span>: <span class="string">"Z-04 (Urban)"</span>,
+                            <span class="variable">"line_items"</span>: [
+                            { <span class="variable">"desc"</span>: <span class="string">"33kV 3C 400sqmm Cable"</span>,
+                            <span class="variable">"qty"</span>: <span class="number">5000</span> }
+                            ]
+                            }</span>
+                        }
+                    </div>
+                </div>
+
+                <!-- CONNECTOR -->
+                <div class="connector">
+                    <i class="fas fa-arrow-down"></i> Main Agent passes ID "RFP-2025-DMRC-003"
+                </div>
+            </div>
+
+            <!-- STAGE 2: TECH AGENT -->
+            <div class="stage-block stage-tech">
+                <div class="stage-marker"></div>
+
+                <!-- LEFT -->
+                <div class="process-card">
+                    <div class="process-title"><i class="fas fa-microchip"></i> 2. Technical Mapping</div>
+                    <p class="process-desc">
+                        Main Agent triggers <strong>Tech Agent</strong>.
+                        It reads the `sales_agent_output` via the ID, matches SKUs from `product_master`, and WRITES
+                        `tech_agent_output`.
+                    </p>
+                    <div class="handoff-box" style="border-color: var(--accent-tech);">
+                        <div class="handoff-label">Baton Pass Mechanism:</div>
+                        <div class="handoff-val">func run_tech(rfp_id)</div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="json-window">
+                    <div class="json-header">
+                        <span>state_dump_t1.json</span>
+                        <span>Size: 8KB (+6KB)</span>
+                    </div>
+                    <div class="json-body">
+                        {
+                        <span class="variable">"rfp_unique_id"</span>: <span class="string">"RFP-2025-DMRC-003"</span>,
+                        <span class="variable">"status"</span>: <span class="string">"Tech Completed"</span>,
+                        <span class="variable">"sales_agent_output"</span>: { ... }, <span class="comment">// Existing
+                            Data Preserved</span>
+                        <span class="diff-add"><span class="variable">"tech_agent_output"</span>: {
+                            <span class="variable">"competitor_codes"</span>: [ <span class="string">"COMP-001"</span>
+                            ],
+                            <span class="variable">"line_item_matches"</span>: [
+                            {
+                            <span class="variable">"lot_id"</span>: <span class="string">"L001"</span>,
+                            <span class="variable">"matched_sku"</span>: <span
+                                class="string">"PC-33KV-AL-3C-400"</span>,
+                            <span class="variable">"confidence_score"</span>: <span class="number">98.5</span>,
+                            <span class="variable">"required_tests"</span>: [ <span
+                                class="string">"HV-WATER-TANK"</span> ]
+                            }
+                            ]
+                            }</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="connector">
+                    <i class="fas fa-arrow-down"></i> Main Agent passes ID "RFP-2025-DMRC-003"
+                </div>
+            </div>
+
+            <!-- STAGE 3: PRICING AGENT -->
+            <div class="stage-block stage-price">
+                <div class="stage-marker"></div>
+
+                <!-- LEFT -->
+                <div class="process-card">
+                    <div class="process-title"><i class="fas fa-calculator"></i> 3. Financial Modeling</div>
+                    <p class="process-desc">
+                        <strong>Pricing Agent</strong> activates. It performs a "Multi-Table Join" (reading Client,
+                        Tech, Logistics, Factory) to compute the price.
+                    </p>
+                    <div class="handoff-box" style="border-color: var(--accent-price);">
+                        <div class="handoff-label">Data Access:</div>
+                        <div class="handoff-val">Reads: Sales + Tech<br>Writes: Pricing</div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="json-window">
+                    <div class="json-header">
+                        <span>state_dump_t2.json</span>
+                        <span>Size: 15KB (+7KB)</span>
+                    </div>
+                    <div class="json-body">
+                        {
+                        <span class="variable">"rfp_unique_id"</span>: <span class="string">"RFP-2025-DMRC-003"</span>,
+                        <span class="variable">"status"</span>: <span class="string">"Pricing Completed"</span>,
+                        <span class="variable">"sales_agent_output"</span>: { ... },
+                        <span class="variable">"tech_agent_output"</span>: { ... },
+                        <span class="diff-add"><span class="variable">"pricing_agent_output"</span>: {
+                            <span class="variable">"financial_summary"</span>: {
+                            <span class="variable">"total_mfg_cost"</span>: <span class="number">4500000</span>,
+                            <span class="variable">"final_bid_value"</span>: <span class="number">5650000</span>,
+                            <span class="variable">"margin_percentage"</span>: <span class="number">0.18</span>
+                            },
+                            <span class="variable">"strategy_rationale"</span>: [
+                            <span class="string">"Competitor Threat: Aggressive"</span>,
+                            <span class="string">"Factory Load: High (+5% Premium)"</span>
+                            ]
+                            }</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="connector">
+                    <i class="fas fa-arrow-down"></i> Trigger Priority Recalculation
+                </div>
+            </div>
+
+            <!-- STAGE 4: PRIORITY AGENT -->
+            <div class="stage-block stage-prior">
+                <div class="stage-marker"></div>
+
+                <!-- LEFT -->
+                <div class="process-card">
+                    <div class="process-title"><i class="fas fa-trophy"></i> 4. Ranking & Start</div>
+                    <p class="process-desc">
+                        The <strong>Main Agent</strong> sorts all active RFPs by `margin_percentage`.
+                        This RFP enters the "High Priority" queue because 18% > 15% threshold.
+                    </p>
+                    <div class="handoff-box" style="border-color: var(--accent-prior);">
+                        <div class="handoff-label">Final State:</div>
+                        <div class="handoff-val">Dashboard Update</div>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="json-window">
+                    <div class="json-header">
+                        <span>state_dump_final.json</span>
+                        <span>Status: READY</span>
+                    </div>
+                    <div class="json-body">
+                        {
+                        <span class="variable">"rfp_unique_id"</span>: <span class="string">"RFP-2025-DMRC-003"</span>,
+                        <span class="variable">"status"</span>: <span class="string">"Ready for Approval"</span>,
+                        <span class="variable">"sales_agent_output"</span>: { ... },
+                        <span class="variable">"tech_agent_output"</span>: { ... },
+                        <span class="variable">"pricing_agent_output"</span>: { ... },
+                        <span class="diff-add"><span class="variable">"sales_agent_2_output"</span>: {
+                            <span class="variable">"priority_score"</span>: <span class="string">"High"</span>,
+                            <span class="variable">"priority_rank"</span>: <span class="number">1</span>,
+                            <span class="variable">"timestamp"</span>: <span class="string">"2025-12-17T10:06:45"</span>
+                            }</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

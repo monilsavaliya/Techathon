@@ -1,0 +1,55 @@
+lot_id,rfp_description,rank,sku_id,sku_name,match_percentage
+L001,"70 sq mm Cable, 3.5 Core XLPE armoured Cable Al",1,PC-LT-AL-3.5C-70,Polycab 1.1kV 3.5 Core 70sqmm Aluminium Armoured Cable,92.86
+L001,"70 sq mm Cable, 3.5 Core XLPE armoured Cable Al",2,PC-LT-AL-3.5C-50,Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable,88.77
+L001,"70 sq mm Cable, 3.5 Core XLPE armoured Cable Al",3,PC-LT-AL-3.5C-95,Polycab 1.1kV 3.5 Core 95sqmm Aluminium Armoured Cable,87.76
+L002,"50 sq mm Cable, 3.5 Core XLPE armoured Cable Al",1,PC-LT-AL-3.5C-50,Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable,92.86
+L002,"50 sq mm Cable, 3.5 Core XLPE armoured Cable Al",2,PC-LT-AL-3.5C-35,Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable,88.57
+L002,"50 sq mm Cable, 3.5 Core XLPE armoured Cable Al",3,PC-LT-AL-3.5C-70,Polycab 1.1kV 3.5 Core 70sqmm Aluminium Armoured Cable,87.14
+L003,"35 sq mm Cable, 3.5 Core XLPE armoured Al",1,PC-LT-AL-3.5C-35,Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable,92.86
+L003,"35 sq mm Cable, 3.5 Core XLPE armoured Al",2,PC-LT-AL-3.5C-25,Polycab 1.1kV 3.5 Core 25sqmm Aluminium Armoured Cable,88.77
+L003,"35 sq mm Cable, 3.5 Core XLPE armoured Al",3,PC-LT-AL-3.5C-50,Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable,86.73
+L004,"25 sq mm Cable, 3.5 Core XLPE armoured Al",1,PC-LT-AL-3.5C-25,Polycab 1.1kV 3.5 Core 25sqmm Aluminium Armoured Cable,92.86
+L004,"25 sq mm Cable, 3.5 Core XLPE armoured Al",2,PC-LT-AL-3.5C-35,Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable,87.14
+L004,"25 sq mm Cable, 3.5 Core XLPE armoured Al",3,PC-LT-AL-3.5C-50,Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable,78.57
+L005,4 Core XLPE Cable 16 Sq mm Al armored,1,PC-LT-AL-4C-16,Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable,92.86
+L005,4 Core XLPE Cable 16 Sq mm Al armored,2,PC-LT-AL-4C-25,Polycab 1.1kV 4 Core 25sqmm Aluminium Armoured Cable,84.83
+L005,4 Core XLPE Cable 16 Sq mm Al armored,3,PC-LT-AL-4C-50,Polycab 1.1kV 4 Core 50sqmm Aluminium Armoured Cable,78.57
+L006,4 Core XLPE Cable 10 Sq mm Al armored,1,PC-LT-AL-4C-16,Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable,84.29
+L006,4 Core XLPE Cable 10 Sq mm Al armored,2,PC-LT-AL-4C-25,Polycab 1.1kV 4 Core 25sqmm Aluminium Armoured Cable,78.57
+L006,4 Core XLPE Cable 10 Sq mm Al armored,3,PC-LT-AL-4C-50,Polycab 1.1kV 4 Core 50sqmm Aluminium Armoured Cable,78.57
+L007,4 Core PVC Cable 6 Sq mm Cu,1,PC-LT-CU-4C-6,Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable,78.57
+L007,4 Core PVC Cable 6 Sq mm Cu,2,PC-LT-CU-CONTROL-12C-1.5,Polycab 1.1kV 12 Core 1.5sqmm Copper Armoured Control Cable,67.86
+L007,4 Core PVC Cable 6 Sq mm Cu,3,PC-LT-CU-3C-6,Polycab 1.1kV 3 Core 6sqmm Copper Armoured Cable,64.29
+L008,3 Core PVC Cable 6 Sq mm Cu,1,PC-LT-CU-3C-6,Polycab 1.1kV 3 Core 6sqmm Copper Armoured Cable,78.57
+L008,3 Core PVC Cable 6 Sq mm Cu,2,PC-LT-CU-CONTROL-12C-1.5,Polycab 1.1kV 12 Core 1.5sqmm Copper Armoured Control Cable,67.86
+L008,3 Core PVC Cable 6 Sq mm Cu,3,PC-LT-CU-4C-6,Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable,64.29
+L009,25 Sq mm Cu single core cable Black,1,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,83.57
+L009,25 Sq mm Cu single core cable Black,2,PC-CU-4,Polycab Copper Wire 4 sqmm,80.86
+L009,25 Sq mm Cu single core cable Black,3,PC-LT-CU-1C-25-RED,Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red),78.57
+L010,25 Sq mm Cu single core cable Red,1,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,83.57
+L010,25 Sq mm Cu single core cable Red,2,PC-CU-4,Polycab Copper Wire 4 sqmm,80.86
+L010,25 Sq mm Cu single core cable Red,3,PC-LT-CU-1C-25-RED,Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red),78.57
+L011,16 Sq mm Cu single core cable Red,1,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,84.37
+L011,16 Sq mm Cu single core cable Red,2,PC-LT-CU-1C-16-BLK,Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Black),82.14
+L011,16 Sq mm Cu single core cable Red,3,PC-CU-4,Polycab Copper Wire 4 sqmm,82.14
+L012,16 Sq mm Cu single core cable Black,1,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,84.37
+L012,16 Sq mm Cu single core cable Black,2,PC-LT-CU-1C-16-BLK,Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Black),82.14
+L012,16 Sq mm Cu single core cable Black,3,PC-CU-4,Polycab Copper Wire 4 sqmm,82.14
+L013,Power cable Red 10 Sqmm Cu Single Core,1,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,85.71
+L013,Power cable Red 10 Sqmm Cu Single Core,2,PC-CU-4,Polycab Copper Wire 4 sqmm,84.29
+L013,Power cable Red 10 Sqmm Cu Single Core,3,PC-LT-CU-1C-10-RED,Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red),78.57
+L014,Power cable Black 10 Sqmm Cu Single Core,1,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,85.71
+L014,Power cable Black 10 Sqmm Cu Single Core,2,PC-CU-4,Polycab Copper Wire 4 sqmm,84.29
+L014,Power cable Black 10 Sqmm Cu Single Core,3,PC-LT-CU-1C-10-RED,Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red),78.57
+L015,Power cable Red 4 Sqmm Cu Single Core,1,PC-CU-4,Polycab Copper Wire 4 sqmm,92.86
+L015,Power cable Red 4 Sqmm Cu Single Core,2,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,91.07
+L015,Power cable Red 4 Sqmm Cu Single Core,3,PROD-008,Solar DC Cable 4sqmm Tinned Copper EN 50618,75.0
+L016,Power cable Black 4 Sqmm Cu Single Core,1,PC-CU-4,Polycab Copper Wire 4 sqmm,92.86
+L016,Power cable Black 4 Sqmm Cu Single Core,2,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,91.07
+L016,Power cable Black 4 Sqmm Cu Single Core,3,PROD-008,Solar DC Cable 4sqmm Tinned Copper EN 50618,75.0
+L017,Earthing Cable 35 Sqmm Cu Single core (Green),1,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,83.16
+L017,Earthing Cable 35 Sqmm Cu Single core (Green),2,PC-CU-4,Polycab Copper Wire 4 sqmm,80.2
+L017,Earthing Cable 35 Sqmm Cu Single core (Green),3,PC-LT-CU-1C-25-RED,Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red),74.49
+L018,Earthing Cable 6 Sqmm Cu Single core (Green),1,PC-CU-2.5,Polycab Copper Wire 2.5 sqmm,88.1
+L018,Earthing Cable 6 Sqmm Cu Single core (Green),2,PC-CU-4,Polycab Copper Wire 4 sqmm,88.1
+L018,Earthing Cable 6 Sqmm Cu Single core (Green),3,PC-LT-CU-4C-6,Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable,78.57

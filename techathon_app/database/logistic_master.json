@@ -1,0 +1,58 @@
+[
+  {
+    "zone_code": "Z-01",
+    "zone_type": "Plains_Highway",
+    "surcharge_multiplier": 1.00,
+    "transport_rate_per_ton_km": 4.50,
+    "packaging_requirement": "Standard",
+    "risk_factor_percent": 0.02
+  },
+  {
+    "zone_code": "Z-02",
+    "zone_type": "Hilly_Remote",
+    "surcharge_multiplier": 2.50,
+    "transport_rate_per_ton_km": 12.00,
+    "packaging_requirement": "Shockproof_Crating",
+    "risk_factor_percent": 0.15
+  },
+  {
+    "zone_code": "Z-03",
+    "zone_type": "Coastal_Humid",
+    "surcharge_multiplier": 1.10,
+    "transport_rate_per_ton_km": 5.50,
+    "packaging_requirement": "Anti_Saline_Wrap",
+    "risk_factor_percent": 0.05
+  },
+  {
+    "zone_code": "Z-04",
+    "zone_type": "Urban_Restricted",
+    "surcharge_multiplier": 1.50,
+    "transport_rate_per_ton_km": 6.00,
+    "packaging_requirement": "Standard",
+    "risk_factor_percent": 0.03
+  },
+  {
+    "zone_code": "Z-05",
+    "zone_type": "Desert_HighHeat",
+    "surcharge_multiplier": 1.20,
+    "transport_rate_per_ton_km": 5.00,
+    "packaging_requirement": "Heat_Resistant_Wrap",
+    "risk_factor_percent": 0.04
+  },
+  {
+    "zone_code": "Z-06",
+    "zone_type": "Island_Shipping",
+    "surcharge_multiplier": 3.00,
+    "transport_rate_per_ton_km": 15.00,
+    "packaging_requirement": "Sea_Worthy_Crating",
+    "risk_factor_percent": 0.20
+  },
+  {
+    "zone_code": "Z-07",
+    "zone_type": "Industrial_Zone",
+    "surcharge_multiplier": 1.00,
+    "transport_rate_per_ton_km": 4.00,
+    "packaging_requirement": "Standard",
+    "risk_factor_percent": 0.01
+  }
+]

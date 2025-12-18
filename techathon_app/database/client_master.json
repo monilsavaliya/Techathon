@@ -1,0 +1,402 @@
+[
+  {
+    "client_id": "CL-ORN-001",
+    "client_name": "Orion Infrastructure Solutions Ltd.",
+    "tier": "Tier-1 (Infrastructure Major)",
+    "loyalty_status": "Gold",
+    "default_discount_percent": 0.05,
+    "payment_terms": "90 Days Credit"
+  },
+  {
+    "client_id": "CL-101",
+    "client_name": "Sharma Infra",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-FCP-001",
+    "client_name": "Future City Projects",
+    "tier": "Tier-1 (Infrastructure Major)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-105",
+    "client_name": "Old Infra Co",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-GOV-001",
+    "client_name": "National Highways Authority",
+    "tier": "Tier-1 (Govt)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.03,
+    "payment_terms": "90 Days Credit"
+  },
+  {
+    "client_id": "CL-LNT-099",
+    "client_name": "L&T Construction",
+    "tier": "Tier-1 (Infrastructure Major)",
+    "loyalty_status": "Gold",
+    "default_discount_percent": 0.05,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-DLF-022",
+    "client_name": "DLF Power Projects",
+    "tier": "Tier-1 (Real Estate)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-REL-005",
+    "client_name": "Reliance Energy",
+    "tier": "Tier-1 (Power)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "45 Days Credit"
+  },
+  {
+    "client_id": "CL-ATA-001",
+    "client_name": "Adani Transmission",
+    "tier": "Tier-1 (Power)",
+    "loyalty_status": "Gold",
+    "default_discount_percent": 0.05,
+    "payment_terms": "90 Days Credit"
+  },
+  {
+    "client_id": "CL-TATA-003",
+    "client_name": "Tata Projects",
+    "tier": "Tier-1 (Infrastructure Major)",
+    "loyalty_status": "Gold",
+    "default_discount_percent": 0.05,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-SNG-044",
+    "client_name": "Sanghvi Movers",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-PAT-012",
+    "client_name": "Patel Engineering",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-GMR-008",
+    "client_name": "GMR Infrastructure",
+    "tier": "Tier-1 (Infrastructure Major)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "90 Days Credit"
+  },
+  {
+    "client_id": "CL-ASH-002",
+    "client_name": "Ashoka Buildcon",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-IRB-055",
+    "client_name": "IRB Infrastructure",
+    "tier": "Tier-1 (Infrastructure Major)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-NCC-023",
+    "client_name": "NCC Ltd",
+    "tier": "Tier-1 (Infrastructure Major)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "90 Days Credit"
+  },
+  {
+    "client_id": "CL-KNR-089",
+    "client_name": "KNR Constructions",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-PNC-067",
+    "client_name": "PNC Infratech",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "45 Days Credit"
+  },
+  {
+    "client_id": "CL-DIL-034",
+    "client_name": "Dilip Buildcon",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-SAD-011",
+    "client_name": "Sadbhav Engineering",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-JMC-099",
+    "client_name": "JMC Projects",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-ITD-045",
+    "client_name": "ITD Cementation",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-SIM-078",
+    "client_name": "Simplex Infrastructures",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-HCC-012",
+    "client_name": "Hindustan Construction Co",
+    "tier": "Tier-1 (Infrastructure Major)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "90 Days Credit"
+  },
+  {
+    "client_id": "CL-WEL-056",
+    "client_name": "Welspun Enterprises",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-MAN-033",
+    "client_name": "Man Infraconstruction",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-AHL-022",
+    "client_name": "Ahluwalia Contracts",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-PSP-088",
+    "client_name": "PSP Projects",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "45 Days Credit"
+  },
+  {
+    "client_id": "CL-CAP-044",
+    "client_name": "Capacite Infraprojects",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-MAH-077",
+    "client_name": "Mahindra Lifespace",
+    "tier": "Tier-1 (Real Estate)",
+    "loyalty_status": "Gold",
+    "default_discount_percent": 0.05,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-GOD-011",
+    "client_name": "Godrej Properties",
+    "tier": "Tier-1 (Real Estate)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "45 Days Credit"
+  },
+  {
+    "client_id": "CL-SOB-055",
+    "client_name": "Sobha Ltd",
+    "tier": "Tier-1 (Real Estate)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-BRI-099",
+    "client_name": "Brigade Enterprises",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-PRE-033",
+    "client_name": "Prestige Estates",
+    "tier": "Tier-1 (Real Estate)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-OBE-022",
+    "client_name": "Oberoi Realty",
+    "tier": "Tier-1 (Real Estate)",
+    "loyalty_status": "Gold",
+    "default_discount_percent": 0.05,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-SUN-066",
+    "client_name": "Sunteck Realty",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-KOL-088",
+    "client_name": "Kolte Patil Developers",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-PUR-044",
+    "client_name": "Puravankara Ltd",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "45 Days Credit"
+  },
+  {
+    "client_id": "CL-ASH-077",
+    "client_name": "Ashiana Housing",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-ARI-011",
+    "client_name": "Arihant Superstructures",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-ARP-055",
+    "client_name": "Arvind SmartSpaces",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-MAR-099",
+    "client_name": "Marathon Nextgen",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "45 Days Credit"
+  },
+  {
+    "client_id": "CL-PEN-033",
+    "client_name": "Peninsula Land",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-GAN-022",
+    "client_name": "Ganesh Housing",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "30 Days Credit"
+  },
+  {
+    "client_id": "CL-VIP-066",
+    "client_name": "Vipul Ltd",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-ANS-088",
+    "client_name": "Ansal Properties",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-PAR-044",
+    "client_name": "Parsvnath Developers",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "45 Days Credit"
+  },
+  {
+    "client_id": "CL-UNI-077",
+    "client_name": "Unitech Ltd",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "New",
+    "default_discount_percent": 0.00,
+    "payment_terms": "Advance"
+  },
+  {
+    "client_id": "CL-OMA-011",
+    "client_name": "Omaxe Ltd",
+    "tier": "Tier-2 (Regional Player)",
+    "loyalty_status": "Silver",
+    "default_discount_percent": 0.02,
+    "payment_terms": "60 Days Credit"
+  },
+  {
+    "client_id": "CL-ELD-055",
+    "client_name": "Eldeco Housing",
+    "tier": "Tier-3 (Local Contractor)",
+    "loyalty_status": "Bronze",
+    "default_discount_percent": 0.01,
+    "payment_terms": "30 Days Credit"
+  }
+]

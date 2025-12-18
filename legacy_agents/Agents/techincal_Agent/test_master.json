@@ -1,0 +1,112 @@
+[
+  {
+    "test_id": "TEST-RT-001",
+    "test_name": "Conductor Resistance Test",
+    "test_category": "Routine Test",
+    "standard_ref": "IS 8130",
+    "description": "Measures DC resistance of conductor to ensure copper/aluminum purity and area.",
+    "mandatory_for": ["All Cables"],
+    "base_test_cost": 500.0,
+    "currency": "INR",
+    "duration_hours": 0.5
+  },
+  {
+    "test_id": "TEST-RT-002",
+    "test_name": "High Voltage Test (Water Tank)",
+    "test_category": "Routine Test",
+    "standard_ref": "IS 7098 Part-1",
+    "description": "Cable is submerged in water and HV applied to check insulation integrity.",
+    "mandatory_for": ["LT Cables", "HT Cables"],
+    "base_test_cost": 850.0,
+    "currency": "INR",
+    "duration_hours": 1.0
+  },
+  {
+    "test_id": "TEST-RT-003",
+    "test_name": "Partial Discharge Test",
+    "test_category": "Routine Test",
+    "standard_ref": "IS 7098 Part-2",
+    "description": "Critical for HT/MV cables (11kV+) to detect voids in XLPE insulation.",
+    "mandatory_for": ["HT Cables (6.6kV and above)"],
+    "base_test_cost": 2500.0,
+    "currency": "INR",
+    "duration_hours": 2.0
+  },
+  {
+    "test_id": "TEST-AT-001",
+    "test_name": "Tensile Strength & Elongation (Insulation)",
+    "test_category": "Acceptance Test",
+    "standard_ref": "IS 10810 Part 7",
+    "description": "Mechanical stress test on XLPE/PVC samples from the batch.",
+    "mandatory_for": ["All Cables"],
+    "base_test_cost": 1200.0,
+    "currency": "INR",
+    "duration_hours": 24.0
+  },
+  {
+    "test_id": "TEST-AT-002",
+    "test_name": "Insulation Resistance Test (Volume Resistivity)",
+    "test_category": "Acceptance Test",
+    "standard_ref": "IS 10810 Part 43",
+    "description": "Ensures insulation resistance meets MegaOhm/km standards.",
+    "mandatory_for": ["All Cables"],
+    "base_test_cost": 600.0,
+    "currency": "INR",
+    "duration_hours": 1.0
+  },
+  {
+    "test_id": "TEST-AT-003",
+    "test_name": "Armor Resistance Test",
+    "test_category": "Acceptance Test",
+    "standard_ref": "IS 7098",
+    "description": "Verifies the conductivity of the steel/aluminum armor for earthing safety.",
+    "mandatory_for": ["Armoured Cables"],
+    "base_test_cost": 450.0,
+    "currency": "INR",
+    "duration_hours": 0.5
+  },
+  {
+    "test_id": "TEST-AT-004",
+    "test_name": "Dimensions Check (OD & Thickness)",
+    "test_category": "Acceptance Test",
+    "standard_ref": "IS 10810 Part 6",
+    "description": "Physical verification of insulation thickness and overall diameter.",
+    "mandatory_for": ["All Cables"],
+    "base_test_cost": 300.0,
+    "currency": "INR",
+    "duration_hours": 0.5
+  },
+  {
+    "test_id": "TEST-TT-001",
+    "test_name": "Impulse Withstand Voltage Test",
+    "test_category": "Type Test",
+    "standard_ref": "IS 7098 Part-2",
+    "description": "Simulates lightning strikes. Required for 11kV/33kV cables.",
+    "mandatory_for": ["HT Cables"],
+    "base_test_cost": 15000.0,
+    "currency": "INR",
+    "duration_hours": 4.0
+  },
+  {
+    "test_id": "TEST-TT-002",
+    "test_name": "Flammability Test (FRLS)",
+    "test_category": "Type Test",
+    "standard_ref": "IS 10810 Part 53",
+    "description": "Checks if the cable sheath resists fire propagation (Oxygen Index).",
+    "mandatory_for": ["FRLS / LSZH Cables"],
+    "base_test_cost": 8000.0,
+    "currency": "INR",
+    "duration_hours": 3.0
+  },
+  {
+    "test_id": "TEST-TT-003",
+    "test_name": "Cold Bend / Cold Impact Test",
+    "test_category": "Type Test",
+    "standard_ref": "IS 5831",
+    "description": "Ensures sheath does not crack in freezing temperatures (-20°C).",
+    "mandatory_for": ["Outdoor Cables"],
+    "base_test_cost": 5000.0,
+    "currency": "INR",
+    "duration_hours": 48.0
+  }
+]

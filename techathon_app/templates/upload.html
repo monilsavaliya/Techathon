@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block header %}Ingest New RFP{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10">
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-10 text-center">
+        <div class="mb-6">
+            <div class="w-20 h-20 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center mx-auto text-3xl">
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Upload Tender Document</h2>
+        <p class="text-gray-500 mb-8">Select workflow mode and upload your PDF.</p>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-6">
+            
+            <div class="flex justify-center gap-4 mb-6">
+                <label class="cursor-pointer">
+                    <input type="radio" name="flow_mode" value="auto" checked class="peer sr-only">
+                    <div class="px-4 py-2 rounded-lg border-2 border-gray-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 text-gray-600 peer-checked:text-blue-700 transition-all">
+                        <i class="fas fa-magic mr-2"></i>Full Automatic Workflow
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="flow_mode" value="manual" class="peer sr-only">
+                    <div class="px-4 py-2 rounded-lg border-2 border-gray-200 peer-checked:border-purple-500 peer-checked:bg-purple-50 text-gray-600 peer-checked:text-purple-700 transition-all">
+                        <i class="fas fa-hand-pointer mr-2"></i>Extraction Only (Manual)
+                    </div>
+                </label>
+            </div>
+
+            <div class="relative border-2 border-dashed border-gray-300 rounded-xl p-10 hover:bg-gray-50 transition-colors cursor-pointer group" onclick="document.getElementById('fileInput').click()">
+                <input type="file" name="rfp_file" id="fileInput" class="hidden" accept=".pdf" onchange="document.getElementById('fileName').innerText = this.files[0].name; document.getElementById('uploadBtn').classList.remove('opacity-50', 'cursor-not-allowed')">
+                <p class="text-gray-400 group-hover:text-blue-500 font-medium">Click to browse or drag file here</p>
+                <p id="fileName" class="text-sm text-gray-800 font-semibold mt-4"></p>
+            </div>
+
+            <button id="uploadBtn" type=\"submit\" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-black transition-transform transform active:scale-95 opacity-50 cursor-not-allowed">
+                Start Agent Workflow 🚀
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

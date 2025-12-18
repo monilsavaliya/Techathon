@@ -1,0 +1,656 @@
+[
+  {
+    "rfp_unique_id": "RFP-2025-101",
+    "status": "Ready (High)",
+    "is_archived": false,
+    "created_at": "2025-12-17T15:37:39.694106",
+    "document_url": "/static/rfp_docs/sample.pdf",
+    "local_file_name": "tender_doc_1.pdf",
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Adani Green Energy",
+        "project_title": "Phase 1 Electrical Infrastructure Upgrade - 33kV Network",
+        "submission_deadline": "2025-12-16",
+        "contract_currency": "INR",
+        "emd_amount": 500000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Khavda Solar Park, Gujarat",
+        "delivery_timeline_days": 45
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "33kV 3C 400sqmm Al Cable (Armoured)",
+          "qty": 5000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "1.1kV 4C 16sqmm Cu Cable (FRLS)",
+          "qty": 2000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "Polycab India",
+        "KEI Industries"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "product_name": "HT Power Cable 33kV (Armoured)",
+          "match_confidence": 0.98
+        },
+        {
+          "lot_id_ref": "L2",
+          "product_name": "LT Control Cable FRLS",
+          "match_confidence": 0.95
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "total_material_cost": 3700000,
+        "total_logistics_cost": 185000,
+        "total_packaging_cost": 67500,
+        "margin_percentage": "25.0%",
+        "final_bid_value": 5528738
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 4144000,
+          "formula": "Standard BOM + 12% Ovhd",
+          "breakdown": [
+            "Copper Conductor",
+            "XLPE Insulation",
+            "Steel Armour"
+          ]
+        },
+        "packaging": {
+          "total": 67500,
+          "breakdown": [
+            "Steel Drums x 5",
+            "Lagging"
+          ]
+        },
+        "testing": {
+          "total": 27500,
+          "breakdown": [
+            "HV Test",
+            "Resistance Test"
+          ]
+        },
+        "logistics": {
+          "total": 185000,
+          "formula": "Zone Z1 Rate"
+        },
+        "strategy": {
+          "competitor_impact": "-2.0%",
+          "zone_risk": "+1.5%"
+        }
+      },
+      "breakdowns": {
+        "strategy_rationale": [
+          "Aggressive pricing against Tier-1",
+          "Volume discount applied"
+        ]
+      }
+    },
+    "sales_agent_2_output": {
+      "priority_rank": "High",
+      "priority_score": 94,
+      "win_probability": "86%",
+      "recommendation": "Bid Immediately"
+    }
+  },
+  {
+    "rfp_unique_id": "RFP-2025-102",
+    "status": "Ready (High)",
+    "is_archived": false,
+    "created_at": "2025-12-17T15:37:39.694189",
+    "document_url": "/static/rfp_docs/sample.pdf",
+    "local_file_name": "tender_doc_2.pdf",
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Tata Power Solar",
+        "project_title": "Phase 2 Electrical Infrastructure Upgrade - 33kV Network",
+        "submission_deadline": "2025-12-17",
+        "contract_currency": "INR",
+        "emd_amount": 500000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Mumbai Metro Line 3",
+        "delivery_timeline_days": 45
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "33kV 3C 400sqmm Al Cable (Armoured)",
+          "qty": 5000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "1.1kV 4C 16sqmm Cu Cable (FRLS)",
+          "qty": 2000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "KEI Industries",
+        "Havells"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "product_name": "HT Power Cable 33kV (Armoured)",
+          "match_confidence": 0.98
+        },
+        {
+          "lot_id_ref": "L2",
+          "product_name": "LT Control Cable FRLS",
+          "match_confidence": 0.95
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "total_material_cost": 11000000,
+        "total_logistics_cost": 550000,
+        "total_packaging_cost": 67500,
+        "margin_percentage": "23.0%",
+        "final_bid_value": 15945684
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 12320000,
+          "formula": "Standard BOM + 12% Ovhd",
+          "breakdown": [
+            "Copper Conductor",
+            "XLPE Insulation",
+            "Steel Armour"
+          ]
+        },
+        "packaging": {
+          "total": 67500,
+          "breakdown": [
+            "Steel Drums x 5",
+            "Lagging"
+          ]
+        },
+        "testing": {
+          "total": 27500,
+          "breakdown": [
+            "HV Test",
+            "Resistance Test"
+          ]
+        },
+        "logistics": {
+          "total": 550000,
+          "formula": "Zone Z1 Rate"
+        },
+        "strategy": {
+          "competitor_impact": "-2.0%",
+          "zone_risk": "+1.5%"
+        }
+      },
+      "breakdowns": {
+        "strategy_rationale": [
+          "Aggressive pricing against Tier-1",
+          "Volume discount applied"
+        ]
+      }
+    },
+    "sales_agent_2_output": {
+      "priority_rank": "High",
+      "priority_score": 91,
+      "win_probability": "90%",
+      "recommendation": "Bid Immediately"
+    }
+  },
+  {
+    "rfp_unique_id": "RFP-2025-103",
+    "status": "Ready (High)",
+    "is_archived": false,
+    "created_at": "2025-12-17T15:37:39.694208",
+    "document_url": "/static/rfp_docs/sample.pdf",
+    "local_file_name": "tender_doc_3.pdf",
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "L&T Construction",
+        "project_title": "Phase 3 Electrical Infrastructure Upgrade - 33kV Network",
+        "submission_deadline": "2025-12-18",
+        "contract_currency": "INR",
+        "emd_amount": 500000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Bangalore Data Center",
+        "delivery_timeline_days": 45
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "33kV 3C 400sqmm Al Cable (Armoured)",
+          "qty": 5000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "1.1kV 4C 16sqmm Cu Cable (FRLS)",
+          "qty": 2000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "Havells",
+        "KEI Industries"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "product_name": "HT Power Cable 33kV (Armoured)",
+          "match_confidence": 0.98
+        },
+        {
+          "lot_id_ref": "L2",
+          "product_name": "LT Control Cable FRLS",
+          "match_confidence": 0.95
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "total_material_cost": 10200000,
+        "total_logistics_cost": 510000,
+        "total_packaging_cost": 67500,
+        "margin_percentage": "20.4%",
+        "final_bid_value": 14485259
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 11424000,
+          "formula": "Standard BOM + 12% Ovhd",
+          "breakdown": [
+            "Copper Conductor",
+            "XLPE Insulation",
+            "Steel Armour"
+          ]
+        },
+        "packaging": {
+          "total": 67500,
+          "breakdown": [
+            "Steel Drums x 5",
+            "Lagging"
+          ]
+        },
+        "testing": {
+          "total": 27500,
+          "breakdown": [
+            "HV Test",
+            "Resistance Test"
+          ]
+        },
+        "logistics": {
+          "total": 510000,
+          "formula": "Zone Z1 Rate"
+        },
+        "strategy": {
+          "competitor_impact": "-2.0%",
+          "zone_risk": "+1.5%"
+        }
+      },
+      "breakdowns": {
+        "strategy_rationale": [
+          "Aggressive pricing against Tier-1",
+          "Volume discount applied"
+        ]
+      }
+    },
+    "sales_agent_2_output": {
+      "priority_rank": "High",
+      "priority_score": 79,
+      "win_probability": "77%",
+      "recommendation": "Bid Immediately"
+    }
+  },
+  {
+    "rfp_unique_id": "RFP-2025-104",
+    "status": "Ready (Medium)",
+    "is_archived": false,
+    "created_at": "2025-12-17T15:37:39.694224",
+    "document_url": "/static/rfp_docs/sample.pdf",
+    "local_file_name": "tender_doc_4.pdf",
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "NTPC Renewables",
+        "project_title": "Phase 4 Electrical Infrastructure Upgrade - 33kV Network",
+        "submission_deadline": "2025-12-19",
+        "contract_currency": "INR",
+        "emd_amount": 500000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Delhi-Mumbai Expressway",
+        "delivery_timeline_days": 45
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "33kV 3C 400sqmm Al Cable (Armoured)",
+          "qty": 5000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "1.1kV 4C 16sqmm Cu Cable (FRLS)",
+          "qty": 2000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "KEI Industries",
+        "Havells"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "product_name": "HT Power Cable 33kV (Armoured)",
+          "match_confidence": 0.98
+        },
+        {
+          "lot_id_ref": "L2",
+          "product_name": "LT Control Cable FRLS",
+          "match_confidence": 0.95
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "total_material_cost": 10800000,
+        "total_logistics_cost": 540000,
+        "total_packaging_cost": 67500,
+        "margin_percentage": "17.0%",
+        "final_bid_value": 14891102
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 12096000,
+          "formula": "Standard BOM + 12% Ovhd",
+          "breakdown": [
+            "Copper Conductor",
+            "XLPE Insulation",
+            "Steel Armour"
+          ]
+        },
+        "packaging": {
+          "total": 67500,
+          "breakdown": [
+            "Steel Drums x 5",
+            "Lagging"
+          ]
+        },
+        "testing": {
+          "total": 27500,
+          "breakdown": [
+            "HV Test",
+            "Resistance Test"
+          ]
+        },
+        "logistics": {
+          "total": 540000,
+          "formula": "Zone Z1 Rate"
+        },
+        "strategy": {
+          "competitor_impact": "-2.0%",
+          "zone_risk": "+1.5%"
+        }
+      },
+      "breakdowns": {
+        "strategy_rationale": [
+          "Aggressive pricing against Tier-1",
+          "Volume discount applied"
+        ]
+      }
+    },
+    "sales_agent_2_output": {
+      "priority_rank": "Medium",
+      "priority_score": 71,
+      "win_probability": "78%",
+      "recommendation": "Bid Immediately"
+    }
+  },
+  {
+    "rfp_unique_id": "RFP-2025-105",
+    "status": "Ready (Medium)",
+    "is_archived": false,
+    "created_at": "2025-12-17T15:37:39.694234",
+    "document_url": "/static/rfp_docs/sample.pdf",
+    "local_file_name": "tender_doc_5.pdf",
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Reliance Jio Infra",
+        "project_title": "Phase 5 Electrical Infrastructure Upgrade - 33kV Network",
+        "submission_deadline": "2025-12-20",
+        "contract_currency": "INR",
+        "emd_amount": 500000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Pune Industrial Zone",
+        "delivery_timeline_days": 45
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "33kV 3C 400sqmm Al Cable (Armoured)",
+          "qty": 5000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "1.1kV 4C 16sqmm Cu Cable (FRLS)",
+          "qty": 2000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "KEI Industries",
+        "Havells"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "product_name": "HT Power Cable 33kV (Armoured)",
+          "match_confidence": 0.98
+        },
+        {
+          "lot_id_ref": "L2",
+          "product_name": "LT Control Cable FRLS",
+          "match_confidence": 0.95
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "total_material_cost": 8500000,
+        "total_logistics_cost": 425000,
+        "total_packaging_cost": 67500,
+        "margin_percentage": "14.9%",
+        "final_bid_value": 11540777
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 9520000,
+          "formula": "Standard BOM + 12% Ovhd",
+          "breakdown": [
+            "Copper Conductor",
+            "XLPE Insulation",
+            "Steel Armour"
+          ]
+        },
+        "packaging": {
+          "total": 67500,
+          "breakdown": [
+            "Steel Drums x 5",
+            "Lagging"
+          ]
+        },
+        "testing": {
+          "total": 27500,
+          "breakdown": [
+            "HV Test",
+            "Resistance Test"
+          ]
+        },
+        "logistics": {
+          "total": 425000,
+          "formula": "Zone Z1 Rate"
+        },
+        "strategy": {
+          "competitor_impact": "-2.0%",
+          "zone_risk": "+1.5%"
+        }
+      },
+      "breakdowns": {
+        "strategy_rationale": [
+          "Aggressive pricing against Tier-1",
+          "Volume discount applied"
+        ]
+      }
+    },
+    "sales_agent_2_output": {
+      "priority_rank": "Medium",
+      "priority_score": 70,
+      "win_probability": "87%",
+      "recommendation": "Bid Immediately"
+    }
+  },
+  {
+    "rfp_unique_id": "RFP-2025-106",
+    "status": "Ready (Medium)",
+    "is_archived": false,
+    "created_at": "2025-12-17T15:37:39.694251",
+    "document_url": "/static/rfp_docs/sample.pdf",
+    "local_file_name": "tender_doc_6.pdf",
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Sterling & Wilson",
+        "project_title": "Phase 6 Electrical Infrastructure Upgrade - 33kV Network",
+        "submission_deadline": "2025-12-21",
+        "contract_currency": "INR",
+        "emd_amount": 500000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Hyderabad Pharma City",
+        "delivery_timeline_days": 45
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "33kV 3C 400sqmm Al Cable (Armoured)",
+          "qty": 5000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "1.1kV 4C 16sqmm Cu Cable (FRLS)",
+          "qty": 2000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "Havells",
+        "KEI Industries"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "product_name": "HT Power Cable 33kV (Armoured)",
+          "match_confidence": 0.98
+        },
+        {
+          "lot_id_ref": "L2",
+          "product_name": "LT Control Cable FRLS",
+          "match_confidence": 0.95
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "total_material_cost": 8700000,
+        "total_logistics_cost": 435000,
+        "total_packaging_cost": 67500,
+        "margin_percentage": "16.9%",
+        "final_bid_value": 12015336
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 9744000,
+          "formula": "Standard BOM + 12% Ovhd",
+          "breakdown": [
+            "Copper Conductor",
+            "XLPE Insulation",
+            "Steel Armour"
+          ]
+        },
+        "packaging": {
+          "total": 67500,
+          "breakdown": [
+            "Steel Drums x 5",
+            "Lagging"
+          ]
+        },
+        "testing": {
+          "total": 27500,
+          "breakdown": [
+            "HV Test",
+            "Resistance Test"
+          ]
+        },
+        "logistics": {
+          "total": 435000,
+          "formula": "Zone Z1 Rate"
+        },
+        "strategy": {
+          "competitor_impact": "-2.0%",
+          "zone_risk": "+1.5%"
+        }
+      },
+      "breakdowns": {
+        "strategy_rationale": [
+          "Aggressive pricing against Tier-1",
+          "Volume discount applied"
+        ]
+      }
+    },
+    "sales_agent_2_output": {
+      "priority_rank": "Medium",
+      "priority_score": 64,
+      "win_probability": "60%",
+      "recommendation": "Bid Immediately"
+    }
+  }
+]

@@ -1,0 +1,1170 @@
+[
+  {
+    "lot_id": "L001",
+    "selected_sku": {
+      "sku_id": "PC-LT-AL-3.5C-70",
+      "sku_name": "Polycab 1.1kV 3.5 Core 70sqmm Aluminium Armoured Cable",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1100V",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "3.5",
+          "sku_value": "3.5",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "70",
+          "sku_value": "70",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Aluminum",
+          "sku_value": "Aluminium",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "XLPE",
+          "sku_value": "XLPE",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "Armoured",
+          "sku_value": "armour_type present",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 7098, IS 7098 Part-1, IS 10810 Part 6",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": []
+  },
+  {
+    "lot_id": "L002",
+    "selected_sku": {
+      "sku_id": "PC-LT-AL-3.5C-50",
+      "sku_name": "Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1100V",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "3.5",
+          "sku_value": "3.5",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "50",
+          "sku_value": "50",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Aluminum",
+          "sku_value": "Aluminium",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "XLPE",
+          "sku_value": "XLPE",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "Armoured",
+          "sku_value": "armour_type present",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 10810 Part 53, IS 7098 Part-1, IS 5831",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-037",
+        "name": "Rho Cables"
+      }
+    ]
+  },
+  {
+    "lot_id": "L003",
+    "selected_sku": {
+      "sku_id": "PC-LT-AL-3.5C-35",
+      "sku_name": "Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1100V",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "3.5",
+          "sku_value": "3.5",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "35",
+          "sku_value": "35",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Aluminum",
+          "sku_value": "Aluminium",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "XLPE",
+          "sku_value": "XLPE",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "Armoured",
+          "sku_value": "armour_type present",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 7098 Part-1, IS 5831, IS 10810 Part 6, IS 7098 Part-2, IS 10810 Part 53",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-047",
+        "name": "City Electricals"
+      }
+    ]
+  },
+  {
+    "lot_id": "L004",
+    "selected_sku": {
+      "sku_id": "PC-LT-AL-3.5C-25",
+      "sku_name": "Polycab 1.1kV 3.5 Core 25sqmm Aluminium Armoured Cable",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1100V",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "3.5",
+          "sku_value": "3.5",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "25",
+          "sku_value": "25",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Aluminum",
+          "sku_value": "Aluminium",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "XLPE",
+          "sku_value": "XLPE",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "Armoured",
+          "sku_value": "armour_type present",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 8130, IS 7098 Part-1, IS 5831",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-020",
+        "name": "Bonton Cables"
+      }
+    ]
+  },
+  {
+    "lot_id": "L005",
+    "selected_sku": {
+      "sku_id": "PC-LT-AL-4C-16",
+      "sku_name": "Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1100V",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "4",
+          "sku_value": "4",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "16",
+          "sku_value": "16",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Aluminum",
+          "sku_value": "Aluminium",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "XLPE",
+          "sku_value": "XLPE",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "Armoured",
+          "sku_value": "armour_type present",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 10810 Part 53, IS 7098 Part-1, IS 5831",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-009",
+        "name": "Gemscab"
+      },
+      {
+        "competitor_id": "COMP-018",
+        "name": "V-Flow Tech Cables"
+      }
+    ]
+  },
+  {
+    "lot_id": "L006",
+    "selected_sku": {
+      "sku_id": "PC-LT-AL-4C-16",
+      "sku_name": "Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1100V",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "4",
+          "sku_value": "4",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "10",
+          "sku_value": "16",
+          "spec_score": 0.4
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Aluminum",
+          "sku_value": "Aluminium",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "XLPE",
+          "sku_value": "XLPE",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "Armoured",
+          "sku_value": "armour_type present",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 10810 Part 53, IS 7098 Part-1, IS 5831",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-009",
+        "name": "Gemscab"
+      },
+      {
+        "competitor_id": "COMP-018",
+        "name": "V-Flow Tech Cables"
+      }
+    ]
+  },
+  {
+    "lot_id": "L007",
+    "selected_sku": {
+      "sku_id": "PC-LT-CU-4C-6",
+      "sku_name": "Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1100V",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "4",
+          "sku_value": "4",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "6",
+          "sku_value": "6",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "PVC",
+          "sku_value": "XLPE",
+          "spec_score": 0.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "armour_type present",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 7098 Part-1, IS 5831, IS 10810 Part 6, IS 10810 Part 53, IS 7098",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": []
+  },
+  {
+    "lot_id": "L008",
+    "selected_sku": {
+      "sku_id": "PC-LT-CU-3C-6",
+      "sku_name": "Polycab 1.1kV 3 Core 6sqmm Copper Armoured Cable",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1100V",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "3",
+          "sku_value": "3",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "6",
+          "sku_value": "6",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "PVC",
+          "sku_value": "XLPE",
+          "spec_score": 0.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "armour_type present",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 7098 Part-1, IS 10810 Part 6, IS 10810 Part 43, IS 7098 Part-2, IS 10810 Part 7, IS 8130",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-004",
+        "name": "Finolex Cables"
+      }
+    ]
+  },
+  {
+    "lot_id": "L009",
+    "selected_sku": {
+      "sku_id": "PC-CU-2.5",
+      "sku_name": "Polycab Copper Wire 2.5 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "25",
+          "sku_value": "2.5",
+          "spec_score": 0.1
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 8130, IS 7098 Part-1, IS 5831, IS 694",
+          "spec_score": 0.75
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-001",
+        "name": "Polycab India Ltd"
+      },
+      {
+        "competitor_id": "COMP-005",
+        "name": "RR Kabel"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-019",
+        "name": "Ultracab India"
+      },
+      {
+        "competitor_id": "COMP-038",
+        "name": "Sigma Wires"
+      }
+    ]
+  },
+  {
+    "lot_id": "L010",
+    "selected_sku": {
+      "sku_id": "PC-CU-2.5",
+      "sku_name": "Polycab Copper Wire 2.5 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "25",
+          "sku_value": "2.5",
+          "spec_score": 0.1
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 8130, IS 7098 Part-1, IS 5831, IS 694",
+          "spec_score": 0.75
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-001",
+        "name": "Polycab India Ltd"
+      },
+      {
+        "competitor_id": "COMP-005",
+        "name": "RR Kabel"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-019",
+        "name": "Ultracab India"
+      },
+      {
+        "competitor_id": "COMP-038",
+        "name": "Sigma Wires"
+      }
+    ]
+  },
+  {
+    "lot_id": "L011",
+    "selected_sku": {
+      "sku_id": "PC-CU-2.5",
+      "sku_name": "Polycab Copper Wire 2.5 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "16",
+          "sku_value": "2.5",
+          "spec_score": 0.156
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 8130, IS 7098 Part-1, IS 5831, IS 694",
+          "spec_score": 0.75
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-001",
+        "name": "Polycab India Ltd"
+      },
+      {
+        "competitor_id": "COMP-005",
+        "name": "RR Kabel"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-019",
+        "name": "Ultracab India"
+      },
+      {
+        "competitor_id": "COMP-038",
+        "name": "Sigma Wires"
+      }
+    ]
+  },
+  {
+    "lot_id": "L012",
+    "selected_sku": {
+      "sku_id": "PC-CU-2.5",
+      "sku_name": "Polycab Copper Wire 2.5 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "16",
+          "sku_value": "2.5",
+          "spec_score": 0.156
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 8130, IS 7098 Part-1, IS 5831, IS 694",
+          "spec_score": 0.75
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-001",
+        "name": "Polycab India Ltd"
+      },
+      {
+        "competitor_id": "COMP-005",
+        "name": "RR Kabel"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-019",
+        "name": "Ultracab India"
+      },
+      {
+        "competitor_id": "COMP-038",
+        "name": "Sigma Wires"
+      }
+    ]
+  },
+  {
+    "lot_id": "L013",
+    "selected_sku": {
+      "sku_id": "PC-CU-2.5",
+      "sku_name": "Polycab Copper Wire 2.5 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "10",
+          "sku_value": "2.5",
+          "spec_score": 0.25
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 8130, IS 7098 Part-1, IS 5831, IS 694",
+          "spec_score": 0.75
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-001",
+        "name": "Polycab India Ltd"
+      },
+      {
+        "competitor_id": "COMP-005",
+        "name": "RR Kabel"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-019",
+        "name": "Ultracab India"
+      },
+      {
+        "competitor_id": "COMP-038",
+        "name": "Sigma Wires"
+      }
+    ]
+  },
+  {
+    "lot_id": "L014",
+    "selected_sku": {
+      "sku_id": "PC-CU-2.5",
+      "sku_name": "Polycab Copper Wire 2.5 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "10",
+          "sku_value": "2.5",
+          "spec_score": 0.25
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 8130, IS 7098 Part-1, IS 5831, IS 694",
+          "spec_score": 0.75
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-001",
+        "name": "Polycab India Ltd"
+      },
+      {
+        "competitor_id": "COMP-005",
+        "name": "RR Kabel"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-019",
+        "name": "Ultracab India"
+      },
+      {
+        "competitor_id": "COMP-038",
+        "name": "Sigma Wires"
+      }
+    ]
+  },
+  {
+    "lot_id": "L015",
+    "selected_sku": {
+      "sku_id": "PC-CU-4",
+      "sku_name": "Polycab Copper Wire 4 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "4",
+          "sku_value": "4",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 10810 Part 7, IS 7098, IS 5831, IS 694",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-002",
+        "name": "Havells India"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-022",
+        "name": "Beta Wires Ltd"
+      }
+    ]
+  },
+  {
+    "lot_id": "L016",
+    "selected_sku": {
+      "sku_id": "PC-CU-4",
+      "sku_name": "Polycab Copper Wire 4 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "4",
+          "sku_value": "4",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 10810 Part 7, IS 7098, IS 5831, IS 694",
+          "spec_score": 0.5
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-002",
+        "name": "Havells India"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-022",
+        "name": "Beta Wires Ltd"
+      }
+    ]
+  },
+  {
+    "lot_id": "L017",
+    "selected_sku": {
+      "sku_id": "PC-CU-2.5",
+      "sku_name": "Polycab Copper Wire 2.5 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "35",
+          "sku_value": "2.5",
+          "spec_score": 0.071
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 8130, IS 7098 Part-1, IS 5831, IS 694",
+          "spec_score": 0.75
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-001",
+        "name": "Polycab India Ltd"
+      },
+      {
+        "competitor_id": "COMP-005",
+        "name": "RR Kabel"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-019",
+        "name": "Ultracab India"
+      },
+      {
+        "competitor_id": "COMP-038",
+        "name": "Sigma Wires"
+      }
+    ]
+  },
+  {
+    "lot_id": "L018",
+    "selected_sku": {
+      "sku_id": "PC-CU-2.5",
+      "sku_name": "Polycab Copper Wire 2.5 sqmm",
+      "technical_breakdown": [
+        {
+          "spec_name": "voltage_grade",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "1.1kV",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "core_count",
+          "rfp_value": "1",
+          "sku_value": "1",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "cross_section_sqmm",
+          "rfp_value": "6",
+          "sku_value": "2.5",
+          "spec_score": 0.417
+        },
+        {
+          "spec_name": "conductor_material",
+          "rfp_value": "Copper",
+          "sku_value": "Copper",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "insulation_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "PVC FRLS",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "sheath_type",
+          "rfp_value": "NOT SPECIFIED",
+          "sku_value": "not armoured",
+          "spec_score": 1.0
+        },
+        {
+          "spec_name": "standards",
+          "rfp_value": "ISI marked, IS 7098 Part 1 (1988), IS 1554 (Part 1) 1988, IS 694:1990",
+          "sku_value": "IS 8130, IS 7098 Part-1, IS 5831, IS 694",
+          "spec_score": 0.75
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "competitor_id": "COMP-001",
+        "name": "Polycab India Ltd"
+      },
+      {
+        "competitor_id": "COMP-005",
+        "name": "RR Kabel"
+      },
+      {
+        "competitor_id": "COMP-011",
+        "name": "V-Guard"
+      },
+      {
+        "competitor_id": "COMP-019",
+        "name": "Ultracab India"
+      },
+      {
+        "competitor_id": "COMP-038",
+        "name": "Sigma Wires"
+      }
+    ]
+  }
+]

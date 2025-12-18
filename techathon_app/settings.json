@@ -1,0 +1,25 @@
+{
+  "sales_config": {
+    "default_priority_threshold": 76,
+    "high_value_client_multiplier": 1.2,
+    "deadline_warning_days": 5
+  },
+  "tech_config": {
+    "strict_compliance_mode": false,
+    "competitor_match_threshold": 0.85,
+    "allow_alternative_materials": false
+  },
+  "pricing_config": {
+    "base_margin_percent": 18.0,
+    "competitor_undercut_percent": 2.0,
+    "logistics_rate_per_km_ton": 12.5,
+    "packaging_cost_per_drum": 12000,
+    "testing_cost_base": 15000
+  },
+  "priority_config": {
+    "weight_product_fit": 0.4,
+    "weight_relationship": 0.4,
+    "weight_urgency": 0.2,
+    "max_urgency_days": 90
+  }
+}

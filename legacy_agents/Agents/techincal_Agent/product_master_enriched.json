@@ -1,0 +1,4489 @@
+[
+  {
+    "product_id": "PC-LT-AL-3.5C-25",
+    "product_name": "Polycab 1.1kV 3.5 Core 25sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 25,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 8130",
+        "IS 7098 Part-1",
+        "IS 5831"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 145.0,
+      "setup_cost": 1200.0,
+      "inventory_stock": 450,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.55,
+      "current_rating_air_amps": 78,
+      "overall_diameter_mm": 21.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.27,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.08,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-35",
+    "product_name": "Polycab 1.1kV 3.5 Core 35sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 35,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 7098 Part-2",
+        "IS 10810 Part 53"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 185.0,
+      "setup_cost": 1200.0,
+      "inventory_stock": 320,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.72,
+      "current_rating_air_amps": 96,
+      "overall_diameter_mm": 23.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.38,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.1,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.24,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-50",
+    "product_name": "Polycab 1.1kV 3.5 Core 50sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 50,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 53",
+        "IS 7098 Part-1",
+        "IS 5831"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 240.0,
+      "setup_cost": 1500.0,
+      "inventory_stock": 1200,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.95,
+      "current_rating_air_amps": 118,
+      "overall_diameter_mm": 26.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.54,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.14,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.27,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-70",
+    "product_name": "Polycab 1.1kV 3.5 Core 70sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 70,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098",
+        "IS 7098 Part-1",
+        "IS 10810 Part 6"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 325.0,
+      "setup_cost": 1500.0,
+      "inventory_stock": 800,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.3,
+      "current_rating_air_amps": 149,
+      "overall_diameter_mm": 30.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.76,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.18,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.36,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-95",
+    "product_name": "Polycab 1.1kV 3.5 Core 95sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 95,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 10810 Part 6"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 440.0,
+      "setup_cost": 1800.0,
+      "inventory_stock": 650,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.75,
+      "current_rating_air_amps": 181,
+      "overall_diameter_mm": 34.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.03,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.22,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.5,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-120",
+    "product_name": "Polycab 1.1kV 3.5 Core 120sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 120,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 7098"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 550.0,
+      "setup_cost": 1800.0,
+      "inventory_stock": 400,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 2.2,
+      "current_rating_air_amps": 210,
+      "overall_diameter_mm": 38.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.3,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.28,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.62,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-150",
+    "product_name": "Polycab 1.1kV 3.5 Core 150sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 150,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 53",
+        "IS 7098 Part-1",
+        "IS 10810 Part 43",
+        "IS 7098"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 665.0,
+      "setup_cost": 2000.0,
+      "inventory_stock": 350,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 2.7,
+      "current_rating_air_amps": 240,
+      "overall_diameter_mm": 41.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.62,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.32,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.76,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-185",
+    "product_name": "Polycab 1.1kV 3.5 Core 185sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 185,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 53",
+        "IS 7098 Part-1",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 820.0,
+      "setup_cost": 2200.0,
+      "inventory_stock": 250,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 3.35,
+      "current_rating_air_amps": 275,
+      "overall_diameter_mm": 45.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 2.0,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.38,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.97,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-240",
+    "product_name": "Polycab 1.1kV 3.5 Core 240sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 240,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 7098 Part-2",
+        "IS 10810 Part 6"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1050.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 180,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 4.25,
+      "current_rating_air_amps": 322,
+      "overall_diameter_mm": 51.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 2.59,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.45,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 1.21,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-300",
+    "product_name": "Polycab 1.1kV 3.5 Core 300sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 300,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 8130",
+        "IS 7098 Part-1",
+        "IS 10810 Part 53"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1290.0,
+      "setup_cost": 2800.0,
+      "inventory_stock": 150,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 5.3,
+      "current_rating_air_amps": 368,
+      "overall_diameter_mm": 56.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 3.24,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.55,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 1.51,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-400",
+    "product_name": "Polycab 1.1kV 3.5 Core 400sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 400,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip / Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 10810 Part 53"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1680.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 100,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 6.8,
+      "current_rating_air_amps": 435,
+      "overall_diameter_mm": 62.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 4.32,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.65,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 1.83,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-4C-16",
+    "product_name": "Polycab 1.1kV 4 Core 16sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 4,
+      "cross_section_sqmm": 16,
+      "insulation": "XLPE",
+      "armour_type": "Wire/Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 53",
+        "IS 7098 Part-1",
+        "IS 5831"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 95.0,
+      "setup_cost": 800.0,
+      "inventory_stock": 1500,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.42,
+      "current_rating_air_amps": 63,
+      "overall_diameter_mm": 18.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.18,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.06,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.18,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-4C-25",
+    "product_name": "Polycab 1.1kV 4 Core 25sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 4,
+      "cross_section_sqmm": 25,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 10810 Part 7",
+        "IS 8130"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 140.0,
+      "setup_cost": 800.0,
+      "inventory_stock": 1200,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.58,
+      "current_rating_air_amps": 78,
+      "overall_diameter_mm": 22.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.29,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.09,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-4C-50",
+    "product_name": "Polycab 1.1kV 4 Core 50sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Aluminium",
+      "core_count": 4,
+      "cross_section_sqmm": 50,
+      "insulation": "XLPE",
+      "armour_type": "Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 53",
+        "IS 7098 Part-1",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 235.0,
+      "setup_cost": 1000.0,
+      "inventory_stock": 900,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.85,
+      "current_rating_air_amps": 118,
+      "overall_diameter_mm": 25.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.57,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.15,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.3,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-4C-6",
+    "product_name": "Polycab 1.1kV 4 Core 6sqmm Copper Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Copper",
+      "core_count": 4,
+      "cross_section_sqmm": 6,
+      "insulation": "XLPE",
+      "armour_type": "Steel Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 10810 Part 53",
+        "IS 7098"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 220.0,
+      "setup_cost": 500.0,
+      "inventory_stock": 2000,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.38,
+      "current_rating_air_amps": 44,
+      "overall_diameter_mm": 16.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.22,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.05,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.11,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-3C-6",
+    "product_name": "Polycab 1.1kV 3 Core 6sqmm Copper Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 6,
+      "insulation": "XLPE",
+      "armour_type": "Steel Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 10810 Part 6",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 8130"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 180.0,
+      "setup_cost": 500.0,
+      "inventory_stock": 2000,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.32,
+      "current_rating_air_amps": 44,
+      "overall_diameter_mm": 15.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.17,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.04,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.11,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-1C-25-RED",
+    "product_name": "Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Red)",
+    "category": "LT Control/Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Copper (Flexible)",
+      "core_count": 1,
+      "cross_section_sqmm": 25,
+      "insulation": "PVC",
+      "armour_type": "Unarmoured",
+      "sheath": "PVC Type ST1",
+      "standards": [
+        "IS 10810 Part 6",
+        "IS 10810 Part 43",
+        "IS 10810 Part 7",
+        "IS 694",
+        "IS 7098"
+      ],
+      "color": "Red"
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 280.0,
+      "setup_cost": 300.0,
+      "inventory_stock": 5000,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.26,
+      "current_rating_air_amps": 110,
+      "overall_diameter_mm": 10.5
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.23,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-GEN",
+        "quantity": 0.03,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-1C-25-BLK",
+    "product_name": "Polycab 1.1kV 1 Core 25sqmm Copper Flexible Cable (Black)",
+    "category": "LT Control/Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Copper (Flexible)",
+      "core_count": 1,
+      "cross_section_sqmm": 25,
+      "insulation": "PVC",
+      "armour_type": "Unarmoured",
+      "sheath": "PVC Type ST1",
+      "standards": [
+        "IS 10810 Part 6",
+        "IS 10810 Part 43",
+        "IS 694"
+      ],
+      "color": "Black"
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 280.0,
+      "setup_cost": 300.0,
+      "inventory_stock": 5000,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.26,
+      "current_rating_air_amps": 110,
+      "overall_diameter_mm": 10.5
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.23,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-GEN",
+        "quantity": 0.03,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-1C-16-RED",
+    "product_name": "Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Red)",
+    "category": "LT Control/Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Copper (Flexible)",
+      "core_count": 1,
+      "cross_section_sqmm": 16,
+      "insulation": "PVC",
+      "armour_type": "Unarmoured",
+      "sheath": "PVC Type ST1",
+      "standards": [
+        "IS 10810 Part 53",
+        "IS 10810 Part 6",
+        "IS 8130",
+        "IS 694"
+      ],
+      "color": "Red"
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 185.0,
+      "setup_cost": 300.0,
+      "inventory_stock": 6000,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.17,
+      "current_rating_air_amps": 85,
+      "overall_diameter_mm": 8.5
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.15,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-GEN",
+        "quantity": 0.02,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-1C-16-BLK",
+    "product_name": "Polycab 1.1kV 1 Core 16sqmm Copper Flexible Cable (Black)",
+    "category": "LT Control/Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Copper (Flexible)",
+      "core_count": 1,
+      "cross_section_sqmm": 16,
+      "insulation": "PVC",
+      "armour_type": "Unarmoured",
+      "sheath": "PVC Type ST1",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 694"
+      ],
+      "color": "Black"
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 185.0,
+      "setup_cost": 300.0,
+      "inventory_stock": 6000,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.17,
+      "current_rating_air_amps": 85,
+      "overall_diameter_mm": 8.5
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.15,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-GEN",
+        "quantity": 0.02,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-1C-10-RED",
+    "product_name": "Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Red)",
+    "category": "LT Control/Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Copper (Flexible)",
+      "core_count": 1,
+      "cross_section_sqmm": 10,
+      "insulation": "PVC",
+      "armour_type": "Unarmoured",
+      "sheath": "PVC Type ST1",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 8130",
+        "IS 694"
+      ],
+      "color": "Red"
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 120.0,
+      "setup_cost": 250.0,
+      "inventory_stock": 8000,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.11,
+      "current_rating_air_amps": 65,
+      "overall_diameter_mm": 7.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.09,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-GEN",
+        "quantity": 0.02,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-1C-10-BLK",
+    "product_name": "Polycab 1.1kV 1 Core 10sqmm Copper Flexible Cable (Black)",
+    "category": "LT Control/Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1100V",
+      "conductor_material": "Copper (Flexible)",
+      "core_count": 1,
+      "cross_section_sqmm": 10,
+      "insulation": "PVC",
+      "armour_type": "Unarmoured",
+      "sheath": "PVC Type ST1",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 694"
+      ],
+      "color": "Black"
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 120.0,
+      "setup_cost": 250.0,
+      "inventory_stock": 8000,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.11,
+      "current_rating_air_amps": 65,
+      "overall_diameter_mm": 7.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.09,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-GEN",
+        "quantity": 0.02,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-50",
+    "product_name": "Polycab 6.35/11 kV 1 Core 50sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 50,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 7098",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 245.5,
+      "setup_cost": 1500.0,
+      "inventory_stock": 500,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 0.85,
+      "current_rating_air_amps": 189,
+      "overall_diameter_mm": 26.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.142,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.18,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.25,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-70",
+    "product_name": "Polycab 6.35/11 kV 1 Core 70sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 70,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 10810 Part 53",
+        "IS 7098 Part-2",
+        "IS 7098",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 290.0,
+      "setup_cost": 1500.0,
+      "inventory_stock": 480,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.0,
+      "current_rating_air_amps": 236,
+      "overall_diameter_mm": 28.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.198,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.21,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.3,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-95",
+    "product_name": "Polycab 6.35/11 kV 1 Core 95sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 95,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 8130",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 345.2,
+      "setup_cost": 1500.0,
+      "inventory_stock": 450,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.15,
+      "current_rating_air_amps": 287,
+      "overall_diameter_mm": 30.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.269,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.24,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.35,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-120",
+    "product_name": "Polycab 6.35/11 kV 1 Core 120sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 120,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 10810 Part 53",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 410.5,
+      "setup_cost": 1500.0,
+      "inventory_stock": 400,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.3,
+      "current_rating_air_amps": 332,
+      "overall_diameter_mm": 32.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.34,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.28,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.38,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-150",
+    "product_name": "Polycab 6.35/11 kV 1 Core 150sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 150,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 10810 Part 53",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 485.0,
+      "setup_cost": 1500.0,
+      "inventory_stock": 350,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.55,
+      "current_rating_air_amps": 376,
+      "overall_diameter_mm": 35.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.425,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.32,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.45,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-185",
+    "product_name": "Polycab 6.35/11 kV 1 Core 185sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 185,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 53",
+        "IEC 60502-2",
+        "IS 7098 Part-2",
+        "IS 10810 Part 6"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 550.0,
+      "setup_cost": 1500.0,
+      "inventory_stock": 300,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.7,
+      "current_rating_air_amps": 432,
+      "overall_diameter_mm": 36.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.524,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.35,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.5,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-240",
+    "product_name": "Polycab 6.35/11 kV 1 Core 240sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 240,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 10810 Part 53",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 680.0,
+      "setup_cost": 1500.0,
+      "inventory_stock": 250,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.95,
+      "current_rating_air_amps": 511,
+      "overall_diameter_mm": 39.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.68,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.6,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-300",
+    "product_name": "Polycab 6.35/11 kV 1 Core 300sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 300,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 8130",
+        "IS 7098",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 820.5,
+      "setup_cost": 1500.0,
+      "inventory_stock": 200,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 2.25,
+      "current_rating_air_amps": 586,
+      "overall_diameter_mm": 41.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.85,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.45,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.7,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-400",
+    "product_name": "Polycab 6.35/11 kV 1 Core 400sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 400,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 10810 Part 6",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1050.0,
+      "setup_cost": 1500.0,
+      "inventory_stock": 150,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 2.7,
+      "current_rating_air_amps": 676,
+      "overall_diameter_mm": 45.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.134,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.55,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.85,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-1C-500",
+    "product_name": "Polycab 6.35/11 kV 1 Core 500sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 500,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 10810 Part 6",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 7098",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1280.0,
+      "setup_cost": 1500.0,
+      "inventory_stock": 100,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 3.3,
+      "current_rating_air_amps": 760,
+      "overall_diameter_mm": 49.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.417,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.65,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 1.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-CU-3C-50",
+    "product_name": "Polycab 6.35/11 kV 3 Core 50sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 50,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 53",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 2650.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 200,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 4.05,
+      "current_rating_air_amps": 204,
+      "overall_diameter_mm": 47.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 1.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 4.7,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 9.4,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-CU-3C-70",
+    "product_name": "Polycab 6.35/11 kV 3 Core 70sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 70,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 3680.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 180,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 4.6,
+      "current_rating_air_amps": 253,
+      "overall_diameter_mm": 51.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 1.96,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 5.1,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 10.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-CU-3C-95",
+    "product_name": "Polycab 6.35/11 kV 3 Core 95sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 95,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098 Part-1",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 4850.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 160,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 5.25,
+      "current_rating_air_amps": 304,
+      "overall_diameter_mm": 54.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 2.66,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 5.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 10.8,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-CU-3C-120",
+    "product_name": "Polycab 6.35/11 kV 3 Core 120sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 120,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 10810 Part 53",
+        "IS 7098 Part-2",
+        "IS 7098",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 6050.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 140,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 5.9,
+      "current_rating_air_amps": 351,
+      "overall_diameter_mm": 58.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 3.36,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 5.8,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 11.6,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-CU-3C-150",
+    "product_name": "Polycab 6.35/11 kV 3 Core 150sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 150,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 7200.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 120,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 6.65,
+      "current_rating_air_amps": 398,
+      "overall_diameter_mm": 61.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 4.2,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 6.1,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 12.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-CU-3C-185",
+    "product_name": "Polycab 6.35/11 kV 3 Core 185sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 185,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 7098 Part-1",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 8600.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 100,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 7.35,
+      "current_rating_air_amps": 455,
+      "overall_diameter_mm": 65.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 5.18,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 6.5,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 13.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-CU-3C-240",
+    "product_name": "Polycab 6.35/11 kV 3 Core 240sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 240,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 10810 Part 53",
+        "IEC 60502-2",
+        "IS 7098"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 10800.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 80,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 9.25,
+      "current_rating_air_amps": 531,
+      "overall_diameter_mm": 70.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 6.72,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 7.0,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 14.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-CU-3C-300",
+    "product_name": "Polycab 6.35/11 kV 3 Core 300sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 300,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 13200.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 60,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 10.7,
+      "current_rating_air_amps": 606,
+      "overall_diameter_mm": 75.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 8.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 7.5,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 15.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-CU-3C-400",
+    "product_name": "Polycab 6.35/11 kV 3 Core 400sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 400,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 17150.0,
+      "setup_cost": 2500.0,
+      "inventory_stock": 40,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 12.45,
+      "current_rating_air_amps": 696,
+      "overall_diameter_mm": 81.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 11.21,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 8.1,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 16.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-1C-50",
+    "product_name": "Polycab 19/33 kV 1 Core 50sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 50,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 8130",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 465.0,
+      "setup_cost": 2000.0,
+      "inventory_stock": 400,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.6,
+      "current_rating_air_amps": 204,
+      "overall_diameter_mm": 37.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.142,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.37,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.74,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-1C-70",
+    "product_name": "Polycab 19/33 kV 1 Core 70sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 70,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 10810 Part 53",
+        "IEC 60502-2",
+        "IS 7098"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 525.5,
+      "setup_cost": 2000.0,
+      "inventory_stock": 380,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.75,
+      "current_rating_air_amps": 253,
+      "overall_diameter_mm": 39.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.198,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.39,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.78,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-1C-95",
+    "product_name": "Polycab 19/33 kV 1 Core 95sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 95,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 605.0,
+      "setup_cost": 2000.0,
+      "inventory_stock": 350,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 1.95,
+      "current_rating_air_amps": 304,
+      "overall_diameter_mm": 41.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.269,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.41,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.82,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-1C-120",
+    "product_name": "Polycab 19/33 kV 1 Core 120sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 120,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IEC 60502-2",
+        "IS 7098 Part-2",
+        "IS 10810 Part 43"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 680.0,
+      "setup_cost": 2000.0,
+      "inventory_stock": 320,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 2.1,
+      "current_rating_air_amps": 351,
+      "overall_diameter_mm": 42.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.34,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.42,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.84,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-1C-150",
+    "product_name": "Polycab 19/33 kV 1 Core 150sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 150,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IEC 60502-2",
+        "IS 7098 Part-2",
+        "IS 10810 Part 6"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 805.0,
+      "setup_cost": 2000.0,
+      "inventory_stock": 300,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 2.45,
+      "current_rating_air_amps": 398,
+      "overall_diameter_mm": 46.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.425,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.46,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.92,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-1C-185",
+    "product_name": "Polycab 19/33 kV 1 Core 185sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 185,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IEC 60502-2",
+        "IS 7098 Part-2",
+        "IS 10810 Part 43"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 880.0,
+      "setup_cost": 2000.0,
+      "inventory_stock": 250,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 2.65,
+      "current_rating_air_amps": 455,
+      "overall_diameter_mm": 47.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.524,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.47,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 0.94,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-1C-240",
+    "product_name": "Polycab 19/33 kV 1 Core 240sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 240,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098",
+        "IS 7098 Part-1",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1050.0,
+      "setup_cost": 2000.0,
+      "inventory_stock": 200,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 3.0,
+      "current_rating_air_amps": 531,
+      "overall_diameter_mm": 50.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.68,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.5,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 1.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-1C-300",
+    "product_name": "Polycab 19/33 kV 1 Core 300sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 300,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IEC 60502-2",
+        "IS 7098 Part-2",
+        "IS 10810 Part 43"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1205.0,
+      "setup_cost": 2000.0,
+      "inventory_stock": 180,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 3.35,
+      "current_rating_air_amps": 606,
+      "overall_diameter_mm": 53.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.85,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.53,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 1.06,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-1C-400",
+    "product_name": "Polycab 19/33 kV 1 Core 400sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 1,
+      "cross_section_sqmm": 400,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "AWA (Aluminium Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1460.0,
+      "setup_cost": 2000.0,
+      "inventory_stock": 150,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 3.85,
+      "current_rating_air_amps": 696,
+      "overall_diameter_mm": 56.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.134,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.56,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-AWA-ARM",
+        "quantity": 1.12,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-CU-3C-50",
+    "product_name": "Polycab 19/33 kV 3 Core 50sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 50,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 6050.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 100,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 8.95,
+      "current_rating_air_amps": 236,
+      "overall_diameter_mm": 74.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 1.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 7.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 14.8,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-CU-3C-70",
+    "product_name": "Polycab 19/33 kV 3 Core 70sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 70,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 7250.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 80,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 10.05,
+      "current_rating_air_amps": 295,
+      "overall_diameter_mm": 78.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 1.96,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 7.8,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 15.6,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-CU-3C-95",
+    "product_name": "Polycab 19/33 kV 3 Core 95sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 95,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 7098",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 8350.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 70,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 11.4,
+      "current_rating_air_amps": 350,
+      "overall_diameter_mm": 82.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 2.66,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 8.2,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 16.4,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-CU-3C-120",
+    "product_name": "Polycab 19/33 kV 3 Core 120sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 120,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 10810 Part 53",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 9450.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 60,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 12.65,
+      "current_rating_air_amps": 405,
+      "overall_diameter_mm": 86.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 3.36,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 8.6,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 17.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-CU-3C-150",
+    "product_name": "Polycab 19/33 kV 3 Core 150sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 150,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 10810 Part 53",
+        "IEC 60502-2",
+        "IS 7098"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 10700.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 50,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 14.15,
+      "current_rating_air_amps": 460,
+      "overall_diameter_mm": 90.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 4.2,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 9.0,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 18.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-CU-3C-185",
+    "product_name": "Polycab 19/33 kV 3 Core 185sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 185,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 12050.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 40,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 15.75,
+      "current_rating_air_amps": 530,
+      "overall_diameter_mm": 94.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 5.18,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 9.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 18.8,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-CU-3C-240",
+    "product_name": "Polycab 19/33 kV 3 Core 240sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 240,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 53",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 14450.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 30,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 18.25,
+      "current_rating_air_amps": 627,
+      "overall_diameter_mm": 100.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 6.72,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 10.0,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 20.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-CU-3C-300",
+    "product_name": "Polycab 19/33 kV 3 Core 300sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 300,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 53",
+        "IS 7098 Part-2",
+        "IS 7098",
+        "IEC 60502-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 17200.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 25,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 21.05,
+      "current_rating_air_amps": 721,
+      "overall_diameter_mm": 106.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 8.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 10.6,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 21.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-CU-3C-400",
+    "product_name": "Polycab 19/33 kV 3 Core 400sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 400,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 7098",
+        "IEC 60502-2",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 22100.0,
+      "setup_cost": 3000.0,
+      "inventory_stock": 15,
+      "unit_of_measure": "Meter",
+      "currency": "INR"
+    },
+    "performance_data": {
+      "weight_kg_per_unit": 24.9,
+      "current_rating_air_amps": 825,
+      "overall_diameter_mm": 113.0
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 11.21,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 11.3,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 22.6,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-BS7835-CU-3C-400",
+    "product_name": "Polycab BS 7835 19/33 kV 3 Core 400sqmm Copper LSZH Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 400,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "LSZH (Low Smoke Zero Halogen)",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "BS 7835",
+        "IEC 60502-2"
+      ],
+      "max_operating_temp": "90\u00c2\u00b0C"
+    },
+    "performance_data": {
+      "overall_diameter_mm": 92.0,
+      "approx_weight_kg_km": 21750,
+      "current_rating_air_amps": 690,
+      "reactance_ohm_km": 0.11
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 24500.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 11.2,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 3.5,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 5.8,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-HDPE-OUT",
+        "quantity": 1.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-BS7835-CU-3C-300",
+    "product_name": "Polycab BS 7835 19/33 kV 3 Core 300sqmm Copper LSZH Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 (36) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 300,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "LSZH (Low Smoke Zero Halogen)",
+      "standards": [
+        "BS 7835",
+        "IS 10810 Part 53",
+        "IS 5831"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 85.0,
+      "approx_weight_kg_km": 18300,
+      "current_rating_air_amps": 600,
+      "reactance_ohm_km": 0.11
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 19200.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 8.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 3.0,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 5.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-BS6622-AL-3C-400",
+    "product_name": "Polycab BS 6622 6.35/11 kV 3 Core 400sqmm Aluminium PVC Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 400,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type 9",
+      "standards": [
+        "IS 7098",
+        "IS 7098 Part-1",
+        "BS 6622"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 76.6,
+      "approx_weight_kg_km": 12450,
+      "current_rating_air_amps": 545,
+      "reactance_ohm_km": 0.077
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 2850.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 3.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 2.2,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 4.5,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-ST2",
+        "quantity": 2.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-BS6622-CU-3C-185",
+    "product_name": "Polycab BS 6622 11 kV 3 Core 185sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 185,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA (Steel Wire Armour)",
+      "sheath": "PVC Type 9",
+      "standards": [
+        "IS 10810 Part 43",
+        "IS 10810 Part 6",
+        "BS 6622"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 58.6,
+      "approx_weight_kg_km": 10800,
+      "current_rating_air_amps": 453,
+      "reactance_ohm_km": 0.086
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 7200.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 5.18,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 1.5,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 3.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-IEC-CU-3C-50",
+    "product_name": "Polycab IEC 60502 3.6/6 kV 3 Core 50sqmm Copper Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "3.6/6 (7.2) kV",
+      "conductor_material": "Copper",
+      "core_count": 3,
+      "cross_section_sqmm": 50,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "SWA",
+      "sheath": "PVC",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 10810 Part 43",
+        "IS 10810 Part 53",
+        "IEC 60502-2",
+        "IS 7098"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 40.2,
+      "approx_weight_kg_km": 5700,
+      "current_rating_air_amps": 205,
+      "reactance_ohm_km": 0.096
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 2100.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 1.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 2.1,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-CONTROL-12C-1.5",
+    "product_name": "Polycab 1.1kV 12 Core 1.5sqmm Copper Armoured Control Cable",
+    "category": "Control Cable",
+    "technical_specs": {
+      "voltage_grade": "1.1kV",
+      "conductor_material": "Copper",
+      "core_count": 12,
+      "cross_section_sqmm": 1.5,
+      "insulation": "PVC",
+      "armour_type": "GSW (Galvanized Steel Wire)",
+      "sheath": "PVC FRLS",
+      "standards": [
+        "IS 1554 Part-1",
+        "IS 8130",
+        "IS 7098 Part-1",
+        "IS 10810 Part 43"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 22.0,
+      "approx_weight_kg_km": 850,
+      "current_rating_air_amps": 15,
+      "reactance_ohm_km": 0.0
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 280.0,
+      "currency": "INR",
+      "min_order_quantity": 1000
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.16,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-ST2",
+        "quantity": 0.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-CONTROL-19C-1.5",
+    "product_name": "Polycab 1.1kV 19 Core 1.5sqmm Copper Armoured Control Cable",
+    "category": "Control Cable",
+    "technical_specs": {
+      "voltage_grade": "1.1kV",
+      "conductor_material": "Copper",
+      "core_count": 19,
+      "cross_section_sqmm": 1.5,
+      "insulation": "PVC",
+      "armour_type": "GSW (Galvanized Steel Wire)",
+      "sheath": "PVC FRLS",
+      "standards": [
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 1554 Part-1",
+        "IS 10810 Part 53"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 26.0,
+      "approx_weight_kg_km": 1150,
+      "current_rating_air_amps": 12,
+      "reactance_ohm_km": 0.0
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 410.0,
+      "currency": "INR",
+      "min_order_quantity": 1000
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.25,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.3,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-3.5C-300",
+    "product_name": "Polycab 1.1kV 3.5 Core 300sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1.1kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3.5,
+      "cross_section_sqmm": 300,
+      "insulation": "XLPE",
+      "armour_type": "Flat Steel Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 10810 Part 53",
+        "IS 10810 Part 43",
+        "IS 7098"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 56.0,
+      "approx_weight_kg_km": 5300,
+      "current_rating_air_amps": 368,
+      "reactance_ohm_km": 0.076
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1290.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 3.24,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.55,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 0.9,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-4C-185",
+    "product_name": "Polycab 1.1kV 4 Core 185sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1.1kV",
+      "conductor_material": "Aluminium",
+      "core_count": 4,
+      "cross_section_sqmm": 185,
+      "insulation": "XLPE",
+      "armour_type": "Flat Steel Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 8130",
+        "IS 7098 Part-1",
+        "IS 5831"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 52.0,
+      "approx_weight_kg_km": 4200,
+      "current_rating_air_amps": 284,
+      "reactance_ohm_km": 0.078
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 950.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 2.12,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.45,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 0.7,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-AL-4C-95",
+    "product_name": "Polycab 1.1kV 4 Core 95sqmm Aluminium Armoured Cable",
+    "category": "LT Power Cable",
+    "technical_specs": {
+      "voltage_grade": "1.1kV",
+      "conductor_material": "Aluminium",
+      "core_count": 4,
+      "cross_section_sqmm": 95,
+      "insulation": "XLPE",
+      "armour_type": "Flat Steel Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IS 7098 Part-1"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 37.0,
+      "approx_weight_kg_km": 2100,
+      "current_rating_air_amps": 181,
+      "reactance_ohm_km": 0.081
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 520.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.09,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.25,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 0.4,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-CU-2.5",
+    "product_name": "Polycab Copper Wire 2.5 sqmm",
+    "category": "Building Wire",
+    "technical_specs": {
+      "voltage_grade": "1.1kV",
+      "conductor_material": "Copper",
+      "core_count": 1,
+      "cross_section_sqmm": 2.5,
+      "insulation": "PVC FRLS",
+      "standards": [
+        "IS 8130",
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 694"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 4.2,
+      "approx_weight_kg_km": 35,
+      "current_rating_air_amps": 29
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 18.5,
+      "currency": "INR",
+      "min_order_quantity": 9000
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.022,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-GEN",
+        "quantity": 0.015,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-CU-4",
+    "product_name": "Polycab Copper Wire 4 sqmm",
+    "category": "Building Wire",
+    "technical_specs": {
+      "voltage_grade": "1.1kV",
+      "conductor_material": "Copper",
+      "core_count": 1,
+      "cross_section_sqmm": 4,
+      "insulation": "PVC FRLS",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IS 5831",
+        "IS 694"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 4.8,
+      "approx_weight_kg_km": 52,
+      "current_rating_air_amps": 38
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 28.0,
+      "currency": "INR",
+      "min_order_quantity": 9000
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.036,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-PVC-GEN",
+        "quantity": 0.02,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-220KV-CU-1200",
+    "product_name": "Polycab 220kV 1 Core 1200sqmm Copper EHV Cable Lead Sheath",
+    "category": "EHV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "220kV",
+      "conductor_material": "Copper (Milliken)",
+      "core_count": 1,
+      "cross_section_sqmm": 1200,
+      "insulation": "XLPE",
+      "sheath": "Lead Alloy",
+      "standards": [
+        "IS 8130",
+        "IEC 62067",
+        "IS 5831",
+        "IS 7098 Part-2"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 145.0,
+      "approx_weight_kg_km": 42000,
+      "current_rating_air_amps": 1450,
+      "reactance_ohm_km": 0.19
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 85000.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 11.5,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 8.0,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-LEAD-ALLOY",
+        "quantity": 15.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-6.6KV-AL-3C-185",
+    "product_name": "Polycab 6.6/6.6 kV (E) 3 Core 185sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.6/6.6 kV (E)",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 185,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IS 7098 Part-1",
+        "IS 7098 Part-2"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 54.0,
+      "approx_weight_kg_km": 4200,
+      "current_rating_air_amps": 335,
+      "reactance_ohm_km": 0.089
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1850.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.57,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.85,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-35",
+    "product_name": "Polycab 6.35/11 kV 3 Core 35sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 35,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 10810 Part 53",
+        "IS 7098"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 44.0,
+      "approx_weight_kg_km": 2400,
+      "current_rating_air_amps": 115,
+      "reactance_ohm_km": 0.128
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 720.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.3,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.6,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 0.8,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-50",
+    "product_name": "Polycab 6.35/11 kV 3 Core 50sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 50,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 10810 Part 53"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 47.0,
+      "approx_weight_kg_km": 2800,
+      "current_rating_air_amps": 140,
+      "reactance_ohm_km": 0.119
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 850.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.42,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.65,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 0.9,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-70",
+    "product_name": "Polycab 6.35/11 kV 3 Core 70sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 70,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 10810 Part 53",
+        "IS 7098"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 50.0,
+      "approx_weight_kg_km": 3200,
+      "current_rating_air_amps": 170,
+      "reactance_ohm_km": 0.111
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1020.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.59,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.7,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-95",
+    "product_name": "Polycab 6.35/11 kV 3 Core 95sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 95,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 54.0,
+      "approx_weight_kg_km": 3850,
+      "current_rating_air_amps": 205,
+      "reactance_ohm_km": 0.106
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1250.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.81,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.75,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.1,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-120",
+    "product_name": "Polycab 6.35/11 kV 3 Core 120sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 120,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098 Part-2",
+        "IS 10810 Part 6",
+        "IS 5831"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 57.0,
+      "approx_weight_kg_km": 4400,
+      "current_rating_air_amps": 235,
+      "reactance_ohm_km": 0.101
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1480.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.02,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.8,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.2,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-150",
+    "product_name": "Polycab 6.35/11 kV 3 Core 150sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 150,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 6"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 60.0,
+      "approx_weight_kg_km": 5000,
+      "current_rating_air_amps": 265,
+      "reactance_ohm_km": 0.097
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1750.0,
+      "currency": "INR",
+      "min_order_quantity": 500
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.27,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.85,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.3,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-185",
+    "product_name": "Polycab 6.35/11 kV 3 Core 185sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 185,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 6",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 7098"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 64.0,
+      "approx_weight_kg_km": 5800,
+      "current_rating_air_amps": 305,
+      "reactance_ohm_km": 0.093
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 2100.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.57,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.9,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.4,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-240",
+    "product_name": "Polycab 6.35/11 kV 3 Core 240sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 240,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 8130",
+        "IS 7098 Part-2"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 69.0,
+      "approx_weight_kg_km": 7100,
+      "current_rating_air_amps": 355,
+      "reactance_ohm_km": 0.088
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 2650.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 2.04,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 1.0,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.6,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-300",
+    "product_name": "Polycab 6.35/11 kV 3 Core 300sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 300,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098",
+        "IS 7098 Part-2",
+        "IS 10810 Part 6"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 74.0,
+      "approx_weight_kg_km": 8400,
+      "current_rating_air_amps": 405,
+      "reactance_ohm_km": 0.084
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 3200.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 2.55,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 1.1,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.8,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-11KV-AL-3C-400",
+    "product_name": "Polycab 6.35/11 kV 3 Core 400sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "6.35/11 (12) kV",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 400,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 8130",
+        "IS 7098 Part-2"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 80.0,
+      "approx_weight_kg_km": 10200,
+      "current_rating_air_amps": 470,
+      "reactance_ohm_km": 0.08
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 4100.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 3.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 1.25,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 2.0,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-22KV-AL-3C-240",
+    "product_name": "Polycab 12.7/22 kV (E) 3 Core 240sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "12.7/22 kV (E)",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 240,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IS 7098 Part-2",
+        "IS 10810 Part 6"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 78.0,
+      "approx_weight_kg_km": 9100,
+      "current_rating_air_amps": 360,
+      "reactance_ohm_km": 0.095
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 3400.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 2.04,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 1.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.8,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-3C-50",
+    "product_name": "Polycab 19/33 kV (E) 3 Core 50sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 kV (E)",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 50,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 5831",
+        "IS 8130",
+        "IS 7098 Part-2",
+        "IS 7098"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 63.0,
+      "approx_weight_kg_km": 5400,
+      "current_rating_air_amps": 145,
+      "reactance_ohm_km": 0.138
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 1950.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.42,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 1.5,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.3,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-3C-95",
+    "product_name": "Polycab 19/33 kV (E) 3 Core 95sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 kV (E)",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 95,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 10810 Part 6",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 7098"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 70.0,
+      "approx_weight_kg_km": 6800,
+      "current_rating_air_amps": 210,
+      "reactance_ohm_km": 0.124
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 2450.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 0.81,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 1.7,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.5,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-3C-150",
+    "product_name": "Polycab 19/33 kV (E) 3 Core 150sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 kV (E)",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 150,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 10810 Part 53"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 78.0,
+      "approx_weight_kg_km": 8500,
+      "current_rating_air_amps": 270,
+      "reactance_ohm_km": 0.114
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 3100.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 1.27,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 1.9,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 1.8,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-3C-240",
+    "product_name": "Polycab 19/33 kV (E) 3 Core 240sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 kV (E)",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 240,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Flat Strip",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 10810 Part 6",
+        "IS 10810 Part 43",
+        "IS 7098 Part-2",
+        "IS 10810 Part 7",
+        "IS 8130"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 86.0,
+      "approx_weight_kg_km": 10900,
+      "current_rating_air_amps": 365,
+      "reactance_ohm_km": 0.104
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 4200.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 2.04,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 2.2,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-STEEL-TAPE",
+        "quantity": 2.1,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-33KV-AL-3C-400",
+    "product_name": "Polycab 19/33 kV (E) 3 Core 400sqmm Aluminium Armoured Cable",
+    "category": "MV Power Cable",
+    "technical_specs": {
+      "voltage_grade": "19/33 kV (E)",
+      "conductor_material": "Aluminium",
+      "core_count": 3,
+      "cross_section_sqmm": 400,
+      "insulation": "XLPE",
+      "screen": "Copper Tape",
+      "armour_type": "GS Round Wire",
+      "sheath": "PVC Type ST2",
+      "standards": [
+        "IS 7098 Part-1",
+        "IS 5831",
+        "IS 10810 Part 53",
+        "IS 7098 Part-2",
+        "IS 8130",
+        "IS 7098"
+      ]
+    },
+    "performance_data": {
+      "overall_diameter_mm": 98.0,
+      "approx_weight_kg_km": 14500,
+      "current_rating_air_amps": 480,
+      "reactance_ohm_km": 0.096
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 5800.0,
+      "currency": "INR",
+      "min_order_quantity": 250
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-AL-H3",
+        "quantity": 3.4,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 2.6,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 4.5,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PROD-008",
+    "product_name": "Solar DC Cable 4sqmm Tinned Copper EN 50618",
+    "category": "Solar Cable",
+    "technical_specs": {
+      "voltage_grade": "1.5kV DC",
+      "conductor_material": "Tinned Copper",
+      "core_count": 1,
+      "cross_section_sqmm": 4,
+      "standards": [
+        "IS 5831",
+        "IS 10810 Part 6",
+        "IS 10810 Part 43",
+        "EN 50618",
+        "IS 7098"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 45.5,
+      "min_order_quantity": 1000
+    },
+    "performance_data": {
+      "approx_weight_kg_km": 85
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.035,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-MV",
+        "quantity": 0.02,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-BSNL-PIJF",
+    "product_name": "BSNL PIJF 50 Pair Telephone Cable",
+    "category": "Telecom Cable",
+    "technical_specs": {
+      "standards": [
+        "IS 10810 Part 7",
+        "GR/CABLE-PIJF",
+        "IS 7098 Part-2"
+      ]
+    },
+    "commercial": {
+      "base_mfg_cost_per_meter": 120.0,
+      "min_order_quantity": 500
+    },
+    "performance_data": {
+      "approx_weight_kg_km": 450
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.15,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-HDPE-OUT",
+        "quantity": 0.12,
+        "unit": "kg/m"
+      }
+    ]
+  },
+  {
+    "product_id": "PC-LT-CU-2C-10",
+    "product_name": "Polycab 1.1kV 2 Core 10sqmm Copper Armoured Cable",
+    "category": "LT Power Cable",
+    "commercial": {
+      "base_mfg_cost_per_meter": 210.0
+    },
+    "performance_data": {
+      "approx_weight_kg_km": 680
+    },
+    "bill_of_materials": [
+      {
+        "material_id": "MAT-CU-EC",
+        "quantity": 0.18,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-XLPE-LV",
+        "quantity": 0.05,
+        "unit": "kg/m"
+      },
+      {
+        "material_id": "MAT-GSW-ARM",
+        "quantity": 0.25,
+        "unit": "kg/m"
+      }
+    ],
+    "technical_specs": {
+      "standards": [
+        "IS 10810 Part 7",
+        "IS 7098",
+        "IS 10810 Part 43"
+      ]
+    }
+  }
+]

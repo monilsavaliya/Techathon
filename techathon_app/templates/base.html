@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBid.ai | Enterprise Tender Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: { 850: '#151e2e', 950: '#020617' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-sidebar {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .nav-item-active {
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            box-shadow: 0 4px 15px -3px rgba(67, 56, 202, 0.4);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-100/50 text-slate-800 h-screen flex overflow-hidden selection:bg-indigo-500 selection:text-white font-sans"
+    x-data="{ 
+          sidebarHover: false,
+          sidebarLocked: false,
+          get sidebarOpen() { return this.sidebarHover || this.sidebarLocked }
+      }">
+
+    <!-- SIDEBAR -->
+    <aside
+        class="glass-sidebar text-white flex flex-col flex-shrink-0 shadow-2xl z-50 transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) relative border-r border-white/5 group"
+        :class="sidebarOpen ? 'w-72' : 'w-24'" @mouseenter="sidebarHover = true" @mouseleave="sidebarHover = false">
+
+        <!-- Logo Area -->
+        <div class="h-24 flex items-center px-6 border-b border-white/5 relative overflow-hidden">
+            <div class="flex items-center gap-4 whitespace-nowrap">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/30 flex-shrink-0 relative">
+                    <i class="fas fa-bolt text-white text-xl animate-pulse"></i>
+                    <div class="absolute inset-0 bg-white/20 blur-lg rounded-full opacity-50"></div>
+                </div>
+                <div class="transition-all duration-500 ease-out origin-left"
+                    :class="sidebarOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10 absolute pointer-events-none'">
+                    <h1
+                        class="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+                        SmartBid<span class="text-indigo-400">.ai</span></h1>
+                </div>
+            </div>
+
+            <!-- Lock Toggle Button -->
+            <button @click="sidebarLocked = !sidebarLocked" x-show="sidebarOpen"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-all backdrop-blur-sm border border-white/5"
+                :class="sidebarLocked ? 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20' : ''"
+                title="Lock Sidebar Open">
+                <i class="fas text-xs" :class="sidebarLocked ? 'fa-lock' : 'fa-lock-open'"></i>
+            </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 px-4 py-8 space-y-3 overflow-y-auto custom-scrollbar overflow-x-hidden">
+
+            <!-- Section Header -->
+            <div class="px-2 mb-2 mt-2 transition-all duration-300 overflow-hidden whitespace-nowrap"
+                :class="sidebarOpen ? 'opacity-100 max-h-10' : 'opacity-0 max-h-0'">
+                <p
+                    class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] pl-2 border-l-2 border-indigo-500/50">
+                    Core Modules</p>
+            </div>
+
+            <!-- Nav Item: Dashboard -->
+            <a href="/"
+                class="flex items-center px-4 py-4 text-sm font-medium rounded-2xl transition-all duration-300 group relative overflow-hidden"
+                :class="window.location.pathname == '/' ? 'nav-item-active text-white shadow-lg shadow-indigo-900/20' : 'text-slate-400 hover:bg-white/5 hover:text-white'">
+                <div class="relative w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-chart-pie text-xl transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                        :class="window.location.pathname == '/' ? 'text-white' : 'text-slate-400 group-hover:text-white'"></i>
+                </div>
+                <span class="ml-4 whitespace-nowrap font-semibold tracking-wide transition-all duration-500 delay-75"
+                    :class="sidebarOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10 w-0'">Dashboard</span>
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-indigo-400 rounded-r-full transition-all duration-300 blur-[1px]"
+                    :class="window.location.pathname == '/' && !sidebarOpen ? 'opacity-100' : 'opacity-0'"></div>
+            </a>
+
+            <a href="/upload_page"
+                class="flex items-center px-4 py-4 text-sm font-medium rounded-2xl transition-all duration-300 group relative overflow-hidden"
+                :class="window.location.pathname == '/upload_page' ? 'nav-item-active text-white' : 'text-slate-400 hover:bg-white/5 hover:text-white'">
+                <div class="relative w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-cloud-upload-alt text-xl transition-all duration-300 group-hover:scale-110"></i>
+                </div>
+                <span class="ml-4 whitespace-nowrap font-semibold transition-all duration-500 delay-75"
+                    :class="sidebarOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10 w-0'">Ingest
+                    RFP</span>
+            </a>
+
+            <!-- Knowledge Base Section -->
+            <div class="px-2 mb-2 mt-8 transition-all duration-300 overflow-hidden whitespace-nowrap"
+                :class="sidebarOpen ? 'opacity-100 max-h-10' : 'opacity-0 max-h-0'">
+                <p
+                    class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] pl-2 border-l-2 border-purple-500/50">
+                    Knowledge Base</p>
+            </div>
+
+            {% for item in [
+            {'url': '/products', 'icon': 'fa-box', 'label': 'Products'},
+            {'url': '/manage/client_master', 'icon': 'fa-users', 'label': 'Clients'},
+            {'url': '/manage/competitors', 'icon': 'fa-chess-rook', 'label': 'Competitors'}
+            ] %}
+            <a href="{{ item.url }}"
+                class="flex items-center px-4 py-3 text-sm font-medium rounded-2xl transition-all duration-300 group relative overflow-hidden"
+                :class="window.location.pathname.includes('{{ item.url }}'.replace('/manage/', '')) ? 'bg-white/10 text-white border border-white/5' : 'text-slate-400 hover:bg-white/5 hover:text-white'">
+                <div class="relative w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <i class="fas {{ item.icon }} text-lg transition-all duration-300 group-hover:scale-110"></i>
+                </div>
+                <span class="ml-4 whitespace-nowrap font-medium transition-all duration-500 delay-75"
+                    :class="sidebarOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10 w-0'">{{ item.label
+                    }}</span>
+            </a>
+            {% endfor %}
+
+            <!-- Operational Data Section -->
+            <div class="px-2 mb-2 mt-8 transition-all duration-300 overflow-hidden whitespace-nowrap"
+                :class="sidebarOpen ? 'opacity-100 max-h-10' : 'opacity-0 max-h-0'">
+                <p
+                    class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] pl-2 border-l-2 border-emerald-500/50">
+                    Operations</p>
+            </div>
+
+            {% for item in [
+            {'url': '/manage/factory_production_schedule', 'icon': 'fa-industry', 'label': 'Production'},
+            {'url': '/manage/logistic_master', 'icon': 'fa-truck-fast', 'label': 'Logistics'},
+            {'url': '/manage/material_master', 'icon': 'fa-layer-group', 'label': 'Materials'},
+            {'url': '/manage/central_rfp_database', 'icon': 'fa-database', 'label': 'RFP Data'}
+            ] %}
+            <a href="{{ item.url }}"
+                class="flex items-center px-4 py-3 text-sm font-medium rounded-2xl transition-all duration-300 group relative overflow-hidden"
+                :class="window.location.pathname.includes('{{ item.url }}'.replace('/manage/', '')) ? 'bg-white/10 text-white border border-white/5' : 'text-slate-400 hover:bg-white/5 hover:text-white'">
+                <div class="relative w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <i class="fas {{ item.icon }} text-lg transition-all duration-300 group-hover:scale-110"></i>
+                </div>
+                <span class="ml-4 whitespace-nowrap font-medium transition-all duration-500 delay-75"
+                    :class="sidebarOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10 w-0'">{{ item.label
+                    }}</span>
+            </a>
+            {% endfor %}
+
+            <!-- Spacer -->
+            <div class="h-20"></div>
+
+            <a href="/settings"
+                class="flex items-center px-4 py-4 text-sm font-medium rounded-2xl transition-all duration-300 group relative mt-auto"
+                :class="window.location.pathname == '/settings' ? 'bg-white/10 text-white' : 'text-slate-400 hover:bg-white/5 hover:text-white'">
+                <div class="relative w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-cog text-xl group-hover:rotate-90 transition-transform duration-700"></i>
+                </div>
+                <span class="ml-4 whitespace-nowrap font-semibold transition-all duration-500 delay-75"
+                    :class="sidebarOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10 w-0'">Settings</span>
+            </a>
+
+        </nav>
+
+        <!-- User Profile -->
+        <div
+            class="p-6 border-t border-white/5 bg-black/20 backdrop-blur-md relative overflow-hidden group hover:bg-white/5 transition-colors duration-300">
+            <div class="flex items-center gap-4 whitespace-nowrap">
+                <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center font-bold text-white shadow-lg flex-shrink-0 cursor-pointer hover:scale-110 transition-transform duration-300 ring-2 ring-white/10 group-hover:ring-white/30">
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=random"
+                        class="rounded-full opacity-90" alt="Admin">
+                    <span
+                        class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-slate-900 rounded-full"></span>
+                </div>
+                <div class="transition-all duration-500 ease-out origin-left"
+                    :class="sidebarOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10 absolute'">
+                    <p class="text-sm font-bold text-white leading-tight">System Admin</p>
+                    <p class="text-[10px] text-emerald-400 font-medium tracking-wide">● CONNECTED</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 flex flex-col h-full overflow-hidden bg-slate-50/50 relative">
+        <!-- Glass Pattern Background -->
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white/50 to-blue-50/50 -z-10 pointer-events-none">
+        </div>
+        <div
+            class="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] -z-10 pointer-events-none">
+        </div>
+
+        <!-- Header -->
+        <header
+            class="h-20 glass-panel border-b border-white/60 flex items-center justify-between px-8 sticky top-0 z-40 transition-shadow hover:shadow-sm">
+            <div class="flex items-center gap-4">
+                <h2 class="text-2xl font-bold text-slate-800 tracking-tight">{% block header %}{% endblock %}</h2>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="relative group">
+                    <button
+                        class="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-500 hover:text-blue-600 hover:border-blue-200 transition-all flex items-center justify-center shadow-sm hover:shadow-md">
+                        <i class="fas fa-bell"></i>
+                        <span
+                            class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border-2 border-white"></span>
+                    </button>
+                </div>
+
+                <button onclick="window.location.reload()"
+                    class="w-10 h-10 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center justify-center group"
+                    title="Refresh Data">
+                    <i class="fas fa-sync-alt group-hover:rotate-180 transition-transform duration-500"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dynamic Content -->
+        <div class="flex-1 overflow-auto p-8 custom-scrollbar relative">
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="fixed bottom-8 right-8 z-50 w-96 space-y-3 pointer-events-none">
+                {% for category, message in messages %}
+                <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 translate-y-4"
+                    class="pointer-events-auto p-4 rounded-2xl shadow-2xl border flex items-center justify-between bg-white/90 backdrop-blur-lg
+                            {% if category == 'error' %}border-red-100 text-red-700 shadow-red-100{% else %}border-emerald-100 text-emerald-700 shadow-emerald-100{% endif %}">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full flex items-center justify-center {% if category == 'error' %}bg-red-50 text-red-500{% else %}bg-emerald-50 text-emerald-500{% endif %}">
+                            <i class="fas {% if category == 'error' %}fa-exclamation{% else %}fa-check{% endif %}"></i>
+                        </div>
+                        <span class="font-medium text-sm">{{ message }}</span>
+                    </div>
+                    <button @click="show = false" class="text-slate-400 hover:text-slate-600 transition"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <style>
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+[
+  {
+    "rfp_unique_id": "RFP-2025-101",
+    "status": "In Progress",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Adani Transmission",
+        "project_title": "Khavda Renewable Energy Park - Phase 4",
+        "submission_deadline": "2025-12-20",
+        "contract_currency": "INR",
+        "emd_amount": 5000000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Khavda Desert Zone, Gujarat",
+        "distance_from_factory_km": 680,
+        "delivery_timeline_days": 60
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "33kV 3C 400sqmm Al Cable (Armoured)",
+          "quantity": 15000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "Solar DC Cable 4sqmm EN50618",
+          "quantity": 50000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "COMP-001",
+        "COMP-003"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "matched_product_id": "PC-33KV-AL-3C-400",
+          "product_name": "Polycab 19/33 kV (E) 3 Core 400sqmm Aluminium Armoured Cable",
+          "confirmed_quantity": 15000,
+          "match_confidence": 0.99
+        },
+        {
+          "lot_id_ref": "L2",
+          "matched_product_id": "PROD-008",
+          "product_name": "Solar DC Cable 4sqmm Tinned Copper",
+          "confirmed_quantity": 50000,
+          "match_confidence": 0.95
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "final_bid_value": 40280023,
+        "margin_percentage": "23.0%",
+        "total_cost_base": 32747986,
+        "total_material_cost": 29982412,
+        "total_logistics_cost": 904740,
+        "total_packaging_cost": 810000,
+        "total_testing_cost": 109700,
+        "finance_cost": 941134
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 29982412.5,
+          "breakdown": [
+            "   - EC Grade Aluminium (H2/H4 Grade): 3.4 units/m @ 231.00",
+            "   - XLPE Compound (MV Tree Retardant): 2.6 units/m (High Volatility Risk +155844)",
+            "   - EC Grade Copper (99.9% Pure): 0.035 units/m (High Volatility Risk +34212)",
+            "   - XLPE Compound (MV Tree Retardant): 0.02 units/m (High Volatility Risk +3996)"
+          ],
+          "formula": "Micro-BOM"
+        },
+        "strategy": {
+          "rationale": [
+            "Credit Cost (90 days): +INR 941134",
+            "Loyalty Discount: -3.0%",
+            "Zone Risk (Desert_HighHeat): +4.0%"
+          ],
+          "competitor_impact": "+0.0%",
+          "zone_risk": "4.0%"
+        }
+      },
+      "breakdowns": {
+        "strategy_rationale": [
+          "Credit Cost (90 days): +INR 941134",
+          "Loyalty Discount: -3.0%",
+          "Zone Risk (Desert_HighHeat): +4.0%"
+        ]
+      }
+    },
+    "audit_report_url": "/audit_reports/RFP-2025-101_AUDIT.pdf"
+  },
+  {
+    "rfp_unique_id": "RFP-2025-102",
+    "status": "In Progress",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "Tata Projects",
+        "project_title": "Mumbai Metro Line 3 Electrification",
+        "submission_deadline": "2025-12-22",
+        "contract_currency": "INR",
+        "emd_amount": 2500000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Mumbai Metro Yard (Urban Restricted)",
+        "distance_from_factory_km": 280,
+        "delivery_timeline_days": 45
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "11kV 3C 185sqmm Copper Cable",
+          "quantity": 5000,
+          "unit": "M"
+        },
+        {
+          "lot_id": "L2",
+          "description": "1.1kV 4C 16sqmm Copper Control Cable",
+          "quantity": 12000,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "COMP-002",
+        "COMP-005"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "matched_product_id": "PC-11KV-CU-3C-185",
+          "product_name": "Polycab 6.35/11 kV 3 Core 185sqmm Copper Armoured Cable",
+          "confirmed_quantity": 5000,
+          "match_confidence": 0.98
+        },
+        {
+          "lot_id_ref": "L2",
+          "matched_product_id": "PC-LT-CU-4C-16",
+          "product_name": "Polycab 1.1kV 4 Core 16sqmm Copper Armoured Cable",
+          "confirmed_quantity": 12000,
+          "match_confidence": 0.96
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "final_bid_value": 74724504,
+        "margin_percentage": "22.0%",
+        "total_cost_base": 61249594,
+        "total_material_cost": 59778855,
+        "total_logistics_cost": 88200,
+        "total_packaging_cost": 153000,
+        "total_testing_cost": 44700,
+        "finance_cost": 1184839
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 59778855.0,
+          "breakdown": [
+            "   - EC Grade Copper (99.9% Pure): 5.18 units/m (High Volatility Risk +506344)",
+            "   - XLPE Compound (MV Tree Retardant): 6.5 units/m (High Volatility Risk +129870)",
+            "Product Master Missing - Using Estimate"
+          ],
+          "formula": "Micro-BOM"
+        },
+        "strategy": {
+          "rationale": [
+            "Credit Cost (60 days): +INR 1184839",
+            "Loyalty Discount: -3.0%",
+            "Zone Risk (Urban_Restricted): +3.0%"
+          ],
+          "competitor_impact": "+0.0%",
+          "zone_risk": "3.0%"
+        }
+      },
+      "breakdowns": {
+        "strategy_rationale": [
+          "Credit Cost (60 days): +INR 1184839",
+          "Loyalty Discount: -3.0%",
+          "Zone Risk (Urban_Restricted): +3.0%"
+        ]
+      }
+    },
+    "audit_report_url": "/audit_reports/RFP-2025-102_AUDIT.pdf"
+  },
+  {
+    "rfp_unique_id": "RFP-2025-103",
+    "status": "In Progress",
+    "processing_stage_tracker": {
+      "sales_agent": "Completed",
+      "tech_agent": "Completed",
+      "pricing_agent": "Pending",
+      "final_review": "Pending"
+    },
+    "sales_agent_output": {
+      "summary": {
+        "client_name": "L&T Construction",
+        "project_title": "Zojila Tunnel Connectivity Project",
+        "submission_deadline": "2025-12-28",
+        "contract_currency": "INR",
+        "emd_amount": 10000000
+      },
+      "logistics_constraints": {
+        "delivery_location": "Ladakh Remote Hilly Area",
+        "distance_from_factory_km": 1850,
+        "delivery_timeline_days": 90
+      },
+      "line_items_extracted": [
+        {
+          "lot_id": "L1",
+          "description": "220kV 1C 1200sqmm EHV Cable",
+          "quantity": 2500,
+          "unit": "M"
+        }
+      ]
+    },
+    "tech_agent_output": {
+      "status": "Success",
+      "competitor_codes": [
+        "COMP-013",
+        "COMP-003"
+      ],
+      "line_item_matches": [
+        {
+          "lot_id_ref": "L1",
+          "matched_product_id": "PC-220KV-CU-1200",
+          "product_name": "Polycab 220kV 1 Core 1200sqmm Copper EHV Cable Lead Sheath",
+          "confirmed_quantity": 2500,
+          "match_confidence": 0.99
+        }
+      ]
+    },
+    "pricing_agent_output": {
+      "status": "Success",
+      "financial_summary": {
+        "final_bid_value": 58001799,
+        "margin_percentage": "34.0%",
+        "total_cost_base": 43284925,
+        "total_material_cost": 36593002,
+        "total_logistics_cost": 5827500,
+        "total_packaging_cost": 22500,
+        "total_testing_cost": 4600,
+        "finance_cost": 837322
+      },
+      "audit_details": {
+        "manufacturing": {
+          "total": 36593002.49999999,
+          "breakdown": [
+            "   - EC Grade Copper (99.9% Pure): 11.5 units/m (High Volatility Risk +562062)",
+            "   - XLPE Compound (MV Tree Retardant): 8.0 units/m (High Volatility Risk +79920)"
+          ],
+          "formula": "Micro-BOM"
+        },
+        "strategy": {
+          "rationale": [
+            "Credit Cost (60 days): +INR 837322",
+            "Loyalty Discount: -3.0%",
+            "Zone Risk (Hilly_Remote): +15.0%"
+          ],
+          "competitor_impact": "+0.0%",
+          "zone_risk": "15.0%"
+        }
+      },
+      "breakdowns": {
+        "strategy_rationale": [
+          "Credit Cost (60 days): +INR 837322",
+          "Loyalty Discount: -3.0%",
+          "Zone Risk (Hilly_Remote): +15.0%"
+        ]
+      }
+    },
+    "audit_report_url": "/audit_reports/RFP-2025-103_AUDIT.pdf"
+  }
+]

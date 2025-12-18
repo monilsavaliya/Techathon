@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block header %}Agent Configuration{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto" x-data="{ tab: 'sales' }">
+    
+    <div class="flex space-x-1 bg-gray-100 p-1 rounded-xl mb-8">
+        <button @click="tab = 'sales'" :class="tab === 'sales' ? 'bg-white shadow text-blue-600' : 'text-gray-500 hover:text-gray-700'" class="flex-1 py-2.5 text-sm font-bold rounded-lg transition-all">
+            <i class="fas fa-briefcase mr-2"></i> Sales
+        </button>
+        <button @click="tab = 'tech'" :class="tab === 'tech' ? 'bg-white shadow text-purple-600' : 'text-gray-500 hover:text-gray-700'" class="flex-1 py-2.5 text-sm font-bold rounded-lg transition-all">
+            <i class="fas fa-microchip mr-2"></i> Tech
+        </button>
+        <button @click="tab = 'pricing'" :class="tab === 'pricing' ? 'bg-white shadow text-green-600' : 'text-gray-500 hover:text-gray-700'" class="flex-1 py-2.5 text-sm font-bold rounded-lg transition-all">
+            <i class="fas fa-coins mr-2"></i> Pricing
+        </button>
+        <button @click="tab = 'priority'" :class="tab === 'priority' ? 'bg-white shadow text-orange-600' : 'text-gray-500 hover:text-gray-700'" class="flex-1 py-2.5 text-sm font-bold rounded-lg transition-all">
+            <i class="fas fa-crown mr-2"></i> Priority
+        </button>
+    </div>
+
+    <form action="/settings" method="POST" class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+        
+        <div x-show="tab === 'sales'" class="space-y-6">
+            <h3 class="text-lg font-bold text-gray-800 border-b pb-2">Sales Agent Parameters</h3>
+            <div class="grid grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">Priority Threshold (0-100)</label>
+                    <input type="number" name="sales_priority" value="{{ config.sales_config.default_priority_threshold }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">RFPs scoring above this are automatically flagged as "Hot Leads".</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">High Value Client Multiplier</label>
+                    <input type="number" step="0.1" name="sales_multiplier" value="{{ config.sales_config.high_value_client_multiplier }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">Boosts score for Tier-1 clients (e.g., 1.2 = 20% boost).</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">Deadline Warning (Days)</label>
+                    <input type="number" name="deadline_days" value="{{ config.sales_config.deadline_warning_days }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">Triggers "Urgent" status if submission is due within this window.</p>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="tab === 'tech'" class="space-y-6" style="display: none;">
+            <h3 class="text-lg font-bold text-gray-800 border-b pb-2">Tech Agent Logic</h3>
+            <div class="flex items-center gap-4 mb-4">
+                <input type="checkbox" name="strict_mode" id="strict" {% if config.tech_config.strict_compliance_mode %}checked{% endif %} class="w-5 h-5 text-purple-600 rounded">
+                <label for="strict" class="text-sm font-medium text-gray-700">Strict Compliance Mode (Reject Partial Matches)</label>
+            </div>
+            <p class="text-xs text-gray-400 -mt-3 ml-9">If enabled, the agent will not suggest products with < 100% match score.</p>
+
+            <div>
+                <label class="block text-sm font-bold text-gray-600 mb-2">Competitor Match Threshold (0.0 - 1.0)</label>
+                <input type="number" step="0.05" name="comp_threshold" value="{{ config.tech_config.competitor_match_threshold }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none">
+                <p class="text-xs text-gray-400 mt-1">Similarity score required to identify a competitor product (0.85 = 85% match).</p>
+            </div>
+        </div>
+
+        <div x-show="tab === 'pricing'" class="space-y-6" style="display: none;">
+            <h3 class="text-lg font-bold text-gray-800 border-b pb-2">Financial Engine</h3>
+            <div class="grid grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">Base Margin Target (%)</label>
+                    <input type="number" step="0.1" name="base_margin" value="{{ config.pricing_config.base_margin_percent }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">Starting profit margin before strategic adjustments.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">Competitor Undercut (%)</label>
+                    <input type="number" step="0.1" name="price_undercut" value="{{ config.pricing_config.competitor_undercut_percent }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">How much to lower price when facing aggressive rivals.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">Logistics Rate (per Ton/Km)</label>
+                    <input type="number" step="0.1" name="price_logistics" value="{{ config.pricing_config.logistics_rate_per_km_ton }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">Base freight calculation rate.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">Packaging Cost (Steel Drum)</label>
+                    <input type="number" name="price_pkg" value="{{ config.pricing_config.packaging_cost_per_drum }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">Standard cost for one steel cable drum.</p>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="tab === 'priority'" class="space-y-6" style="display: none;">
+            <h3 class="text-lg font-bold text-gray-800 border-b pb-2">Queue Ranking Logic (Must sum to 1.0)</h3>
+            <div class="grid grid-cols-3 gap-6">
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">Product Fit Weight</label>
+                    <input type="number" step="0.1" name="w_product" value="{{ config.priority_config.weight_product_fit }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">Importance of inventory availability.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">Relationship Weight</label>
+                    <input type="number" step="0.1" name="w_rel" value="{{ config.priority_config.weight_relationship }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">Importance of client history/tier.</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-2">Urgency Weight</label>
+                    <input type="number" step="0.1" name="w_urgency" value="{{ config.priority_config.weight_urgency }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 outline-none">
+                    <p class="text-xs text-gray-400 mt-1">Importance of submission deadline.</p>
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-gray-600 mb-2">Max Urgency Days Cap</label>
+                <input type="number" name="max_days" value="{{ config.priority_config.max_urgency_days }}" class="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-orange-500 outline-none">
+                <p class="text-xs text-gray-400 mt-1">Deadlines beyond this number of days are treated as low urgency.</p>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t flex justify-end">
+            <button type="submit" class="bg-slate-900 text-white px-8 py-3 rounded-lg font-bold hover:bg-black transition shadow-lg flex items-center gap-2">
+                <i class="fas fa-save"></i> Save Configuration
+            </button>
+        </div>
+    </form>
+</div>
+
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+{% endblock %}

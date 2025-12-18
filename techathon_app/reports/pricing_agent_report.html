@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBid: Pricing Agent Logic & Analysis Report</title>
+    <style>
+        :root {
+            --primary: #003366;
+            /* Navy Blue */
+            --secondary: #0066cc;
+            /* Bright Blue */
+            --accent: #f0f4f8;
+            /* Light Blue/Gray */
+            --danger: #cc0000;
+            --success: #28a745;
+            --text-dark: #333;
+            --text-light: #666;
+            --border: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--secondary);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin-top: 1.5rem;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #d63384;
+            font-size: 0.9rem;
+        }
+
+        pre {
+            background-color: #272822;
+            /* Monokai-ish */
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: var(--accent);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .tag.input {
+            background-color: #17a2b8;
+        }
+
+        .tag.db {
+            background-color: #6610f2;
+        }
+
+        .tag.calc {
+            background-color: #fd7e14;
+        }
+
+        .tag.strat {
+            background-color: #e83e8c;
+        }
+
+        .logic-step {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .logic-step::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SmartBid Pricing Analysis</h1>
+        <p>Detailed System Architecture, Data Flow, and Logic Documentation</p>
+    </header>
+
+    <div class="container">
+
+        <!-- SECTION 1: SYSTEM OVERVIEW -->
+        <section>
+            <h2>1. System Overview</h2>
+            <p>The <strong>Pricing Agent</strong> acts as the "CFO AI" for the SmartBid system. It is designed to
+                simulate a Diamond-Tier commercial manager that calculates bids not just based on cost, but on strategy,
+                risk, and market game theory.</p>
+            <div class="grid">
+                <div class="card">
+                    <h4>Core Objective</h4>
+                    <p>Generate a winning bid price that maximizes net margin while ensuring a < 30% probability of loss
+                            against specific competitors.</p>
+                </div>
+                <div class="card">
+                    <h4>Key Capabilities</h4>
+                    <ul>
+                        <li>Micro-BOM Costing (Atomic Material Analysis)</li>
+                        <li>Game Theory Rival Analysis</li>
+                        <li>Geo-Spatial Risk Calculation</li>
+                        <li>Financial Cost of Capital Modeling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INPUT SPECIFICATIONS -->
+        <section>
+            <h2>2. Input Specifications (JSON Interface)</h2>
+            <p>The agent receives a consolidated JSON object (<code>input.json</code>) synthesizing data from the Sales
+                and Technical agents.</p>
+
+            <h3>Required Input Fields</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field Path</th>
+                        <th>Source Agent</th>
+                        <th>Description & Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>sales_agent_output.summary.client_name</code></td>
+                        <td>Sales Agent</td>
+                        <td>Used to query <code>client_master.json</code> for credit ratings and loyalty.</td>
+                    </tr>
+                    <tr>
+                        <td><code>sales_agent_output.summary.payment_terms</code></td>
+                        <td>Sales Agent</td>
+                        <td>e.g., "90 Days Credit". Drives interest cost calculation.</td>
+                    </tr>
+                    <tr>
+                        <td><code>sales_agent_output.logistics.delivery_location</code></td>
+                        <td>Sales Agent</td>
+                        <td>Raw text (e.g., "Khavda Desert"). Parsed for Zone Risk.</td>
+                    </tr>
+                    <tr>
+                        <td><code>tech_agent_output.line_item_matches[].matched_product_id</code></td>
+                        <td>Tech Agent</td>
+                        <td>The internal SKU (e.g., <code>PC-33KV-AL-3C-400</code>) map to the RFP item.</td>
+                    </tr>
+                    <tr>
+                        <td><code>tech_agent_output.competitor_codes</code></td>
+                        <td>Tech Agent</td>
+                        <td>Array of rival IDs (e.g., <code>COMP-001</code>) active in this tender.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Sample Input JSON</h3>
+            <pre>{
+  "rfp_unique_id": "RFP-2025-101",
+  "sales_agent_output": {
+    "summary": {
+      "client_name": "Adani Transmission",
+      "payment_terms": "90 Days Credit"
+    },
+    "logistics_constraints": {
+      "delivery_location": "Khavda Desert Zone",
+      "distance_from_factory_km": 680
+    }
+  },
+  "tech_agent_output": {
+    "competitor_codes": ["COMP-001", "COMP-003"],
+    "line_item_matches": [
+      {
+        "matched_product_id": "PC-33KV-AL-3C-400",
+        "confirmed_quantity": 15000
+      }
+    ]
+  }
+}</pre>
+        </section>
+
+        <!-- SECTION 3: DATABASE ECOSYSTEM -->
+        <section>
+            <h2>3. Database Ecosystem (7 Master Files)</h2>
+            <p>The system relies on a set of interconnected "Smart Master" JSON files located in the
+                <code>/database</code> directory. These simulate an ERP's master data.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <h4><span class="tag db">Product Master</span></h4>
+                    <p><code>product_master.json</code> (100+ SKUs)</p>
+                    <ul>
+                        <li><strong>BOM Structure:</strong> Recursive list of materials & quantities per meter.</li>
+                        <li><strong>Tech Specs:</strong> Voltage, Weight (kg/km), OD.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><span class="tag db">Material Master</span></h4>
+                    <p><code>material_master.json</code></p>
+                    <ul>
+                        <li><strong>Live Rates:</strong> Base Cost (INR/kg).</li>
+                        <li><strong>Risk Flags:</strong> "High Volatility" (Copper/Al) adds hedging buffer.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><span class="tag db">Competitor Intelligence</span></h4>
+                    <p><code>competitors.json</code></p>
+                    <ul>
+                        <li><strong>Profiles:</strong> Tier-1 vs. Tier-3.</li>
+                        <li><strong>Aggression Score:</strong> 1-10 scale determining price war probability.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><span class="tag db">Logistics Master</span></h4>
+                    <p><code>logistic_master.json</code></p>
+                    <ul>
+                        <li><strong>Zones:</strong> Z-01 (Plains) to Z-06 (Island/Mountain).</li>
+                        <li><strong>Multipliers:</strong> Surcharge factors (e.g., 2.5x for Hilly).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><span class="tag db">Factory Schedule</span></h4>
+                    <p><code>factory_production_schedule.json</code></p>
+                    <ul>
+                        <li><strong>Line Utilization:</strong> Real-time % load.</li>
+                        <li><strong>Logic:</strong> >90% Load = Scarcity Premium.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><span class="tag db">Client Master</span></h4>
+                    <p><code>client_master.json</code></p>
+                    <ul>
+                        <li><strong>Credit:</strong> Payment terms & loyalty status.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3B: COMPETITOR HANDLING -->
+        <section>
+            <h2>3b. Competitor Identification & Strategic Handling</h2>
+            <p>The system performs a rapid "Threat Assessment" for every RFP to determine if a Pre-emptive Price Strike
+                is necessary. This ensures we don't lose High-Value tenders to known discounters.</p>
+
+            <div class="grid">
+                <div class="card" style="border-left: 4px solid var(--danger);">
+                    <h4>1. Identification Mechanism</h4>
+                    <p><strong>Method:</strong> Overlap Analysis via Tech Agent</p>
+                    <div
+                        style="background: #fff; padding: 10px; border-radius: 4px; font-size: 13px; border: 1px solid #eee;">
+                        <code>Target_SKU: 33kV 3C 400sqmm</code><br>
+                        &darr;<br>
+                        <strong>Scan:</strong> `competitors.json`<br>
+                        &darr;<br>
+                        <strong>Result:</strong> Found 2 Matches<br>
+                        - Polycab (Full Match)<br>
+                        - Havells (Full Match)
+                    </div>
+                </div>
+
+                <div class="card" style="border-left: 4px solid var(--success);">
+                    <h4>2. Handling Strategy (The Matrix)</h4>
+                    <p><strong>Method:</strong> Nash Equilibrium Logic</p>
+                    <ul>
+                        <li><strong>Step 1:</strong> Fetch `aggression_score` (1-10).</li>
+                        <li><strong>Step 2:</strong> Compare against our `win_rate_target`.</li>
+                        <li><strong>Step 3:</strong> Apply Margin Adjustment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>The "War Room" Decision Matrix</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Competitor Type</th>
+                        <th>Aggression Score</th>
+                        <th>System Reaction</th>
+                        <th>Margin Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Rational Incumbent</strong></td>
+                        <td>1 - 4</td>
+                        <td><span class="tag input">Passive</span> Maintain Standard Pricing.</td>
+                        <td><strong>0%</strong> (No Change)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Active Challenger</strong></td>
+                        <td>5 - 7</td>
+                        <td><span class="tag strat">Defensive</span> Match their estimated price floor.</td>
+                        <td><strong>-1.5%</strong> (Minor Cut)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Predatory Discounter</strong></td>
+                        <td>8 - 10</td>
+                        <td><span class="tag strat" style="background:#dc3545;">Aggressive</span> Pre-emptive strike to
+                            "Kill the Bid".</td>
+                        <td><strong>-4.0%</strong> (Survival Mode)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 15px; padding: 15px; background: #e2e3e5; border-radius: 6px; font-size: 14px;">
+                <strong><i class="fas fa-robot"></i> Automated Defense:</strong> If the identified competitor is flagged
+                as "Blacklisted" (e.g. History of Default), the Agent automatically adds a warning flag to the CFO Audit
+                Report but <em>does not</em> adjust price, to avoid winning a "Bad Project".
+            </div>
+        </section>
+
+        <!-- SECTION 3C: TEST IDENTIFICATION -->
+        <section>
+            <h2>3c. Test Identification & Qualification Checks</h2>
+            <p>The system does not just match products; it validates <strong>Technical Compliance</strong>. It
+                automatically identifies mandatory Type Tests and Acceptance Tests based on the requested Standards
+                (e.g., IS:7098, IEC 60502).</p>
+
+            <div class="grid">
+                <div class="card" style="border-left: 4px solid var(--primary);">
+                    <h4>1. Identification Logic (Tech Agent)</h4>
+                    <p><strong>Trigger:</strong> Parsing `standards` array in RFP.</p>
+                    <div
+                        style="background: #fff; padding: 10px; border-radius: 4px; font-size: 13px; border: 1px solid #eee;">
+                        <code>Standard Detected: "IS 7098 (Part-2)"</code><br>
+                        &darr;<br>
+                        <strong>Lookup:</strong> `test_master.json` (Tech View)<br>
+                        &darr;<br>
+                        <strong>Mandatory Tests Added:</strong><br>
+                        - <i class="fas fa-bolt"></i> HV Water Tank Test<br>
+                    </div>
+                </div>
+
+                <div class="card" style="border-left: 4px solid var(--secondary);">
+                    <h4>2. Cost Implication (Pricing Agent)</h4>
+                    <p><strong>Trigger:</strong> `test_master.json` (Finance View)</p>
+                    <div
+                        style="background: #fff; padding: 10px; border-radius: 4px; font-size: 13px; border: 1px solid #eee;">
+                        <strong>Query:</strong> "HV Water Tank Test"<br>
+                        &darr;<br>
+                        <strong>Fetch Cost:</strong> ₹15,000 + 3m Sample<br>
+                        &darr;<br>
+                        <strong>Calc:</strong> Fee + (3m * BOM_Cost) + Witnessing
+                    </div>
+                </div>
+            </div>
+
+            <h3>Test Cost Breakdown Matrix</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Test Name</th>
+                        <th>Classification</th>
+                        <th>Base Fee</th>
+                        <th>Sample Destruction</th>
+                        <th>Total Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Type Test (HV)</strong></td>
+                        <td><span class="tag calc">One-Time</span></td>
+                        <td>₹ 45,000</td>
+                        <td>Yes (5 Meters)</td>
+                        <td><strong>High</strong> (Amortized over qty)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Routine Test</strong></td>
+                        <td><span class="tag db">Per Batch</span></td>
+                        <td>₹ 0 (Internal)</td>
+                        <td>No</td>
+                        <td><strong>Low</strong> (OpEx)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fire Resistance (FRLS)</strong></td>
+                        <td><span class="tag strat">Special</span></td>
+                        <td>₹ 12,000</td>
+                        <td>Yes (3 Meters)</td>
+                        <td><strong>Medium</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 4: THE PRICING ALGORITHM -->
+        <section>
+            <h2>4. Precise Calculation Logic (The "Brain")</h2>
+            <p>The final price is calculated in a strict 5-step waterfall process.</p>
+
+            <h3>Step A: Micro-BOM Costing (The Floor)</h3>
+            <p>For each product, the system "explodes" the Bill of Materials:</p>
+            <div class="logic-step">
+                <strong>Materials:</strong> <code>Sum(Qty_per_m × Base_Rate × Market_Factor)</code>
+            </div>
+            <div class="logic-step">
+                <strong>Hedging Buffer:</strong> If material is <code>volatility_risk_level = "High"</code>, add
+                <strong>2%</strong> (0.02) to that material's cost.
+            </div>
+            <div class="logic-step">
+                <strong>Manufacturing Overhead:</strong> <code>Sum(Material_Cost) × 12%</code>.
+            </div>
+            <div class="logic-step">
+                <strong>Packaging:</strong> <code>(Total Qty / 500m per drum) × Drum_Cost</code>. (Steel drums for HV,
+                Wooden for LV).
+            </div>
+
+            <h3>Step B: Logistics & Zone Risk</h3>
+            <p>The system parses the destination name to find a matching Zone in <code>logistic_master</code>.</p>
+            <ul>
+                <li><strong>Weight Calculation:</strong> <code>Total_Meters × Kg_per_Meter</code> (from Product Master).
+                </li>
+                <li><strong>Freight Formula:</strong>
+                    <code>(Weight_Tons × Distance_km × Zone_Rate_per_Ton_km × Zone_Surcharge_Multiplier)</code>.
+                </li>
+                <li><strong>Example:</strong> "Hilly" zone has a <strong>2.5x</strong> surcharge multiplier.</li>
+            </ul>
+
+            <h3>Step C: Strategic Margin (The Variable)</h3>
+            <p>The Base Target Margin is <strong>22%</strong>. This is adjusted dynamically:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Factor</th>
+                        <th>Condition</th>
+                        <th>Adjustment</th>
+                        <th>Rationale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Rival Aggression</strong></td>
+                        <td>Rival Score > 8</td>
+                        <td><span style="color:red">-3.0%</span></td>
+                        <td>Price War prevention against aggressive players.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Win Rate</strong></td>
+                        <td>Rival Win Rate > 60%</td>
+                        <td><span style="color:red">-2.0%</span></td>
+                        <td>Buying market share against dominant rival.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Factory Load</strong></td>
+                        <td>Utilization > 90%</td>
+                        <td><span style="color:green">+5.0%</span></td>
+                        <td>Scarcity Premium (Supply < Demand).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Factory Idle</strong></td>
+                        <td>Utilization < 30%</td>
+                        <td><span style="color:red">-3.0%</span></td>
+                        <td>Desperation Discount to fill factory lines.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Loyalty</strong></td>
+                        <td>Client = "Gold"</td>
+                        <td><span style="color:red">-3.0%</span></td>
+                        <td>Relationship preservation discount.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zone Risk</strong></td>
+                        <td>Zone Logic</td>
+                        <td><span style="color:green">+ Risk %</span></td>
+                        <td>e.g., +4% for Desert Heat risk (Cable aging).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Step D: Financial Cost of Capital</h3>
+            <p>Interest cost is added <em>above</em> the margin to preserve net profit.</p>
+            <div class="logic-step">
+                <strong>Logic:</strong> <code>Total_Value × (Annual_Rate 12% × Credit_Days / 365)</code>.
+            </div>
+            <div class="logic-step">
+                <strong>Impact:</strong> A 90-day credit term adds ~3% pure cost to the bid compared to an Advance
+                payment.
+            </div>
+
+            <h3>Step E: Final Output Formula</h3>
+            <pre>
+Base_Cost   = Material + Mfg + Packaging + Testing + Logistics
+Final_Margin = 22% + Factory_Adj - Rival_Adj - Loyalty_Adj + Geo_Risk
+Bid_Value   = (Base_Cost + Financial_Interest_Cost) * (1 + Final_Margin)
+        </pre>
+        </section>
+
+        <!-- SECTION 5: OUTPUTS -->
+        <section>
+            <h2>5. Output Generation</h2>
+            <p>The agent generates two primary outputs.</p>
+
+            <h3>1. JSON Output (<code>output_priced.json</code>)</h3>
+            <p>Appends a <code>pricing_agent_output</code> block containing:</p>
+            <ul>
+                <li><code>final_bid_value</code>: Integer INR value.</li>
+                <li><code>margin_percentage</code>: The final net margin used.</li>
+                <li><code>audit_details</code>: Object containing the breakdown of every cost component (for debugging).
+                </li>
+                <li><code>strategy.rationale</code>: Array of strings explaining <em>why</em> the price is what it is
+                    (e.g., ["High Volatility Risk +15k", "Zone Risk: Desert"]).</li>
+            </ul>
+
+            <h3>2. Forensic Audit PDF</h3>
+            <p>A human-readable PDF report is generated in the <code>audit_reports/</code> folder, meant for internal
+                CFO review before submission.</p>
+        </section>
+
+    </div>
+
+</body>
+
+</html>

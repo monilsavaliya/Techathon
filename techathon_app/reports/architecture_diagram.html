@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBid: Hub-and-Spoke Architecture</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+        }
+
+        h1 {
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .diagram-container {
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            min-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>System Architecture: The Orchestrator</h1>
+    <p>Visualizing the <strong>Main Agent</strong> as the central nervous system.</p>
+
+    <div class="diagram-container">
+        <div class="mermaid">
+            %%{init: {'theme': 'dark', 'themeVariables': { 'darkMode': true, 'background': '#1e293b', 'primaryColor':
+            '#3b82f6', 'edgeLabelBackground':'#0f172a', 'tertiaryColor': '#1e293b'}}}%%
+            graph TD
+            %% NODES
+            DB[("💾 CENTRAL DATABASE<br>(The Memory)")]
+            MAIN{{("⚡ MAIN AGENT<br>(The Orchestrator)")}}
+
+            SALES["1. SALES AGENT<br>(PDF Ingestion)"]
+            TECH["2. TECH AGENT<br>(Spec Matching)"]
+            PRICE["3. PRICING AGENT<br>(Costing)"]
+            PRIOR["4. PRIORITY AGENT<br>(Ranking)"]
+
+            %% STYLES
+            classDef db fill:#0f172a,stroke:#94a3b8,stroke-width:4px,color:#fff;
+            classDef main fill:#7c4dff,stroke:#fff,stroke-width:4px,color:#fff,font-weight:bold,font-size:18px;
+            classDef agent fill:#1e293b,stroke:#3b82f6,stroke-width:2px,color:#fff;
+
+            class DB db;
+            class MAIN main;
+            class SALES,TECH,PRICE,PRIOR agent;
+
+            %% CONNECTIONS (Hub and Spoke Layout approximation)
+
+            %% Main interacts with DB centrally
+            MAIN <==>|Read/Write JSON| DB
+
+                %% Step 1: Sales
+                MAIN -->|Spawn| SALES
+                SALES -.->|Step 1: Save Output| DB
+
+                %% Step 2: Tech
+                MAIN -->| Trigger| TECH
+                TECH <-->|Read Sales<br>Write Matches| DB
+
+                    %% Step 3: Pricing
+                    MAIN -->|Trigger| PRICE
+                    PRICE <-->|Read All<br>Write Price| DB
+
+                        %% Step 4: Priority
+                        MAIN -->|Trigger| PRIOR
+                        PRIOR -.->|Update Rank| DB
+
+                        %% Layout Hints (Invisible links to force positions if needed)
+                        SALES ~~~ TECH
+                        TECH ~~~ PRICE
+                        PRICE ~~~ PRIOR
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+</body>
+
+</html>

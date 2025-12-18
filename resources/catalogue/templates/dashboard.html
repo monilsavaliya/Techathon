@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block header %}
+<div class="flex justify-between items-center w-full">
+    <div>
+        <h1 class="text-2xl font-bold text-slate-800 tracking-tight">Executive Dashboard</h1>
+        <p class="text-xs text-slate-500 mt-1">Real-time pipeline analysis & ranking</p>
+    </div>
+    <a href="/upload_page"
+        class="group relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white transition-all duration-200 bg-slate-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900 hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5">
+        <i class="fas fa-plus mr-2 group-hover:rotate-90 transition-transform"></i> New Tender
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between hover:shadow-md transition-all duration-300 group animate-fade-in-up"
+        style="animation-delay: 0.1s">
+        <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Active Tenders</p>
+            <h3 class="text-3xl font-extrabold text-slate-800 group-hover:text-blue-600 transition-colors">{{ kpi.count
+                }}</h3>
+        </div>
+        <div
+            class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+            <i class="fas fa-file-contract"></i>
+        </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between hover:shadow-md transition-all duration-300 group animate-fade-in-up"
+        style="animation-delay: 0.2s">
+        <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Pipeline Value</p>
+            <h3 class="text-3xl font-extrabold text-slate-800 group-hover:text-emerald-600 transition-colors">
+                <span class="text-lg text-slate-400 font-medium">₹</span> {{ "{:,.0f}".format(kpi.val) }}
+            </h3>
+        </div>
+        <div
+            class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+            <i class="fas fa-chart-line"></i>
+        </div>
+    </div>
+
+    <div class="relative bg-gradient-to-br from-indigo-600 to-violet-700 p-6 rounded-2xl shadow-lg shadow-indigo-200 text-white overflow-hidden group animate-fade-in-up"
+        style="animation-delay: 0.3s">
+        <div
+            class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white opacity-10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700">
+        </div>
+        <div class="relative flex justify-between items-center">
+            <div>
+                <p class="text-xs font-bold text-indigo-200 uppercase tracking-wider mb-1 flex items-center gap-2">
+                    <i class="fas fa-bolt text-yellow-400"></i> Top Opportunity
+                </p>
+                <h3 class="text-lg font-bold leading-tight mt-2 truncate w-48">
+                    {% if rfps and rfps[0].sales_agent_2_output and rfps[0].sales_agent_2_output.rank == 1 %}
+                    {{ rfps[0].sales_agent_output.get('summary', {}).get('client_name', 'Unknown') }}
+                    {% else %}
+                    No Data Yet
+                    {% endif %}
+                </h3>
+                <p class="text-xs text-indigo-100 mt-1 opacity-80">
+                    {% if rfps and rfps[0].sales_agent_2_output and rfps[0].sales_agent_2_output.rank == 1 %}
+                    Rank #1 • {{ rfps[0].sales_agent_2_output.priority_score }}% Win Prob
+                    {% else %}
+                    Upload a PDF to start ranking
+                    {% endif %}
+                </p>
+            </div>
+            <div
+                class="w-10 h-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center hover:rotate-12 transition-transform">
+                <i class="fas fa-crown text-yellow-300"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white rounded-2xl shadow-sm border border-slate-200 flex flex-col h-[65vh] overflow-hidden">
+
+    <div
+        class="px-6 py-4 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 bg-slate-50/50">
+        <div class="flex p-1 bg-slate-200/60 rounded-xl">
+            <button onclick="switchTab('active')" id="tab-active"
+                class="px-6 py-2 text-xs font-bold rounded-lg shadow-sm bg-white text-slate-800 transition-all">
+                Active Pipeline
+            </button>
+            <button onclick="switchTab('archived')" id="tab-archived"
+                class="px-6 py-2 text-xs font-bold rounded-lg text-slate-500 hover:text-slate-700 transition-all">
+                Archived
+            </button>
+        </div>
+
+        <div class="relative w-full sm:w-72 group">
+            <i
+                class="fas fa-search absolute left-3 top-3 text-slate-400 group-focus-within:text-blue-500 transition-colors text-xs"></i>
+            <input type="text" id="tableSearch" placeholder="Search client, project or ID..."
+                class="w-full pl-9 pr-4 py-2.5 text-sm bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-sm">
+        </div>
+    </div>
+
+    <div class="flex-1 overflow-auto custom-scrollbar">
+        <table class="w-full text-sm text-left">
+            <thead
+                class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-200 sticky top-0 z-10 text-xs uppercase tracking-wide">
+                <tr>
+                    <th class="px-6 py-4 w-24 text-center">Rank</th>
+                    <th class="px-6 py-4">Client & Project</th>
+                    <th class="px-6 py-4">Deadline</th>
+                    <th class="px-6 py-4 text-right">Est. Value</th>
+                    <th class="px-6 py-4 w-32">Win Prob.</th>
+                    <th class="px-6 py-4 text-center">Status</th>
+                    <th class="px-6 py-4 text-center">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="active-body" class="divide-y divide-slate-100">
+                {% for rfp in rfps if not rfp.is_archived %}
+                <tr class="hover:bg-blue-50/30 transition-colors group search-item"
+                    data-search="{{ rfp.sales_agent_output.get('summary', {}).get('client_name', '') }} {{ rfp.rfp_unique_id }}">
+
+                    <td class="px-6 py-4 text-center">
+                        {% set rank = rfp.sales_agent_2_output.rank|default(999) %}
+                        {% if rank == 1 %}
+                        <div
+                            class="w-8 h-8 mx-auto rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center font-bold border border-yellow-200 shadow-sm ring-2 ring-white">
+                            🏆</div>
+                        {% elif rank == 2 %}
+                        <div
+                            class="w-8 h-8 mx-auto rounded-full bg-slate-100 text-slate-600 flex items-center justify-center font-bold border border-slate-200 ring-2 ring-white">
+                            #2</div>
+                        {% elif rank == 3 %}
+                        <div
+                            class="w-8 h-8 mx-auto rounded-full bg-orange-50 text-orange-700 flex items-center justify-center font-bold border border-orange-200 ring-2 ring-white">
+                            #3</div>
+                        {% else %}
+                        <span class="text-slate-400 font-mono text-xs">#{{ rank if rank != 999 else '-' }}</span>
+                        {% endif %}
+                    </td>
+
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 font-bold text-xs uppercase">
+                                {{ rfp.sales_agent_output.get('summary', {}).get('client_name', '?')[0] }}
+                            </div>
+                            <div>
+                                <div class="font-bold text-slate-800 truncate w-48"
+                                    title="{{ rfp.sales_agent_output.get('summary', {}).get('client_name', '') }}">
+                                    {{ rfp.sales_agent_output.get('summary', {}).get('client_name', 'Unknown Client') }}
+                                </div>
+                                <div class="text-[10px] text-slate-400 font-mono">{{ rfp.rfp_unique_id }}</div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td class="px-6 py-4">
+                        {% if rfp.sales_agent_output.get('summary', {}).get('submission_deadline') %}
+                        <div class="flex items-center gap-2 text-slate-600">
+                            <i class="far fa-calendar-alt text-slate-400"></i>
+                            <span>{{ rfp.sales_agent_output.summary.submission_deadline.split('T')[0] }}</span>
+                        </div>
+                        {% else %}
+                        <span class="text-slate-300">--</span>
+                        {% endif %}
+                    </td>
+
+                    <td class="px-6 py-4 text-right font-mono font-bold text-slate-700">
+                        {% if rfp.pricing_agent_output.financial_summary %}
+                        ₹ {{ "{:,.0f}".format(rfp.pricing_agent_output.financial_summary.final_bid_value|default(0)) }}
+                        {% else %}
+                        <span class="text-slate-300 font-normal">--</span>
+                        {% endif %}
+                    </td>
+
+                    <td class="px-6 py-4">
+                        {% set score = rfp.sales_agent_2_output.priority_score|default(0) %}
+                        {% if score == 'Pending' or score == 0 %}
+                        <span class="text-xs text-slate-400 italic">Calculating...</span>
+                        {% else %}
+                        <div class="w-full bg-slate-100 rounded-full h-2 mb-1 overflow-hidden">
+                            <div class="h-2 rounded-full 
+                                    {% if score >= 80 %}bg-emerald-500{% elif score >= 50 %}bg-amber-400{% else %}bg-slate-400{% endif %}"
+                                style="width: {{ score }}%">
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-bold text-slate-500">{{ score }}% Probability</span>
+                        {% endif %}
+                    </td>
+
+                    <td class="px-6 py-4 text-center">
+                        {% if rfp.status == 'Processing' %}
+                        <span
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-600 border border-blue-100">
+                            <span class="relative flex h-2 w-2">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            </span>
+                            Processing
+                        </span>
+                        {% elif rfp.status == 'Failed' %}
+                        <span
+                            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100">
+                            <i class="fas fa-exclamation-circle mr-1"></i> Error
+                        </span>
+                        {% else %}
+                        <span
+                            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-600 border border-slate-200">
+                            {{ rfp.status }}
+                        </span>
+                        {% endif %}
+                    </td>
+
+                    <td class="px-6 py-4 text-center">
+                        <div
+                            class="flex justify-center items-center gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+                            <a href="/rfp/{{ rfp.rfp_unique_id }}"
+                                class="w-8 h-8 flex items-center justify-center rounded-lg text-blue-600 hover:bg-blue-50 hover:shadow-sm transition-all"
+                                title="View Details">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="/archive_rfp/{{ rfp.rfp_unique_id }}"
+                                class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-amber-600 hover:bg-amber-50 hover:shadow-sm transition-all"
+                                title="Archive">
+                                <i class="fas fa-box-archive"></i>
+                            </a>
+                            <a href="/delete_rfp/{{ rfp.rfp_unique_id }}"
+                                class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50 hover:shadow-sm transition-all"
+                                onclick="return confirm('Permanently delete this RFP?')" title="Delete">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7" class="text-center py-16">
+                        <div class="flex flex-col items-center gap-3 opacity-50">
+                            <div
+                                class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 text-2xl">
+                                <i class="fas fa-folder-open"></i>
+                            </div>
+                            <p class="text-slate-500 font-medium">No active tenders found.</p>
+                            <a href="/upload_page" class="text-blue-600 hover:underline text-sm">Upload a PDF to get
+                                started</a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            <tbody id="archived-body" class="divide-y divide-slate-100 hidden">
+                {% for rfp in rfps if rfp.is_archived %}
+                <tr class="bg-slate-50/50 grayscale opacity-75 search-item hover:opacity-100 transition-opacity"
+                    data-search="{{ rfp.sales_agent_output.summary.client_name|default('') }}">
+                    <td class="px-6 py-4 text-slate-400 font-mono text-center">-</td>
+                    <td class="px-6 py-4 text-slate-500">
+                        <div class="font-bold">{{ rfp.sales_agent_output.summary.client_name }}</div>
+                        <div class="text-[10px]">{{ rfp.rfp_unique_id }}</div>
+                    </td>
+                    <td class="px-6 py-4 text-slate-400 text-xs">--</td>
+                    <td class="px-6 py-4 text-right text-slate-400 text-xs">--</td>
+                    <td class="px-6 py-4 text-center text-slate-400 text-xs">--</td>
+                    <td class="px-6 py-4 text-center"><span
+                            class="px-2 py-1 rounded text-xs font-bold bg-slate-200 text-slate-600">Archived</span></td>
+                    <td class="px-6 py-4 text-center">
+                        <a href="/archive_rfp/{{ rfp.rfp_unique_id }}"
+                            class="text-blue-600 hover:text-blue-800 text-xs font-bold flex items-center justify-center gap-1">
+                            <i class="fas fa-undo"></i> Restore
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function switchTab(tab) {
+        const active = document.getElementById('active-body');
+        const archived = document.getElementById('archived-body');
+        const btnActive = document.getElementById('tab-active');
+        const btnArchived = document.getElementById('tab-archived');
+
+        if (tab === 'active') {
+            active.classList.remove('hidden'); archived.classList.add('hidden');
+            btnActive.className = "px-6 py-2 text-xs font-bold rounded-lg shadow-sm bg-white text-slate-800 transition-all";
+            btnArchived.className = "px-6 py-2 text-xs font-bold rounded-lg text-slate-500 hover:text-slate-700 transition-all";
+        } else {
+            active.classList.add('hidden'); archived.classList.remove('hidden');
+            btnArchived.className = "px-6 py-2 text-xs font-bold rounded-lg shadow-sm bg-white text-slate-800 transition-all";
+            btnActive.className = "px-6 py-2 text-xs font-bold rounded-lg text-slate-500 hover:text-slate-700 transition-all";
+        }
+    }
+
+    document.getElementById('tableSearch').addEventListener('keyup', function () {
+        const filter = this.value.toLowerCase();
+        document.querySelectorAll('.search-item').forEach(row => {
+            if (row.parentElement.classList.contains('hidden')) return;
+            const text = row.getAttribute('data-search').toLowerCase();
+            row.style.display = text.includes(filter) ? '' : 'none';
+        });
+    });
+</script>
+{% endblock %}
